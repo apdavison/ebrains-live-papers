@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Button from "@material-ui/core/Button";
 import LoadingIndicator from "./components/LoadingIndicator";
 import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
@@ -971,3 +972,7 @@ export default class App extends React.Component {
     }
   }
 }
+
+App.propTypes = {
+  auth: PropTypes.object;
+};

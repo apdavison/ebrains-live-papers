@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { useLocation } from "react-router-dom";
 import Spreadsheet, { createEmptyMatrix } from "react-spreadsheet";
 import { updateHash } from "./globals";
@@ -446,6 +448,14 @@ class BulkEntryWizardComp extends React.Component {
     );
   }
 }
+
+
+BulkEntryWizardComp.propTypes = {
+  location: PropTypes.object,
+  enqueueSnackbar: PropTypes.object,
+  closeSnackbar: PropTypes.object
+};
+
 
 // based on this: https://reactnavigation.org/docs/use-navigation/
 // You can wrap your class component in a function component to use the hook:

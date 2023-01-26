@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const ContextMain = React.createContext();
 
@@ -44,3 +45,7 @@ const ContextMainProvider = (props) => {
 export default ContextMain;
 
 export { ContextMainProvider };
+
+ContextMainProvider.propTypes = {
+  children: PropTypes.object
+};
