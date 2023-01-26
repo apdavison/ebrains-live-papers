@@ -17,16 +17,16 @@ import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
 import Typography from "@material-ui/core/Typography";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
-import ErrorDialog from "./components/ErrorDialog";
-import LoadingIndicator from "./components/LoadingIndicator";
-import ContextMain from "./ContextMain";
+import ErrorDialog from "../components/ErrorDialog";
+import LoadingIndicator from "../components/LoadingIndicator";
+import ContextMain from "../ContextMain";
 import TextField from "@material-ui/core/TextField";
-import MultipleSelect from "./components/MultipleSelect";
+import MultipleSelect from "../components/MultipleSelect";
 import axios from "axios";
 import Tooltip from "@material-ui/core/Tooltip";
 import Link from "@material-ui/core/Link";
-import SwitchMultiWay from "./components/SwitchMultiWay";
-import ToggleSwitch from "./components/ToggleSwitch";
+import SwitchMultiWay from "../components/SwitchMultiWay";
+import ToggleSwitch from "../components/ToggleSwitch";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import ViewColumnIcon from "@material-ui/icons/ViewColumn";
 import { readRemoteFile } from "react-papaparse";
@@ -38,8 +38,8 @@ import {
   allenbrain_viewMorphologyUrl,
   filterNeuroMorphoKeys,
   corsProxy,
-} from "./globals";
-import { buildQuery, showNotification, formatLabel } from "./utils";
+} from "../globals";
+import { buildQuery, showNotification, formatLabel } from "../utils";
 
 const labelsNeuroMorphoKeys = {
   age_classification: "Age Classification",

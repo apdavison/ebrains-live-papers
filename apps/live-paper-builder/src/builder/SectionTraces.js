@@ -1,14 +1,14 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import MaterialIconSelector from "./MaterialIconSelector";
+import MaterialIconSelector from "../components/MaterialIconSelector";
 import HelpIcon from "@material-ui/icons/Help";
 import TextField from "@material-ui/core/TextField";
 import Tooltip from "@material-ui/core/Tooltip";
-import ModalDialog from "./components/ModalDialog";
-import DialogConfirm from "./components/DialogConfirm";
+import ModalDialog from "../components/ModalDialog";
+import DialogConfirm from "../components/DialogConfirm";
 import DynamicTableItems from "./DynamicTableItems";
-import DBInputMorphology from "./DBInputMorphology";
-import ToggleSwitch from "./components/ToggleSwitch";
+import DBInputTraces from "./DBInputTraces";
+import ToggleSwitch from "../components/ToggleSwitch";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 
 import Accordion from "@material-ui/core/Accordion";
@@ -26,7 +26,7 @@ function HelpContent() {
       {
         "type": "URL",
         "label": "file_A",
-        "url": "https://www.datasource.com/morphologies/oh140807_A0_idB.asc",
+        "url": "https://www.datasource.com/traces/oh140807_A0_idB.abf",
         "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
@@ -34,7 +34,7 @@ function HelpContent() {
       {
         "type": "URL",
         "label": "file_B",
-        "url": "https://www.datasource.com/morphologies/oh140807_A0_idC.asc",
+        "url": "https://www.datasource.com/traces/oh140807_A0_idC.abf",
         "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
@@ -42,7 +42,7 @@ function HelpContent() {
       {
         "type": "URL",
         "label": "file_C",
-        "url": "https://www.datasource.com/morphologies/oh140807_A0_idF.asc",
+        "url": "https://www.datasource.com/traces/oh140807_A0_idF.abf",
         "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
@@ -50,24 +50,24 @@ function HelpContent() {
       {
         "type": "URL",
         "label": "file_D",
-        "url": "https://www.datasource.com/morphologies/oh140807_A0_idG.asc",
+        "url": "https://www.datasource.com/traces/oh140807_A0_idG.abf",
         "view_url": null,
         "identifier": null,
-        "tab_name": "Group B"
+        "tab_name": "Group A"
       },
       {
         "type": "URL",
         "label": "file_E",
-        "url": "https://www.datasource.com/morphologies/oh140807_A0_idH.asc",
+        "url": "https://www.datasource.com/traces/oh140807_A0_idH.abf",
         "view_url": null,
         "identifier": null,
-        "tab_name": "Group B"
+        "tab_name": "Group A"
       }
     ]`;
 
   return (
     <div>
-      The morphology data can be input in the following format:
+      The traces data can be input in the following format:
       <br />
       <br />
       <h6>
@@ -85,7 +85,7 @@ function HelpContent() {
   );
 }
 
-export class SectionMorphologyEdit extends React.Component {
+export class SectionTracesEdit extends React.Component {
   constructor(props) {
     super(props);
 
@@ -216,7 +216,7 @@ export class SectionMorphologyEdit extends React.Component {
           <ModalDialog
             open={this.state.showHelp}
             title="Data Input"
-            headerBgColor="#FF9800"
+            headerBgColor="#70BF73"
             content={<HelpContent />}
             handleClose={this.handleHelpClose}
           />
@@ -231,11 +231,11 @@ export class SectionMorphologyEdit extends React.Component {
       <DialogConfirm
         open={this.props.open}
         title={"Edit Source: " + this.props.title}
-        headerBgColor="#FF9800"
+        headerBgColor="#70BF73"
         content={this.renderContent()}
         handleClose={this.handleSaveData}
         clickHelp={this.clickHelp}
-        bulkEntry="Morphology"
+        bulkEntry="Recordings/Traces"
       />
     );
   }
@@ -269,15 +269,15 @@ const Icon = styled((props) => (
   }
 `;
 
-export default class SectionMorphology extends React.Component {
+export default class SectionTraces extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       order: null,
-      type: "section_morphology",
-      title: "Morphologies",
-      icon: "settings_input_antenna",
+      type: "section_traces",
+      title: "Recordings / Traces",
+      icon: "timeline",
       description: "",
       dataOk: true,
       data: [],
@@ -440,13 +440,13 @@ export default class SectionMorphology extends React.Component {
     if (flag) {
       console.log(items);
       let new_items = [];
-      for (const morph_id in items) {
-        for (const instance_id in items[morph_id]) {
+      for (const trace_id in items) {
+        for (const instance_id in items[trace_id]) {
           new_items.push({
-            type: sourceDB === "NeuroMorpho" ? "NeuroMorpho" : "AllenBrain",
-            label: items[morph_id][instance_id]["label"] || "",
-            url: items[morph_id][instance_id]["source_url"] || "",
-            view_url: items[morph_id][instance_id]["view_url"] || "",
+            type: sourceDB === "Knowledge Graph" ? "Recording" : "AllenBrain",
+            label: items[trace_id][instance_id]["label"] || "",
+            url: items[trace_id][instance_id]["source_url"] || "",
+            view_url: items[trace_id][instance_id]["view_url"] || "",
             tab_name: "",
             identifier: null,
           });
@@ -521,9 +521,9 @@ export default class SectionMorphology extends React.Component {
               display: "flex",
               justifyContent: "space-between",
               borderStyle: "solid",
-              borderColor: "#E65100",
+              borderColor: "#194D1B",
               borderWidth: "2px",
-              backgroundColor: "#FF9800",
+              backgroundColor: "#70BF73",
               fontWeight: "bold",
               color: "#000000",
               width: "100%",
@@ -546,7 +546,7 @@ export default class SectionMorphology extends React.Component {
                 }}
               >
                 <span style={{ verticalAlign: "middle" }}>
-                  Section: Neuronal Morphology
+                  Section: Recordings / Traces
                 </span>
               </div>
               <div>
@@ -602,7 +602,7 @@ export default class SectionMorphology extends React.Component {
           >
             <div
               style={{
-                backgroundColor: "#FFECD1",
+                backgroundColor: "#E2F2E3",
                 width: "100%",
               }}
             >
@@ -660,7 +660,7 @@ export default class SectionMorphology extends React.Component {
                   <TextField
                     multiline
                     rows="4"
-                    label="Description of morphologies (optional)"
+                    label="Description of electrophysiological traces (optional)"
                     variant="outlined"
                     fullWidth={true}
                     helperText="The description may be formatted with Markdown, LaTeX math and/or AsciiMath. Click on ? icon for help."
@@ -685,7 +685,7 @@ export default class SectionMorphology extends React.Component {
                     Do you wish to use tabs to group items in this section?
                   </span>
                   <ToggleSwitch
-                    id="morphologiesTabs"
+                    id="tracesTabs"
                     checked={this.state.useTabs}
                     onChange={this.toggleUseTabs}
                   />
@@ -700,9 +700,18 @@ export default class SectionMorphology extends React.Component {
                   }}
                 >
                   <span style={{ paddingRight: "10px" }}>
-                    <strong>Note:</strong> 'View URL' can be left empty for SWC,
-                    neurolucida-ASC, neurolucida-XML or neurolucida-DAT/NRX
-                    files to make use of intergrated 3D visualization tool.
+                    <strong>Note:</strong> This section employs the{" "}
+                    <a
+                      href="https://neo-viewer.brainsimulation.eu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      NEO Viewer
+                    </a>{" "}
+                    to visualize each of the listed data files. If you wish to
+                    list data without including this tool, please replace this
+                    section with a section of type{" "}
+                    <strong>'Generic Listing'</strong>.
                   </span>
                 </Grid>
                 {this.state.useTabs && (
@@ -722,14 +731,14 @@ export default class SectionMorphology extends React.Component {
                   onChangeValue={this.handleItemsChange}
                   handleEdit={this.clickEdit}
                   handleDB={this.clickDB}
-                  numCols={3}
+                  numCols={2}
                   useTabs={this.state.useTabs}
-                  type={"section_morphology"}
+                  type={"section_traces"}
                 />
                 <br />
                 <br />
                 {this.state.showEdit ? (
-                  <SectionMorphologyEdit
+                  <SectionTracesEdit
                     open={this.state.showEdit}
                     title={this.state.title}
                     data={this.state.data}
@@ -741,13 +750,13 @@ export default class SectionMorphology extends React.Component {
                   <ModalDialog
                     open={this.state.showDescHelp}
                     title="Markdown / Latex Description Input Format"
-                    headerBgColor="#FF9800"
+                    headerBgColor="#70BF73"
                     content={<MarkdownLatexExample />}
                     handleClose={this.handleDescHelpClose}
                   />
                 ) : null}
                 {this.state.showDBInput ? (
-                  <DBInputMorphology
+                  <DBInputTraces
                     open={this.state.showDBInput}
                     handleClose={this.handleDBClose}
                     enqueueSnackbar={this.props.enqueueSnackbar}
@@ -758,9 +767,9 @@ export default class SectionMorphology extends React.Component {
               <DialogConfirm
                 open={this.state.deleteOpen}
                 title="Please confirm to delete!"
-                headerBgColor="#FF9800"
+                headerBgColor="#70BF73"
                 content={
-                  "Do you wish to delete the morphology resource section with title '<b>" +
+                  "Do you wish to delete the traces resource section with title '<b>" +
                   this.state.title +
                   "</b>'?"
                 }

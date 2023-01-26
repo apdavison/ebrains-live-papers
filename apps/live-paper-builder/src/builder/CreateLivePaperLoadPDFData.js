@@ -12,12 +12,12 @@ import CloseIcon from "@material-ui/icons/Close";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import CreateLivePaper from "./CreateLivePaper";
-import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
-import ErrorDialog from "./components/ErrorDialog";
+import LoadingIndicatorModal from "../components/LoadingIndicatorModal";
+import ErrorDialog from "../components/ErrorDialog";
 import Tooltip from "@material-ui/core/Tooltip";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
+import { livePaperPlatformUrl, livePaperDocsUrl } from "../globals";
 
 const styles = (theme) => ({
   root: {

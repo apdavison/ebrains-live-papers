@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import MaterialIconSelector from "./MaterialIconSelector";
+import MaterialIconSelector from "../components/MaterialIconSelector";
 import HelpIcon from "@material-ui/icons/Help";
 import TextField from "@material-ui/core/TextField";
 import Tooltip from "@material-ui/core/Tooltip";
-import ModalDialog from "./components/ModalDialog";
-import DialogConfirm from "./components/DialogConfirm";
+import ModalDialog from "../components/ModalDialog";
+import DialogConfirm from "../components/DialogConfirm";
 import { Converter } from "showdown";
 import prettier from "prettier/standalone";
 import html from "prettier/parser-html";

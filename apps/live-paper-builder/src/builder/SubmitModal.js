@@ -7,14 +7,14 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
-import SwitchMultiWay from "./components/SwitchMultiWay";
-import ContextMain from "./ContextMain";
-import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
-import ErrorDialog from "./components/ErrorDialog";
-import ModalDialog from "./components/ModalDialog";
+import SwitchMultiWay from "../components/SwitchMultiWay";
+import ContextMain from "../ContextMain";
+import LoadingIndicatorModal from "../components/LoadingIndicatorModal";
+import ErrorDialog from "../components/ErrorDialog";
+import ModalDialog from "../components/ModalDialog";
 import Link from "@material-ui/core/Link";
-import { baseUrl } from "./globals";
-import { showNotification } from "./utils";
+import { baseUrl } from "../globals";
+import { showNotification } from "../utils";
 import saltedMd5 from "salted-md5";
 
 export default class SubmitModal extends React.Component {

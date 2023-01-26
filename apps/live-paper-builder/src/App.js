@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import ContextMain from "./ContextMain";
-import CreateLivePaperLoadPDFData from "./CreateLivePaperLoadPDFData";
+import CreateLivePaperLoadPDFData from "./builder/CreateLivePaperLoadPDFData";
 import LoadKGProjects from "./LoadKGProjects";
 import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
 import ErrorDialog from "./components/ErrorDialog";

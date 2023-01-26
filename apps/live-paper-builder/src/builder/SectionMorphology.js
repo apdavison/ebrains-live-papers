@@ -1,13 +1,14 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import MaterialIconSelector from "./MaterialIconSelector";
+import MaterialIconSelector from "../components/MaterialIconSelector";
 import HelpIcon from "@material-ui/icons/Help";
 import TextField from "@material-ui/core/TextField";
 import Tooltip from "@material-ui/core/Tooltip";
-import ModalDialog from "./components/ModalDialog";
-import DialogConfirm from "./components/DialogConfirm";
+import ModalDialog from "../components/ModalDialog";
+import DialogConfirm from "../components/DialogConfirm";
 import DynamicTableItems from "./DynamicTableItems";
-import ToggleSwitch from "./components/ToggleSwitch";
+import DBInputMorphology from "./DBInputMorphology";
+import ToggleSwitch from "../components/ToggleSwitch";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 
 import Accordion from "@material-ui/core/Accordion";
@@ -24,49 +25,49 @@ function HelpContent() {
     [
       {
         "type": "URL",
-        "url": "https://www.datasource.com/listing/file_idB.dat",
-        "view_url": null,
         "label": "file_A",
+        "url": "https://www.datasource.com/morphologies/oh140807_A0_idB.asc",
+        "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
       },
       {
         "type": "URL",
-        "url": "https://www.datasource.com/listing/file_idC.dat",
-        "view_url": null,
         "label": "file_B",
+        "url": "https://www.datasource.com/morphologies/oh140807_A0_idC.asc",
+        "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
       },
       {
         "type": "URL",
-        "url": "https://www.datasource.com/listing/file_idF.dat",
-        "view_url": null,
         "label": "file_C",
+        "url": "https://www.datasource.com/morphologies/oh140807_A0_idF.asc",
+        "view_url": null,
         "identifier": null,
         "tab_name": "Group A"
       },
       {
         "type": "URL",
-        "url": "https://www.datasource.com/listing/file_idG.dat",
-        "view_url": null,
         "label": "file_D",
+        "url": "https://www.datasource.com/morphologies/oh140807_A0_idG.asc",
+        "view_url": null,
         "identifier": null,
-        "tab_name": "Group A"
+        "tab_name": "Group B"
       },
       {
         "type": "URL",
-        "url": "https://www.datasource.com/listing/file_idH.dat",
-        "view_url": null,
         "label": "file_E",
+        "url": "https://www.datasource.com/morphologies/oh140807_A0_idH.asc",
+        "view_url": null,
         "identifier": null,
-        "tab_name": "Group A"
+        "tab_name": "Group B"
       }
     ]`;
 
   return (
     <div>
-      The listing data can be input in the following format:
+      The morphology data can be input in the following format:
       <br />
       <br />
       <h6>
@@ -84,7 +85,7 @@ function HelpContent() {
   );
 }
 
-export class SectionGenericEdit extends React.Component {
+export class SectionMorphologyEdit extends React.Component {
   constructor(props) {
     super(props);
 
@@ -215,7 +216,7 @@ export class SectionGenericEdit extends React.Component {
           <ModalDialog
             open={this.state.showHelp}
             title="Data Input"
-            headerBgColor="#AA91D7"
+            headerBgColor="#FF9800"
             content={<HelpContent />}
             handleClose={this.handleHelpClose}
           />
@@ -230,11 +231,11 @@ export class SectionGenericEdit extends React.Component {
       <DialogConfirm
         open={this.props.open}
         title={"Edit Source: " + this.props.title}
-        headerBgColor="#AA91D7"
+        headerBgColor="#FF9800"
         content={this.renderContent()}
         handleClose={this.handleSaveData}
         clickHelp={this.clickHelp}
-        bulkEntry="Generic"
+        bulkEntry="Morphology"
       />
     );
   }
@@ -268,19 +269,20 @@ const Icon = styled((props) => (
   }
 `;
 
-export default class SectionGeneric extends React.Component {
+export default class SectionMorphology extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       order: null,
-      type: "section_generic",
-      title: "Listing Title",
-      icon: "format_list_bulleted",
+      type: "section_morphology",
+      title: "Morphologies",
+      icon: "settings_input_antenna",
       description: "",
       dataOk: true,
       data: [],
       showEdit: false,
+      showDBInput: false,
       deleteOpen: false,
       expanded: true,
       useTabs: false,
@@ -291,6 +293,8 @@ export default class SectionGeneric extends React.Component {
     this.handleFieldChange = this.handleFieldChange.bind(this);
     this.clickEdit = this.clickEdit.bind(this);
     this.handleEditClose = this.handleEditClose.bind(this);
+    this.clickDB = this.clickDB.bind(this);
+    this.handleDBClose = this.handleDBClose.bind(this);
     this.setIcon = this.setIcon.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleMoveDown = this.handleMoveDown.bind(this);
@@ -426,6 +430,53 @@ export default class SectionGeneric extends React.Component {
     });
   }
 
+  clickDB() {
+    this.setState({
+      showDBInput: true,
+    });
+  }
+
+  handleDBClose(flag, items, sourceDB) {
+    if (flag) {
+      console.log(items);
+      let new_items = [];
+      for (const morph_id in items) {
+        for (const instance_id in items[morph_id]) {
+          new_items.push({
+            type: sourceDB === "NeuroMorpho" ? "NeuroMorpho" : "AllenBrain",
+            label: items[morph_id][instance_id]["label"] || "",
+            url: items[morph_id][instance_id]["source_url"] || "",
+            view_url: items[morph_id][instance_id]["view_url"] || "",
+            tab_name: "",
+            identifier: null,
+          });
+        }
+      }
+      console.log(new_items);
+
+      this.setState(
+        (prevState) => ({
+          data:
+            prevState.data.length === 1 &&
+            prevState.data[0].type === "URL" &&
+            prevState.data[0].label === "" &&
+            prevState.data[0].url === "" &&
+            prevState.data[0].view_url === ""
+              ? new_items
+              : prevState.data.concat(new_items),
+          showDBInput: false,
+        }),
+        () => {
+          this.props.storeSectionInfo(this.state);
+        }
+      );
+    } else {
+      this.setState({
+        showDBInput: false,
+      });
+    }
+  }
+
   toggleUseTabs() {
     if (this.state.useTabs) {
       // if turning off, then erase all tabs data
@@ -470,9 +521,9 @@ export default class SectionGeneric extends React.Component {
               display: "flex",
               justifyContent: "space-between",
               borderStyle: "solid",
-              borderColor: "#311B92",
+              borderColor: "#E65100",
               borderWidth: "2px",
-              backgroundColor: "#AA91D7",
+              backgroundColor: "#FF9800",
               fontWeight: "bold",
               color: "#000000",
               width: "100%",
@@ -495,7 +546,7 @@ export default class SectionGeneric extends React.Component {
                 }}
               >
                 <span style={{ verticalAlign: "middle" }}>
-                  Section: Generic Listing
+                  Section: Neuronal Morphology
                 </span>
               </div>
               <div>
@@ -551,7 +602,7 @@ export default class SectionGeneric extends React.Component {
           >
             <div
               style={{
-                backgroundColor: "#EAE3F5",
+                backgroundColor: "#FFECD1",
                 width: "100%",
               }}
             >
@@ -609,7 +660,7 @@ export default class SectionGeneric extends React.Component {
                   <TextField
                     multiline
                     rows="4"
-                    label="Description (optional)"
+                    label="Description of morphologies (optional)"
                     variant="outlined"
                     fullWidth={true}
                     helperText="The description may be formatted with Markdown, LaTeX math and/or AsciiMath. Click on ? icon for help."
@@ -634,10 +685,25 @@ export default class SectionGeneric extends React.Component {
                     Do you wish to use tabs to group items in this section?
                   </span>
                   <ToggleSwitch
-                    id="genericTabs"
+                    id="morphologiesTabs"
                     checked={this.state.useTabs}
                     onChange={this.toggleUseTabs}
                   />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  style={{
+                    paddingLeft: "10px",
+                    paddingRight: "10px",
+                    paddingBottom: "20px",
+                  }}
+                >
+                  <span style={{ paddingRight: "10px" }}>
+                    <strong>Note:</strong> 'View URL' can be left empty for SWC,
+                    neurolucida-ASC, neurolucida-XML or neurolucida-DAT/NRX
+                    files to make use of intergrated 3D visualization tool.
+                  </span>
                 </Grid>
                 {this.state.useTabs && (
                   <Grid
@@ -655,14 +721,15 @@ export default class SectionGeneric extends React.Component {
                   items={this.state.data}
                   onChangeValue={this.handleItemsChange}
                   handleEdit={this.clickEdit}
+                  handleDB={this.clickDB}
                   numCols={3}
                   useTabs={this.state.useTabs}
-                  type={"section_generic"}
+                  type={"section_morphology"}
                 />
                 <br />
                 <br />
                 {this.state.showEdit ? (
-                  <SectionGenericEdit
+                  <SectionMorphologyEdit
                     open={this.state.showEdit}
                     title={this.state.title}
                     data={this.state.data}
@@ -674,18 +741,26 @@ export default class SectionGeneric extends React.Component {
                   <ModalDialog
                     open={this.state.showDescHelp}
                     title="Markdown / Latex Description Input Format"
-                    headerBgColor="#AA91D7"
+                    headerBgColor="#FF9800"
                     content={<MarkdownLatexExample />}
                     handleClose={this.handleDescHelpClose}
+                  />
+                ) : null}
+                {this.state.showDBInput ? (
+                  <DBInputMorphology
+                    open={this.state.showDBInput}
+                    handleClose={this.handleDBClose}
+                    enqueueSnackbar={this.props.enqueueSnackbar}
+                    closeSnackbar={this.props.closeSnackbar}
                   />
                 ) : null}
               </div>
               <DialogConfirm
                 open={this.state.deleteOpen}
                 title="Please confirm to delete!"
-                headerBgColor="#AA91D7"
+                headerBgColor="#FF9800"
                 content={
-                  "Do you wish to delete the generic resource section with title '<b>" +
+                  "Do you wish to delete the morphology resource section with title '<b>" +
                   this.state.title +
                   "</b>'?"
                 }
