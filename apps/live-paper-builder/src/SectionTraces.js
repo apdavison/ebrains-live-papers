@@ -4,11 +4,11 @@ import MaterialIconSelector from "./MaterialIconSelector";
 import HelpIcon from "@material-ui/icons/Help";
 import TextField from "@material-ui/core/TextField";
 import Tooltip from "@material-ui/core/Tooltip";
-import ModalDialog from "./ModalDialog";
-import DialogConfirm from "./DialogConfirm";
+import ModalDialog from "./components/ModalDialog";
+import DialogConfirm from "./components/DialogConfirm";
 import DynamicTableItems from "./DynamicTableItems";
 import DBInputTraces from "./DBInputTraces";
-import ToggleSwitch from "./ToggleSwitch";
+import ToggleSwitch from "./components/ToggleSwitch";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 
 import Accordion from "@material-ui/core/Accordion";

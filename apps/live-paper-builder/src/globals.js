@@ -2,7 +2,11 @@
 export const livePaperPlatformUrl = "/";
 export const livePaperBuilderUrl = "/builder";
 export const livePaperDocsUrl = "/docs";
+export const keycloakUrl = "https://iam.ebrains.eu/auth";
+//export const keycloakUrl = "https://iam-int.ebrains.eu/auth";
+//export const baseUrl = "https://validation-staging.brainsimulation.eu";
 export const baseUrl = "https://validation.brainsimulation.eu";
+//export const baseUrl = "http://localhost:8000";
 export const mc_baseUrl = "https://model-catalog.brainsimulation.eu";
 export const nar_baseUrl =
   "https://neural-activity-resource.brainsimulation.eu";

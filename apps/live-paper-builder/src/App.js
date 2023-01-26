@@ -4,14 +4,14 @@ import axios from "axios";
 import ContextMain from "./ContextMain";
 import CreateLivePaperLoadPDFData from "./CreateLivePaperLoadPDFData";
 import LoadKGProjects from "./LoadKGProjects";
-import LoadingIndicatorModal from "./LoadingIndicatorModal";
-import ErrorDialog from "./ErrorDialog";
+import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
+import ErrorDialog from "./components/ErrorDialog";
 import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
-import WarningBox from "./WarningBox";
+import WarningBox from "./components/WarningBox";
 
 import "./App.css";
 
@@ -219,6 +219,11 @@ class App extends React.Component {
       // replace null values with empty strings
       // avoids errors, e.g. `value` prop on `textarea` should not be null
       data = replaceNullWithEmptyStrings(data);
+      // but some things should be empty lists, not empty strings
+      if (data.corresponding_author === "") {
+        data.corresponding_author = [];
+      }
+      console.log(data);
 
       // sort resource sections by order #
       data.resources.sort(compareArrayoOfObjectsByOrder);

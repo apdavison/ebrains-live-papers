@@ -1,14 +1,14 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import LoadingIndicator from "./LoadingIndicator";
-import LoadingIndicatorModal from "./LoadingIndicatorModal";
+import LoadingIndicator from "./components/LoadingIndicator";
+import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
 import IconButton from "@material-ui/core/IconButton";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import BuildIcon from "@material-ui/icons/Build";
 import axios from "axios";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import ErrorDialog from "./ErrorDialog";
+import ErrorDialog from "./components/ErrorDialog";
 import LivePaperViewer from "./LivePaperViewer";
 import { baseUrl, updateHash } from "./globals";
 import { isUUID } from "./utils";

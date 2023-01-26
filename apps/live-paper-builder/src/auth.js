@@ -1,9 +1,10 @@
 import Keycloak from "keycloak-js";
+import { keycloakUrl } from "./globals";
 
 // We start by configuring the Keycloak javascript client
 // It needs to know your app id in order to authenticate users for it
 const keycloak = Keycloak({
-  url: "https://iam.ebrains.eu/auth",
+  url: keycloakUrl,
   realm: "hbp",
   clientId: "live-paper-apps",
   "public-client": true,

@@ -6,12 +6,12 @@ import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import axios from "axios";
-import SwitchMultiWay from "./SwitchMultiWay";
+import SwitchMultiWay from "./components/SwitchMultiWay";
 import ContextMain from "./ContextMain";
-import LoadingIndicatorModal from "./LoadingIndicatorModal";
+import LoadingIndicatorModal from "./components/LoadingIndicatorModal";
 import TextField from "@material-ui/core/TextField";
-import SingleSelect from "./SingleSelect";
-import ErrorDialog from "./ErrorDialog";
+import SingleSelect from "./components/SingleSelect";
+import ErrorDialog from "./components/ErrorDialog";
 import { baseUrl, separator } from "./globals";
 import { replaceEmptyStringsWithNull, showNotification } from "./utils";
 

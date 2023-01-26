@@ -29,18 +29,18 @@ import showdownKatex from "showdown-katex";
 
 import ContextMain from "./ContextMain";
 import DynamicTablePerson from "./DynamicTablePerson";
-import SingleSelect from "./SingleSelect";
-import MultipleSelect from "./MultipleSelect";
+import SingleSelect from "./components/SingleSelect";
+import MultipleSelect from "./components/MultipleSelect";
 import SectionMorphology from "./SectionMorphology";
 import SectionTraces from "./SectionTraces";
 import SectionModels from "./SectionModels";
 import SectionGeneric from "./SectionGeneric";
 import SectionCustom from "./SectionCustom";
-import SwitchMultiWay from "./SwitchMultiWay";
+import SwitchMultiWay from "./components/SwitchMultiWay";
 import SaveModal from "./SaveModal";
 import SubmitModal from "./SubmitModal";
-import ModalDialog from "./ModalDialog";
-import DialogConfirm from "./DialogConfirm";
+import ModalDialog from "./components/ModalDialog";
+import DialogConfirm from "./components/DialogConfirm";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
@@ -51,7 +51,7 @@ import {
   updateHash,
 } from "./globals";
 import { showNotification, compareArrayoOfObjectsByOrder } from "./utils";
-import WarningBox from "./WarningBox";
+import WarningBox from "./components/WarningBox";
 
 import nunjucks from "nunjucks";
 import LivePaper_v01 from "./templates/LivePaper_v0.1.njk";
