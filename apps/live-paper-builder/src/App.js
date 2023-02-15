@@ -12,6 +12,7 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 import WarningBox from "./WarningBox";
+import buildInfo from "./buildInfo";
 
 import "./App.css";
 
@@ -552,7 +553,7 @@ class App extends React.Component {
             Quickly create and distribute interactive live papers
           </div>
         </div>
-        <div style={{ marginBottom: "40px" }}>
+        <div style={{ marginBottom: "10px" }}>
           <div className="rainbow-row">
             <div></div>
             <div></div>
@@ -563,6 +564,18 @@ class App extends React.Component {
             <div></div>
             <div></div>
           </div>
+        </div>
+        <div
+          style={{
+            paddingLeft: "0%",
+            paddingRight: "0%",
+            textAlign: "right",
+            fontSize: 8,
+            lineHeight: 1.2,
+            marginBottom: "30px"
+          }}
+        >
+          Version: {buildInfo.gitCommit}
         </div>
         <div
           style={{
