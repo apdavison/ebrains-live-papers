@@ -200,6 +200,10 @@ class CreateLivePaper extends React.Component {
         props.data.live_paper_title !== "" &&
         props.data.associated_paper_title === "",
     };
+    if (this.state.corresponding_author.length === 0) {
+      this.state.corresponding_author = [{ firstname: "", lastname: "", affiliation: "" }]
+    };
+
     // const [authContext,] = this.context.auth;
 
     this.handlePageClose = this.handlePageClose.bind(this);
