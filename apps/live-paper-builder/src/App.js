@@ -89,9 +89,13 @@ class App extends React.Component {
     this.retrieveBioModelsFilterValidValues();
 
     if (window.location.hash) {
-      const lp_id = window.location.hash.slice(1);
+      let lp_id = window.location.hash.slice(1);
       console.log(lp_id);
-      this.handleSpecifiedLP(lp_id);
+      if (lp_id.includes("&")) {
+        // remove stuff added on by IAM, like iss=...
+        lp_id = lp_id.split("&")[0];
+        this.handleSpecifiedLP(lp_id);
+      }
     }
   }
 
