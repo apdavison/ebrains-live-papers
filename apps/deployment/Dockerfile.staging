@@ -39,5 +39,4 @@ COPY --from=build /live-paper-platform/build /usr/share/nginx/html/live-paper-pl
 COPY --from=build /live-paper-builder/build /usr/share/nginx/html/live-paper-builder
 COPY --from=build /live-paper-docs/build /usr/share/nginx/html/live-paper-docs
 EXPOSE 80
-EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
