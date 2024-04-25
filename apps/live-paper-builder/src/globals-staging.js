@@ -3,7 +3,8 @@ export const livePaperPlatformUrl = "/";
 export const livePaperBuilderUrl = "/builder";
 export const livePaperDocsUrl = "/docs";
 export const baseUrl = "https://live-papers-api.apps.tc.humanbrainproject.eu";
-export const mc_baseUrl = "https://model-catalog-dev.brainsimulation.eu";
+export const vf_baseUrl = "https://validation.brainsimulation.eu";
+export const mc_baseUrl = "https://model-catalog.brainsimulation.eu";
 export const nar_baseUrl =
   "https://neural-activity-resource.brainsimulation.eu";
 export const modelDB_baseUrl = "http://modeldb.science/api/v1";

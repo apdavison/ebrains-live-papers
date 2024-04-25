@@ -31,7 +31,7 @@ import ToggleSwitch from "./ToggleSwitch";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import ViewColumnIcon from "@material-ui/icons/ViewColumn";
 import {
-  baseUrl,
+  vf_baseUrl,
   mc_baseUrl,
   querySizeLimit,
   filterKGModelsKeys,
@@ -1506,7 +1506,7 @@ export class FilterPanelKG extends React.Component {
     };
     let query = buildQuery(this.state.configFilters);
     let url =
-      baseUrl + "/models/?" + encodeURI(query) + "&size=" + querySizeLimit;
+      vf_baseUrl + "/models/?" + encodeURI(query) + "&size=" + querySizeLimit;
     axios
       .get(url, config)
       .then((res) => {

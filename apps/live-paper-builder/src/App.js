@@ -18,6 +18,7 @@ import "./App.css";
 
 import {
   baseUrl,
+  vf_baseUrl,
   separator,
   modelDB_baseUrl,
   neuromorpho_baseUrl,
@@ -313,7 +314,7 @@ class App extends React.Component {
   }
 
   getCollabList(auth, attempt = 0) {
-    const url = baseUrl + "/projects?only_editable=true";
+    const url = vf_baseUrl + "/projects?only_editable=true";
     console.log(auth);
     if (!auth.token) {
       console.log("ERROR: auth token not available!");
@@ -345,7 +346,7 @@ class App extends React.Component {
   }
 
   retrieveKGFilterValidValues() {
-    let url = baseUrl + "/vocab/";
+    let url = vf_baseUrl + "/vocab/";
     let config = {
       cancelToken: this.signal.token,
       headers: { Authorization: "Bearer " + this.context.auth[0].token },
