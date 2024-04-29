@@ -92,9 +92,10 @@ class App extends React.Component {
     if (window.location.hash) {
       let lp_id = window.location.hash.slice(1);
       console.log(lp_id);
-      if (lp_id.includes("&")) {
-        // remove stuff added on by IAM, like iss=...
-        lp_id = lp_id.split("&")[0];
+      if (lp_id.includes("iss=")) {
+        // remove iss parameter added on by IAM
+        lp_id = lp_id.replace("iss=https%3A%2F%2Fiam.ebrains.eu%2Fauth%2Frealms%2Fhbp", "");
+        console.log(lp_id);
         this.handleSpecifiedLP(lp_id);
       }
     }
