@@ -90,13 +90,14 @@ class App extends React.Component {
     this.retrieveBioModelsFilterValidValues();
 
     if (window.location.hash) {
-      let lp_id = window.location.hash.slice(1);
+      console.log(window.location.hash);
+      if (window.location.hash.includes("iss=")) {
+        window.location.hash = window.location.hash.replace("iss=https%3A%2F%2Fiam.ebrains.eu%2Fauth%2Frealms%2Fhbp", "");
+      }
+      let lp_id = window.location.hash.slice(1).replace("&", "");
       console.log(lp_id);
-      if (lp_id.includes("iss=")) {
-        // remove iss parameter added on by IAM
-        lp_id = lp_id.replace("iss=https%3A%2F%2Fiam.ebrains.eu%2Fauth%2Frealms%2Fhbp", "");
-        console.log(lp_id);
-        this.handleSpecifiedLP(lp_id);
+      if (lp_id.length > 0) {
+          this.handleSpecifiedLP(lp_id);
       }
     }
   }
