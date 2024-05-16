@@ -13,8 +13,6 @@ import LivePaperViewer from "./LivePaperViewer";
 import { baseUrl, updateHash } from "./globals";
 import { isUUID } from "./utils";
 import saltedMd5 from "salted-md5";
-// import { TwitterTimelineEmbed } from "react-twitter-embed";
-import { Timeline } from "react-twitter-widgets";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -787,7 +785,7 @@ export default class App extends React.Component {
             }}
           >
             <Grid container>
-              <Grid item xs={8}>
+
                 <div
                   style={{
                     paddingLeft: "2.5%",
@@ -858,38 +856,8 @@ export default class App extends React.Component {
                   </a>{" "}
                   for further assistance.
                 </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    paddingRight: "5%",
-                    textAlign: "justify",
-                  }}
-                >
-                  {/* <TwitterTimelineEmbed
-                    sourceType="profile"
-                    screenName="HumanBrainProj"
-                    borderColor="#F44336"
-                    noHeader
-                    noFooter
-                    options={{ height: 400 }}
-                  /> */}
-                  <Timeline
-                    dataSource={{
-                      sourceType: "profile",
-                      screenName: "HumanBrainProj",
-                    }}
-                    options={{
-                      height: "400",
-                      chrome: "noheader, nofooter",
-                      borderColor: "#00A595",
 
-                      id: "profile:HumanBrainProj",
-                    }}
-                  />
-                </div>
-              </Grid>
+
             </Grid>
           </div>
           <br />
