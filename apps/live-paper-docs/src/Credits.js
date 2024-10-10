@@ -139,7 +139,7 @@ export default class Credits extends React.Component {
                       <br />
                       <i>
                         <a
-                          href="https://collab-file-cloner.netlify.app/"
+                          href="https://collab-file-cloner.apps.ebrains.eu/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -152,7 +152,7 @@ export default class Credits extends React.Component {
                       <br />
                       <i>
                         <a
-                          href="https://model-catalog.brainsimulation.eu/"
+                          href="https://model-catalog.apps.ebrains.eu/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
