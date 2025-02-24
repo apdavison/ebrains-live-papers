@@ -23,13 +23,13 @@ export default function initAuth(main) {
     keycloak
       .init({ flow: "implicit", promiseType: "native" })
       .then(() => checkAuth(main))
-      .catch(console.log);
+      .catch((err) => console.log(`keycloak init exception: ${err}`));
   } else {
     // for deployment
     keycloak
       .init({ flow: "standard", pkceMethod: "S256" })
       .then(() => checkAuth(main))
-      .catch(console.log);
+      .catch((err) => console.log(`keycloak init exception: ${err}`));
   }
 }
 
