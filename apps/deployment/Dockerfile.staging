@@ -4,7 +4,7 @@
 # as it contains only the final built app
 
 # build environment
-FROM node:16-alpine as build
+FROM docker-registry.ebrains.eu/live-papers/node:22-alpine AS build
 
 WORKDIR /live-paper-platform
 ENV PATH /live-paper-platform/node_modules/.bin:$PATH
