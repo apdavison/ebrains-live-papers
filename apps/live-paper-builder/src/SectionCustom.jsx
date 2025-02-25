@@ -70,8 +70,7 @@ function HelpContentCustom() {
     <div>
       You can enter custom content using either Markdown syntax or HTML.
       <br />
-      <b>Note: </b>Markdown content will be automatically converted to
-      equivalent HTML syntax.
+      <b>Note: </b>Markdown content will be automatically converted to equivalent HTML syntax.
       <br />
       <br />
       <h6>
@@ -100,8 +99,8 @@ function HelpContentCustom() {
         </a>
         . These are imported by default in every sheet.
         <br />
-        Please bear this in mind when developing your own custom Live Paper
-        section with additional dependencies to avoid conflicts.
+        Please bear this in mind when developing your own custom Live Paper section with additional dependencies
+        to avoid conflicts.
         <br />
         <br />
         To view a complete list of the CSS and JS dependencies, check&nbsp;
@@ -283,9 +282,7 @@ export default class SectionCustom extends React.Component {
       });
       console.log(code);
     } catch (error) {
-      console.log(
-        "Error using prettier on code. Potentially invalid HTML syntax!"
-      );
+      console.log("Error using prettier on code. Potentially invalid HTML syntax!");
     }
 
     this.setState(
@@ -301,10 +298,7 @@ export default class SectionCustom extends React.Component {
   render() {
     return (
       <div style={{ width: "100%", paddingTop: "25px", paddingBottom: "25px" }}>
-        <Accordion
-          expanded={this.state.expanded}
-          onChange={this.toggleExpanded}
-        >
+        <Accordion expanded={this.state.expanded} onChange={this.toggleExpanded}>
           <AccordionSummary
             expandIcon={<Icon />}
             aria-controls="panel1a-content"
@@ -337,9 +331,7 @@ export default class SectionCustom extends React.Component {
                   color: "#000000",
                 }}
               >
-                <span style={{ verticalAlign: "middle" }}>
-                  Section: Custom HTML / Markdown
-                </span>
+                <span style={{ verticalAlign: "middle" }}>Section: Custom HTML / Markdown</span>
               </div>
               <div>
                 <Tooltip title="Delete this section">
@@ -364,10 +356,7 @@ export default class SectionCustom extends React.Component {
                     style={{
                       marginRight: "30px",
                       transform: `rotate(90deg)`,
-                      color:
-                        this.state.order === this.props.numResources - 1
-                          ? "#A1887F"
-                          : "#000000",
+                      color: this.state.order === this.props.numResources - 1 ? "#A1887F" : "#000000",
                     }}
                     onClick={(event) => this.handleMoveDown(event)}
                     onFocus={(event) => event.stopPropagation()}
@@ -389,9 +378,7 @@ export default class SectionCustom extends React.Component {
               </div>
             </div>
           </AccordionSummary>
-          <AccordionDetails
-            style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}
-          >
+          <AccordionDetails style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}>
             <div
               style={{
                 backgroundColor: "#EAEAEA",
@@ -407,11 +394,7 @@ export default class SectionCustom extends React.Component {
                 <br />
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <div style={{ width: "50px" }}>
-                    <MaterialIconSelector
-                      size="35px"
-                      icon={this.state.icon}
-                      setIcon={this.setIcon}
-                    />
+                    <MaterialIconSelector size="35px" icon={this.state.icon} setIcon={this.setIcon} />
                   </div>
                   <div style={{ paddingLeft: "20px", flexGrow: 1 }}>
                     <TextField
@@ -439,10 +422,7 @@ export default class SectionCustom extends React.Component {
                     }}
                   >
                     <Tooltip title="Click for info on input format">
-                      <HelpIcon
-                        style={{ width: 30, height: 30 }}
-                        onClick={this.clickHelp}
-                      />
+                      <HelpIcon style={{ width: 30, height: 30 }} onClick={this.clickHelp} />
                     </Tooltip>
                   </div>
                 </div>
@@ -458,8 +438,7 @@ export default class SectionCustom extends React.Component {
                   }}
                 >
                   <span style={{ paddingRight: "10px" }}>
-                    Click on ? icon for help on input, and for info on the
-                    existing CSS/JS dependencies.
+                    Click on ? icon for help on input, and for info on the existing CSS/JS dependencies.
                   </span>
                 </Grid>
 
@@ -523,13 +502,7 @@ export default class SectionCustom extends React.Component {
                         width: "200px",
                         backgroundColor: "#795548",
                       }}
-                      startIcon={
-                        this.state.expandSection ? (
-                          <PhotoSizeSelectSmallIcon />
-                        ) : (
-                          <AspectRatioIcon />
-                        )
-                      }
+                      startIcon={this.state.expandSection ? <PhotoSizeSelectSmallIcon /> : <AspectRatioIcon />}
                     >
                       {this.state.expandSection ? "Collapse" : "Expand"}
                     </Button>

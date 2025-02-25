@@ -6,7 +6,9 @@ export const Switch = styled.div`
   height: 40px;
   background-color: #e4e4e4;
   border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 1px rgba(255, 255, 255, 0.1);
 `;
 
 export const SwitchRadio = styled.input`
@@ -55,12 +57,7 @@ const ClickableLabel = ({ title, onChange, id }) => (
 );
 
 const ConcealedRadio = ({ value, selected }) => (
-  <SwitchRadio
-    type="radio"
-    name="switch"
-    checked={selected === value}
-    onChange={() => {}}
-  />
+  <SwitchRadio type="radio" name="switch" checked={selected === value} onChange={() => {}} />
 );
 
 export default class SwitchMultiWay extends React.Component {
@@ -73,11 +70,7 @@ export default class SwitchMultiWay extends React.Component {
 
   selectionStyle = () => {
     return {
-      left: `${
-        (this.props.values.indexOf(this.state.selected) /
-          this.props.values.length) *
-        100
-      }%`,
+      left: `${(this.props.values.indexOf(this.state.selected) / this.props.values.length) * 100}%`,
     };
   };
 

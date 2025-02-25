@@ -60,11 +60,7 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon style={{ color: "#000000" }} />
         </IconButton>
       ) : null}
@@ -225,9 +221,7 @@ function IncludeButton(props) {
             width: "150px",
           }}
           startIcon={<RemoveFromQueueIcon />}
-          onClick={() =>
-            props.removeInstanceCollection(props.trace_id, props.instance_id)
-          }
+          onClick={() => props.removeInstanceCollection(props.trace_id, props.instance_id)}
         >
           Remove
         </Button>
@@ -314,12 +308,7 @@ class KGContentTraceVersion extends React.Component {
 
   render() {
     return (
-      <Box
-        my={2}
-        pb={0}
-        style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-        key={this.props.ind}
-      >
+      <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }} key={this.props.ind}>
         <Grid
           container
           style={{
@@ -331,10 +320,7 @@ class KGContentTraceVersion extends React.Component {
           <Grid item xs={6}>
             <Box px={2} display="flex" flexDirection="row">
               <p variant="subtitle2">
-                Record #:{" "}
-                <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-                  {this.props.ind + 1}
-                </span>
+                Record #: <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.ind + 1}</span>
               </p>
             </Box>
           </Grid>
@@ -365,10 +351,7 @@ class KGContentTraceVersion extends React.Component {
                   />
                 ))}
               </div>
-              <InstanceParameter
-                label={"param"}
-                value={this.props.instance[this.state.selectedParam]}
-              />
+              <InstanceParameter label={"param"} value={this.props.instance[this.state.selectedParam]} />
             </div>
           </Grid>
           <Grid item xs={3} style={{ paddingBottom: "35px" }}>
@@ -412,12 +395,7 @@ class KGContentTraceVersionsPanel extends React.Component {
             <Typography variant="subtitle1">
               <b>Versions</b>
             </Typography>
-            <Link
-              href={this.props.data.view_url}
-              target="_blank"
-              rel="noreferrer"
-              underline="none"
-            >
+            <Link href={this.props.data.view_url} target="_blank" rel="noreferrer" underline="none">
               <Button
                 variant="contained"
                 style={{ backgroundColor: "#01579b", color: "#ffffff" }}
@@ -474,9 +452,8 @@ export class KGContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
           title={
@@ -503,18 +480,13 @@ export class KGContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -556,10 +528,7 @@ export class KGContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of trace instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of trace instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -594,9 +563,7 @@ class AllenBrainContentTracePanel extends React.Component {
               <b>Morphology Details:</b>
             </Typography>
             <Link
-              href={
-                allenbrain_viewTraceUrl + "/" + this.props.data.specimen__id
-              }
+              href={allenbrain_viewTraceUrl + "/" + this.props.data.specimen__id}
               target="_blank"
               rel="noreferrer"
               underline="none"
@@ -612,11 +579,7 @@ class AllenBrainContentTracePanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -645,10 +608,7 @@ class AllenBrainContentTracePanel extends React.Component {
                   }}
                 >
                   <Typography variant="body2">
-                    Trace ID:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {this.props.data.specimen__id}
-                    </span>
+                    Trace ID: <span style={{ fontWeight: "bold" }}>{this.props.data.specimen__id}</span>
                   </Typography>
                 </Box>
               </Grid>
@@ -695,10 +655,7 @@ class AllenBrainContentTracePanel extends React.Component {
                       />
                     ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
@@ -711,12 +668,8 @@ class AllenBrainContentTracePanel extends React.Component {
                   trace_name={this.props.data.specimen__name}
                   instance_id={"0"}
                   instance_name={""}
-                  source_url={
-                    allenbrain_downloadUrl + "/" + this.props.data.download__id
-                  }
-                  view_url={
-                    allenbrain_viewTraceUrl + "/" + this.props.data.specimen__id
-                  }
+                  source_url={allenbrain_downloadUrl + "/" + this.props.data.download__id}
+                  view_url={allenbrain_viewTraceUrl + "/" + this.props.data.specimen__id}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />
@@ -750,9 +703,8 @@ export class AllenBrainContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
           title={
@@ -779,18 +731,13 @@ export class AllenBrainContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -832,10 +779,7 @@ export class AllenBrainContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of trace instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of trace instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -916,9 +860,7 @@ export class FilterPanelKG extends React.Component {
   handleFiltersChange(event) {
     const newConfig = { ...this.state.configFilters };
     newConfig[event.target.name] =
-      typeof event.target.value === "string"
-        ? [event.target.value]
-        : event.target.value;
+      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
     this.setState({ configFilters: newConfig });
   }
 
@@ -930,11 +872,7 @@ export class FilterPanelKG extends React.Component {
         <form>
           {this.props.showFilters.map((filter) => (
             <MultipleSelect
-              itemNames={
-                !this.props.validKGFilterValues
-                  ? []
-                  : this.props.validKGFilterValues[filter]
-              }
+              itemNames={!this.props.validKGFilterValues ? [] : this.props.validKGFilterValues[filter]}
               label={formatLabel(filter)}
               name={filter}
               value={this.state.configFilters[filter] || []}
@@ -1044,9 +982,7 @@ export class FilterPanelAllenBrain extends React.Component {
         });
     } else {
       // as AllenBrain collection is loaded via CSV file, we offer filtering on the front-end
-      let url =
-        corsProxy +
-        "https://celltypes.brain-map.org/cell_types_specimen_details.csv";
+      let url = corsProxy + "https://celltypes.brain-map.org/cell_types_specimen_details.csv";
       try {
         readRemoteFile(url, {
           header: true,
@@ -1116,30 +1052,23 @@ export class FilterPanelAllenBrain extends React.Component {
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
             Allen Brain Atlas:{" "}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://alleninstitute.org/legal/citation-policy/"
-            >
+            <a target="_blank" rel="noreferrer" href="https://alleninstitute.org/legal/citation-policy/">
               Citation Policy
             </a>
           </h6>
           <div>
-            Use one of the following general citation formats for any Allen
-            Institute resource:
+            Use one of the following general citation formats for any Allen Institute resource:
             <ul>
               <li style={{ marginBottom: "10px" }}>
                 <em>
-                  © [[year of first publication]] Allen Institute for Brain
-                  Science. [Name of Allen Institute Resource]. Available from:
-                  [Resource URL]
+                  © [[year of first publication]] Allen Institute for Brain Science. [Name of Allen Institute
+                  Resource]. Available from: [Resource URL]
                 </em>
               </li>
               <li style={{ marginBottom: "10px" }}>
                 <em>
-                  © [[year of first publication]] Allen Institute for Cell
-                  Science. [Name of Allen Institute Resource]. Available from:
-                  [Resource URL]
+                  © [[year of first publication]] Allen Institute for Cell Science. [Name of Allen Institute
+                  Resource]. Available from: [Resource URL]
                 </em>
               </li>
             </ul>
@@ -1147,22 +1076,15 @@ export class FilterPanelAllenBrain extends React.Component {
         </Grid>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by cell ID?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by cell ID?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the cell IDs below:</h6>
             <em>
-              Note: you can enter multiple IDs by separating them with a comma
-              (e.g. 643575207, 628700262)
+              Note: you can enter multiple IDs by separating them with a comma (e.g. 643575207, 628700262)
             </em>
             <form>
               <TextField
@@ -1186,8 +1108,8 @@ export class FilterPanelAllenBrain extends React.Component {
         {!this.state.searchByID && (
           <div>
             <h6>
-              Click "Proceed" to fetch all entries from Allen Brain Atlas, and
-              you can subsequently filter them by individual attributes.
+              Click "Proceed" to fetch all entries from Allen Brain Atlas, and you can subsequently filter them
+              by individual attributes.
             </h6>
           </div>
         )}
@@ -1254,23 +1176,14 @@ export default class DBInputTraces extends React.Component {
     this.setState({ error: null });
   }
 
-  addInstanceCollection(
-    trace_id,
-    trace_name,
-    instance_id,
-    instance_name,
-    source_url,
-    view_url
-  ) {
+  addInstanceCollection(trace_id, trace_name, instance_id, instance_name, source_url, view_url) {
     console.log("Add");
 
     let trace_collection = this.state.trace_collection;
     if (Object.keys(trace_collection).includes(trace_id)) {
       if (!Object.keys(trace_collection[trace_id]).includes(instance_id)) {
         trace_collection[trace_id][instance_id] = {
-          label: instance_name
-            ? trace_name + " (" + instance_name + ")"
-            : trace_name,
+          label: instance_name ? trace_name + " (" + instance_name + ")" : trace_name,
           source_url: source_url,
           view_url: view_url,
         };
@@ -1278,9 +1191,7 @@ export default class DBInputTraces extends React.Component {
     } else {
       trace_collection[trace_id] = {
         [instance_id]: {
-          label: instance_name
-            ? trace_name + " (" + instance_name + ")"
-            : trace_name,
+          label: instance_name ? trace_name + " (" + instance_name + ")" : trace_name,
           source_url: source_url,
           view_url: view_url,
         },
@@ -1434,13 +1345,10 @@ export default class DBInputTraces extends React.Component {
             onClose={() => this.props.handleClose(false)}
             style={{ backgroundColor: "#00A595" }}
           >
-            <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-              Input From Database
-            </span>
+            <span style={{ fontWeight: "bolder", fontSize: 18 }}>Input From Database</span>
           </DialogTitle>
           <DialogContent dividers>
-            {(!this.context.validKGFilterValues[0] && this.state.showFilters) ||
-            this.state.loading ? (
+            {(!this.context.validKGFilterValues[0] && this.state.showFilters) || this.state.loading ? (
               <div
                 style={{
                   minWidth: 700,
@@ -1528,11 +1436,7 @@ export default class DBInputTraces extends React.Component {
                 onClick={() =>
                   this.state.showFilters
                     ? this.handleProceed()
-                    : this.props.handleClose(
-                        true,
-                        this.state.trace_collection,
-                        this.state.sourceDB
-                      )
+                    : this.props.handleClose(true, this.state.trace_collection, this.state.sourceDB)
                 }
               >
                 {this.state.showFilters ? "Proceed" : "Add Items"}

@@ -44,9 +44,7 @@ export default function ErrorDialog(props) {
       maxWidth="sm"
     >
       <DialogTitle style={{ backgroundColor: "#00A595" }}>
-        <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-          There seems to be a problem...
-        </span>
+        <span style={{ fontWeight: "bolder", fontSize: 18 }}>There seems to be a problem...</span>
       </DialogTitle>
       <DialogContent>
         <Box my={2}>
@@ -59,8 +57,7 @@ export default function ErrorDialog(props) {
           </Typography>
           {
             // props.whileDevelop is true only via SaveModal and SubmitModal
-            (props.error === "Token verification failed" ||
-              props.error.status === 401) && (
+            (props.error === "Token verification failed" || props.error.status === 401) && (
               <div>
                 <br />
                 <hr />
@@ -70,18 +67,15 @@ export default function ErrorDialog(props) {
                 <br />
                 {props.whileDevelop && (
                   <span>
-                    To start a new session, please take a backup of your work by
-                    clicking 'Download' on the bottom toolbar, and then refresh
-                    this page.
+                    To start a new session, please take a backup of your work by clicking 'Download' on the
+                    bottom toolbar, and then refresh this page.
                     <br />
                     <br />
-                    After reloading the page, you can load the downloaded '.lpp'
-                    file to resume working where you left off.
+                    After reloading the page, you can load the downloaded '.lpp' file to resume working where
+                    you left off.
                   </span>
                 )}
-                {!props.whileDevelop && (
-                  <span>To start a new session, please refresh this page.</span>
-                )}
+                {!props.whileDevelop && <span>To start a new session, please refresh this page.</span>}
               </div>
             )
           }

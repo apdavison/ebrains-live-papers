@@ -43,8 +43,7 @@ export default class SubmitModal extends React.Component {
     this.handleModeChange = this.handleModeChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleErrorDialogClose = this.handleErrorDialogClose.bind(this);
-    this.handleProtectedSummaryClose =
-      this.handleProtectedSummaryClose.bind(this);
+    this.handleProtectedSummaryClose = this.handleProtectedSummaryClose.bind(this);
   }
 
   handleCancel() {
@@ -145,20 +144,15 @@ export default class SubmitModal extends React.Component {
           maxWidth="md"
         >
           <DialogTitle style={{ backgroundColor: "#00A595" }}>
-            <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-              Submit Live Paper
-            </span>
+            <span style={{ fontWeight: "bolder", fontSize: 18 }}>Submit Live Paper</span>
           </DialogTitle>
           <DialogContent>
             <LoadingIndicatorModal open={this.state.loading} />
             <Box my={2}>
-              Verify that you have entered all the required info in the live
-              paper before proceeding.
+              Verify that you have entered all the required info in the live paper before proceeding.
             </Box>
             <Box my={2}>
-              <strong>
-                Please specify the visibility mode for this live paper:
-              </strong>
+              <strong>Please specify the visibility mode for this live paper:</strong>
               <Box my={2} style={{ marginBottom: "30px" }}>
                 <form>
                   <SwitchMultiWay
@@ -174,10 +168,7 @@ export default class SubmitModal extends React.Component {
                 <Box my={2}>
                   <div>
                     <p>
-                      <strong>
-                        Please specify a password for restricting access to this
-                        live paper:
-                      </strong>
+                      <strong>Please specify a password for restricting access to this live paper:</strong>
                     </p>
                   </div>
 
@@ -200,16 +191,12 @@ export default class SubmitModal extends React.Component {
                 </Box>
                 {(!this.state.password || this.state.password.length < 6) && (
                   <div style={{ color: "red" }}>
-                    <strong>
-                      Please specify a password with minimum 6 characters!
-                    </strong>
+                    <strong>Please specify a password with minimum 6 characters!</strong>
                   </div>
                 )}
                 {!this.props.data.id && (
                   <span style={{ color: "red" }}>
-                    <strong>
-                      You need to 'Save' the live paper before proceeding!
-                    </strong>
+                    <strong>You need to 'Save' the live paper before proceeding!</strong>
                   </span>
                 )}
               </>
@@ -217,10 +204,7 @@ export default class SubmitModal extends React.Component {
             {this.state.mode === "Public" && (
               <Box my={2}>
                 <div>
-                  <strong>
-                    To request publication of the live paper, do one of the
-                    following:
-                  </strong>
+                  <strong>To request publication of the live paper, do one of the following:</strong>
                   <div
                     style={{
                       marginLeft: "25px",
@@ -228,9 +212,8 @@ export default class SubmitModal extends React.Component {
                       display: "list-item",
                     }}
                   >
-                    Click on "Send Email" to open the draft email in your
-                    default email client. Send the email without editing any of
-                    its contents.
+                    Click on "Send Email" to open the draft email in your default email client. Send the email
+                    without editing any of its contents.
                   </div>
                   <div
                     style={{
@@ -244,9 +227,7 @@ export default class SubmitModal extends React.Component {
                     <strong
                       ref={this.mailTo1}
                       onClick={() => {
-                        navigator.clipboard.writeText(
-                          this.mailTo1.current.innerText
-                        );
+                        navigator.clipboard.writeText(this.mailTo1.current.innerText);
                         showNotification(
                           this.props.enqueueSnackbar,
                           this.props.closeSnackbar,
@@ -262,9 +243,7 @@ export default class SubmitModal extends React.Component {
                     <strong
                       ref={this.mailTo2}
                       onClick={() => {
-                        navigator.clipboard.writeText(
-                          this.mailTo2.current.innerText
-                        );
+                        navigator.clipboard.writeText(this.mailTo2.current.innerText);
                         showNotification(
                           this.props.enqueueSnackbar,
                           this.props.closeSnackbar,
@@ -280,9 +259,7 @@ export default class SubmitModal extends React.Component {
                     <strong
                       ref={this.mailSubject}
                       onClick={() => {
-                        navigator.clipboard.writeText(
-                          this.mailSubject.current.innerText
-                        );
+                        navigator.clipboard.writeText(this.mailSubject.current.innerText);
                         showNotification(
                           this.props.enqueueSnackbar,
                           this.props.closeSnackbar,
@@ -306,9 +283,7 @@ export default class SubmitModal extends React.Component {
                       }}
                       ref={this.mailBodyRef}
                       onClick={() => {
-                        navigator.clipboard.writeText(
-                          this.mailBodyRef.current.innerText
-                        );
+                        navigator.clipboard.writeText(this.mailBodyRef.current.innerText);
                         showNotification(
                           this.props.enqueueSnackbar,
                           this.props.closeSnackbar,
@@ -317,8 +292,7 @@ export default class SubmitModal extends React.Component {
                         );
                       }}
                     >
-                      We would like to request the publication of our live
-                      paper.
+                      We would like to request the publication of our live paper.
                       <br />
                       The details are as follows:
                       <br />
@@ -328,9 +302,7 @@ export default class SubmitModal extends React.Component {
                         this.props.data.id
                       ) : (
                         <span style={{ color: "red" }}>
-                          <i>
-                            You need to 'Save' the live paper before proceeding!
-                          </i>
+                          <i>You need to 'Save' the live paper before proceeding!</i>
                         </span>
                       )}
                       <br />
@@ -389,9 +361,7 @@ export default class SubmitModal extends React.Component {
                     color="primary"
                     style={{
                       width: "100%",
-                      backgroundColor: this.props.data.id
-                        ? "#4DC26D"
-                        : "#FFFFFF",
+                      backgroundColor: this.props.data.id ? "#4DC26D" : "#FFFFFF",
                       color: "#000000",
                       fontWeight: "bold",
                       border: "solid",
@@ -410,9 +380,7 @@ export default class SubmitModal extends React.Component {
                   style={{
                     width: "20%",
                     backgroundColor:
-                      this.state.password && this.state.password.length >= 6
-                        ? "#4DC26D"
-                        : "#FFFFFF",
+                      this.state.password && this.state.password.length >= 6 ? "#4DC26D" : "#FFFFFF",
                     color: "#000000",
                     fontWeight: "bold",
                     border: "solid",
@@ -462,21 +430,13 @@ function ProtectedSummary(props) {
       }}
     >
       <br />
-      You can now share this live paper with others by sharing the following
-      info:
+      You can now share this live paper with others by sharing the following info:
       <br />
       <br />
       <div
         onClick={() => {
-          navigator.clipboard.writeText(
-            "https://live-papers.brainsimulation.eu/#" + props.id
-          );
-          showNotification(
-            props.enqueueSnackbar,
-            props.closeSnackbar,
-            "Copied to clipboard!",
-            "info"
-          );
+          navigator.clipboard.writeText("https://live-papers.brainsimulation.eu/#" + props.id);
+          showNotification(props.enqueueSnackbar, props.closeSnackbar, "Copied to clipboard!", "info");
         }}
         style={{ cursor: "pointer" }}
       >
@@ -489,12 +449,7 @@ function ProtectedSummary(props) {
       <div
         onClick={() => {
           navigator.clipboard.writeText(props.password);
-          showNotification(
-            props.enqueueSnackbar,
-            props.closeSnackbar,
-            "Copied to clipboard!",
-            "info"
-          );
+          showNotification(props.enqueueSnackbar, props.closeSnackbar, "Copied to clipboard!", "info");
         }}
         style={{ cursor: "pointer" }}
       >

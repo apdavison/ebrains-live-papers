@@ -44,12 +44,7 @@ import DialogConfirm from "./DialogConfirm";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import {
-  livePaperPlatformUrl,
-  livePaperDocsUrl,
-  lp_tool_version,
-  updateHash,
-} from "./globals";
+import { livePaperPlatformUrl, livePaperDocsUrl, lp_tool_version, updateHash } from "./globals";
 import { showNotification, compareArrayoOfObjectsByOrder } from "./utils";
 import WarningBox from "./WarningBox";
 
@@ -125,11 +120,7 @@ const MyDialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -170,10 +161,7 @@ class CreateLivePaper extends React.Component {
       approved_author: { firstname: "", lastname: "", affiliation: "" }, // "email" removed
       year: new Date()
         .toISOString()
-        .replace(
-          /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-          "$<year>-$<month>-$<day>"
-        ),
+        .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
       associated_paper_title: "",
       live_paper_title: "",
       doi: null,
@@ -196,13 +184,11 @@ class CreateLivePaper extends React.Component {
     this.state = {
       ...this.state,
       ...props.data,
-      standalone:
-        props.data.live_paper_title !== "" &&
-        props.data.associated_paper_title === "",
+      standalone: props.data.live_paper_title !== "" && props.data.associated_paper_title === "",
     };
     if (this.state.corresponding_author.length === 0) {
-      this.state.corresponding_author = [{ firstname: "", lastname: "", affiliation: "" }]
-    };
+      this.state.corresponding_author = [{ firstname: "", lastname: "", affiliation: "" }];
+    }
 
     // const [authContext,] = this.context.auth;
 
@@ -220,11 +206,9 @@ class CreateLivePaper extends React.Component {
     this.handleAuthorsChange = this.handleAuthorsChange.bind(this);
     this.handleCreatedAuthorChange = this.handleCreatedAuthorChange.bind(this);
     this.makePageTitleString = this.makePageTitleString.bind(this);
-    this.makeAuthorsAndAffiliationsString =
-      this.makeAuthorsAndAffiliationsString.bind(this);
+    this.makeAuthorsAndAffiliationsString = this.makeAuthorsAndAffiliationsString.bind(this);
     this.makeCreatedAuthorsString = this.makeCreatedAuthorsString.bind(this);
-    this.makeCorrespondingAuthorsString =
-      this.makeCorrespondingAuthorsString.bind(this);
+    this.makeCorrespondingAuthorsString = this.makeCorrespondingAuthorsString.bind(this);
     this.handleAddSection = this.handleAddSection.bind(this);
     this.storeSectionInfo = this.storeSectionInfo.bind(this);
     this.removeExcessData = this.removeExcessData.bind(this);
@@ -276,12 +260,7 @@ class CreateLivePaper extends React.Component {
       resources: temp_resources,
     });
 
-    showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
-      "Section deleted!",
-      "success"
-    );
+    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Section deleted!", "success");
   }
 
   moveDownResourceSection(order) {
@@ -334,9 +313,7 @@ class CreateLivePaper extends React.Component {
   checkPersonInStateAuthors(person) {
     if (typeof person === "string") {
       return this.state.authors.find(
-        (author) =>
-          author.firstname + " " + author.lastname === person &&
-          person.trim().length > 0
+        (author) => author.firstname + " " + author.lastname === person && person.trim().length > 0
       );
     } else if (Array.isArray(person)) {
       if (typeof person[0] === "string") {
@@ -345,9 +322,7 @@ class CreateLivePaper extends React.Component {
         let context = this;
         return person.map(function (entry) {
           return context.state.authors.find(
-            (author) =>
-              author.firstname + " " + author.lastname === entry &&
-              entry.trim().length > 0
+            (author) => author.firstname + " " + author.lastname === entry && entry.trim().length > 0
           );
         });
       } else {
@@ -377,13 +352,7 @@ class CreateLivePaper extends React.Component {
 
   removeExcessData() {
     let req_data = JSON.parse(JSON.stringify(this.state)); // copy by value
-    let remove_keys = [
-      "saveOpen",
-      "submitOpen",
-      "lastSaved",
-      "openCloseConfirm",
-      "showDescHelp",
-    ];
+    let remove_keys = ["saveOpen", "submitOpen", "lastSaved", "openCloseConfirm", "showDescHelp"];
     remove_keys.forEach((k) => delete req_data[k]);
 
     // remove from within resources objects
@@ -405,11 +374,9 @@ class CreateLivePaper extends React.Component {
 
   addDerivedData(data) {
     data["page_title"] = this.makePageTitleString();
-    [data["authors_string"], data["affiliations_string"]] =
-      this.makeAuthorsAndAffiliationsString();
+    [data["authors_string"], data["affiliations_string"]] = this.makeAuthorsAndAffiliationsString();
     data["created_authors_string"] = this.makeCreatedAuthorsString();
-    data["corresponding_authors_string"] =
-      this.makeCorrespondingAuthorsString();
+    data["corresponding_authors_string"] = this.makeCorrespondingAuthorsString();
 
     let converter = new showdown.Converter({
       extensions: [
@@ -420,9 +387,7 @@ class CreateLivePaper extends React.Component {
       ],
     });
     // handle potential markdown in top-level resource description
-    data["resources_description"] = converter.makeHtml(
-      data["resources_description"]
-    );
+    data["resources_description"] = converter.makeHtml(data["resources_description"]);
 
     // check if resources use tabs; handle appropriately
     // also handle potential markdown in all descriptions
@@ -494,12 +459,7 @@ class CreateLivePaper extends React.Component {
     console.log(lp_data);
     render(lp_data);
 
-    showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
-      "Preview generated...",
-      "success"
-    );
+    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Preview generated...", "success");
   }
 
   handleDownload() {
@@ -787,10 +747,7 @@ class CreateLivePaper extends React.Component {
         associated_paper_title: "",
         year: new Date()
           .toISOString()
-          .replace(
-            /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-            "$<year>-$<month>-$<day>"
-          ),
+          .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
         journal: "",
         url: "",
         citation: "",
@@ -808,16 +765,10 @@ class CreateLivePaper extends React.Component {
         value === "Published"
           ? new Date()
               .toISOString()
-              .replace(
-                /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-                "$<year>-$<month>-$<day>"
-              )
+              .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>")
           : new Date("9999-01-01")
               .toISOString()
-              .replace(
-                /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-                "$<year>-$<month>-$<day>"
-              ),
+              .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
     });
   }
 
@@ -826,10 +777,7 @@ class CreateLivePaper extends React.Component {
     this.setState({
       year: value
         .toISOString()
-        .replace(
-          /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-          "$<year>-$<month>-$<day>"
-        ),
+        .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
     });
   }
 
@@ -854,9 +802,7 @@ class CreateLivePaper extends React.Component {
         // if existing author name changed, remove old matching author from ...
 
         // ... corresponding author
-        const c_authors = this.checkPersonInStateAuthors(
-          this.state.corresponding_author
-        );
+        const c_authors = this.checkPersonInStateAuthors(this.state.corresponding_author);
         if (c_authors[0]) {
           this.setState({
             corresponding_author: c_authors.map(function (c_author) {
@@ -869,9 +815,7 @@ class CreateLivePaper extends React.Component {
           });
         } else {
           this.setState({
-            corresponding_author: [
-              { firstname: "", lastname: "", affiliation: "" },
-            ],
+            corresponding_author: [{ firstname: "", lastname: "", affiliation: "" }],
           });
         }
 
@@ -881,8 +825,7 @@ class CreateLivePaper extends React.Component {
           return (
             context.state.authors.find(
               (author) =>
-                author.firstname + " " + author.lastname ===
-                cr_auth.firstname + " " + cr_auth.lastname
+                author.firstname + " " + author.lastname === cr_auth.firstname + " " + cr_auth.lastname
             ) || cr_auth
           );
         });
@@ -898,9 +841,7 @@ class CreateLivePaper extends React.Component {
         }
 
         // ... approved author
-        const appr_author = this.checkPersonInStateAuthors(
-          this.state.approved_author
-        );
+        const appr_author = this.checkPersonInStateAuthors(this.state.approved_author);
         if (appr_author) {
           this.setState({
             approved_author: {
@@ -942,10 +883,7 @@ class CreateLivePaper extends React.Component {
     if (author_data.length === 0) {
       page_title = "";
     } else if (author_data.length === 1) {
-      page_title =
-        author_data[0].lastname +
-        " " +
-        (year === 9999 ? "(unpublished)" : year);
+      page_title = author_data[0].lastname + " " + (year === 9999 ? "(unpublished)" : year);
     } else if (author_data.length === 2) {
       page_title =
         author_data[0].lastname +
@@ -954,10 +892,7 @@ class CreateLivePaper extends React.Component {
         " " +
         (year === 9999 ? "(unpublished)" : year);
     } else {
-      page_title =
-        author_data[0].lastname +
-        " et al. " +
-        (year === 9999 ? "(unpublished)" : year);
+      page_title = author_data[0].lastname + " et al. " + (year === 9999 ? "(unpublished)" : year);
     }
     return page_title;
   }
@@ -998,18 +933,11 @@ class CreateLivePaper extends React.Component {
             author_affs = author_affs + ",";
           }
           if (aff !== "" && unique_affs.includes(aff)) {
-            author_affs =
-              author_affs + (unique_affs.indexOf(aff) + 1).toString();
+            author_affs = author_affs + (unique_affs.indexOf(aff) + 1).toString();
           }
         });
 
-        authors_string =
-          authors_string +
-          author.firstname +
-          " " +
-          author.lastname +
-          " " +
-          author_affs.sup();
+        authors_string = authors_string + author.firstname + " " + author.lastname + " " + author_affs.sup();
       }
     });
     return [authors_string, affiliations_string];
@@ -1018,21 +946,14 @@ class CreateLivePaper extends React.Component {
   makeCreatedAuthorsString() {
     var created_authors_string = "";
     this.state.created_author.forEach(function (created_author, index) {
-      if (
-        created_author.firstname.trim() !== "" ||
-        created_author.lastname.trim() !== ""
-      ) {
+      if (created_author.firstname.trim() !== "" || created_author.lastname.trim() !== "") {
         if (created_authors_string !== "") {
           created_authors_string = created_authors_string + ";; ";
         }
         created_authors_string =
-          created_authors_string +
-          created_author.firstname +
-          " " +
-          created_author.lastname;
+          created_authors_string + created_author.firstname + " " + created_author.lastname;
         if (created_author.affiliation) {
-          created_authors_string +=
-            " (" + created_author.affiliation.italics() + ")";
+          created_authors_string += " (" + created_author.affiliation.italics() + ")";
         }
       }
     });
@@ -1042,21 +963,14 @@ class CreateLivePaper extends React.Component {
   makeCorrespondingAuthorsString() {
     var corresponding_authors_string = "";
     this.state.corresponding_author.forEach(function (corresp_author, index) {
-      if (
-        corresp_author.firstname.trim() !== "" ||
-        corresp_author.lastname.trim() !== ""
-      ) {
+      if (corresp_author.firstname.trim() !== "" || corresp_author.lastname.trim() !== "") {
         if (corresponding_authors_string !== "") {
           corresponding_authors_string = corresponding_authors_string + ", ";
         }
         corresponding_authors_string =
-          corresponding_authors_string +
-          corresp_author.firstname +
-          " " +
-          corresp_author.lastname;
+          corresponding_authors_string + corresp_author.firstname + " " + corresp_author.lastname;
         if (corresp_author.affiliation) {
-          corresponding_authors_string +=
-            " (" + corresp_author.affiliation.italics() + ")";
+          corresponding_authors_string += " (" + corresp_author.affiliation.italics() + ")";
         }
       }
     });
@@ -1065,10 +979,7 @@ class CreateLivePaper extends React.Component {
 
   handleAddSection(section_type) {
     this.setState((prevState) => ({
-      resources: [
-        ...prevState.resources,
-        { order: prevState.resources.length, type: section_type },
-      ],
+      resources: [...prevState.resources, { order: prevState.resources.length, type: section_type }],
     }));
   }
 
@@ -1328,11 +1239,7 @@ class CreateLivePaper extends React.Component {
                     </a>
                   </Tooltip>
                   <Tooltip title={"Open Documentation"}>
-                    <a
-                      href={livePaperDocsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href={livePaperDocsUrl} target="_blank" rel="noopener noreferrer">
                       <IconButton aria-label="Open Documentation">
                         <HelpOutlineIcon fontSize="large" />
                       </IconButton>
@@ -1354,10 +1261,7 @@ class CreateLivePaper extends React.Component {
               <div className="title-solid-style" style={{ fontSize: 44 }}>
                 EBRAINS Live Paper Builder
               </div>
-              <div
-                className="title-solid-style"
-                style={{ fontSize: 32, color: "#00A595" }}
-              >
+              <div className="title-solid-style" style={{ fontSize: 32, color: "#00A595" }}>
                 Quickly create and distribute interactive live papers
               </div>
             </div>
@@ -1382,50 +1286,38 @@ class CreateLivePaper extends React.Component {
             >
               <WarningBox message={kgStatus} />
               <div>
-                Live papers can be developed as interactive documents
-                accompanying traditional journal publications (or manuscripts
-                available on publicly accessible preprint repositories), or as
-                standalone interactive documents for the purposes of publishing
-                and sharing resources.
+                Live papers can be developed as interactive documents accompanying traditional journal
+                publications (or manuscripts available on publicly accessible preprint repositories), or as
+                standalone interactive documents for the purposes of publishing and sharing resources.
                 <br />
                 <br />
-                Follow the steps listed below to create the live paper. You can
-                preview the live paper and/or download it at any time by
-                clicking on the buttons on the bottom of the page. It also
-                provides you an option to save your work online before
-                proceeding. Once completed you can submit for publishing the
-                live paper online.
+                Follow the steps listed below to create the live paper. You can preview the live paper and/or
+                download it at any time by clicking on the buttons on the bottom of the page. It also provides
+                you an option to save your work online before proceeding. Once completed you can submit for
+                publishing the live paper online.
                 <br />
                 <br />
-                When downloading, an HTML version of the live paper and a file
-                with extension '.lpp' both will be downloaded. You can upload
-                the latter file at any point to update the live paper contents.
-                Please do not manually edit these files, as it could render them
-                unreadable by this tool.
+                When downloading, an HTML version of the live paper and a file with extension '.lpp' both will
+                be downloaded. You can upload the latter file at any point to update the live paper contents.
+                Please do not manually edit these files, as it could render them unreadable by this tool.
               </div>
               <br />
               <div>
                 <p>
                   <strong>
-                    Does this live paper have an associated accessible
-                    manuscript or journal publication?
+                    Does this live paper have an associated accessible manuscript or journal publication?
                   </strong>
                   <br />
                   <i>
-                    Articles submitted to publicly accessible preprint
-                    repositories, such as bioRxiv, are considered as accessible
-                    manuscripts.
+                    Articles submitted to publicly accessible preprint repositories, such as bioRxiv, are
+                    considered as accessible manuscripts.
                   </i>
                 </p>
               </div>
               <form>
                 <SwitchMultiWay
                   values={["Associated Publication", "Standalone Live Paper"]}
-                  selected={
-                    this.state.standalone
-                      ? "Standalone Live Paper"
-                      : "Associated Publication"
-                  }
+                  selected={this.state.standalone ? "Standalone Live Paper" : "Associated Publication"}
                   onChange={this.handleStandaloneChange}
                 />
               </form>
@@ -1434,9 +1326,7 @@ class CreateLivePaper extends React.Component {
                 <div>
                   <div>
                     <p>
-                      <strong>
-                        Enter the complete title of your manuscript / paper:
-                      </strong>
+                      <strong>Enter the complete title of your manuscript / paper:</strong>
                     </p>
                   </div>
                   <div>
@@ -1460,17 +1350,15 @@ class CreateLivePaper extends React.Component {
                       <strong>Specify the status of the article:</strong>
                       <br />
                       <i>
-                        Articles submitted to preprint repositories, such as
-                        bioRxiv, are considered as unpublished.
+                        Articles submitted to preprint repositories, such as bioRxiv, are considered as
+                        unpublished.
                       </i>
                     </p>
                   </div>
                   <form>
                     <SwitchMultiWay
                       values={["Published", "Unpublished"]}
-                      selected={
-                        this.state.paper_published ? "Published" : "Unpublished"
-                      }
+                      selected={this.state.paper_published ? "Published" : "Unpublished"}
                       onChange={this.handlePublishedChange}
                     />
                   </form>
@@ -1520,9 +1408,8 @@ class CreateLivePaper extends React.Component {
                     <>
                       <br />
                       <i>
-                        Live papers with associated publications generally use
-                        the same title as the article for ease of
-                        identification.
+                        Live papers with associated publications generally use the same title as the article for
+                        ease of identification.
                       </i>
                     </>
                   )}
@@ -1546,25 +1433,19 @@ class CreateLivePaper extends React.Component {
               <br />
               <div>
                 <p>
-                  <strong>
-                    Enter details of all authors in the required order:
-                  </strong>
+                  <strong>Enter details of all authors in the required order:</strong>
                   <br />
                   <br />
                   <i>
-                    You can enter multiple affiliations per author by separating
-                    each with a semi-colon ( ; ). Note that an affiliation must
-                    be input identically across multiple authors, for it to be
+                    You can enter multiple affiliations per author by separating each with a semi-colon ( ; ).
+                    Note that an affiliation must be input identically across multiple authors, for it to be
                     identified as the same affliation.
                   </i>
                 </p>
                 <br />
               </div>
               <div>
-                <DynamicTablePerson
-                  items={this.state.authors}
-                  onChangeValue={this.handleAuthorsChange}
-                />
+                <DynamicTablePerson items={this.state.authors} onChangeValue={this.handleAuthorsChange} />
               </div>
               <br />
               <br />
@@ -1579,20 +1460,14 @@ class CreateLivePaper extends React.Component {
               <div>
                 <MultipleSelect
                   itemNames={this.state.authors
-                    .filter(
-                      (author) =>
-                        author.firstname !== "" || author.lastname !== ""
-                    )
+                    .filter((author) => author.firstname !== "" || author.lastname !== "")
                     .map(function (author) {
                       return author.firstname + " " + author.lastname;
                     })}
                   label="Corresponding Author(s)"
                   name="corresponding_author"
                   value={this.state.corresponding_author
-                    .filter(
-                      (author) =>
-                        author.firstname !== "" || author.lastname !== ""
-                    )
+                    .filter((author) => author.firstname !== "" || author.lastname !== "")
                     .map(function (author) {
                       return author.firstname + " " + author.lastname;
                     })}
@@ -1642,14 +1517,10 @@ class CreateLivePaper extends React.Component {
                   value={
                     !(
                       this.state.created_author.length === 1 &&
-                      this.checkPersonInStateAuthors(
-                        this.state.created_author[0]
-                      )
+                      this.checkPersonInStateAuthors(this.state.created_author[0])
                     )
                       ? "-- Other --"
-                      : this.state.created_author[0].firstname +
-                        " " +
-                        this.state.created_author[0].lastname
+                      : this.state.created_author[0].firstname + " " + this.state.created_author[0].lastname
                   }
                   handleChange={this.handleFieldChange}
                 />
@@ -1742,11 +1613,9 @@ class CreateLivePaper extends React.Component {
                   <div>
                     <p>
                       <strong>
-                        Since the live paper is being created by persons who are
-                        not authors on the article (as indicated above), the
-                        live paper needs to be approved by one of the original
-                        authors. Specify the authorising author:{" "}
-                        {/* , along with their email address: */}
+                        Since the live paper is being created by persons who are not authors on the article (as
+                        indicated above), the live paper needs to be approved by one of the original authors.
+                        Specify the authorising author: {/* , along with their email address: */}
                       </strong>
                     </p>
                   </div>
@@ -1763,9 +1632,7 @@ class CreateLivePaper extends React.Component {
                       name="approved_author"
                       value={
                         this.state.approved_author.firstname
-                          ? this.state.approved_author.firstname +
-                            " " +
-                            this.state.approved_author.lastname
+                          ? this.state.approved_author.firstname + " " + this.state.approved_author.lastname
                           : ""
                       }
                       handleChange={this.handleFieldChange}
@@ -1795,8 +1662,7 @@ class CreateLivePaper extends React.Component {
                   <div>
                     <p>
                       <strong>
-                        Specify the journal in which paper is published (leave
-                        empty if awaiting publication):
+                        Specify the journal in which paper is published (leave empty if awaiting publication):
                       </strong>
                     </p>
                   </div>
@@ -1860,9 +1726,7 @@ class CreateLivePaper extends React.Component {
                   <br />
                   <div>
                     <p>
-                      <strong>
-                        Specify the article page range or other identifier:
-                      </strong>
+                      <strong>Specify the article page range or other identifier:</strong>
                     </p>
                   </div>
                   <div>
@@ -1884,9 +1748,8 @@ class CreateLivePaper extends React.Component {
                   <div>
                     <p>
                       <strong>
-                        Provide the URL to access article (leave empty if
-                        awaiting publication or link to publicly accessible
-                        preprint repositories, such as bioRxiv, if available):
+                        Provide the URL to access article (leave empty if awaiting publication or link to
+                        publicly accessible preprint repositories, such as bioRxiv, if available):
                       </strong>
                     </p>
                   </div>
@@ -1909,8 +1772,7 @@ class CreateLivePaper extends React.Component {
                   <div>
                     <p>
                       <strong>
-                        Specify the citation text to be used for article (leave
-                        empty if awaiting publication):
+                        Specify the citation text to be used for article (leave empty if awaiting publication):
                       </strong>
                     </p>
                   </div>
@@ -1934,10 +1796,7 @@ class CreateLivePaper extends React.Component {
                   <br />
                   <div>
                     <p>
-                      <strong>
-                        Indicate the DOI entry for article (leave empty if
-                        awaiting publication):
-                      </strong>
+                      <strong>Indicate the DOI entry for article (leave empty if awaiting publication):</strong>
                     </p>
                   </div>
                   <div>
@@ -1958,9 +1817,7 @@ class CreateLivePaper extends React.Component {
                   <br />
                   <div>
                     <p>
-                      <strong>
-                        Provide the abstract of your manuscript / paper:
-                      </strong>
+                      <strong>Provide the abstract of your manuscript / paper:</strong>
                     </p>
                   </div>
                   <div>
@@ -1989,8 +1846,7 @@ class CreateLivePaper extends React.Component {
               <div>
                 <p>
                   <strong>
-                    Specify the license to be applied for the contents displayed
-                    in this live paper:
+                    Specify the license to be applied for the contents displayed in this live paper:
                   </strong>
                 </p>
               </div>
@@ -2021,10 +1877,7 @@ class CreateLivePaper extends React.Component {
                   }}
                 >
                   <Tooltip title="Click for help with description input format">
-                    <HelpIcon
-                      style={{ width: 30, height: 30 }}
-                      onClick={this.clickDescHelp}
-                    />
+                    <HelpIcon style={{ width: 30, height: 30 }} onClick={this.clickDescHelp} />
                   </Tooltip>
                 </div>
               </div>
@@ -2060,9 +1913,7 @@ class CreateLivePaper extends React.Component {
                           key={index}
                           storeSectionInfo={this.storeSectionInfo}
                           data={item}
-                          numResources={
-                            Object.keys(this.state.resources).length
-                          }
+                          numResources={Object.keys(this.state.resources).length}
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
@@ -2076,9 +1927,7 @@ class CreateLivePaper extends React.Component {
                           key={index}
                           storeSectionInfo={this.storeSectionInfo}
                           data={item}
-                          numResources={
-                            Object.keys(this.state.resources).length
-                          }
+                          numResources={Object.keys(this.state.resources).length}
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
@@ -2092,9 +1941,7 @@ class CreateLivePaper extends React.Component {
                           key={index}
                           storeSectionInfo={this.storeSectionInfo}
                           data={item}
-                          numResources={
-                            Object.keys(this.state.resources).length
-                          }
+                          numResources={Object.keys(this.state.resources).length}
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
@@ -2108,9 +1955,7 @@ class CreateLivePaper extends React.Component {
                           key={index}
                           storeSectionInfo={this.storeSectionInfo}
                           data={item}
-                          numResources={
-                            Object.keys(this.state.resources).length
-                          }
+                          numResources={Object.keys(this.state.resources).length}
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
@@ -2122,9 +1967,7 @@ class CreateLivePaper extends React.Component {
                           key={index}
                           storeSectionInfo={this.storeSectionInfo}
                           data={item}
-                          numResources={
-                            Object.keys(this.state.resources).length
-                          }
+                          numResources={Object.keys(this.state.resources).length}
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
@@ -2234,9 +2077,7 @@ class CreateLivePaper extends React.Component {
                     borderWidth: "1px",
                     overflowX: "hidden",
                   }}
-                  startIcon={
-                    <LocalPlayIcon style={{ width: 30, height: 30 }} />
-                  }
+                  startIcon={<LocalPlayIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_models")}
                 >
                   Models
@@ -2256,9 +2097,7 @@ class CreateLivePaper extends React.Component {
                     borderWidth: "1px",
                     overflowX: "hidden",
                   }}
-                  startIcon={
-                    <FormatListBulletedIcon style={{ width: 30, height: 30 }} />
-                  }
+                  startIcon={<FormatListBulletedIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_generic")}
                 >
                   Generic
@@ -2278,11 +2117,7 @@ class CreateLivePaper extends React.Component {
                     borderWidth: "1px",
                     overflowX: "hidden",
                   }}
-                  startIcon={
-                    <CheckBoxOutlineBlankIcon
-                      style={{ width: 30, height: 30 }}
-                    />
-                  }
+                  startIcon={<CheckBoxOutlineBlankIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_custom")}
                 >
                   Custom
@@ -2305,10 +2140,7 @@ class CreateLivePaper extends React.Component {
           <Footer>
             <div style={{ height: "10px", backgroundColor: "#FFFFFF" }}></div>
             <div style={{ border: "1px solid #000000" }}>
-              <div
-                className="rainbow-row"
-                style={{ borderBottom: "1px solid #000000" }}
-              >
+              <div className="rainbow-row" style={{ borderBottom: "1px solid #000000" }}>
                 <div></div>
                 <div></div>
                 <div></div>

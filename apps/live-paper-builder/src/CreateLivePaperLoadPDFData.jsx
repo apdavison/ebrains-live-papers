@@ -38,11 +38,7 @@ const MyDialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -139,10 +135,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
     this.setState({ loading: true }, () => {
       let scope = this;
       axios
-        .get(
-          "https://api.crossref.org/works/" +
-            this.state.articleDOI.split(".org/")[1]
-        )
+        .get("https://api.crossref.org/works/" + this.state.articleDOI.split(".org/")[1])
         .then((res) => {
           console.log(res);
           let result = res.data.message;
@@ -201,8 +194,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
       formData.append("consolidateHeader", 1);
       formData.append("includeRawAffiliations", 1);
 
-      let url =
-        "https://cloud.science-miner.com/grobid/api/processHeaderDocument";
+      let url = "https://cloud.science-miner.com/grobid/api/processHeaderDocument";
       let config = {
         cancelToken: this.signal.token,
         headers: {
@@ -216,165 +208,135 @@ class CreateLivePaperLoadPDFData extends React.Component {
         .post(url, formData, config)
         .then((res) => {
           var parseString = require("xml2js").parseString;
-          parseString(
-            res.data,
-            { trim: true, preserveChildrenOrder: true },
-            function (err, result) {
-              console.log(result);
+          parseString(res.data, { trim: true, preserveChildrenOrder: true }, function (err, result) {
+            console.log(result);
 
-              let data = {};
-              data["associated_paper_title"] =
-                result["TEI"]["teiHeader"][0]["fileDesc"][0]["titleStmt"][0][
-                  "title"
-                ][0]["_"];
-              data["live_paper_title"] =
-                result["TEI"]["teiHeader"][0]["fileDesc"][0]["titleStmt"][0][
-                  "title"
-                ][0]["_"];
+            let data = {};
+            data["associated_paper_title"] =
+              result["TEI"]["teiHeader"][0]["fileDesc"][0]["titleStmt"][0]["title"][0]["_"];
+            data["live_paper_title"] =
+              result["TEI"]["teiHeader"][0]["fileDesc"][0]["titleStmt"][0]["title"][0]["_"];
 
-              data["abstract"] = "";
-              if (
-                Object.prototype.hasOwnProperty.call(
-                  result["TEI"]["teiHeader"][0]["profileDesc"][0][
-                    "abstract"
-                  ][0],
-                  "p"
-                )
-              ) {
-                data["abstract"] =
-                  result["TEI"]["teiHeader"][0]["profileDesc"][0][
-                    "abstract"
-                  ][0]["p"][0];
+            data["abstract"] = "";
+            if (
+              Object.prototype.hasOwnProperty.call(
+                result["TEI"]["teiHeader"][0]["profileDesc"][0]["abstract"][0],
+                "p"
+              )
+            ) {
+              data["abstract"] = result["TEI"]["teiHeader"][0]["profileDesc"][0]["abstract"][0]["p"][0];
+            }
+
+            data["associated_paper_doi"] =
+              "https://doi.org/" +
+              result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["idno"][0]["_"];
+
+            let author_dict =
+              result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["analytic"][0][
+                "author"
+              ];
+
+            let author_data = [];
+            let corresp_author = [];
+            author_dict.forEach(function (item) {
+              // console.log(item);
+              let aff = "";
+              try {
+                if ("affiliation" in item) {
+                  aff = item["affiliation"]
+                    .map(function (elem) {
+                      // remove commas and semicolons from the end of the string
+                      return elem["note"][0]["_"].replace(/,\s*$/, "").replace(/;\s*$/, "");
+                    })
+                    .join("; ");
+                }
+              } catch (error) {
+                // do nothing
               }
-
-              data["associated_paper_doi"] =
-                "https://doi.org/" +
-                result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                  "biblStruct"
-                ][0]["idno"][0]["_"];
-
-              let author_dict =
-                result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                  "biblStruct"
-                ][0]["analytic"][0]["author"];
-
-              let author_data = [];
-              let corresp_author = [];
-              author_dict.forEach(function (item) {
-                // console.log(item);
-                let aff = "";
-                try {
-                  if ("affiliation" in item) {
-                    aff = item["affiliation"]
-                      .map(function (elem) {
-                        // remove commas and semicolons from the end of the string
-                        return elem["note"][0]["_"]
-                          .replace(/,\s*$/, "")
-                          .replace(/;\s*$/, "");
-                      })
-                      .join("; ");
-                  }
-                } catch (error) {
-                  // do nothing
-                }
-                if ("$" in item && item["$"]["role"] === "corresp") {
-                  corresp_author.push({
-                    firstname:
-                      item["persName"][0]["forename"].length === 1
-                        ? item["persName"][0]["forename"][0]["_"]
-                        : item["persName"][0]["forename"][0]["_"] +
-                          " " +
-                          item["persName"][0]["forename"][1]["_"]
-                            .split(" ")
-                            .join(".") +
-                          ".",
-                    lastname: item["persName"][0]["surname"][0],
-                    // email: "email" in item ? item["email"][0] : "",
-                    affiliation: aff,
-                  });
-                }
-                author_data.push({
+              if ("$" in item && item["$"]["role"] === "corresp") {
+                corresp_author.push({
                   firstname:
-                    "persName" in item &&
-                    "forename" in item["persName"][0] &&
-                    item["persName"][0]["forename"].length > 0
-                      ? item["persName"][0]["forename"].length === 1
-                        ? item["persName"][0]["forename"][0]["_"]
-                        : item["persName"][0]["forename"][0]["_"] +
-                          " " +
-                          item["persName"][0]["forename"][1]["_"]
-                            .split(" ")
-                            .join(".") +
-                          "."
-                      : "",
-                  lastname:
-                    "persName" in item &&
-                    "surname" in item["persName"][0] &&
-                    item["persName"][0]["surname"].length > 0
-                      ? item["persName"][0]["surname"][0]
-                      : "",
+                    item["persName"][0]["forename"].length === 1
+                      ? item["persName"][0]["forename"][0]["_"]
+                      : item["persName"][0]["forename"][0]["_"] +
+                        " " +
+                        item["persName"][0]["forename"][1]["_"].split(" ").join(".") +
+                        ".",
+                  lastname: item["persName"][0]["surname"][0],
+                  // email: "email" in item ? item["email"][0] : "",
                   affiliation: aff,
                 });
+              }
+              author_data.push({
+                firstname:
+                  "persName" in item &&
+                  "forename" in item["persName"][0] &&
+                  item["persName"][0]["forename"].length > 0
+                    ? item["persName"][0]["forename"].length === 1
+                      ? item["persName"][0]["forename"][0]["_"]
+                      : item["persName"][0]["forename"][0]["_"] +
+                        " " +
+                        item["persName"][0]["forename"][1]["_"].split(" ").join(".") +
+                        "."
+                    : "",
+                lastname:
+                  "persName" in item &&
+                  "surname" in item["persName"][0] &&
+                  item["persName"][0]["surname"].length > 0
+                    ? item["persName"][0]["surname"][0]
+                    : "",
+                affiliation: aff,
               });
+            });
 
-              data["authors"] = author_data;
-              data["corresponding_author"] = corresp_author;
+            data["authors"] = author_data;
+            data["corresponding_author"] = corresp_author;
 
-              data["journal"] = "";
-              if (
-                Object.prototype.hasOwnProperty.call(
-                  result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                    "biblStruct"
-                  ][0]["monogr"][0],
-                  "title"
-                )
-              ) {
-                data["journal"] = result["TEI"]["teiHeader"][0]["fileDesc"][0][
-                  "sourceDesc"
-                ][0]["biblStruct"][0]["monogr"][0]["title"].find(
-                  (element) => element["$"]["type"] === "main"
-                )["_"];
-              }
-
-              // volume, issue
-              let vol_iss_page =
-                result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                  "biblStruct"
-                ][0]["monogr"][0]["imprint"][0]["biblScope"];
-              data["associated_paper_volume"] = vol_iss_page[0];
-              data["associated_paper_issue"] = vol_iss_page[1];
-              data["associated_paper_pagination"] = vol_iss_page[2];
-
-              try {
-                //   date also available at:
-                // result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                //    "biblStruct"][0]["monogr"][0]["imprint"][0]["date"][0]["$"]["when"]
-                data["year"] = new Date(
-                  result["TEI"]["teiHeader"][0]["fileDesc"][0][
-                    "publicationStmt"
-                  ][0]["date"][0]["$"]["when"]
-                )
-                  .toISOString()
-                  .replace(
-                    /^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/,
-                    "$<year>-$<month>-$<day>"
-                  );
-              } catch (error) {
-                console.log("Could not identify year!");
-              }
-
-              try {
-                data["url"] =
-                  result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
-                    "biblStruct"
-                  ][0]["ptr"][0]["$"]["target"];
-              } catch (error) {
-                console.log("Could not identify download URL!");
-              }
-
-              scope.setState({ dataExtracted: data, loading: false });
+            data["journal"] = "";
+            if (
+              Object.prototype.hasOwnProperty.call(
+                result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["monogr"][0],
+                "title"
+              )
+            ) {
+              data["journal"] = result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0][
+                "monogr"
+              ][0]["title"].find((element) => element["$"]["type"] === "main")["_"];
             }
-          );
+
+            // volume, issue
+            let vol_iss_page =
+              result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["monogr"][0][
+                "imprint"
+              ][0]["biblScope"];
+            data["associated_paper_volume"] = vol_iss_page[0];
+            data["associated_paper_issue"] = vol_iss_page[1];
+            data["associated_paper_pagination"] = vol_iss_page[2];
+
+            try {
+              //   date also available at:
+              // result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0][
+              //    "biblStruct"][0]["monogr"][0]["imprint"][0]["date"][0]["$"]["when"]
+              data["year"] = new Date(
+                result["TEI"]["teiHeader"][0]["fileDesc"][0]["publicationStmt"][0]["date"][0]["$"]["when"]
+              )
+                .toISOString()
+                .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>");
+            } catch (error) {
+              console.log("Could not identify year!");
+            }
+
+            try {
+              data["url"] =
+                result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["ptr"][0]["$"][
+                  "target"
+                ];
+            } catch (error) {
+              console.log("Could not identify download URL!");
+            }
+
+            scope.setState({ dataExtracted: data, loading: false });
+          });
         })
         .catch((err) => {
           if (axios.isCancel(err)) {
@@ -411,11 +373,9 @@ class CreateLivePaperLoadPDFData extends React.Component {
             <i>
               <a href="https://github.com/kermitt2/grobid">GROBID</a>
             </i>{" "}
-            for extracting the required info from the uploaded PDF file. As this
-            is an automated process, it could result in certain discrepancies.
-            We urge you to verify the extracted info, and rectify them wherever
-            necessary on the live paper creation page (after clicking
-            'Proceed').
+            for extracting the required info from the uploaded PDF file. As this is an automated process, it
+            could result in certain discrepancies. We urge you to verify the extracted info, and rectify them
+            wherever necessary on the live paper creation page (after clicking 'Proceed').
           </div>
         )}
 
@@ -589,9 +549,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
           )}
         </Paper>
         <div style={{ paddingRight: "20px" }}>
-          <div
-            style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}
-          >
+          <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
             <div style={{ float: "right", paddingTop: "20px" }}>
               <Button
                 variant="contained"
@@ -690,9 +648,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
             />
           </div>
           <div style={{ paddingRight: "20px" }}>
-            <div
-              style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}
-            >
+            <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
               <div style={{ float: "right", paddingTop: "10px" }}>
                 <Button
                   variant="contained"
@@ -741,11 +697,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
           </div>
           <br />
           <br />
-          <div>
-            {Object.keys(this.state.dataExtracted).length > 1
-              ? this.displayDataExtracted()
-              : ""}
-          </div>
+          <div>{Object.keys(this.state.dataExtracted).length > 1 ? this.displayDataExtracted() : ""}</div>
           <br />
           <br />
         </div>
@@ -772,9 +724,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
             />
           </div>
           <div style={{ paddingRight: "20px" }}>
-            <div
-              style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}
-            >
+            <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
               <div style={{ float: "right", paddingTop: "10px" }}>
                 <Button
                   variant="contained"
@@ -823,21 +773,14 @@ class CreateLivePaperLoadPDFData extends React.Component {
           </div>
           <br />
           <br />
-          <div>
-            {Object.keys(this.state.dataExtracted).length > 1
-              ? this.displayDataExtracted()
-              : ""}
-          </div>
+          <div>{Object.keys(this.state.dataExtracted).length > 1 ? this.displayDataExtracted() : ""}</div>
           <br />
           <br />
         </div>
       );
     }
 
-    if (
-      (!this.state.loadData && this.state.loadPDF) ||
-      (!this.state.loadData && this.state.loadDOI)
-    ) {
+    if ((!this.state.loadData && this.state.loadPDF) || (!this.state.loadData && this.state.loadDOI)) {
       return (
         <Dialog
           fullScreen
@@ -905,11 +848,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                       </a>
                     </Tooltip>
                     <Tooltip title={"Open Documentation"}>
-                      <a
-                        href={livePaperDocsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={livePaperDocsUrl} target="_blank" rel="noopener noreferrer">
                         <IconButton aria-label="Open Documentation">
                           <HelpOutlineIcon fontSize="large" />
                         </IconButton>
@@ -931,10 +870,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                 <div className="title-solid-style" style={{ fontSize: 44 }}>
                   EBRAINS Live Paper Builder
                 </div>
-                <div
-                  className="title-solid-style"
-                  style={{ fontSize: 32, color: "#00A595" }}
-                >
+                <div className="title-solid-style" style={{ fontSize: 32, color: "#00A595" }}>
                   Quickly create and distribute interactive live papers
                 </div>
               </div>
@@ -958,41 +894,28 @@ class CreateLivePaperLoadPDFData extends React.Component {
                 }}
               >
                 <div>
-                  You can start the live paper creation process by either
-                  specifying the DOI of the associated publication, or uploading
-                  its PDF file. We will use this to try auto-extracting the
-                  required metadata.
+                  You can start the live paper creation process by either specifying the DOI of the associated
+                  publication, or uploading its PDF file. We will use this to try auto-extracting the required
+                  metadata.
                   <br />
                   <ul className="collection">
-                    <li
-                      className="collection-item"
-                      style={{ backgroundColor: "#EFF7E5" }}
-                    >
-                      To extract the metadata using the DOI, click on{" "}
-                      <strong>Specify DOI</strong>, input the DOI of the
-                      associated publication, and then click 'Retrieve' to fetch
-                      the metadata.
+                    <li className="collection-item" style={{ backgroundColor: "#EFF7E5" }}>
+                      To extract the metadata using the DOI, click on <strong>Specify DOI</strong>, input the
+                      DOI of the associated publication, and then click 'Retrieve' to fetch the metadata.
                     </li>
-                    <li
-                      className="collection-item"
-                      style={{ backgroundColor: "#EFF7E5" }}
-                    >
-                      To extract the metadata using the PDF file, click on{" "}
-                      <strong>Upload PDF</strong>, select the PDF file in the
-                      file browser pop-up, and then click 'Upload' to begin the
-                      extraction process.
+                    <li className="collection-item" style={{ backgroundColor: "#EFF7E5" }}>
+                      To extract the metadata using the PDF file, click on <strong>Upload PDF</strong>, select
+                      the PDF file in the file browser pop-up, and then click 'Upload' to begin the extraction
+                      process.
                     </li>
                   </ul>
-                  When completed, the extracted info is displayed on the page
-                  for you to verify. You can then click 'Proceed' (scroll to
-                  bottom of page) to be redirected to the live paper creation
-                  page with the extracted info auto-populated into their
-                  respective fields.
+                  When completed, the extracted info is displayed on the page for you to verify. You can then
+                  click 'Proceed' (scroll to bottom of page) to be redirected to the live paper creation page
+                  with the extracted info auto-populated into their respective fields.
                   <br />
                   <br />
-                  Alternatively, if the info extracted is not helpful or you
-                  wish to enter all the info manually, you can click on 'Skip'
-                  to start the live paper creation process with an empty
+                  Alternatively, if the info extracted is not helpful or you wish to enter all the info
+                  manually, you can click on 'Skip' to start the live paper creation process with an empty
                   template.
                 </div>
                 <br />
@@ -1088,8 +1011,8 @@ class CreateLivePaperLoadPDFData extends React.Component {
             this.props.loadData
               ? this.state.data // for loading saved project data (.lpp file)
               : this.state.loadData
-              ? { ...this.state.data, ...this.state.dataExtracted } // for loading PDF data
-              : {} // no data to be loaded
+                ? { ...this.state.data, ...this.state.dataExtracted } // for loading PDF data
+                : {} // no data to be loaded
           }
           loadData={this.state.loadData}
         />

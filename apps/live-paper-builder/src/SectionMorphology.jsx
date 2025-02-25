@@ -73,10 +73,9 @@ function HelpContent() {
       <h6>
         <b>List of dicts/objects</b>
       </h6>
-      Each dict in the list should have keys named 'type', 'url', 'view_url',
-      'label', 'identifier' and 'tab_name'. For manually entered items, 'type'
-      'view_url' and 'identifier' can be set to 'URL', null and null,
-      respectively. <i>Example:</i>
+      Each dict in the list should have keys named 'type', 'url', 'view_url', 'label', 'identifier' and
+      'tab_name'. For manually entered items, 'type' 'view_url' and 'identifier' can be set to 'URL', null and
+      null, respectively. <i>Example:</i>
       <br />
       <pre>
         <code>{list_of_dicts}</code>
@@ -206,9 +205,7 @@ export class SectionMorphologyEdit extends React.Component {
           />
           {!this.state.dataOk && (
             <div style={{ color: "red", paddingTop: "10px" }}>
-              <strong>
-                Data not in expected format! Click on 'Help' for more info.
-              </strong>
+              <strong>Data not in expected format! Click on 'Help' for more info.</strong>
             </div>
           )}
         </Grid>
@@ -509,10 +506,7 @@ export default class SectionMorphology extends React.Component {
     // console.log(this.state.data);
     return (
       <div style={{ width: "100%", paddingTop: "25px", paddingBottom: "25px" }}>
-        <Accordion
-          expanded={this.state.expanded}
-          onChange={this.toggleExpanded}
-        >
+        <Accordion expanded={this.state.expanded} onChange={this.toggleExpanded}>
           <AccordionSummary
             expandIcon={<Icon />}
             aria-controls="panel1a-content"
@@ -545,9 +539,7 @@ export default class SectionMorphology extends React.Component {
                   color: "#000000",
                 }}
               >
-                <span style={{ verticalAlign: "middle" }}>
-                  Section: Neuronal Morphology
-                </span>
+                <span style={{ verticalAlign: "middle" }}>Section: Neuronal Morphology</span>
               </div>
               <div>
                 <Tooltip title="Delete this section">
@@ -572,10 +564,7 @@ export default class SectionMorphology extends React.Component {
                     style={{
                       marginRight: "30px",
                       transform: `rotate(90deg)`,
-                      color:
-                        this.state.order === this.props.numResources - 1
-                          ? "#A1887F"
-                          : "#000000",
+                      color: this.state.order === this.props.numResources - 1 ? "#A1887F" : "#000000",
                     }}
                     onClick={(event) => this.handleMoveDown(event)}
                     onFocus={(event) => event.stopPropagation()}
@@ -597,9 +586,7 @@ export default class SectionMorphology extends React.Component {
               </div>
             </div>
           </AccordionSummary>
-          <AccordionDetails
-            style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}
-          >
+          <AccordionDetails style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}>
             <div
               style={{
                 backgroundColor: "#FFECD1",
@@ -615,11 +602,7 @@ export default class SectionMorphology extends React.Component {
                 <br />
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <div style={{ width: "50px" }}>
-                    <MaterialIconSelector
-                      size="35px"
-                      icon={this.state.icon}
-                      setIcon={this.setIcon}
-                    />
+                    <MaterialIconSelector size="35px" icon={this.state.icon} setIcon={this.setIcon} />
                   </div>
                   <div style={{ paddingLeft: "20px", flexGrow: 1 }}>
                     <TextField
@@ -647,10 +630,7 @@ export default class SectionMorphology extends React.Component {
                     }}
                   >
                     <Tooltip title="Click for help with description input format">
-                      <HelpIcon
-                        style={{ width: 30, height: 30 }}
-                        onClick={this.clickDescHelp}
-                      />
+                      <HelpIcon style={{ width: 30, height: 30 }} onClick={this.clickDescHelp} />
                     </Tooltip>
                   </div>
                 </div>
@@ -676,11 +656,7 @@ export default class SectionMorphology extends React.Component {
                   />
                 </Grid>
                 <br />
-                <Grid
-                  item
-                  xs={12}
-                  style={{ paddingLeft: "10px", paddingBottom: "20px" }}
-                >
+                <Grid item xs={12} style={{ paddingLeft: "10px", paddingBottom: "20px" }}>
                   <span style={{ paddingRight: "10px" }}>
                     Do you wish to use tabs to group items in this section?
                   </span>
@@ -700,21 +676,14 @@ export default class SectionMorphology extends React.Component {
                   }}
                 >
                   <span style={{ paddingRight: "10px" }}>
-                    <strong>Note:</strong> 'View URL' can be left empty for SWC,
-                    neurolucida-ASC, neurolucida-XML or neurolucida-DAT/NRX
-                    files to make use of intergrated 3D visualization tool.
+                    <strong>Note:</strong> 'View URL' can be left empty for SWC, neurolucida-ASC,
+                    neurolucida-XML or neurolucida-DAT/NRX files to make use of intergrated 3D visualization
+                    tool.
                   </span>
                 </Grid>
                 {this.state.useTabs && (
-                  <Grid
-                    item
-                    xs={12}
-                    style={{ paddingLeft: "10px", paddingBottom: "20px" }}
-                  >
-                    <em>
-                      Note: All items to be grouped together should be assigned
-                      the same tab name.
-                    </em>
+                  <Grid item xs={12} style={{ paddingLeft: "10px", paddingBottom: "20px" }}>
+                    <em>Note: All items to be grouped together should be assigned the same tab name.</em>
                   </Grid>
                 )}
                 <DynamicTableItems

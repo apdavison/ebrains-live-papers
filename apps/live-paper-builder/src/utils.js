@@ -1,10 +1,4 @@
-export function copyToClipboard(
-  value,
-  enqueueSnackbar,
-  closeSnackbar,
-  message,
-  type = "default"
-) {
+export function copyToClipboard(value, enqueueSnackbar, closeSnackbar, message, type = "default") {
   // type: default, success, error, warning, info
   navigator.clipboard.writeText(value);
   const key = enqueueSnackbar(message, {
@@ -19,12 +13,7 @@ export function copyToClipboard(
   });
 }
 
-export function showNotification(
-  enqueueSnackbar,
-  closeSnackbar,
-  message,
-  type = "default"
-) {
+export function showNotification(enqueueSnackbar, closeSnackbar, message, type = "default") {
   // type: default, success, error, warning, info
   const key = enqueueSnackbar(message, {
     variant: type,
@@ -85,9 +74,7 @@ export function compareArrayoOfObjectsByOrder(a, b) {
 
 export function formatAuthors(authors) {
   if (authors) {
-    return authors
-      .map((author) => author.given_name + " " + author.family_name)
-      .join(", ");
+    return authors.map((author) => author.given_name + " " + author.family_name).join(", ");
   } else {
     return "";
   }
@@ -129,9 +116,7 @@ export function formatLabel(label) {
     label = label
       .toLowerCase()
       .split(" ")
-      .map((word) =>
-        word === "id" ? "ID" : word.charAt(0).toUpperCase() + word.slice(1)
-      )
+      .map((word) => (word === "id" ? "ID" : word.charAt(0).toUpperCase() + word.slice(1)))
       .join(" ");
   }
   return label;

@@ -84,10 +84,7 @@ const RowIndex = withStyles(styles)((props) => {
         textAlign: "center",
       }}
     >
-      <Tooltip
-        title={resourseTypeBadgeMappings[props.type][1] || ""}
-        placement="left"
-      >
+      <Tooltip title={resourseTypeBadgeMappings[props.type][1] || ""} placement="left">
         <Badge
           badgeContent={resourseTypeBadgeMappings[props.type][0] || ""}
           // color="default"
@@ -128,9 +125,7 @@ export class RowURL extends React.Component {
                 name="label"
                 type="text"
                 value={this.props.item["label"]}
-                onChange={(e) =>
-                  this.props.handleItemChanged(this.props.ind, e)
-                }
+                onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
               />
             </Tooltip>
           </div>
@@ -143,8 +138,8 @@ export class RowURL extends React.Component {
                   ? "27.5"
                   : "30%"
                 : this.props.useTabs
-                ? "55%"
-                : "60%",
+                  ? "55%"
+                  : "60%",
             padding: "5px 10px 5px 0px",
           }}
         >
@@ -154,9 +149,7 @@ export class RowURL extends React.Component {
                 name="url"
                 type="text"
                 value={this.props.item["url"]}
-                onChange={(e) =>
-                  this.props.handleItemChanged(this.props.ind, e)
-                }
+                onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
               />
             </Tooltip>
           </div>
@@ -174,9 +167,7 @@ export class RowURL extends React.Component {
                   name="view_url"
                   type="text"
                   value={this.props.item["view_url"] || ""}
-                  onChange={(e) =>
-                    this.props.handleItemChanged(this.props.ind, e)
-                  }
+                  onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                 />
               </Tooltip>
             </div>
@@ -190,9 +181,7 @@ export class RowURL extends React.Component {
                   name="tab_name"
                   type="text"
                   value={this.props.item["tab_name"]}
-                  onChange={(e) =>
-                    this.props.handleItemChanged(this.props.ind, e)
-                  }
+                  onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                 />
               </Tooltip>
             </div>
@@ -227,9 +216,7 @@ export class RowURLExpanded extends React.Component {
                       fullWidth={true}
                       name="label"
                       value={this.props.item["label"]}
-                      onChange={(e) =>
-                        this.props.handleItemChanged(this.props.ind, e)
-                      }
+                      onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                       InputProps={{
                         style: {
                           backgroundColor: "#FFFFFF",
@@ -254,9 +241,7 @@ export class RowURLExpanded extends React.Component {
                       fullWidth={true}
                       name="url"
                       value={this.props.item["url"]}
-                      onChange={(e) =>
-                        this.props.handleItemChanged(this.props.ind, e)
-                      }
+                      onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                       InputProps={{
                         style: {
                           backgroundColor: "#FFFFFF",
@@ -282,9 +267,7 @@ export class RowURLExpanded extends React.Component {
                         fullWidth={true}
                         name="view_url"
                         value={this.props.item["view_url"] || ""}
-                        onChange={(e) =>
-                          this.props.handleItemChanged(this.props.ind, e)
-                        }
+                        onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                         InputProps={{
                           style: {
                             backgroundColor: "#FFFFFF",
@@ -311,9 +294,7 @@ export class RowURLExpanded extends React.Component {
                         fullWidth={true}
                         name="tab_name"
                         value={this.props.item["tab_name"]}
-                        onChange={(e) =>
-                          this.props.handleItemChanged(this.props.ind, e)
-                        }
+                        onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                         InputProps={{
                           style: {
                             backgroundColor: "#FFFFFF",
@@ -352,9 +333,7 @@ export class RowDB extends React.Component {
                 name="label"
                 type="text"
                 value={this.props.item["label"]}
-                onChange={(e) =>
-                  this.props.handleItemChanged(this.props.ind, e)
-                }
+                onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
               />
             </Tooltip>
           </div>
@@ -367,17 +346,15 @@ export class RowDB extends React.Component {
                   ? "27.5"
                   : "30%"
                 : this.props.useTabs
-                ? "55%"
-                : "60%",
+                  ? "55%"
+                  : "60%",
             padding: "5px 10px 5px 0px",
           }}
         >
           <div style={{ backgroundColor: "#FFFFFF", padding: "0px 10px" }}>
             <Tooltip
               title={this.props.item["url"] || ""}
-              onClick={() =>
-                navigator.clipboard.writeText(this.props.item["url"])
-              }
+              onClick={() => navigator.clipboard.writeText(this.props.item["url"])}
             >
               <input
                 name="url"
@@ -399,9 +376,7 @@ export class RowDB extends React.Component {
             <div style={{ backgroundColor: "#FFFFFF", padding: "0px 10px" }}>
               <Tooltip
                 title={this.props.item["view_url"] || ""}
-                onClick={() =>
-                  navigator.clipboard.writeText(this.props.item["view_url"])
-                }
+                onClick={() => navigator.clipboard.writeText(this.props.item["view_url"])}
               >
                 <input
                   name="view_url"
@@ -422,9 +397,7 @@ export class RowDB extends React.Component {
                   name="tab_name"
                   type="text"
                   value={this.props.item["tab_name"]}
-                  onChange={(e) =>
-                    this.props.handleItemChanged(this.props.ind, e)
-                  }
+                  onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                 />
               </Tooltip>
             </div>
@@ -459,9 +432,7 @@ export class RowDBExpanded extends React.Component {
                       fullWidth={true}
                       name="label"
                       value={this.props.item["label"]}
-                      onChange={(e) =>
-                        this.props.handleItemChanged(this.props.ind, e)
-                      }
+                      onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                       InputProps={{
                         style: {
                           backgroundColor: "#FFFFFF",
@@ -481,9 +452,7 @@ export class RowDBExpanded extends React.Component {
                 >
                   <Tooltip
                     title={this.props.item["url"] || ""}
-                    onClick={() =>
-                      navigator.clipboard.writeText(this.props.item["url"])
-                    }
+                    onClick={() => navigator.clipboard.writeText(this.props.item["url"])}
                   >
                     <TextField
                       label="Download URL"
@@ -515,11 +484,7 @@ export class RowDBExpanded extends React.Component {
                   >
                     <Tooltip
                       title={this.props.item["view_url"] || ""}
-                      onClick={() =>
-                        navigator.clipboard.writeText(
-                          this.props.item["view_url"]
-                        )
-                      }
+                      onClick={() => navigator.clipboard.writeText(this.props.item["view_url"])}
                     >
                       <TextField
                         label="View URL"
@@ -557,9 +522,7 @@ export class RowDBExpanded extends React.Component {
                         fullWidth={true}
                         name="tab_name"
                         value={this.props.item["tab_name"]}
-                        onChange={(e) =>
-                          this.props.handleItemChanged(this.props.ind, e)
-                        }
+                        onChange={(e) => this.props.handleItemChanged(this.props.ind, e)}
                         InputProps={{
                           style: {
                             backgroundColor: "#FFFFFF",
@@ -605,10 +568,7 @@ export class ToolBar extends React.Component {
                 strokeWidth={1}
                 style={{
                   transform: `rotate(90deg)`,
-                  color:
-                    this.props.ind === this.props.numRows - 1
-                      ? "#A1887F"
-                      : "#000000",
+                  color: this.props.ind === this.props.numRows - 1 ? "#A1887F" : "#000000",
                 }}
                 fontSize="small"
               />
@@ -807,21 +767,13 @@ export default class DynamicTableItems extends React.Component {
                 <th style={{ padding: "5px 10px", textAlign: "center" }}>#</th>
                 <th style={{ padding: "5px 10px" }}>Label</th>
                 <th style={{ padding: "5px 10px" }}>Download URL</th>
-                {this.props.numCols > 2 && (
-                  <th style={{ padding: "5px 10px" }}>View URL</th>
-                )}
-                {this.props.useTabs && (
-                  <th style={{ padding: "5px 10px" }}>Tab Name</th>
-                )}
-                <th style={{ padding: "5px 0px 5px 10 px" }}>
-                  {/* delete button */}
-                </th>
+                {this.props.numCols > 2 && <th style={{ padding: "5px 10px" }}>View URL</th>}
+                {this.props.useTabs && <th style={{ padding: "5px 10px" }}>Tab Name</th>}
+                <th style={{ padding: "5px 0px 5px 10 px" }}>{/* delete button */}</th>
               </tr>
             </thead>
           )}
-          <tbody>
-            {this.renderRows(this.props.numCols, this.props.useTabs)}
-          </tbody>
+          <tbody>{this.renderRows(this.props.numCols, this.props.useTabs)}</tbody>
         </table>
         <div
           style={{
@@ -840,13 +792,7 @@ export default class DynamicTableItems extends React.Component {
               marginRight: "25px",
               backgroundColor: "#795548",
             }}
-            startIcon={
-              this.state.expandTable ? (
-                <PhotoSizeSelectSmallIcon />
-              ) : (
-                <AspectRatioIcon />
-              )
-            }
+            startIcon={this.state.expandTable ? <PhotoSizeSelectSmallIcon /> : <AspectRatioIcon />}
           >
             {this.state.expandTable ? "Collapse" : "Expand"}
           </Button>

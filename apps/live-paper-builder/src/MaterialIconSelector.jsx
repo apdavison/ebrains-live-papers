@@ -970,9 +970,7 @@ export default class MaterialIconSelector extends React.Component {
   handleSearchChange(e) {
     console.log(e.target.value);
     this.setState({ search_text: e.target.value });
-    var icon_matches = material_icons.filter((name) =>
-      name.includes(e.target.value.toLowerCase())
-    );
+    var icon_matches = material_icons.filter((name) => name.includes(e.target.value.toLowerCase()));
     this.setState({
       icons_list: icon_matches,
     });
@@ -1011,12 +1009,7 @@ export default class MaterialIconSelector extends React.Component {
           </i>
         </Tooltip>
         {this.state.show ? (
-          <div
-            className="material-icon-picker"
-            tabIndex="-1"
-            style={{ zIndex: "1" }}
-            ref={this.setPickerRef}
-          >
+          <div className="material-icon-picker" tabIndex="-1" style={{ zIndex: "1" }} ref={this.setPickerRef}>
             <div
               style={{
                 display: "flex",
@@ -1051,11 +1044,7 @@ export default class MaterialIconSelector extends React.Component {
               ) : (
                 this.state.icons_list.map((icon_name, i) => {
                   return (
-                    <i
-                      key={i}
-                      className="material-icons"
-                      onClick={() => this.handleClickPickerIcon(i)}
-                    >
+                    <i key={i} className="material-icons" onClick={() => this.handleClickPickerIcon(i)}>
                       {icon_name}
                     </i>
                   );

@@ -78,11 +78,10 @@ function HelpContent() {
       <h6>
         <b>List of dicts/objects</b>
       </h6>
-      Each dict in the list should have keys named 'type', 'url', 'label',
-      'view_url', 'identifier' and 'tab_name'. For manually entered items,
-      'type' 'view_url' and 'identifier' can be set to 'URL', null and null,
-      respectively. You may specify the model catalog URL for each model using
-      their `view_url' field. <i>Example:</i>
+      Each dict in the list should have keys named 'type', 'url', 'label', 'view_url', 'identifier' and
+      'tab_name'. For manually entered items, 'type' 'view_url' and 'identifier' can be set to 'URL', null and
+      null, respectively. You may specify the model catalog URL for each model using their `view_url' field.{" "}
+      <i>Example:</i>
       <br />
       <pre>
         <code>{list_of_dicts}</code>
@@ -212,9 +211,7 @@ export class SectionModelsEdit extends React.Component {
           />
           {!this.state.dataOk && (
             <div style={{ color: "red", paddingTop: "10px" }}>
-              <strong>
-                Data not in expected format! Click on 'Help' for more info.
-              </strong>
+              <strong>Data not in expected format! Click on 'Help' for more info.</strong>
             </div>
           )}
         </Grid>
@@ -453,10 +450,10 @@ export default class SectionModels extends React.Component {
               sourceDB === "Knowledge Graph"
                 ? "ModelInstance"
                 : sourceDB === "Open Source Brain"
-                ? "OSB"
-                : sourceDB === "ModelDB"
-                ? "ModelDB"
-                : "BioModels",
+                  ? "OSB"
+                  : sourceDB === "ModelDB"
+                    ? "ModelDB"
+                    : "BioModels",
             label: items[model_id][instance_id]["label"] || "",
             url: items[model_id][instance_id]["source_url"] || "",
             view_url: items[model_id][instance_id]["view_url"] || "",
@@ -522,10 +519,7 @@ export default class SectionModels extends React.Component {
     // console.log(this.state.data);
     return (
       <div style={{ width: "100%", paddingTop: "25px", paddingBottom: "25px" }}>
-        <Accordion
-          expanded={this.state.expanded}
-          onChange={this.toggleExpanded}
-        >
+        <Accordion expanded={this.state.expanded} onChange={this.toggleExpanded}>
           <AccordionSummary
             expandIcon={<Icon />}
             aria-controls="panel1a-content"
@@ -558,9 +552,7 @@ export default class SectionModels extends React.Component {
                   color: "#000000",
                 }}
               >
-                <span style={{ verticalAlign: "middle" }}>
-                  Section: Model Collection
-                </span>
+                <span style={{ verticalAlign: "middle" }}>Section: Model Collection</span>
               </div>
               <div>
                 <Tooltip title="Delete this section">
@@ -585,10 +577,7 @@ export default class SectionModels extends React.Component {
                     style={{
                       marginRight: "30px",
                       transform: `rotate(90deg)`,
-                      color:
-                        this.state.order === this.props.numResources - 1
-                          ? "#A1887F"
-                          : "#000000",
+                      color: this.state.order === this.props.numResources - 1 ? "#A1887F" : "#000000",
                     }}
                     onClick={(event) => this.handleMoveDown(event)}
                     onFocus={(event) => event.stopPropagation()}
@@ -610,9 +599,7 @@ export default class SectionModels extends React.Component {
               </div>
             </div>
           </AccordionSummary>
-          <AccordionDetails
-            style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}
-          >
+          <AccordionDetails style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: 0 }}>
             <div
               style={{
                 backgroundColor: "#FFE8E0",
@@ -628,11 +615,7 @@ export default class SectionModels extends React.Component {
                 <br />
                 <div style={{ display: "flex", flexDirection: "row" }}>
                   <div style={{ width: "50px" }}>
-                    <MaterialIconSelector
-                      size="35px"
-                      icon={this.state.icon}
-                      setIcon={this.setIcon}
-                    />
+                    <MaterialIconSelector size="35px" icon={this.state.icon} setIcon={this.setIcon} />
                   </div>
                   <div style={{ paddingLeft: "20px", flexGrow: 1 }}>
                     <TextField
@@ -660,10 +643,7 @@ export default class SectionModels extends React.Component {
                     }}
                   >
                     <Tooltip title="Click for help with description input format">
-                      <HelpIcon
-                        style={{ width: 30, height: 30 }}
-                        onClick={this.clickDescHelp}
-                      />
+                      <HelpIcon style={{ width: 30, height: 30 }} onClick={this.clickDescHelp} />
                     </Tooltip>
                   </div>
                 </div>
@@ -689,30 +669,15 @@ export default class SectionModels extends React.Component {
                   />
                 </Grid>
                 <br />
-                <Grid
-                  item
-                  xs={12}
-                  style={{ paddingLeft: "10px", paddingBottom: "20px" }}
-                >
+                <Grid item xs={12} style={{ paddingLeft: "10px", paddingBottom: "20px" }}>
                   <span style={{ paddingRight: "10px" }}>
                     Do you wish to use tabs to group items in this section?
                   </span>
-                  <ToggleSwitch
-                    id="modelsTabs"
-                    checked={this.state.useTabs}
-                    onChange={this.toggleUseTabs}
-                  />
+                  <ToggleSwitch id="modelsTabs" checked={this.state.useTabs} onChange={this.toggleUseTabs} />
                 </Grid>
                 {this.state.useTabs && (
-                  <Grid
-                    item
-                    xs={12}
-                    style={{ paddingLeft: "10px", paddingBottom: "20px" }}
-                  >
-                    <em>
-                      Note: All items to be grouped together should be assigned
-                      the same tab name.
-                    </em>
+                  <Grid item xs={12} style={{ paddingLeft: "10px", paddingBottom: "20px" }}>
+                    <em>Note: All items to be grouped together should be assigned the same tab name.</em>
                   </Grid>
                 )}
                 <DynamicTableItems

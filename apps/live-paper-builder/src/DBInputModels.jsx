@@ -43,13 +43,7 @@ import {
   corsProxy,
   osb_baseUrl,
 } from "./globals";
-import {
-  formatAuthors,
-  formatTimeStampToLongString,
-  buildQuery,
-  showNotification,
-  formatLabel,
-} from "./utils";
+import { formatAuthors, formatTimeStampToLongString, buildQuery, showNotification, formatLabel } from "./utils";
 
 const labelsModelDBKeys = {
   regions: "Brain Region",
@@ -123,11 +117,7 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon style={{ color: "#000000" }} />
         </IconButton>
       ) : null}
@@ -337,9 +327,7 @@ function IncludeButton(props) {
             width: "150px",
           }}
           startIcon={<RemoveFromQueueIcon />}
-          onClick={() =>
-            props.removeInstanceCollection(props.model_id, props.instance_id)
-          }
+          onClick={() => props.removeInstanceCollection(props.model_id, props.instance_id)}
         >
           Remove
         </Button>
@@ -444,9 +432,7 @@ export class KGContentModelVersion extends React.Component {
             <Box px={2} display="flex" flexDirection="row">
               <p variant="subtitle2">
                 Version:{" "}
-                <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-                  {this.props.instance.version}
-                </span>
+                <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.instance.version}</span>
               </p>
             </Box>
           </Grid>
@@ -460,15 +446,9 @@ export class KGContentModelVersion extends React.Component {
               }}
             >
               <Typography variant="body2">
-                Model Instance ID:{" "}
-                <span style={{ fontWeight: "bold" }}>
-                  {this.props.instance.id}
-                </span>
+                Model Instance ID: <span style={{ fontWeight: "bold" }}>{this.props.instance.id}</span>
               </Typography>
-              <Typography
-                variant="body2"
-                style={{ color: "#000000", paddingLeft: "25px" }}
-              >
+              <Typography variant="body2" style={{ color: "#000000", paddingLeft: "25px" }}>
                 {formatTimeStampToLongString(this.props.instance.timestamp)}
               </Typography>
             </Box>
@@ -478,40 +458,31 @@ export class KGContentModelVersion extends React.Component {
           <Grid item xs={9}>
             <div style={{ padding: "10px 0px 0px 10px" }}>
               <div>
-                {[
-                  "description",
-                  "source",
-                  "morphology",
-                  "parameters",
-                  "code_format",
-                  "license",
-                  "hash",
-                ].map((param, ind) => (
-                  <Chip
-                    icon={
-                      this.state.selectedParam === param ? (
-                        <RadioButtonCheckedIcon />
-                      ) : (
-                        <RadioButtonUncheckedIcon />
-                      )
-                    }
-                    key={ind}
-                    label={param}
-                    clickable
-                    onClick={() => this.setState({ selectedParam: param })}
-                    variant="outlined"
-                    style={{
-                      color: "#000000",
-                      marginRight: "10px",
-                      marginBottom: "10px",
-                    }}
-                  />
-                ))}
+                {["description", "source", "morphology", "parameters", "code_format", "license", "hash"].map(
+                  (param, ind) => (
+                    <Chip
+                      icon={
+                        this.state.selectedParam === param ? (
+                          <RadioButtonCheckedIcon />
+                        ) : (
+                          <RadioButtonUncheckedIcon />
+                        )
+                      }
+                      key={ind}
+                      label={param}
+                      clickable
+                      onClick={() => this.setState({ selectedParam: param })}
+                      variant="outlined"
+                      style={{
+                        color: "#000000",
+                        marginRight: "10px",
+                        marginBottom: "10px",
+                      }}
+                    />
+                  )
+                )}
               </div>
-              <InstanceParameter
-                label={"param"}
-                value={this.props.instance[this.state.selectedParam]}
-              />
+              <InstanceParameter label={"param"} value={this.props.instance[this.state.selectedParam]} />
             </div>
           </Grid>
           <Grid item xs={3} style={{ paddingBottom: "35px" }}>
@@ -615,16 +586,11 @@ export class KGContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
-          title={
-            "Models (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
-          }
+          title={"Models (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")}
           data={this.props.data}
           columns={KG_TABLE_COLUMNS}
           options={{
@@ -644,18 +610,13 @@ export class KGContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -697,10 +658,7 @@ export class KGContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of model instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of model instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -735,11 +693,7 @@ export class ModelDBContentModelPanel extends React.Component {
               <b>Model Details:</b>
             </Typography>
             <Link
-              href={
-                modelDB_viewUrl +
-                "/ShowModel.cshtml?model=" +
-                this.props.data.id
-              }
+              href={modelDB_viewUrl + "/ShowModel.cshtml?model=" + this.props.data.id}
               target="_blank"
               rel="noreferrer"
               underline="none"
@@ -755,11 +709,7 @@ export class ModelDBContentModelPanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -772,9 +722,7 @@ export class ModelDBContentModelPanel extends React.Component {
                 <Box px={2} display="flex" flexDirection="row">
                   <p variant="subtitle2">
                     Model ID:{" "}
-                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-                      {this.props.data.id}
-                    </span>
+                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.id}</span>
                   </p>
                 </Box>
               </Grid>
@@ -783,59 +731,42 @@ export class ModelDBContentModelPanel extends React.Component {
               <Grid item xs={9}>
                 <div style={{ padding: "10px 0px 0px 10px" }}>
                   <div>
-                    {Object.entries(filterAttributeMappingModelDB).map(
-                      ([key, param], ind) => (
-                        <Chip
-                          icon={
-                            this.state.selectedParam === param ? (
-                              <RadioButtonCheckedIcon />
-                            ) : (
-                              <RadioButtonUncheckedIcon />
-                            )
-                          }
-                          key={ind}
-                          label={labelsModelDBKeys[key]}
-                          clickable
-                          onClick={() =>
-                            this.setState({ selectedParam: param })
-                          }
-                          variant="outlined"
-                          style={{
-                            color: "#000000",
-                            marginRight: "10px",
-                            marginBottom: "10px",
-                          }}
-                        />
-                      )
-                    )}
+                    {Object.entries(filterAttributeMappingModelDB).map(([key, param], ind) => (
+                      <Chip
+                        icon={
+                          this.state.selectedParam === param ? (
+                            <RadioButtonCheckedIcon />
+                          ) : (
+                            <RadioButtonUncheckedIcon />
+                          )
+                        }
+                        key={ind}
+                        label={labelsModelDBKeys[key]}
+                        clickable
+                        onClick={() => this.setState({ selectedParam: param })}
+                        variant="outlined"
+                        style={{
+                          color: "#000000",
+                          marginRight: "10px",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
                 <IncludeButton
-                  includeFlag={this.props.checkInstanceInCollection(
-                    "ModelDB_" + this.props.data.id,
-                    "0"
-                  )}
+                  includeFlag={this.props.checkInstanceInCollection("ModelDB_" + this.props.data.id, "0")}
                   model_id={"ModelDB_" + this.props.data.id}
                   model_name={this.props.data.name}
                   instance_id={"0"}
                   instance_name={""}
                   source_url={
-                    modelDB_viewUrl +
-                    "/eavBinDown?o=" +
-                    this.props.data.id +
-                    "&a=23&mime=application/zip"
+                    modelDB_viewUrl + "/eavBinDown?o=" + this.props.data.id + "&a=23&mime=application/zip"
                   }
-                  view_url={
-                    modelDB_viewUrl +
-                    "/ShowModel.cshtml?model=" +
-                    this.props.data.id
-                  }
+                  view_url={modelDB_viewUrl + "/ShowModel.cshtml?model=" + this.props.data.id}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />
@@ -869,16 +800,11 @@ export class ModelDBContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
-          title={
-            "Models (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
-          }
+          title={"Models (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")}
           data={this.props.data}
           columns={MODELDB_TABLE_COLUMNS}
           options={{
@@ -898,18 +824,13 @@ export class ModelDBContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -951,10 +872,7 @@ export class ModelDBContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of model instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of model instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -1005,11 +923,7 @@ export class OSBContentModelPanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -1022,9 +936,7 @@ export class OSBContentModelPanel extends React.Component {
                 <Box px={2} display="flex" flexDirection="row">
                   <p variant="subtitle2">
                     Model Identifier:{" "}
-                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-                      {this.props.data.identifier}
-                    </span>
+                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.identifier}</span>
                   </p>
                 </Box>
               </Grid>
@@ -1038,10 +950,7 @@ export class OSBContentModelPanel extends React.Component {
                   }}
                 >
                   <Typography variant="body2">
-                    Model ID:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {this.props.data.id}
-                    </span>
+                    Model ID: <span style={{ fontWeight: "bold" }}>{this.props.data.id}</span>
                   </Typography>
                 </Box>
               </Grid>
@@ -1086,18 +995,12 @@ export class OSBContentModelPanel extends React.Component {
                       />
                     ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
                 <IncludeButton
-                  includeFlag={this.props.checkInstanceInCollection(
-                    "OSB_" + this.props.data.id,
-                    "0"
-                  )}
+                  includeFlag={this.props.checkInstanceInCollection("OSB_" + this.props.data.id, "0")}
                   model_id={"OSB_" + this.props.data.id}
                   model_name={this.props.data.name}
                   instance_id={"0"}
@@ -1107,9 +1010,7 @@ export class OSBContentModelPanel extends React.Component {
                       ? this.props.data.repository
                       : osb_baseUrl + "/projects/" + this.props.data.identifier
                   }
-                  view_url={
-                    osb_baseUrl + "/projects/" + this.props.data.identifier
-                  }
+                  view_url={osb_baseUrl + "/projects/" + this.props.data.identifier}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />
@@ -1143,16 +1044,11 @@ export class OSBContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
-          title={
-            "Models (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
-          }
+          title={"Models (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")}
           data={this.props.data}
           columns={OSB_TABLE_COLUMNS}
           options={{
@@ -1172,18 +1068,13 @@ export class OSBContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -1225,10 +1116,7 @@ export class OSBContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of model instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of model instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -1262,12 +1150,7 @@ export class BioModelsContentModelPanel extends React.Component {
             <Typography variant="subtitle1">
               <b>Model Details:</b>
             </Typography>
-            <Link
-              href={this.props.data.url}
-              target="_blank"
-              rel="noreferrer"
-              underline="none"
-            >
+            <Link href={this.props.data.url} target="_blank" rel="noreferrer" underline="none">
               <Button
                 variant="contained"
                 style={{ backgroundColor: "#01579b", color: "#ffffff" }}
@@ -1279,11 +1162,7 @@ export class BioModelsContentModelPanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -1296,9 +1175,7 @@ export class BioModelsContentModelPanel extends React.Component {
                 <Box px={2} display="flex" flexDirection="row">
                   <p variant="subtitle2">
                     Model Identifier:{" "}
-                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-                      {this.props.data.id}
-                    </span>
+                    <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.id}</span>
                   </p>
                 </Box>
               </Grid>
@@ -1307,49 +1184,39 @@ export class BioModelsContentModelPanel extends React.Component {
               <Grid item xs={9}>
                 <div style={{ padding: "10px 0px 0px 10px" }}>
                   <div>
-                    {Object.entries(labelsPanelBioModelsKeys).map(
-                      ([key, param], ind) => (
-                        <Chip
-                          icon={
-                            this.state.selectedParam === key ? (
-                              <RadioButtonCheckedIcon />
-                            ) : (
-                              <RadioButtonUncheckedIcon />
-                            )
-                          }
-                          key={ind}
-                          label={param}
-                          clickable
-                          onClick={() => this.setState({ selectedParam: key })}
-                          variant="outlined"
-                          style={{
-                            color: "#000000",
-                            marginRight: "10px",
-                            marginBottom: "10px",
-                          }}
-                        />
-                      )
-                    )}
+                    {Object.entries(labelsPanelBioModelsKeys).map(([key, param], ind) => (
+                      <Chip
+                        icon={
+                          this.state.selectedParam === key ? (
+                            <RadioButtonCheckedIcon />
+                          ) : (
+                            <RadioButtonUncheckedIcon />
+                          )
+                        }
+                        key={ind}
+                        label={param}
+                        clickable
+                        onClick={() => this.setState({ selectedParam: key })}
+                        variant="outlined"
+                        style={{
+                          color: "#000000",
+                          marginRight: "10px",
+                          marginBottom: "10px",
+                        }}
+                      />
+                    ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
                 <IncludeButton
-                  includeFlag={this.props.checkInstanceInCollection(
-                    "BioModels_" + this.props.data.id,
-                    "0"
-                  )}
+                  includeFlag={this.props.checkInstanceInCollection("BioModels_" + this.props.data.id, "0")}
                   model_id={"BioModels_" + this.props.data.id}
                   model_name={this.props.data.name}
                   instance_id={"0"}
                   instance_name={""}
-                  source_url={
-                    biomodels_baseUrl + "/model/download/" + this.props.data.id
-                  }
+                  source_url={biomodels_baseUrl + "/model/download/" + this.props.data.id}
                   view_url={this.props.data.url}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
@@ -1384,16 +1251,11 @@ export class BioModelsContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
-          title={
-            "Models (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
-          }
+          title={"Models (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")}
           data={this.props.data}
           columns={BIOMODELS_TABLE_COLUMNS}
           options={{
@@ -1413,18 +1275,13 @@ export class BioModelsContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -1466,10 +1323,7 @@ export class BioModelsContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of model instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of model instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -1505,8 +1359,7 @@ export class FilterPanelKG extends React.Component {
       },
     };
     let query = buildQuery(this.state.configFilters);
-    let url =
-      vf_baseUrl + "/models/?" + encodeURI(query) + "&size=" + querySizeLimit;
+    let url = vf_baseUrl + "/models/?" + encodeURI(query) + "&size=" + querySizeLimit;
     axios
       .get(url, config)
       .then((res) => {
@@ -1527,9 +1380,7 @@ export class FilterPanelKG extends React.Component {
   handleFiltersChange(event) {
     const newConfig = { ...this.state.configFilters };
     newConfig[event.target.name] =
-      typeof event.target.value === "string"
-        ? [event.target.value]
-        : event.target.value;
+      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
     this.setState({ configFilters: newConfig });
   }
 
@@ -1541,11 +1392,7 @@ export class FilterPanelKG extends React.Component {
         <form>
           {this.props.showFilters.map((filter) => (
             <MultipleSelect
-              itemNames={
-                !this.props.validKGFilterValues
-                  ? []
-                  : this.props.validKGFilterValues[filter]
-              }
+              itemNames={!this.props.validKGFilterValues ? [] : this.props.validKGFilterValues[filter]}
               label={formatLabel(filter)}
               name={filter}
               value={this.state.configFilters[filter] || []}
@@ -1609,11 +1456,7 @@ export class FilterPanelModelDB extends React.Component {
           for (let ind in list_model_ids) {
             if (res[ind].status === "fulfilled") {
               let data_dict = {};
-              [
-                "id",
-                "name",
-                ...Object.values(filterAttributeMappingModelDB),
-              ].forEach(function (item, i) {
+              ["id", "name", ...Object.values(filterAttributeMappingModelDB)].forEach(function (item, i) {
                 let value = res[ind].value.data[item];
                 if (typeof value === "string" || !value) {
                   data_dict[item] = value;
@@ -1659,18 +1502,8 @@ export class FilterPanelModelDB extends React.Component {
       // each query will correspond to values for specific attribute
       let query = buildQuery(this.state.configFilters);
       let modelDBreqs = [];
-      for (let item of [
-        "id",
-        "name",
-        ...Object.values(filterAttributeMappingModelDB),
-      ]) {
-        let url =
-          corsProxy +
-          modelDB_baseUrl +
-          "/models/" +
-          item +
-          "?" +
-          encodeURI(query);
+      for (let item of ["id", "name", ...Object.values(filterAttributeMappingModelDB)]) {
+        let url = corsProxy + modelDB_baseUrl + "/models/" + item + "?" + encodeURI(query);
         modelDBreqs.push(axios.get(url));
       }
 
@@ -1681,11 +1514,7 @@ export class FilterPanelModelDB extends React.Component {
           let model_list = [];
           for (let ind in res[0].data) {
             let data_dict = {};
-            [
-              "id",
-              "name",
-              ...Object.values(filterAttributeMappingModelDB),
-            ].forEach(function (item, i) {
+            ["id", "name", ...Object.values(filterAttributeMappingModelDB)].forEach(function (item, i) {
               if (typeof res[i].data[ind] === "string" || !res[i].data[ind]) {
                 data_dict[item] = res[i].data[ind];
               } else if (typeof res[i].data[ind] === "number") {
@@ -1726,9 +1555,7 @@ export class FilterPanelModelDB extends React.Component {
   handleFiltersChange(event) {
     const newConfig = { ...this.state.configFilters };
     newConfig[event.target.name] =
-      typeof event.target.value === "string"
-        ? [event.target.value]
-        : event.target.value;
+      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
     this.setState({ configFilters: newConfig });
   }
 
@@ -1757,23 +1584,14 @@ export class FilterPanelModelDB extends React.Component {
       <div>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by model ID?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by model ID?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the model IDs below:</h6>
-            <em>
-              Note: you can enter multiple IDs by separating them with a comma
-              (e.g. 87284, 128079)
-            </em>
+            <em>Note: you can enter multiple IDs by separating them with a comma (e.g. 87284, 128079)</em>
             <form>
               <TextField
                 variant="outlined"
@@ -1801,17 +1619,11 @@ export class FilterPanelModelDB extends React.Component {
               {this.props.showFilters.map((filter) => (
                 <SingleSelect
                   itemNames={
-                    !this.props.validModelDBFilterValues
-                      ? []
-                      : this.props.validModelDBFilterValues[filter]
+                    !this.props.validModelDBFilterValues ? [] : this.props.validModelDBFilterValues[filter]
                   }
                   label={labelsModelDBKeys[filter]}
                   name={filterAttributeMappingModelDB[filter]}
-                  value={
-                    this.state.configFilters[
-                      filterAttributeMappingModelDB[filter]
-                    ] || ""
-                  }
+                  value={this.state.configFilters[filterAttributeMappingModelDB[filter]] || ""}
                   handleChange={this.handleFiltersChange}
                   key={filter}
                 />
@@ -1916,8 +1728,7 @@ export class FilterPanelOSB extends React.Component {
         });
     } else {
       // as OSB APIs don't accept filters, we retrieve all the models (projects)
-      let url =
-        corsProxy + osb_baseUrl + "/projects.json?limit=" + querySizeLimit;
+      let url = corsProxy + osb_baseUrl + "/projects.json?limit=" + querySizeLimit;
       const context = this;
       axios
         .get(url)
@@ -1985,22 +1796,16 @@ export class FilterPanelOSB extends React.Component {
       <div>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by model identifier?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by model identifier?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the model identifiers below:</h6>
             <em>
-              Note: you can enter multiple identifiers by separating them with a
-              comma (e.g. thalamocortical, potjansdiesmann2014)
+              Note: you can enter multiple identifiers by separating them with a comma (e.g. thalamocortical,
+              potjansdiesmann2014)
             </em>
             <form>
               <TextField
@@ -2024,8 +1829,8 @@ export class FilterPanelOSB extends React.Component {
         {!this.state.searchByID && (
           <div>
             <h6>
-              Click "Proceed" to fetch all entries from OSB, and you can
-              subsequently filter them by individual attributes.
+              Click "Proceed" to fetch all entries from OSB, and you can subsequently filter them by individual
+              attributes.
             </h6>
           </div>
         )}
@@ -2150,9 +1955,7 @@ export class FilterPanelBioModels extends React.Component {
   handleFiltersChange(event) {
     const newConfig = { ...this.state.configFilters };
     newConfig[event.target.name] =
-      typeof event.target.value === "string"
-        ? [event.target.value]
-        : event.target.value;
+      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
     this.setState({ configFilters: newConfig });
   }
 
@@ -2182,22 +1985,16 @@ export class FilterPanelBioModels extends React.Component {
       <div>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by model identifier?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by model identifier?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the model identifiers below:</h6>
             <em>
-              Note: you can enter multiple identifiers by separating them with a
-              comma (e.g. MODEL2003100001, MODEL1611230001)
+              Note: you can enter multiple identifiers by separating them with a comma (e.g. MODEL2003100001,
+              MODEL1611230001)
             </em>
             <form>
               <TextField
@@ -2226,9 +2023,7 @@ export class FilterPanelBioModels extends React.Component {
               {this.props.showFilters.map((filter) => (
                 <MultipleSelect
                   itemNames={
-                    !this.props.validBioModelsFilterValues
-                      ? []
-                      : this.props.validBioModelsFilterValues[filter]
+                    !this.props.validBioModelsFilterValues ? [] : this.props.validBioModelsFilterValues[filter]
                   }
                   label={labelsBioModelsKeys[filter]}
                   name={filter}
@@ -2303,23 +2098,14 @@ export default class DBInputModels extends React.Component {
     this.setState({ error: null });
   }
 
-  addInstanceCollection(
-    model_id,
-    model_name,
-    instance_id,
-    instance_name,
-    source_url,
-    view_url
-  ) {
+  addInstanceCollection(model_id, model_name, instance_id, instance_name, source_url, view_url) {
     console.log("Add");
 
     let model_collection = this.state.model_collection;
     if (Object.keys(model_collection).includes(model_id)) {
       if (!Object.keys(model_collection[model_id]).includes(instance_id)) {
         model_collection[model_id][instance_id] = {
-          label: instance_name
-            ? model_name + " (" + instance_name + ")"
-            : model_name,
+          label: instance_name ? model_name + " (" + instance_name + ")" : model_name,
           source_url: source_url,
           view_url: view_url,
         };
@@ -2327,9 +2113,7 @@ export default class DBInputModels extends React.Component {
     } else {
       model_collection[model_id] = {
         [instance_id]: {
-          label: instance_name
-            ? model_name + " (" + instance_name + ")"
-            : model_name,
+          label: instance_name ? model_name + " (" + instance_name + ")" : model_name,
           source_url: source_url,
           view_url: view_url,
         },
@@ -2404,12 +2188,7 @@ export default class DBInputModels extends React.Component {
       <Box my={2}>
         <h6 style={{ marginBottom: "20px" }}>Please specify the database:</h6>
         <SwitchMultiWay
-          values={[
-            "Knowledge Graph",
-            "ModelDB",
-            "Open Source Brain",
-            "BioModels",
-          ]}
+          values={["Knowledge Graph", "ModelDB", "Open Source Brain", "BioModels"]}
           selected={this.state.sourceDB}
           onChange={this.handleDBChange}
         />
@@ -2443,9 +2222,7 @@ export default class DBInputModels extends React.Component {
         {this.state.sourceDB === "BioModels" && (
           <FilterPanelBioModels
             showFilters={showFilters}
-            validBioModelsFilterValues={
-              this.context.validBioModelsFilterValues[0]
-            }
+            validBioModelsFilterValues={this.context.validBioModelsFilterValues[0]}
             shareGetListModels={this.acceptsProceedMethod}
             setListModels={this.setListModels}
             enqueueSnackbar={this.props.enqueueSnackbar}
@@ -2537,13 +2314,10 @@ export default class DBInputModels extends React.Component {
             onClose={() => this.props.handleClose(false)}
             style={{ backgroundColor: "#00A595" }}
           >
-            <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-              Input From Database
-            </span>
+            <span style={{ fontWeight: "bolder", fontSize: 18 }}>Input From Database</span>
           </DialogTitle>
           <DialogContent dividers>
-            {(!this.context.validKGFilterValues[0] && this.state.showFilters) ||
-            this.state.loading ? (
+            {(!this.context.validKGFilterValues[0] && this.state.showFilters) || this.state.loading ? (
               <div
                 style={{
                   minWidth: 700,
@@ -2631,11 +2405,7 @@ export default class DBInputModels extends React.Component {
                 onClick={() =>
                   this.state.showFilters
                     ? this.handleProceed()
-                    : this.props.handleClose(
-                        true,
-                        this.state.model_collection,
-                        this.state.sourceDB
-                      )
+                    : this.props.handleClose(true, this.state.model_collection, this.state.sourceDB)
                 }
               >
                 {this.state.showFilters ? "Proceed" : "Add Items"}

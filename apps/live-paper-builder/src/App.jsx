@@ -29,10 +29,7 @@ import {
   filterBioModelsKeys,
   updateHash,
 } from "./globals";
-import {
-  compareArrayoOfObjectsByOrder,
-  replaceNullWithEmptyStrings,
-} from "./utils";
+import { compareArrayoOfObjectsByOrder, replaceNullWithEmptyStrings } from "./utils";
 
 class App extends React.Component {
   signal = axios.CancelToken.source();
@@ -55,22 +52,17 @@ class App extends React.Component {
     this.inputFileRef = React.createRef();
 
     this.handleCreateLivePaperOpen = this.handleCreateLivePaperOpen.bind(this);
-    this.handleCreateLivePaperClose =
-      this.handleCreateLivePaperClose.bind(this);
+    this.handleCreateLivePaperClose = this.handleCreateLivePaperClose.bind(this);
     this.handleLoadProjectFile = this.handleLoadProjectFile.bind(this);
     this.handleLoadProjectKG = this.handleLoadProjectKG.bind(this);
     this.handleLoadProjectKGClose = this.handleLoadProjectKGClose.bind(this);
     this.onFileSelect = this.onFileSelect.bind(this);
     this.handleErrorDialogClose = this.handleErrorDialogClose.bind(this);
     this.getCollabList = this.getCollabList.bind(this);
-    this.retrieveKGFilterValidValues =
-      this.retrieveKGFilterValidValues.bind(this);
-    this.retrieveModelDBFilterValidValues =
-      this.retrieveModelDBFilterValidValues.bind(this);
-    this.retrieveNeuroMorphoFilterValidValues =
-      this.retrieveNeuroMorphoFilterValidValues.bind(this);
-    this.retrieveBioModelsFilterValidValues =
-      this.retrieveBioModelsFilterValidValues.bind(this);
+    this.retrieveKGFilterValidValues = this.retrieveKGFilterValidValues.bind(this);
+    this.retrieveModelDBFilterValidValues = this.retrieveModelDBFilterValidValues.bind(this);
+    this.retrieveNeuroMorphoFilterValidValues = this.retrieveNeuroMorphoFilterValidValues.bind(this);
+    this.retrieveBioModelsFilterValidValues = this.retrieveBioModelsFilterValidValues.bind(this);
     this.handleSpecifiedLP = this.handleSpecifiedLP.bind(this);
   }
 
@@ -92,12 +84,15 @@ class App extends React.Component {
     if (window.location.hash) {
       console.log(window.location.hash);
       if (window.location.hash.includes("iss=")) {
-        window.location.hash = window.location.hash.replace("iss=https%3A%2F%2Fiam.ebrains.eu%2Fauth%2Frealms%2Fhbp", "");
+        window.location.hash = window.location.hash.replace(
+          "iss=https%3A%2F%2Fiam.ebrains.eu%2Fauth%2Frealms%2Fhbp",
+          ""
+        );
       }
       let lp_id = window.location.hash.slice(1).replace("&", "");
       console.log(lp_id);
       if (lp_id.length > 0) {
-          this.handleSpecifiedLP(lp_id);
+        this.handleSpecifiedLP(lp_id);
       }
     }
   }
@@ -400,8 +395,7 @@ class App extends React.Component {
         data_dict[item] = res[i].data.fields;
       });
       console.log(data_dict);
-      const [, setValidNeuroMorphoFilterValues] =
-        context.validNeuroMorphoFilterValues;
+      const [, setValidNeuroMorphoFilterValues] = context.validNeuroMorphoFilterValues;
       setValidNeuroMorphoFilterValues(data_dict);
     });
   }
@@ -423,8 +417,7 @@ class App extends React.Component {
           }
         }
         console.log(filters);
-        const [, setValidBioModelsFilterValues] =
-          this.context.validBioModelsFilterValues;
+        const [, setValidBioModelsFilterValues] = this.context.validBioModelsFilterValues;
         setValidBioModelsFilterValues(filters);
       })
       .catch((err) => {
@@ -527,11 +520,7 @@ class App extends React.Component {
                 </a>
               </Tooltip>
               <Tooltip title={"Open Documentation"}>
-                <a
-                  href={livePaperDocsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={livePaperDocsUrl} target="_blank" rel="noopener noreferrer">
                   <IconButton aria-label="Open Documentation">
                     <HelpOutlineIcon fontSize="large" />
                   </IconButton>
@@ -553,10 +542,7 @@ class App extends React.Component {
           <div className="title-solid-style" style={{ fontSize: 44 }}>
             EBRAINS Live Paper Builder
           </div>
-          <div
-            className="title-solid-style"
-            style={{ fontSize: 32, color: "#00A595" }}
-          >
+          <div className="title-solid-style" style={{ fontSize: 32, color: "#00A595" }}>
             Quickly create and distribute interactive live papers
           </div>
         </div>
@@ -579,7 +565,7 @@ class App extends React.Component {
             textAlign: "right",
             fontSize: 8,
             lineHeight: 1.2,
-            marginBottom: "30px"
+            marginBottom: "30px",
           }}
         >
           Version: {buildInfo.gitCommit}
@@ -593,29 +579,23 @@ class App extends React.Component {
             lineHeight: 1.75,
           }}
         >
-          <strong style={{ fontSize: 18 }}>
-            Welcome to the EBRAINS live paper builder!
-          </strong>
+          <strong style={{ fontSize: 18 }}>Welcome to the EBRAINS live paper builder!</strong>
           <br />
           <WarningBox message={kgStatus} />
           <br />
-          Here you can start building a new live paper linked to your manuscript
-          or published article. The live paper builder allows you to build the
-          live paper without any web development skills. Various functionalities
-          for building a simple to moderately complex live paper is made
-          available via this tool. For more advanced features and
-          customizations, the users can edit the live Papers generated by this
-          tool.
+          Here you can start building a new live paper linked to your manuscript or published article. The live
+          paper builder allows you to build the live paper without any web development skills. Various
+          functionalities for building a simple to moderately complex live paper is made available via this
+          tool. For more advanced features and customizations, the users can edit the live Papers generated by
+          this tool.
           <br />
           <br />
-          Live papers are often not produced in one go, and might require
-          revisions over time. Keeping this in mind, we allow users to download
-          "live paper projects" at any point of development. These project files
-          can be loaded later, to continue from where you had left off. Please
-          note, that these project files should not be manually edited as it
-          could render them unreadable by the tool. Alternatively, users also
-          have the option of loading an existing project that was previously
-          saved on the EBRAINS Knowledge Graph.
+          Live papers are often not produced in one go, and might require revisions over time. Keeping this in
+          mind, we allow users to download "live paper projects" at any point of development. These project
+          files can be loaded later, to continue from where you had left off. Please note, that these project
+          files should not be manually edited as it could render them unreadable by the tool. Alternatively,
+          users also have the option of loading an existing project that was previously saved on the EBRAINS
+          Knowledge Graph.
           <br />
           <br />
           <div

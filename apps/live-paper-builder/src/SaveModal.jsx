@@ -37,8 +37,7 @@ export default class SaveModal extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.checkRequirementsOnPage = this.checkRequirementsOnPage.bind(this);
-    this.checkRequirementsOnPayload =
-      this.checkRequirementsOnPayload.bind(this);
+    this.checkRequirementsOnPayload = this.checkRequirementsOnPayload.bind(this);
     this.handleErrorDialogClose = this.handleErrorDialogClose.bind(this);
     this.handleCollabIDChange = this.handleCollabIDChange.bind(this);
     this.handleLivePaperNameChange = this.handleLivePaperNameChange.bind(this);
@@ -132,8 +131,7 @@ export default class SaveModal extends React.Component {
         if (this.state.mode === "Save to Existing") {
           found = res.data.find(
             // allow if it is the existing LP entry with same name and id
-            (item) =>
-              item.live_paper_title === name && item.id !== this.props.data.id
+            (item) => item.live_paper_title === name && item.id !== this.props.data.id
           );
         } else {
           found = res.data.find((item) => item.live_paper_title === name);
@@ -164,112 +162,103 @@ export default class SaveModal extends React.Component {
   }
 
   handleSave() {
-    this.setState(
-      { loading: true, live_paper_title_unique: null },
-      async () => {
-        const payload = {
-          ...this.adjustForKGSchema(this.props.data),
-          collab_id: this.state.collab_id,
-          live_paper_title: this.state.live_paper_title,
-        };
-        // as currently API does not allow `null` for `associated_paper_title`
-        payload["associated_paper_title"] =
-          this.props.data.associated_paper_title;
-        console.log(payload);
-        if (
-          this.checkRequirementsOnPage() &&
-          this.checkRequirementsOnPayload(payload)
-        ) {
-          let isUnique = await this.checkLivePaperNameUnique(
-            this.state.live_paper_title
-          );
-          // console.log("isUnique: ", isUnique);
-          if (isUnique) {
-            let url = baseUrl + "/livepapers/";
-            let config = {
-              cancelToken: this.signal.token,
-              headers: {
-                Authorization: "Bearer " + this.context.auth[0].token,
-                "Content-type": "application/json",
-              },
-            };
+    this.setState({ loading: true, live_paper_title_unique: null }, async () => {
+      const payload = {
+        ...this.adjustForKGSchema(this.props.data),
+        collab_id: this.state.collab_id,
+        live_paper_title: this.state.live_paper_title,
+      };
+      // as currently API does not allow `null` for `associated_paper_title`
+      payload["associated_paper_title"] = this.props.data.associated_paper_title;
+      console.log(payload);
+      if (this.checkRequirementsOnPage() && this.checkRequirementsOnPayload(payload)) {
+        let isUnique = await this.checkLivePaperNameUnique(this.state.live_paper_title);
+        // console.log("isUnique: ", isUnique);
+        if (isUnique) {
+          let url = baseUrl + "/livepapers/";
+          let config = {
+            cancelToken: this.signal.token,
+            headers: {
+              Authorization: "Bearer " + this.context.auth[0].token,
+              "Content-type": "application/json",
+            },
+          };
 
-            if (this.state.mode === "Save to Existing") {
-              console.log("PUT");
-              url = url + this.props.data.id;
-              axios
-                .put(url, payload, config)
-                .then((res) => {
-                  // PUT returns null on success
-                  // console.log(res);
-                  // console.log("UUID = ", res.data.id);
-                  // this.props.setID(res.data.id);
-                  this.props.setCollabID(this.state.collab_id);
-                  this.props.setLivePaperTitle(this.state.live_paper_title);
-                  this.props.setLivePaperModifiedDate(payload.modified_date);
-                  this.setState({ loading: false });
-                  showNotification(
-                    this.props.enqueueSnackbar,
-                    this.props.closeSnackbar,
-                    "Saved to KG!",
-                    "success"
-                  );
-                  this.props.onClose(true);
-                })
-                .catch((err) => {
-                  if (axios.isCancel(err)) {
-                    console.log("Error: ", err.message);
-                  } else {
-                    console.log(err.response || err);
-                    this.setState({
-                      error: err.response || err,
-                    });
-                  }
-                  this.setState({ loading: false });
-                });
-            } else {
-              console.log("POST");
-              // Set id to null for creating new entry via POST
-              payload.id = null;
-              console.log(payload);
-              axios
-                .post(url, payload, config)
-                .then((res) => {
-                  console.log(res);
-                  console.log("UUID = ", res.data.id);
-                  this.props.setID(res.data.id);
-                  this.props.setCollabID(this.state.collab_id);
-                  this.props.setLivePaperTitle(this.state.live_paper_title);
-                  this.props.setLivePaperModifiedDate(payload.modified_date);
-                  this.setState({ loading: false });
-                  showNotification(
-                    this.props.enqueueSnackbar,
-                    this.props.closeSnackbar,
-                    "Saved to KG!",
-                    "success"
-                  );
-                  this.props.onClose(true);
-                })
-                .catch((err) => {
-                  if (axios.isCancel(err)) {
-                    console.log("Error: ", err.message);
-                  } else {
-                    console.log(err.response || err);
-                    this.setState({
-                      error: err.response || err,
-                    });
-                  }
-                  this.setState({ loading: false });
-                });
-            }
+          if (this.state.mode === "Save to Existing") {
+            console.log("PUT");
+            url = url + this.props.data.id;
+            axios
+              .put(url, payload, config)
+              .then((res) => {
+                // PUT returns null on success
+                // console.log(res);
+                // console.log("UUID = ", res.data.id);
+                // this.props.setID(res.data.id);
+                this.props.setCollabID(this.state.collab_id);
+                this.props.setLivePaperTitle(this.state.live_paper_title);
+                this.props.setLivePaperModifiedDate(payload.modified_date);
+                this.setState({ loading: false });
+                showNotification(
+                  this.props.enqueueSnackbar,
+                  this.props.closeSnackbar,
+                  "Saved to KG!",
+                  "success"
+                );
+                this.props.onClose(true);
+              })
+              .catch((err) => {
+                if (axios.isCancel(err)) {
+                  console.log("Error: ", err.message);
+                } else {
+                  console.log(err.response || err);
+                  this.setState({
+                    error: err.response || err,
+                  });
+                }
+                this.setState({ loading: false });
+              });
           } else {
-            this.setState({ loading: false });
+            console.log("POST");
+            // Set id to null for creating new entry via POST
+            payload.id = null;
+            console.log(payload);
+            axios
+              .post(url, payload, config)
+              .then((res) => {
+                console.log(res);
+                console.log("UUID = ", res.data.id);
+                this.props.setID(res.data.id);
+                this.props.setCollabID(this.state.collab_id);
+                this.props.setLivePaperTitle(this.state.live_paper_title);
+                this.props.setLivePaperModifiedDate(payload.modified_date);
+                this.setState({ loading: false });
+                showNotification(
+                  this.props.enqueueSnackbar,
+                  this.props.closeSnackbar,
+                  "Saved to KG!",
+                  "success"
+                );
+                this.props.onClose(true);
+              })
+              .catch((err) => {
+                if (axios.isCancel(err)) {
+                  console.log("Error: ", err.message);
+                } else {
+                  console.log(err.response || err);
+                  this.setState({
+                    error: err.response || err,
+                  });
+                }
+                this.setState({ loading: false });
+              });
           }
         } else {
           this.setState({ loading: false });
         }
+      } else {
+        this.setState({ loading: false });
       }
-    );
+    });
   }
 
   adjustForKGSchema(data) {
@@ -342,12 +331,10 @@ export default class SaveModal extends React.Component {
           <DialogContent>
             <LoadingIndicatorModal open={this.state.loading} />
             <Box my={2}>
-              Each Live Paper needs to be associated with a Collab on the
-              EBRAINS Collaboratory, to handle access permissions for Live
-              Papers prior to their publication, and any further editing in
-              future. Accordingly, please specify a Collab for this live paper.
-              You may need to create a new Collab if you don't already have
-              access to one.{" "}
+              Each Live Paper needs to be associated with a Collab on the EBRAINS Collaboratory, to handle
+              access permissions for Live Papers prior to their publication, and any further editing in future.
+              Accordingly, please specify a Collab for this live paper. You may need to create a new Collab if
+              you don't already have access to one.{" "}
               <a
                 href="https://wiki.ebrains.eu/bin/view/Collabs?clbaction=create"
                 target="_blank"
@@ -358,10 +345,8 @@ export default class SaveModal extends React.Component {
               to create a new Collab.
               <br />
               <br />
-              <strong>Note:</strong> Please select a{" "}
-              <strong>private Collab</strong> to ensure that the live paper
-              content is viewable only to Live Paper owners prior to
-              publication.
+              <strong>Note:</strong> Please select a <strong>private Collab</strong> to ensure that the live
+              paper content is viewable only to Live Paper owners prior to publication.
             </Box>
             <Box my={2}>
               <SingleSelect
@@ -396,9 +381,8 @@ export default class SaveModal extends React.Component {
                 <p>
                   <strong>Live paper title:</strong>
                   <br />
-                  The live paper title would be used for identifying this live
-                  paper when loading existing projects. If, during development,
-                  you wish to create multiple versions of the same live paper,
+                  The live paper title would be used for identifying this live paper when loading existing
+                  projects. If, during development, you wish to create multiple versions of the same live paper,
                   please use different live paper titles for each.
                 </p>
               </div>
@@ -423,27 +407,22 @@ export default class SaveModal extends React.Component {
                   <strong>A Live Paper title must be specified!</strong>
                 </div>
               )}
-              {this.state.live_paper_title &&
-                this.state.live_paper_title_unique === false && (
-                  <div style={{ color: "red", paddingTop: "10px" }}>
-                    <strong>
-                      The live paper title '
-                      <pre style={{ display: "inline" }}>
-                        {this.state.live_paper_title}
-                      </pre>
-                      ' is already us use by another live paper. Please enter a
-                      different name.
-                    </strong>
-                  </div>
-                )}
+              {this.state.live_paper_title && this.state.live_paper_title_unique === false && (
+                <div style={{ color: "red", paddingTop: "10px" }}>
+                  <strong>
+                    The live paper title '<pre style={{ display: "inline" }}>{this.state.live_paper_title}</pre>
+                    ' is already us use by another live paper. Please enter a different name.
+                  </strong>
+                </div>
+              )}
             </Box>
             {this.props.data.id && (
               <Box my={3}>
                 <div>
                   <p>
                     <strong>
-                      This live paper has previously been saved on the Knowledge
-                      Graph. Overwrite the existing entry, or save as new entry:
+                      This live paper has previously been saved on the Knowledge Graph. Overwrite the existing
+                      entry, or save as new entry:
                     </strong>
                   </p>
                 </div>
@@ -490,10 +469,7 @@ export default class SaveModal extends React.Component {
                 color="primary"
                 style={{
                   width: "20%",
-                  backgroundColor:
-                    this.state.collab_id && this.state.live_paper_title
-                      ? "#4DC26D"
-                      : "#FFFFFF",
+                  backgroundColor: this.state.collab_id && this.state.live_paper_title ? "#4DC26D" : "#FFFFFF",
                   color: "#000000",
                   fontWeight: "bold",
                   border: "solid",

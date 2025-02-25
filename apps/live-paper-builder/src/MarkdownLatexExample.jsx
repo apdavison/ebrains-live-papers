@@ -69,8 +69,8 @@ Lorem ipsum dolor sit amet, ~E=mc^2~ consectetur adipiscing elit.
         >
           <b>Click here</b>
         </a>{" "}
-        for more detailed info and access to a live visualizer. Check the
-        sections titled 'Try the live demo' and 'Examples'.
+        for more detailed info and access to a live visualizer. Check the sections titled 'Try the live demo'
+        and 'Examples'.
       </div>
     </div>
   );

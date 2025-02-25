@@ -30,11 +30,7 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon style={{ color: "#000000" }} />
         </IconButton>
       ) : null}
@@ -72,9 +68,7 @@ export default class DialogConfirm extends React.Component {
             onClose={() => this.props.handleClose(false)}
             style={{ backgroundColor: this.props.headerBgColor || "#00A595" }}
           >
-            <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-              {this.props.title}
-            </span>
+            <span style={{ fontWeight: "bolder", fontSize: 18 }}>{this.props.title}</span>
           </DialogTitle>
           <DialogContent dividers>
             {typeof this.props.content === "string" ? (

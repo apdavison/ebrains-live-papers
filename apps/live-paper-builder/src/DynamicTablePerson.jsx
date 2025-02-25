@@ -148,9 +148,7 @@ export default class DynamicTablePerson extends React.Component {
               <th style={{ padding: "5px 10px" }}>First Name</th>
               <th style={{ padding: "5px 10px" }}>Last Name</th>
               <th style={{ padding: "5px 10px" }}>Affiliation</th>
-              <th style={{ padding: "5px 0px 5px 10 px" }}>
-                {/* delete button */}
-              </th>
+              <th style={{ padding: "5px 0px 5px 10 px" }}>{/* delete button */}</th>
             </tr>
           </thead>
           <tbody>{this.renderRows()}</tbody>

@@ -39,7 +39,7 @@ const theme = createTheme({
       h6: {
         fontWeight: "bolder !important",
         color: "#000000",
-      }
+      },
       //},
       // MuiTableRow: {
       //   hover: {
@@ -48,8 +48,8 @@ const theme = createTheme({
       //     },
       //   },
       //},
-    }
-  }
+    },
+  },
 });
 
 export default class LoadKGProjects extends React.Component {
@@ -174,9 +174,9 @@ export default class LoadKGProjects extends React.Component {
           <DialogContent>
             <LoadingIndicatorModal open={this.state.loading} />
             <Box my={2}>
-              To have edit permissions on a live paper, you must be a member of
-              the live paper's host Collab. You currrently have permissions to
-              edit the below listed live paper projects on the Knowledge Graph.
+              To have edit permissions on a live paper, you must be a member of the live paper's host Collab.
+              You currrently have permissions to edit the below listed live paper projects on the Knowledge
+              Graph.
             </Box>
             <Box my={2}>
               <ThemeProvider theme={theme}>
@@ -184,9 +184,7 @@ export default class LoadKGProjects extends React.Component {
                   title="Live Paper Projects"
                   data={this.props.kg_project_list}
                   columns={TABLE_COLUMNS}
-                  onRowClick={(evt, selectedRow) =>
-                    this.setState({ selectedRow: selectedRow.tableData.id })
-                  }
+                  onRowClick={(evt, selectedRow) => this.setState({ selectedRow: selectedRow.tableData.id })}
                   options={{
                     search: true,
                     paging: false,
@@ -202,10 +200,7 @@ export default class LoadKGProjects extends React.Component {
                       fontSize: 16,
                     },
                     rowStyle: (rowData) => ({
-                      backgroundColor:
-                        this.state.selectedRow === rowData.tableData.id
-                          ? "#FFD180"
-                          : "#EFF7E5",
+                      backgroundColor: this.state.selectedRow === rowData.tableData.id ? "#FFD180" : "#EFF7E5",
                     }),
                   }}
                   components={{
@@ -264,9 +259,7 @@ export default class LoadKGProjects extends React.Component {
                   borderWidth: "1px",
                 }}
                 onClick={this.handleSelectProject}
-                disabled={
-                  !this.state.selectedRow
-                }
+                disabled={!this.state.selectedRow}
               >
                 Load Project
               </Button>

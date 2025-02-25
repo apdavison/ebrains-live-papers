@@ -86,11 +86,7 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon style={{ color: "#000000" }} />
         </IconButton>
       ) : null}
@@ -249,10 +245,7 @@ function IncludeButton(props) {
   //   console.log(props);
   if (props.includeFlag) {
     return (
-      <Tooltip
-        title="Remove morphology instance from collection"
-        placement="top"
-      >
+      <Tooltip title="Remove morphology instance from collection" placement="top">
         <Button
           variant="contained"
           style={{
@@ -263,12 +256,7 @@ function IncludeButton(props) {
             width: "150px",
           }}
           startIcon={<RemoveFromQueueIcon />}
-          onClick={() =>
-            props.removeInstanceCollection(
-              props.morphology_id,
-              props.instance_id
-            )
-          }
+          onClick={() => props.removeInstanceCollection(props.morphology_id, props.instance_id)}
         >
           Remove
         </Button>
@@ -372,11 +360,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
               <b>Morphology Details:</b>
             </Typography>
             <Link
-              href={
-                neuromorpho_viewUrl +
-                "/neuron_info.jsp?neuron_name=" +
-                this.props.data.neuron_name
-              }
+              href={neuromorpho_viewUrl + "/neuron_info.jsp?neuron_name=" + this.props.data.neuron_name}
               target="_blank"
               rel="noreferrer"
               underline="none"
@@ -392,11 +376,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -408,10 +388,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
                   <p variant="subtitle2">
-                    Morphology Name:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {this.props.data.neuron_name}
-                    </span>
+                    Morphology Name: <span style={{ fontWeight: "bold" }}>{this.props.data.neuron_name}</span>
                   </p>
                 </Box>
               </Grid>
@@ -425,10 +402,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
                   }}
                 >
                   <Typography variant="body2">
-                    Morphology ID:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {this.props.data.neuron_id}
-                    </span>
+                    Morphology ID: <span style={{ fontWeight: "bold" }}>{this.props.data.neuron_id}</span>
                   </Typography>
                 </Box>
               </Grid>
@@ -459,10 +433,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
                       />
                     ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
@@ -471,9 +442,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
                     "NeuroMorpho_" + this.props.data.neuron_id.toString(),
                     "0"
                   )}
-                  morphology_id={
-                    "NeuroMorpho_" + this.props.data.neuron_id.toString()
-                  }
+                  morphology_id={"NeuroMorpho_" + this.props.data.neuron_id.toString()}
                   morphology_name={this.props.data.neuron_name}
                   instance_id={"0"}
                   instance_name={""}
@@ -485,11 +454,7 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
                     this.props.data.neuron_name +
                     ".CNG.swc"
                   }
-                  view_url={
-                    neuromorpho_viewUrl +
-                    "/neuron_info.jsp?neuron_name=" +
-                    this.props.data.neuron_name
-                  }
+                  view_url={neuromorpho_viewUrl + "/neuron_info.jsp?neuron_name=" + this.props.data.neuron_name}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />
@@ -522,15 +487,12 @@ export class NeuroMorphoContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
           title={
-            "Morphologies (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
+            "Morphologies (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")
           }
           data={this.props.data}
           columns={NeuroMorpho_TABLE_COLUMNS}
@@ -551,18 +513,13 @@ export class NeuroMorphoContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -604,10 +561,7 @@ export class NeuroMorphoContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of morphology instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of morphology instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -642,11 +596,7 @@ class AllenBrainContentMorphologyPanel extends React.Component {
               <b>Morphology Details:</b>
             </Typography>
             <Link
-              href={
-                allenbrain_viewMorphologyUrl +
-                "/" +
-                this.props.data.specimen__id
-              }
+              href={allenbrain_viewMorphologyUrl + "/" + this.props.data.specimen__id}
               target="_blank"
               rel="noreferrer"
               underline="none"
@@ -662,11 +612,7 @@ class AllenBrainContentMorphologyPanel extends React.Component {
           </Grid>
         </Grid>
         <div style={{ marginBottom: "25px" }}>
-          <Box
-            my={2}
-            pb={0}
-            style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}
-          >
+          <Box my={2} pb={0} style={{ backgroundColor: "#FFF1CC", marginBottom: "20px" }}>
             <Grid
               container
               style={{
@@ -695,10 +641,7 @@ class AllenBrainContentMorphologyPanel extends React.Component {
                   }}
                 >
                   <Typography variant="body2">
-                    Morphology ID:{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {this.props.data.specimen__id}
-                    </span>
+                    Morphology ID: <span style={{ fontWeight: "bold" }}>{this.props.data.specimen__id}</span>
                   </Typography>
                 </Box>
               </Grid>
@@ -745,10 +688,7 @@ class AllenBrainContentMorphologyPanel extends React.Component {
                       />
                     ))}
                   </div>
-                  <InstanceParameter
-                    label={"param"}
-                    value={this.props.data[this.state.selectedParam]}
-                  />
+                  <InstanceParameter label={"param"} value={this.props.data[this.state.selectedParam]} />
                 </div>
               </Grid>
               <Grid item xs={3} style={{ paddingBottom: "35px" }}>
@@ -761,14 +701,8 @@ class AllenBrainContentMorphologyPanel extends React.Component {
                   morphology_name={this.props.data.specimen__name}
                   instance_id={"0"}
                   instance_name={""}
-                  source_url={
-                    allenbrain_downloadUrl + "/" + this.props.data.download__id
-                  }
-                  view_url={
-                    allenbrain_viewMorphologyUrl +
-                    "/" +
-                    this.props.data.specimen__id
-                  }
+                  source_url={allenbrain_downloadUrl + "/" + this.props.data.download__id}
+                  view_url={allenbrain_viewMorphologyUrl + "/" + this.props.data.specimen__id}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />
@@ -802,15 +736,12 @@ export class AllenBrainContent extends React.Component {
             alignItems: "center",
           }}
         >
-          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other
-          columns, and click on &nbsp; <FilterListIcon /> &nbsp; to filter the
-          contents for each column.
+          Please click on &nbsp; <ViewColumnIcon /> &nbsp; to hide/show other columns, and click on &nbsp;{" "}
+          <FilterListIcon /> &nbsp; to filter the contents for each column.
         </div>
         <MaterialTable
           title={
-            "Morphologies (" +
-            this.props.data.length +
-            (this.props.data.length === 1 ? " entry)" : " entries)")
+            "Morphologies (" + this.props.data.length + (this.props.data.length === 1 ? " entry)" : " entries)")
           }
           data={this.props.data}
           columns={AllenBrain_TABLE_COLUMNS}
@@ -831,18 +762,13 @@ export class AllenBrainContent extends React.Component {
               fontSize: 15,
             },
             rowStyle: (rowData) => ({
-              backgroundColor: this.state.selectedRows.includes(
-                rowData.tableData.id
-              )
-                ? "#13AC8B"
-                : "#EEEEEE",
+              backgroundColor: this.state.selectedRows.includes(rowData.tableData.id) ? "#13AC8B" : "#EEEEEE",
             }),
           }}
           actions={[
             {
               icon: "filter_list",
-              onClick: () =>
-                this.setState({ filtering: !this.state.filtering }),
+              onClick: () => this.setState({ filtering: !this.state.filtering }),
               position: "toolbar",
               tooltip: "Show Filters",
             },
@@ -884,10 +810,7 @@ export class AllenBrainContent extends React.Component {
             width: "100%",
           }}
         >
-          <h6>
-            {"Number of morphology instances selected: " +
-              this.props.countTotalInstances()}
-          </h6>
+          <h6>{"Number of morphology instances selected: " + this.props.countTotalInstances()}</h6>
         </div>
       </div>
     );
@@ -907,8 +830,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
       morphology_ids: "",
     };
 
-    this.getListMorphologyNeuroMorpho =
-      this.getListMorphologyNeuroMorpho.bind(this);
+    this.getListMorphologyNeuroMorpho = this.getListMorphologyNeuroMorpho.bind(this);
     this.handleFiltersChange = this.handleFiltersChange.bind(this);
     this.toggleSearchByID = this.toggleSearchByID.bind(this);
     this.handleIDsChange = this.handleIDsChange.bind(this);
@@ -944,8 +866,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
       list_morphology_ids = [...new Set(list_morphology_ids)];
 
       list_morphology_ids.forEach(function (morphology_id, i) {
-        let url =
-          neuromorpho_baseUrl + "/neuron/id/" + parseInt(morphology_id, 10);
+        let url = neuromorpho_baseUrl + "/neuron/id/" + parseInt(morphology_id, 10);
         neuroMorphoreqs.push(axios.get(url));
       });
 
@@ -989,9 +910,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
                   : null,
                 cell_type_3: item.cell_type
                   ? item.cell_type.length > 2
-                    ? item.cell_type
-                        .splice(0, item.cell_type.length - 2)
-                        .join(", ")
+                    ? item.cell_type.splice(0, item.cell_type.length - 2).join(", ")
                     : null
                   : null,
                 deposition_date: item.deposition_date,
@@ -1057,12 +976,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
           let neuroMorphoreqs = [];
           if (numPages > 1) {
             for (let ind = 1; ind < numPages; ind++) {
-              url =
-                neuromorpho_baseUrl +
-                "/neuron/select?" +
-                encodeURI(query) +
-                "&page=" +
-                ind;
+              url = neuromorpho_baseUrl + "/neuron/select?" + encodeURI(query) + "&page=" + ind;
               neuroMorphoreqs.push(axios.get(url));
             }
           }
@@ -1107,9 +1021,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
                     : null,
                   cell_type_3: item.cell_type
                     ? item.cell_type.length > 2
-                      ? item.cell_type
-                          .splice(0, item.cell_type.length - 2)
-                          .join(", ")
+                      ? item.cell_type.splice(0, item.cell_type.length - 2).join(", ")
                       : null
                     : null,
                   deposition_date: item.deposition_date,
@@ -1144,10 +1056,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
         .catch((err) => {
           if (axios.isCancel(err)) {
             console.log("errorUpdate: ", err.message);
-          } else if (
-            err.response.status === 404 &&
-            err.response.statusText === "Not Found"
-          ) {
+          } else if (err.response.status === 404 && err.response.statusText === "Not Found") {
             context.props.setListMorphology([], false, null);
           } else {
             // Something went wrong. Save the error in state and re-render.
@@ -1161,9 +1070,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
     console.log(event);
     const newConfig = { ...this.state.configFilters };
     newConfig[event.target.name] =
-      typeof event.target.value === "string"
-        ? [event.target.value]
-        : event.target.value;
+      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
     this.setState({ configFilters: newConfig });
   }
 
@@ -1191,22 +1098,15 @@ export class FilterPanelNeuroMorpho extends React.Component {
       <div>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by NeuroMorpho.Org ID?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by NeuroMorpho.Org ID?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the morphology IDs below:</h6>
             <em>
-              Note: you can enter multiple IDs by separating them with a comma
-              (e.g. NMO_00001, NMO_124073)
+              Note: you can enter multiple IDs by separating them with a comma (e.g. NMO_00001, NMO_124073)
             </em>
             <form>
               <TextField
@@ -1265,8 +1165,7 @@ export class FilterPanelAllenBrain extends React.Component {
       morphology_ids: "",
     };
 
-    this.getListMorphologyAllenBrain =
-      this.getListMorphologyAllenBrain.bind(this);
+    this.getListMorphologyAllenBrain = this.getListMorphologyAllenBrain.bind(this);
     this.toggleSearchByID = this.toggleSearchByID.bind(this);
     this.handleIDsChange = this.handleIDsChange.bind(this);
   }
@@ -1308,8 +1207,7 @@ export class FilterPanelAllenBrain extends React.Component {
             if (
               res[ind].status === "fulfilled" &&
               (res[ind].value.data.msg[0].nr__reconstruction_type === "full" ||
-                res[ind].value.data.msg[0].nr__reconstruction_type ===
-                  "dendrite-only")
+                res[ind].value.data.msg[0].nr__reconstruction_type === "dendrite-only")
             ) {
               let item = res[ind].value.data.msg[0];
               morphology_list.push({
@@ -1356,9 +1254,7 @@ export class FilterPanelAllenBrain extends React.Component {
         });
     } else {
       // as AllenBrain collection is loaded via CSV file, we offer filtering on the front-end
-      let url =
-        corsProxy +
-        "https://celltypes.brain-map.org/cell_types_specimen_details.csv";
+      let url = corsProxy + "https://celltypes.brain-map.org/cell_types_specimen_details.csv";
       try {
         readRemoteFile(url, {
           header: true,
@@ -1366,10 +1262,7 @@ export class FilterPanelAllenBrain extends React.Component {
             console.log(res);
             let morphology_list = [];
             for (let item of res.data) {
-              if (
-                item.nr__reconstruction_type === "full" ||
-                item.nr__reconstruction_type === "dendrite-only"
-              ) {
+              if (item.nr__reconstruction_type === "full" || item.nr__reconstruction_type === "dendrite-only") {
                 morphology_list.push({
                   specimen__id: item.specimen__id,
                   specimen__name: item.specimen__name,
@@ -1387,8 +1280,7 @@ export class FilterPanelAllenBrain extends React.Component {
                   tag__apical: item.tag__apical,
                   tag__dendrite_type: item.tag__dendrite_type,
                   ephys_thumb_path: item.ephys_thumb_path,
-                  ephys_inst_thresh_thumb_path:
-                    item.ephys_inst_thresh_thumb_path,
+                  ephys_inst_thresh_thumb_path: item.ephys_inst_thresh_thumb_path,
                   download__id: item.nrwkf__id,
                   reconstruction_type: item.nr__reconstruction_type,
                 });
@@ -1433,35 +1325,28 @@ export class FilterPanelAllenBrain extends React.Component {
       <div>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <div style={{ color: "red", paddingBottom: "10px" }}>
-            <strong>Note: </strong> Currently unavailable as files have some
-            compatibility issues with PyNWB and Neo.
+            <strong>Note: </strong> Currently unavailable as files have some compatibility issues with PyNWB and
+            Neo.
           </div>
           <h6>
             Allen Brain Atlas:{" "}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://alleninstitute.org/legal/citation-policy/"
-            >
+            <a target="_blank" rel="noreferrer" href="https://alleninstitute.org/legal/citation-policy/">
               Citation Policy
             </a>
           </h6>
           <div>
-            Use one of the following general citation formats for any Allen
-            Institute resource:
+            Use one of the following general citation formats for any Allen Institute resource:
             <ul>
               <li style={{ marginBottom: "10px" }}>
                 <em>
-                  © [[year of first publication]] Allen Institute for Brain
-                  Science. [Name of Allen Institute Resource]. Available from:
-                  [Resource URL]
+                  © [[year of first publication]] Allen Institute for Brain Science. [Name of Allen Institute
+                  Resource]. Available from: [Resource URL]
                 </em>
               </li>
               <li style={{ marginBottom: "10px" }}>
                 <em>
-                  © [[year of first publication]] Allen Institute for Cell
-                  Science. [Name of Allen Institute Resource]. Available from:
-                  [Resource URL]
+                  © [[year of first publication]] Allen Institute for Cell Science. [Name of Allen Institute
+                  Resource]. Available from: [Resource URL]
                 </em>
               </li>
             </ul>
@@ -1469,22 +1354,15 @@ export class FilterPanelAllenBrain extends React.Component {
         </Grid>
         <Grid item xs={12} style={{ paddingBottom: "10px" }}>
           <h6>
-            <span style={{ paddingRight: "10px" }}>
-              Do you wish to search by cell ID?
-            </span>
-            <ToggleSwitch
-              id="searchSwitch"
-              checked={this.state.searchByID}
-              onChange={this.toggleSearchByID}
-            />
+            <span style={{ paddingRight: "10px" }}>Do you wish to search by cell ID?</span>
+            <ToggleSwitch id="searchSwitch" checked={this.state.searchByID} onChange={this.toggleSearchByID} />
           </h6>
         </Grid>
         {this.state.searchByID && (
           <div>
             <h6>Please enter the cell IDs below:</h6>
             <em>
-              Note: you can enter multiple IDs by separating them with a comma
-              (e.g. 643575207, 614767057)
+              Note: you can enter multiple IDs by separating them with a comma (e.g. 643575207, 614767057)
             </em>
             <form>
               <TextField
@@ -1510,8 +1388,8 @@ export class FilterPanelAllenBrain extends React.Component {
         {!this.state.searchByID && (
           <div>
             <h6>
-              Click "Proceed" to fetch all entries from Allen Brain Atlas, and
-              you can subsequently filter them by individual attributes.
+              Click "Proceed" to fetch all entries from Allen Brain Atlas, and you can subsequently filter them
+              by individual attributes.
             </h6>
           </div>
         )}
@@ -1578,25 +1456,14 @@ export default class DBInputMorphology extends React.Component {
     this.setState({ error: null });
   }
 
-  addInstanceCollection(
-    morphology_id,
-    morphology_name,
-    instance_id,
-    instance_name,
-    source_url,
-    view_url
-  ) {
+  addInstanceCollection(morphology_id, morphology_name, instance_id, instance_name, source_url, view_url) {
     console.log("Add");
 
     let morphology_collection = this.state.morphology_collection;
     if (Object.keys(morphology_collection).includes(morphology_id)) {
-      if (
-        !Object.keys(morphology_collection[morphology_id]).includes(instance_id)
-      ) {
+      if (!Object.keys(morphology_collection[morphology_id]).includes(instance_id)) {
         morphology_collection[morphology_id][instance_id] = {
-          label: instance_name
-            ? morphology_name + " (" + instance_name + ")"
-            : morphology_name,
+          label: instance_name ? morphology_name + " (" + instance_name + ")" : morphology_name,
           source_url: source_url,
           view_url: view_url,
         };
@@ -1604,9 +1471,7 @@ export default class DBInputMorphology extends React.Component {
     } else {
       morphology_collection[morphology_id] = {
         [instance_id]: {
-          label: instance_name
-            ? morphology_name + " (" + instance_name + ")"
-            : morphology_name,
+          label: instance_name ? morphology_name + " (" + instance_name + ")" : morphology_name,
           source_url: source_url,
           view_url: view_url,
         },
@@ -1623,9 +1488,7 @@ export default class DBInputMorphology extends React.Component {
 
     let morphology_collection = this.state.morphology_collection;
     if (Object.keys(morphology_collection).includes(morphology_id)) {
-      if (
-        Object.keys(morphology_collection[morphology_id]).includes(instance_id)
-      ) {
+      if (Object.keys(morphology_collection[morphology_id]).includes(instance_id)) {
         delete morphology_collection[morphology_id][instance_id];
       }
       if (Object.keys(morphology_collection[morphology_id]).length === 0) {
@@ -1642,9 +1505,7 @@ export default class DBInputMorphology extends React.Component {
     let flag = false;
     let morphology_collection = this.state.morphology_collection;
     if (Object.keys(morphology_collection).includes(morphology_id)) {
-      if (
-        Object.keys(morphology_collection[morphology_id]).includes(instance_id)
-      ) {
+      if (Object.keys(morphology_collection[morphology_id]).includes(instance_id)) {
         flag = true;
       }
     }
@@ -1686,9 +1547,7 @@ export default class DBInputMorphology extends React.Component {
         {this.state.sourceDB === "NeuroMorpho" && (
           <FilterPanelNeuroMorpho
             showFilters={showFilters}
-            validNeuroMorphoFilterValues={
-              this.context.validNeuroMorphoFilterValues[0]
-            }
+            validNeuroMorphoFilterValues={this.context.validNeuroMorphoFilterValues[0]}
             shareGetListMorphology={this.acceptsProceedMethod}
             setListMorphology={this.setListMorphology}
             enqueueSnackbar={this.props.enqueueSnackbar}
@@ -1769,14 +1628,10 @@ export default class DBInputMorphology extends React.Component {
             onClose={() => this.props.handleClose(false)}
             style={{ backgroundColor: "#00A595" }}
           >
-            <span style={{ fontWeight: "bolder", fontSize: 18 }}>
-              Input From Database
-            </span>
+            <span style={{ fontWeight: "bolder", fontSize: 18 }}>Input From Database</span>
           </DialogTitle>
           <DialogContent dividers>
-            {(!this.context.validNeuroMorphoFilterValues[0] &&
-              this.state.showFilters) ||
-            this.state.loading ? (
+            {(!this.context.validNeuroMorphoFilterValues[0] && this.state.showFilters) || this.state.loading ? (
               <div
                 style={{
                   minWidth: 700,
@@ -1864,11 +1719,7 @@ export default class DBInputMorphology extends React.Component {
                 onClick={() =>
                   this.state.showFilters
                     ? this.handleProceed()
-                    : this.props.handleClose(
-                        true,
-                        this.state.morphology_collection,
-                        this.state.sourceDB
-                      )
+                    : this.props.handleClose(true, this.state.morphology_collection, this.state.sourceDB)
                 }
               >
                 {this.state.showFilters ? "Proceed" : "Add Items"}

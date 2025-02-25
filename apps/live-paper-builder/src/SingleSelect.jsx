@@ -38,10 +38,7 @@ export default function SingleSelect(props) {
 
   return (
     <div>
-      <FormControl
-        className={classes.formControl}
-        disabled={props.disabled || false}
-      >
+      <FormControl className={classes.formControl} disabled={props.disabled || false}>
         <InputLabel id={fieldLabelId}>{props.label}</InputLabel>
         <Select
           labelId={fieldLabelId}
@@ -58,9 +55,7 @@ export default function SingleSelect(props) {
             </MenuItem>
           ))}
         </Select>
-        {props.helperText && (
-          <FormHelperText>{props.helperText}</FormHelperText>
-        )}
+        {props.helperText && <FormHelperText>{props.helperText}</FormHelperText>}
       </FormControl>
     </div>
   );

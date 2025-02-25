@@ -39,10 +39,7 @@ export default function MultipleSelect(props) {
 
   return (
     <div>
-      <FormControl
-        className={classes.formControl}
-        disabled={props.disabled || false}
-      >
+      <FormControl className={classes.formControl} disabled={props.disabled || false}>
         <InputLabel id={fieldLabelId}>{props.label}</InputLabel>
         <Select
           labelId={fieldLabelId}
@@ -62,9 +59,7 @@ export default function MultipleSelect(props) {
             </MenuItem>
           ))}
         </Select>
-        {props.helperText && (
-          <FormHelperText>{props.helperText}</FormHelperText>
-        )}
+        {props.helperText && <FormHelperText>{props.helperText}</FormHelperText>}
       </FormControl>
     </div>
   );

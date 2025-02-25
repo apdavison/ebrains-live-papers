@@ -5,21 +5,16 @@ export const livePaperDocsUrl = "/docs";
 export const baseUrl = "https://live-papers-api.apps.tc.humanbrainproject.eu";
 export const vf_baseUrl = "https://model-validation-api.apps.ebrains.eu";
 export const mc_baseUrl = "https://model-catalog.apps.ebrains.eu";
-export const nar_baseUrl =
-  "https://nar-browser-app.apps.tc.humanbrainproject.eu/";
+export const nar_baseUrl = "https://nar-browser-app.apps.tc.humanbrainproject.eu/";
 export const modelDB_baseUrl = "http://modeldb.science/api/v1";
 export const modelDB_viewUrl = "https://senselab.med.yale.edu/modeldb";
 export const osb_baseUrl = "https://www.opensourcebrain.org";
 export const neuromorpho_baseUrl = "https://neuromorpho.org/api";
 export const neuromorpho_viewUrl = "https://neuromorpho.org";
-export const allenbrain_baseUrl =
-  "https://celltypes.brain-map.org/api/v2/data/ApiCellTypesSpecimenDetail";
-export const allenbrain_downloadUrl =
-  "https://celltypes.brain-map.org/api/v2/well_known_file_download";
-export const allenbrain_viewTraceUrl =
-  "https://celltypes.brain-map.org/experiment/electrophysiology";
-export const allenbrain_viewMorphologyUrl =
-  "https://celltypes.brain-map.org/experiment/morphology";
+export const allenbrain_baseUrl = "https://celltypes.brain-map.org/api/v2/data/ApiCellTypesSpecimenDetail";
+export const allenbrain_downloadUrl = "https://celltypes.brain-map.org/api/v2/well_known_file_download";
+export const allenbrain_viewTraceUrl = "https://celltypes.brain-map.org/experiment/electrophysiology";
+export const allenbrain_viewMorphologyUrl = "https://celltypes.brain-map.org/experiment/morphology";
 export const biomodels_baseUrl = "https://www.ebi.ac.uk/biomodels";
 
 export const lp_tool_version = "0.2";
@@ -28,21 +23,9 @@ export const timeout = 1000;
 export const querySizeLimit = 1000000;
 export const separator = "#-#";
 
-export const filterKGModelsKeys = [
-  "species",
-  "brain_region",
-  "cell_type",
-  "model_scope",
-  "abstraction_level",
-];
+export const filterKGModelsKeys = ["species", "brain_region", "cell_type", "model_scope", "abstraction_level"];
 export const filterKGTracesKeys = ["species", "brain_region", "cell_type"];
-export const filterModelDBKeys = [
-  "regions",
-  "celltypes",
-  "modeltypes",
-  "modelconcepts",
-  "simenvironments",
-];
+export const filterModelDBKeys = ["regions", "celltypes", "modeltypes", "modelconcepts", "simenvironments"];
 export const filterNeuroMorphoKeys = [
   "species",
   "brain_region_1",
@@ -50,12 +33,7 @@ export const filterNeuroMorphoKeys = [
   "reconstruction_software",
   "protocol",
 ];
-export const filterBioModelsKeys = [
-  "curationstatus",
-  "modelflag",
-  "modelformat",
-  "modellingapproach",
-];
+export const filterBioModelsKeys = ["curationstatus", "modelflag", "modelformat", "modellingapproach"];
 
 export const isParent = window.opener == null;
 export const isIframe = window !== window.parent;

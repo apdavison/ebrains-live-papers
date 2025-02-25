@@ -9,16 +9,12 @@ const keycloak = new Keycloak({
   "public-client": true,
   "confidential-port": 0,
 });
-const YOUR_APP_SCOPES =
-  "openid group team email profile clb.wiki.read clb.drive:read clb.drive:write"; // full list at https://iam.ebrains.eu/auth/realms/hbp/.well-known/openid-configuration
+const YOUR_APP_SCOPES = "openid group team email profile clb.wiki.read clb.drive:read clb.drive:write"; // full list at https://iam.ebrains.eu/auth/realms/hbp/.well-known/openid-configuration
 
 export default function initAuth(main) {
   console.log("DOM content is loaded, initialising Keycloak client...");
   console.log(window.location.hostname);
-  if (
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-  ) {
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
     // for local development
     keycloak
       .init({ flow: "implicit", promiseType: "native" })
@@ -49,8 +45,7 @@ function checkAuth(main) {
   // Posting and listening to messages
   const postMessageToParentTab = (message, parentTabOrigin) =>
     window.opener.postMessage(message, parentTabOrigin);
-  const listenToMessage = (callback) =>
-    window.addEventListener("message", callback);
+  const listenToMessage = (callback) => window.addEventListener("message", callback);
   const AUTH_MESSAGE = "clb.authenticated";
   const myAppOrigin = window.location.origin;
   // Manipulating URLs and tabs

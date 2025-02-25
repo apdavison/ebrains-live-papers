@@ -42,11 +42,7 @@ class BulkEntryWizardComp extends React.Component {
     console.log(location.hash);
 
     if (location.hash) {
-      if (
-        ["Morphology", "Recordings/Traces", "Models", "Generic"].includes(
-          location.hash.split("#")[1]
-        )
-      ) {
+      if (["Morphology", "Recordings/Traces", "Models", "Generic"].includes(location.hash.split("#")[1])) {
         this.setState({
           section_type: location.hash.split("#")[1],
         });
@@ -86,9 +82,7 @@ class BulkEntryWizardComp extends React.Component {
     // replace undefined and empty strings with null
     value_cleaned = value_cleaned.map((row) => {
       return row.map((cell) => {
-        return cell && cell["value"] && cell["value"] !== "null"
-          ? cell["value"]
-          : null;
+        return cell && cell["value"] && cell["value"] !== "null" ? cell["value"] : null;
       });
     });
 
@@ -122,10 +116,7 @@ class BulkEntryWizardComp extends React.Component {
       },
       () => {
         this.setState((prevState) => ({
-          data: createEmptyMatrix(
-            prevState.num_rows,
-            prevState.mode === "Basic" ? 3 : 5
-          ),
+          data: createEmptyMatrix(prevState.num_rows, prevState.mode === "Basic" ? 3 : 5),
           data_full: createEmptyMatrix(prevState.num_rows, 5),
           data_json: "",
         }));
@@ -192,11 +183,7 @@ class BulkEntryWizardComp extends React.Component {
                 </a>
               </Tooltip>
               <Tooltip title={"Open Documentation"}>
-                <a
-                  href={livePaperDocsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={livePaperDocsUrl} target="_blank" rel="noopener noreferrer">
                   <IconButton aria-label="Open Documentation">
                     <HelpOutlineIcon fontSize="large" />
                   </IconButton>
@@ -218,10 +205,7 @@ class BulkEntryWizardComp extends React.Component {
           <div className="title-solid-style" style={{ fontSize: 44 }}>
             EBRAINS Live Paper Builder - Input Tool
           </div>
-          <div
-            className="title-solid-style"
-            style={{ fontSize: 32, color: "#00A595" }}
-          >
+          <div className="title-solid-style" style={{ fontSize: 32, color: "#00A595" }}>
             Input multiple entries using spreadsheet-based interface
           </div>
         </div>
@@ -244,10 +228,9 @@ class BulkEntryWizardComp extends React.Component {
             textAlign: "justify",
           }}
         >
-          This tool helps input multiple entries at once into Live Paper
-          sections. You can copy-paste content from a spreadsheet or a text file
-          below. 'Basic' mode only displays the minimally required fields, while
-          the 'Advanced' mode displays all fields.
+          This tool helps input multiple entries at once into Live Paper sections. You can copy-paste content
+          from a spreadsheet or a text file below. 'Basic' mode only displays the minimally required fields,
+          while the 'Advanced' mode displays all fields.
           <br />
           <br />
           <div
@@ -263,9 +246,7 @@ class BulkEntryWizardComp extends React.Component {
             }}
           >
             <FormControl variant="filled">
-              <FormHelperText
-                style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}
-              >
+              <FormHelperText style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}>
                 Section Type:
               </FormHelperText>
               <Select
@@ -280,18 +261,14 @@ class BulkEntryWizardComp extends React.Component {
                   <em>None</em>
                 </MenuItem>
                 <MenuItem value={"Morphology"}>Morphology</MenuItem>
-                <MenuItem value={"Recordings/Traces"}>
-                  Recordings/Traces
-                </MenuItem>
+                <MenuItem value={"Recordings/Traces"}>Recordings/Traces</MenuItem>
                 <MenuItem value={"Models"}>Models</MenuItem>
                 <MenuItem value={"Generic"}>Generic</MenuItem>
               </Select>
             </FormControl>
 
             <FormControl variant="filled">
-              <FormHelperText
-                style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}
-              >
+              <FormHelperText style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}>
                 Mode:
               </FormHelperText>
               <Select
@@ -308,9 +285,7 @@ class BulkEntryWizardComp extends React.Component {
             </FormControl>
 
             <FormControl variant="filled">
-              <FormHelperText
-                style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}
-              >
+              <FormHelperText style={{ color: "black", fontSize: 14, fontWeight: "bolder" }}>
                 Show Rows:
               </FormHelperText>
               <Select
@@ -332,18 +307,16 @@ class BulkEntryWizardComp extends React.Component {
           </div>
           {this.state.section_type && (
             <div>
-              <strong>Note: </strong>Changing any of the above options will
-              reset the spreadsheet. If necessary, please copy the content in
-              the spreadsheet first, then change the options, and paste the
-              content back.
+              <strong>Note: </strong>Changing any of the above options will reset the spreadsheet. If necessary,
+              please copy the content in the spreadsheet first, then change the options, and paste the content
+              back.
               <br />
               <br />
               {this.state.mode === "Advanced" ? (
                 <div>
                   <strong>Tip: </strong>
-                  'Type' and 'View URL' can be set to 'URL' and null,
-                  respectively. Alternatively, both can be set to empty strings.
-                  'Tab Name' can be left empty if grouping is not required.
+                  'Type' and 'View URL' can be set to 'URL' and null, respectively. Alternatively, both can be
+                  set to empty strings. 'Tab Name' can be left empty if grouping is not required.
                   <br />
                   <br />
                 </div>
@@ -371,9 +344,8 @@ class BulkEntryWizardComp extends React.Component {
               </div>
               <br />
               <h6 style={{ fontWeight: "bolder" }}>Output Code:</h6>
-              <strong>Note: </strong>Code will be auto-generated based on data
-              in the table above. This can then be copy-pasted into the "Edit
-              Source" window of the corresponding section in the live paper
+              <strong>Note: </strong>Code will be auto-generated based on data in the table above. This can then
+              be copy-pasted into the "Edit Source" window of the corresponding section in the live paper
               builder.
               <br />
               <br />
