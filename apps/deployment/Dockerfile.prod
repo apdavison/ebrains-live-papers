@@ -4,7 +4,7 @@
 # as it contains only the final built app
 
 # build environment
-FROM node:16-alpine as build
+FROM docker-registry.ebrains.eu/live-papers/node:22-alpine AS build
 
 WORKDIR /live-paper-platform
 ENV PATH /live-paper-platform/node_modules/.bin:$PATH
@@ -34,8 +34,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 COPY deployment/nginx-app.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /live-paper-platform/build /usr/share/nginx/html/live-paper-platform
-COPY --from=build /live-paper-builder/build /usr/share/nginx/html/live-paper-builder
+COPY --from=build /live-paper-builder/dist /usr/share/nginx/html/live-paper-builder
 COPY --from=build /live-paper-docs/build /usr/share/nginx/html/live-paper-docs
 EXPOSE 80
-EXPOSE 443
 CMD ["nginx", "-g", "daemon off;"]
