@@ -2,11 +2,11 @@
 export const livePaperPlatformUrl = "/";
 export const livePaperBuilderUrl = "/builder";
 export const livePaperDocsUrl = "/docs";
-export const baseUrl = "https://validation.brainsimulation.eu";
-export const vf_baseUrl = "https://validation.brainsimulation.eu";
-export const mc_baseUrl = "https://model-catalog.brainsimulation.eu";
+export const baseUrl = "https://live-papers-api.apps.tc.humanbrainproject.eu";
+export const vf_baseUrl = "https://model-validation-api.apps.ebrains.eu";
+export const mc_baseUrl = "https://model-catalog.apps.ebrains.eu";
 export const nar_baseUrl =
-  "https://neural-activity-resource.brainsimulation.eu";
+  "https://nar-browser-app.apps.tc.humanbrainproject.eu/";
 export const modelDB_baseUrl = "http://modeldb.science/api/v1";
 export const modelDB_viewUrl = "https://senselab.med.yale.edu/modeldb";
 export const osb_baseUrl = "https://www.opensourcebrain.org";
@@ -76,7 +76,4 @@ export const updateHash = (value) => {
 };
 
 // To access certain APIs that give CORS related issues
-export const corsProxy = "https://corsproxy.hbpneuromorphic.eu/";
-// previously used https://corsproxy-sa.herokuapp.com/
-// other options: https://cors-clear.herokuapp.com/, https://cors-fixer.herokuapp.com/,
-// https://cors-handler.herokuapp.com/, https://cors-anywhere.herokuapp.com/ - latter now has request limits
+export const corsProxy = "https://corsproxy.apps.tc.humanbrainproject.eu/";
