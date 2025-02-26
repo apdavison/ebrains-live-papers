@@ -30,6 +30,7 @@ import {
   updateHash,
 } from "./globals";
 import { compareArrayoOfObjectsByOrder, replaceNullWithEmptyStrings } from "./utils";
+import RainbowRow from "./RainbowRow";
 
 class App extends React.Component {
   signal = axios.CancelToken.source();
@@ -547,16 +548,7 @@ class App extends React.Component {
           </div>
         </div>
         <div style={{ marginBottom: "10px" }}>
-          <div className="rainbow-row">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <RainbowRow />
         </div>
         <div
           style={{
@@ -661,16 +653,7 @@ class App extends React.Component {
         </div>
         <br />
         <br />
-        <div className="rainbow-row">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <RainbowRow />
         <br />
         <br />
         <div>{createLivePaperContent}</div>

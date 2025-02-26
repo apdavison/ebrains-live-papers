@@ -17,6 +17,7 @@ import ErrorDialog from "./ErrorDialog";
 import Tooltip from "@material-ui/core/Tooltip";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import RainbowRow from "./RainbowRow";
 import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 
 const styles = (theme) => ({
@@ -875,16 +876,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                 </div>
               </div>
               <div style={{ marginBottom: "40px" }}>
-                <div className="rainbow-row">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
+                <RainbowRow />
               </div>
               <div
                 style={{
@@ -983,16 +975,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                 <br />
                 {showSelectedPDF}
                 {showInputDOI}
-                <div className="rainbow-row">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
+                <RainbowRow />
                 <br />
                 <br />
               </div>

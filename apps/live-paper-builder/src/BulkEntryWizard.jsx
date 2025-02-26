@@ -19,6 +19,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 import { copyToClipboard } from "./utils";
 import { useSnackbar } from "notistack";
+import RainbowRow from "./RainbowRow";
 
 class BulkEntryWizardComp extends React.Component {
   constructor() {
@@ -210,16 +211,7 @@ class BulkEntryWizardComp extends React.Component {
           </div>
         </div>
         <div style={{ marginBottom: "40px" }}>
-          <div className="rainbow-row">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <RainbowRow />
         </div>
         <div
           style={{
