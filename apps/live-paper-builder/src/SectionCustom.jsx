@@ -25,6 +25,7 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import AspectRatioIcon from "@material-ui/icons/AspectRatio";
 import PhotoSizeSelectSmallIcon from "@material-ui/icons/PhotoSizeSelectSmall";
 import styled from "styled-components";
+import { InvertedIconButton } from "./Buttons";
 
 function HelpContentCustom() {
   const example_markdown = `
@@ -494,18 +495,13 @@ export default class SectionCustom extends React.Component {
                       paddingTop: "20px",
                     }}
                   >
-                    <Button
-                      variant="contained"
-                      color="primary"
+                    <InvertedIconButton
                       onClick={this.toggleExpandSection}
-                      style={{
-                        width: "200px",
-                        backgroundColor: "#795548",
-                      }}
+                      width="200px"
+                      backgroundColor="#795548"
                       startIcon={this.state.expandSection ? <PhotoSizeSelectSmallIcon /> : <AspectRatioIcon />}
-                    >
-                      {this.state.expandSection ? "Collapse" : "Expand"}
-                    </Button>
+                      label={this.state.expandSection ? "Collapse" : "Expand"}
+                    />
                   </div>
                 </Grid>
                 <br />

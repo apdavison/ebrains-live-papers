@@ -18,6 +18,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import RainbowRow from "./RainbowRow";
+import { InvertedButton, StandardButton, WideButton } from "./Buttons";
 import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 
 const styles = (theme) => ({
@@ -552,23 +553,11 @@ class CreateLivePaperLoadPDFData extends React.Component {
         <div style={{ paddingRight: "20px" }}>
           <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
             <div style={{ float: "right", paddingTop: "20px" }}>
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "150px",
-                  backgroundColor: "#4DC26D",
-                  color: "#000000",
-                  fontWeight: "bold",
-                  padding: "10px",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <StandardButton
+                backgroundColor="#4DC26D"
                 onClick={this.proceed}
-              >
-                Proceed
-              </Button>
+                label="Proceed"
+              />
             </div>
           </div>
         </div>
@@ -651,23 +640,11 @@ class CreateLivePaperLoadPDFData extends React.Component {
           <div style={{ paddingRight: "20px" }}>
             <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
               <div style={{ float: "right", paddingTop: "10px" }}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "150px",
-                    backgroundColor: "#4DC26D",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    padding: "10px",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                  }}
+                <StandardButton
+                  backgroundColor="#4DC26D"
                   onClick={this.uploadPDF}
-                >
-                  Upload
-                </Button>
+                  label="Upload"
+                />
               </div>
               <div
                 style={{
@@ -676,23 +653,11 @@ class CreateLivePaperLoadPDFData extends React.Component {
                   paddingRight: "20px",
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "150px",
-                    backgroundColor: "#525252",
-                    color: "#FFFFFF",
-                    fontWeight: "bold",
-                    padding: "10px",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                  }}
+                <InvertedButton
+                  backgroundColor="#525252"
                   onClick={this.cancelSelectPDF}
-                >
-                  Cancel
-                </Button>
+                  label="Cancel"
+                />
               </div>
             </div>
           </div>
@@ -727,23 +692,11 @@ class CreateLivePaperLoadPDFData extends React.Component {
           <div style={{ paddingRight: "20px" }}>
             <div style={{ flex: 1, flexDirection: "row-reverse", float: "right" }}>
               <div style={{ float: "right", paddingTop: "10px" }}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "150px",
-                    backgroundColor: "#4DC26D",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    padding: "10px",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                  }}
+                <StandardButton
+                  backgroundColor="#4DC26D"
                   onClick={this.retrieveDOI}
-                >
-                  Retrieve
-                </Button>
+                  label="Retrieve"
+                />
               </div>
               <div
                 style={{
@@ -752,23 +705,11 @@ class CreateLivePaperLoadPDFData extends React.Component {
                   paddingRight: "20px",
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "150px",
-                    backgroundColor: "#525252",
-                    color: "#FFFFFF",
-                    fontWeight: "bold",
-                    padding: "10px",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                  }}
+                <InvertedButton
+                  backgroundColor="#525252"
                   onClick={this.cancelDOI}
-                >
-                  Cancel
-                </Button>
+                  label="Cancel"
+                />
               </div>
             </div>
           </div>
@@ -918,58 +859,25 @@ class CreateLivePaperLoadPDFData extends React.Component {
                     alignItems: "center",
                   }}
                 >
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      width: "27.5%",
-                      backgroundColor: "#00A595",
-                      color: "#000000",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
+                  <WideButton
+                    backgroundColor="#00A595"
                     onClick={this.acceptDOI}
-                  >
-                    Specify DOI
-                  </Button>
+                    label="Specify DOI"
+                  />
                   <br />
                   <br />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      width: "27.5%",
-                      backgroundColor: "#4DC26D",
-                      color: "#000000",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
+                  <WideButton
+                    backgroundColor="#4DC26D"
                     onClick={this.browseForPDF}
-                  >
-                    Upload PDF
-                  </Button>
+                    label="Upload PDF"
+                  />
                   <br />
                   <br />
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{
-                      width: "27.5%",
-                      backgroundColor: "#9CE142",
-                      color: "#000000",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
+                  <WideButton
+                    backgroundColor="#9CE142"
                     onClick={this.skipContinue}
-                  >
-                    Skip
-                  </Button>
+                    label="Skip"
+                  />
                 </div>
                 <br />
                 <br />

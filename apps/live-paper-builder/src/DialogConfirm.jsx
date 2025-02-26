@@ -10,6 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
+import { InvertedButton, StandardButton } from "./Buttons";
 
 const styles = (theme) => ({
   root: {
@@ -90,42 +91,20 @@ export default class DialogConfirm extends React.Component {
                 width: "100%",
               }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "150px",
-                  backgroundColor: "#8b0d0d",
-                  color: "#ffffff",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <InvertedButton
+                backgroundColor="#8b0d0d"
                 onClick={() => this.props.handleClose(false)}
-              >
-                Cancel
-              </Button>
+                label="Cancel"
+              />
               <br />
               <br />
               {this.props.clickHelp && (
                 <>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      width: "150px",
-                      backgroundColor: "#525252",
-                      color: "#FFFFFF",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
+                  <InvertedButton
+                    backgroundColor="#525252"
                     onClick={this.props.clickHelp}
-                  >
-                    Help
-                  </Button>
+                    label="Help"
+                  />
                   <br />
                   <br />
                 </>
@@ -139,42 +118,21 @@ export default class DialogConfirm extends React.Component {
                     }}
                     target="_blank"
                   >
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      style={{
-                        width: "150px",
-                        backgroundColor: "#FF9800",
-                        color: "#000000",
-                        fontWeight: "bold",
-                        border: "solid",
-                        borderColor: "#000000",
-                        borderWidth: "1px",
-                      }}
-                    >
-                      Input Tool
-                    </Button>
+                    <StandardButton
+                      backgroundColor="#FF9800"
+                      onClick={null}
+                      label="Input Tool"
+                    />
                   </Link>
                   <br />
                   <br />
                 </>
               )}
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "150px",
-                  backgroundColor: "#4DC26D",
-                  color: "#000000",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <StandardButton
+                backgroundColor="#4DC26D"
                 onClick={() => this.props.handleClose(true)}
-              >
-                Proceed
-              </Button>
+                label="Proceed"
+              />
             </div>
           </DialogActions>
         </Dialog>

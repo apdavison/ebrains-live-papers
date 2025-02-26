@@ -6,6 +6,7 @@ import ForwardIcon from "@material-ui/icons/Forward";
 import Tooltip from "@material-ui/core/Tooltip";
 import arrayMove from "array-move";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import { StandardIconButton } from "./Buttons";
 
 export default class DynamicTablePerson extends React.Component {
   handleAdd() {
@@ -161,22 +162,13 @@ export default class DynamicTablePerson extends React.Component {
             paddingTop: "10px",
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
+          <StandardIconButton
             onClick={this.handleAdd.bind(this)}
-            style={{
-              width: "110px",
-              backgroundColor: "#61CA62",
-              color: "#000000",
-              border: "solid",
-              borderColor: "#000000",
-              borderWidth: "1px",
-            }}
+            width="110px"
+            backgroundColor="#61CA62"
             startIcon={<AddCircleOutlineIcon />}
-          >
-            Add
-          </Button>
+            label="Add"
+          />
         </div>
         <hr />
       </div>

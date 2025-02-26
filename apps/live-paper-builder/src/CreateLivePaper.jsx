@@ -44,6 +44,8 @@ import DialogConfirm from "./DialogConfirm";
 import MarkdownLatexExample from "./MarkdownLatexExample";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import RainbowRow from "./RainbowRow";
+import { StandardButton, StandardIconButton } from "./Buttons";
 import { livePaperPlatformUrl, livePaperDocsUrl, lp_tool_version, updateHash } from "./globals";
 import { showNotification, compareArrayoOfObjectsByOrder } from "./utils";
 import WarningBox from "./WarningBox";
@@ -51,7 +53,6 @@ import WarningBox from "./WarningBox";
 import nunjucks from "nunjucks";
 import LivePaper_v01 from "./templates/LivePaper_v0.1.njk";
 import LivePaper_standalone_v01 from "./templates/LivePaper_standalone_v0.1.njk";
-import RainbowRow from "./RainbowRow";
 
 axiosRetry(axios, {
   retries: 3,
@@ -1086,83 +1087,39 @@ class CreateLivePaper extends React.Component {
     }
 
     let saveButton = (
-      <Button
+      <StandardButton
         disabled
-        variant="contained"
-        color="secondary"
-        style={{
-          width: "17.5%",
-          backgroundColor: "lightgray",
-          color: "gray",
-          fontWeight: "bold",
-          border: "solid",
-          borderColor: "gray",
-          borderWidth: "1px",
-          overflowX: "hidden",
-        }}
-      >
-        Save
-      </Button>
+        width="17.5%"
+        backgroundColor="lightgray"
+        label="Save"
+      />
     );
 
     let submitButton = (
-      <Button
+      <StandardButton
         disabled
-        variant="contained"
-        color="secondary"
-        style={{
-          width: "17.5%",
-          backgroundColor: "lightgray",
-          color: "gray",
-          fontWeight: "bold",
-          border: "solid",
-          borderColor: "gray",
-          borderWidth: "1px",
-          overflowX: "hidden",
-        }}
-      >
-        Submit
-      </Button>
+        width="17.5%"
+        backgroundColor="lightgray"
+        label="Submit"
+      />
     );
 
     if (canSave) {
       saveButton = (
-        <Button
-          variant="contained"
-          color="secondary"
-          style={{
-            width: "17.5%",
-            backgroundColor: "#61CA62",
-            color: "#000000",
-            fontWeight: "bold",
-            border: "solid",
-            borderColor: "#000000",
-            borderWidth: "1px",
-            overflowX: "hidden",
-          }}
+        <StandardButton
+          width="17.5%"
+          backgroundColor="#61CA62"
           onClick={this.handleSaveOpen}
-        >
-          Save
-        </Button>
+          label="Save"
+        />
       );
       submitButton = (
-        <Button
-          variant="contained"
-          color="secondary"
-          style={{
-            width: "17.5%",
-            backgroundColor: "#9CE142",
-            color: "#000000",
-            fontWeight: "bold",
-            border: "solid",
-            borderColor: "#000000",
-            borderWidth: "1px",
-            overflowX: "hidden",
-          }}
+        <StandardButton
+          width="17.5%"
+          backgroundColor="#9CE142"
           onClick={this.handleSubmitOpen}
-        >
-          Submit
-        </Button>
+          label="Submit"
+        />
       );
     }
 
@@ -2016,104 +1973,49 @@ class CreateLivePaper extends React.Component {
                   //   borderRadius: "20px",
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#FFD54F",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardIconButton
+                  backgroundColor="#FFD54F"
+                  width="17.5%"
                   startIcon={<AcUnitIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_morphology")}
-                >
-                  Morphology
-                </Button>
+                  label="Morphology"
+                />
                 <br />
                 <br />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#8BC34A",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardIconButton
+                  backgroundColor="#8BC34A"
+                  width="17.5%"
                   startIcon={<TimelineIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_traces")}
-                >
-                  Traces
-                </Button>
+                  label="Traces"
+                />
                 <br />
                 <br />
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#E5B8B3",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardIconButton
+                  backgroundColor="#E5B8B3"
+                  width="17.5%"
                   startIcon={<LocalPlayIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_models")}
-                >
-                  Models
-                </Button>
+                  label="Models"
+                />
                 <br />
                 <br />
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#B39DDB",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardIconButton
+                  backgroundColor="#B39DDB"
+                  width="17.5%"
                   startIcon={<FormatListBulletedIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_generic")}
-                >
-                  Generic
-                </Button>
+                  label="Generic"
+                />
                 <br />
                 <br />
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#D9D9D9",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardIconButton
+                  backgroundColor="#D9D9D9"
+                  width="17.5%"
                   startIcon={<CheckBoxOutlineBlankIcon style={{ width: 30, height: 30 }} />}
                   onClick={() => this.handleAddSection("section_custom")}
-                >
-                  Custom
-                </Button>
+                  label="Custom"
+                />
               </div>
             </div>
             <div
@@ -2141,42 +2043,20 @@ class CreateLivePaper extends React.Component {
                   height: "57.5px",
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#00A595",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardButton
+                  width="17.5%"
+                  backgroundColor="#00A595"
                   onClick={this.handlePreview}
-                >
-                  Preview
-                </Button>
+                  label="Preview"
+                />
                 <br />
                 <br />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "17.5%",
-                    backgroundColor: "#29B480",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    overflowX: "hidden",
-                  }}
+                <StandardButton
+                  width="17.5%"
+                  backgroundColor="#29B480"
                   onClick={this.handleDownload}
-                >
-                  Download
-                </Button>
+                  label="Download"
+                />
                 <br />
                 <br />
                 {saveButton}

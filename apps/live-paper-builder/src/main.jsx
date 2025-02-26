@@ -15,7 +15,7 @@ function initLoad() {
     renderApp(null);
   } else {
     initAuth(renderApp);
-    // for local development, set a valid token and uncomment the next 4 lines
+    // for local development, comment out the previous line, set a valid token below,and uncomment the next 4 lines
     // const auth = {
     //   token: "eyJ..."
     // }

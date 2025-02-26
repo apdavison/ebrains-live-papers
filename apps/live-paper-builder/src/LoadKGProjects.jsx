@@ -9,6 +9,7 @@ import axios from "axios";
 import ContextMain from "./ContextMain";
 import LoadingIndicatorModal from "./LoadingIndicatorModal";
 import ErrorDialog from "./ErrorDialog";
+import { InvertedButton, StandardButton } from "./Buttons";
 import MaterialTable, { MTableToolbar } from "@material-table/core";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { baseUrl } from "./globals";
@@ -228,41 +229,19 @@ export default class LoadKGProjects extends React.Component {
                 paddingBottom: "20px",
               }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "20%",
-                  backgroundColor: "#525252",
-                  color: "#FFFFFF",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <InvertedButton
+                backgroundColor="#525252"
                 onClick={this.handleCancel}
-              >
-                Cancel
-              </Button>
+                label="Cancel"
+              />
               <br />
               <br />
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "20%",
-                  backgroundColor: this.state.selectedRow ? "#4DC26D" : "#FFFFFF",
-                  color: "#000000",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <StandardButton
+                backgroundColor={this.state.selectedRow ? "#4DC26D" : "#FFFFFF"}
                 onClick={this.handleSelectProject}
                 disabled={!this.state.selectedRow}
-              >
-                Load Project
-              </Button>
+                label="Load Project"
+              />
             </div>
           </DialogContent>
         </Dialog>

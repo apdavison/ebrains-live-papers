@@ -10,13 +10,16 @@ import Tooltip from "@material-ui/core/Tooltip";
 import IconButton from "@material-ui/core/IconButton";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 import WarningBox from "./WarningBox";
+import RainbowRow from "./RainbowRow";
+import { WideButton } from "./Buttons";
 import buildInfo from "./buildInfo";
 
 import "./App.css";
 
 import {
+  livePaperPlatformUrl,
+  livePaperDocsUrl,
   baseUrl,
   vf_baseUrl,
   separator,
@@ -30,7 +33,7 @@ import {
   updateHash,
 } from "./globals";
 import { compareArrayoOfObjectsByOrder, replaceNullWithEmptyStrings } from "./utils";
-import RainbowRow from "./RainbowRow";
+
 
 class App extends React.Component {
   signal = axios.CancelToken.source();
@@ -597,58 +600,25 @@ class App extends React.Component {
               alignItems: "center",
             }}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              style={{
-                width: "27.5%",
-                backgroundColor: "#00A595",
-                color: "#000000",
-                fontWeight: "bold",
-                border: "solid",
-                borderColor: "#000000",
-                borderWidth: "1px",
-              }}
+            <WideButton
+              backgroundColor="#00A595"
               onClick={this.handleCreateLivePaperOpen}
-            >
-              Create New
-            </Button>
+              label="Create New"
+            />
             <br />
             <br />
-            <Button
-              variant="contained"
-              color="secondary"
-              style={{
-                width: "27.5%",
-                backgroundColor: "#4DC26D",
-                color: "#000000",
-                fontWeight: "bold",
-                border: "solid",
-                borderColor: "#000000",
-                borderWidth: "1px",
-              }}
+            <WideButton
+              backgroundColor="#4DC26D"
               onClick={this.handleLoadProjectFile}
-            >
-              Load From File
-            </Button>
+              label="Load From File"
+            />
             <br />
             <br />
-            <Button
-              variant="contained"
-              color="secondary"
-              style={{
-                width: "27.5%",
-                backgroundColor: "#9CE142",
-                color: "#000000",
-                fontWeight: "bold",
-                border: "solid",
-                borderColor: "#000000",
-                borderWidth: "1px",
-              }}
+            <WideButton
+              backgroundColor="#9CE142"
               onClick={this.handleLoadProjectKG}
-            >
-              Load From KG
-            </Button>
+              label="Load From KG"
+            />
           </div>
         </div>
         <br />

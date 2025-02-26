@@ -20,6 +20,7 @@ import { livePaperPlatformUrl, livePaperDocsUrl } from "./globals";
 import { copyToClipboard } from "./utils";
 import { useSnackbar } from "notistack";
 import RainbowRow from "./RainbowRow";
+import { StandardButton } from "./Buttons";
 
 class BulkEntryWizardComp extends React.Component {
   constructor() {
@@ -345,21 +346,11 @@ class BulkEntryWizardComp extends React.Component {
                 style={{
                   display: "flex",
                   justifyContent: "flex-end",
+                  marginBottom: "20px"
                 }}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "150px",
-                    backgroundColor: "#4DC26D",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                    marginBottom: "20px",
-                  }}
+                <StandardButton
+                  backgroundColor="#4DC26D"
                   onClick={() =>
                     copyToClipboard(
                       this.state.data_json,
@@ -369,9 +360,8 @@ class BulkEntryWizardComp extends React.Component {
                       "success"
                     )
                   }
-                >
-                  Copy
-                </Button>
+                  label="Copy"
+                />
               </div>
               <div>
                 <AceEditor

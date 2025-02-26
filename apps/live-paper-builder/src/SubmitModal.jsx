@@ -16,6 +16,7 @@ import Link from "@material-ui/core/Link";
 import { baseUrl } from "./globals";
 import { showNotification } from "./utils";
 import saltedMd5 from "salted-md5";
+import { InvertedButton, StandardButton } from "./Buttons";
 
 export default class SubmitModal extends React.Component {
   signal = axios.CancelToken.source();
@@ -253,7 +254,7 @@ export default class SubmitModal extends React.Component {
                       }}
                       style={{ cursor: "pointer" }}
                     >
-                      shailesh.appukuttan@cnrs.fr
+                      andrew.davison@cnrs.fr
                     </strong>{" "}
                     with the following subject:{" "}
                     <strong
@@ -323,22 +324,11 @@ export default class SubmitModal extends React.Component {
                 paddingBottom: "20px",
               }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "20%",
-                  backgroundColor: "#525252",
-                  color: "#FFFFFF",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <InvertedButton
+                backgroundColor="#525252"
                 onClick={this.handleCancel}
-              >
-                Cancel
-              </Button>
+                label="Cancel"
+              />
               <br />
               <br />
               {this.state.mode === "Public" && (
@@ -349,48 +339,26 @@ export default class SubmitModal extends React.Component {
                   underline="none"
                   href={
                     this.props.data.id
-                      ? "mailto:support@ebrains.eu, shailesh.appukuttan@cnrs.fr?subject=Request%20to%20publish%20Live%20Paper&body=We%20would%20like%20to%20request%20the%20publication%20of%20our%20live%20paper.%0AThe%20details%20are%20as%20follows%3A%0A%0AID%3A%20" +
+                      ? "mailto:support@ebrains.eu, andrew.davison@cnrs.fr?subject=Request%20to%20publish%20Live%20Paper&body=We%20would%20like%20to%20request%20the%20publication%20of%20our%20live%20paper.%0AThe%20details%20are%20as%20follows%3A%0A%0AID%3A%20" +
                         escape(this.props.data.id) +
                         "%0AName%3A%20" +
                         escape(this.props.data.live_paper_title)
                       : null
                   }
                 >
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      width: "100%",
-                      backgroundColor: this.props.data.id ? "#4DC26D" : "#FFFFFF",
-                      color: "#000000",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
-                  >
-                    Send Email
-                  </Button>
+                  <StandardButton
+                    width="100%"
+                    backgroundColor={this.props.data.id ? "#4DC26D" : "#FFFFFF"}
+                    label="Send Email"
+                  />
                 </Link>
               )}
               {this.state.mode === "Password-Protected" && (
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    width: "20%",
-                    backgroundColor:
-                      this.state.password && this.state.password.length >= 6 ? "#4DC26D" : "#FFFFFF",
-                    color: "#000000",
-                    fontWeight: "bold",
-                    border: "solid",
-                    borderColor: "#000000",
-                    borderWidth: "1px",
-                  }}
+                <StandardButton
+                  backgroundColor={this.state.password && this.state.password.length >= 6 ? "#4DC26D" : "#FFFFFF"}
                   onClick={this.handleProtectedSubmit}
-                >
-                  Submit
-                </Button>
+                  label="Submit"
+                />
               )}
             </div>
             {this.state.showProtectedSummary ? (

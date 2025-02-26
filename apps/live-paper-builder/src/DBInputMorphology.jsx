@@ -29,6 +29,7 @@ import SwitchMultiWay from "./SwitchMultiWay";
 import ToggleSwitch from "./ToggleSwitch";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import ViewColumnIcon from "@material-ui/icons/ViewColumn";
+import { InvertedButton, InvertedIconButton, StandardButton, StandardIconButton } from "./Buttons";
 import { readRemoteFile } from "react-papaparse";
 import {
   neuromorpho_baseUrl,
@@ -246,34 +247,19 @@ function IncludeButton(props) {
   if (props.includeFlag) {
     return (
       <Tooltip title="Remove morphology instance from collection" placement="top">
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#FF5722",
-            border: "solid",
-            borderColor: "#000000",
-            borderWidth: "1px",
-            width: "150px",
-          }}
+        <StandardIconButton
+          backgroundColor="#FF5722"
           startIcon={<RemoveFromQueueIcon />}
           onClick={() => props.removeInstanceCollection(props.morphology_id, props.instance_id)}
-        >
-          Remove
-        </Button>
+          label="Remove"
+        />
       </Tooltip>
     );
   } else {
     return (
       <Tooltip title="Add morphology instance to collection" placement="top">
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#81C784",
-            border: "solid",
-            borderColor: "#000000",
-            borderWidth: "1px",
-            width: "150px",
-          }}
+        <StandardIconButton
+          backgroundColor="#81C784"
           startIcon={<AddToQueueIcon />}
           onClick={() =>
             props.addInstanceCollection(
@@ -285,9 +271,8 @@ function IncludeButton(props) {
               props.view_url
             )
           }
-        >
-          Add
-        </Button>
+          label="Add"
+        />
       </Tooltip>
     );
   }
@@ -314,19 +299,6 @@ function InstanceParameter(props) {
             {props.value || ""}
           </Box>
         </Grid>
-        {/* <Grid item xs={3}>
-        <Box component="div" my={2}>
-          <Button
-            variant="contained"
-            style={{
-              textTransform: "none",
-            }}
-            //   onClick={() => doSomething(props.value)}
-          >
-            MyButton
-          </Button>
-        </Box>
-      </Grid> */}
       </Grid>
     </div>
   );
@@ -365,13 +337,11 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
               rel="noreferrer"
               underline="none"
             >
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#01579b", color: "#ffffff" }}
+              <InvertedIconButton
+                backgroundColor="#01579b"
                 startIcon={<OpenInNewIcon />}
-              >
-                Open Page
-              </Button>
+                label="Open Page"
+              />
             </Link>
           </Grid>
         </Grid>
@@ -601,13 +571,11 @@ class AllenBrainContentMorphologyPanel extends React.Component {
               rel="noreferrer"
               underline="none"
             >
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#01579b", color: "#ffffff" }}
+              <InvertedIconButton
+                backgroundColor="#01579b"
                 startIcon={<OpenInNewIcon />}
-              >
-                Open Page
-              </Button>
+                label="Open Page"
+              />
             </Link>
           </Grid>
         </Grid>
@@ -1658,38 +1626,17 @@ export default class DBInputMorphology extends React.Component {
                 width: "100%",
               }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "150px",
-                  backgroundColor: "#525252",
-                  color: "#FFFFFF",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <InvertedButton
+                backgroundColor="#525252"
                 onClick={() => this.props.handleClose(false, null)}
-              >
-                Cancel
-              </Button>
+                label="Cancel"
+              />
               <br />
               <br />
               {!this.state.showFilters && (
                 <>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    style={{
-                      width: "150px",
-                      backgroundColor: "#29B480",
-                      color: "#000000",
-                      fontWeight: "bold",
-                      border: "solid",
-                      borderColor: "#000000",
-                      borderWidth: "1px",
-                    }}
+                  <StandardButton
+                    backgroundColor="#29B480"
                     onClick={() => {
                       this.setState({
                         list_morphologies: [],
@@ -1697,33 +1644,21 @@ export default class DBInputMorphology extends React.Component {
                         showFilters: true,
                       });
                     }}
-                  >
-                    Filters
-                  </Button>
+                    label="Filters"
+                  />
                   <br />
                   <br />
                 </>
               )}
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  width: "150px",
-                  backgroundColor: "#4DC26D",
-                  color: "#000000",
-                  fontWeight: "bold",
-                  border: "solid",
-                  borderColor: "#000000",
-                  borderWidth: "1px",
-                }}
+              <StandardButton
+                backgroundColor="#4DC26D"
                 onClick={() =>
                   this.state.showFilters
                     ? this.handleProceed()
                     : this.props.handleClose(true, this.state.morphology_collection, this.state.sourceDB)
                 }
-              >
-                {this.state.showFilters ? "Proceed" : "Add Items"}
-              </Button>
+                label={this.state.showFilters ? "Proceed" : "Add Items"}
+              />
             </div>
           </DialogActions>
         </Dialog>

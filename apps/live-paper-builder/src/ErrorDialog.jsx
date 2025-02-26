@@ -4,8 +4,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
+import { StandardButton } from "./Buttons";
 
 const addLineBreaks = (string) =>
   string.split("\n").map((text, index) => (
@@ -82,9 +82,10 @@ export default function ErrorDialog(props) {
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.handleErrorDialogClose} color="primary">
-          Close
-        </Button>
+        <StandardButton
+          onClick={props.handleErrorDialogClose}
+          label="Close"
+        />
       </DialogActions>
     </Dialog>
   );

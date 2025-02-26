@@ -14,6 +14,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
+import { InvertedIconButton } from "./Buttons";
 
 const resourseTypeBadgeMappings = {
   URL: ["", "Manual Entry"],
@@ -783,61 +784,35 @@ export default class DynamicTableItems extends React.Component {
             paddingTop: "20px",
           }}
         >
-          <Button
-            variant="contained"
-            color="primary"
+          <InvertedIconButton
             onClick={this.toggleExpand}
-            style={{
-              width: "160px",
-              marginRight: "25px",
-              backgroundColor: "#795548",
-            }}
+            backgroundColor="#795548"
             startIcon={this.state.expandTable ? <PhotoSizeSelectSmallIcon /> : <AspectRatioIcon />}
-          >
-            {this.state.expandTable ? "Collapse" : "Expand"}
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
+            width="160px"
+            label={this.state.expandTable ? "Collapse" : "Expand"}
+          />
+          <InvertedIconButton
             onClick={this.props.handleEdit}
-            style={{
-              width: "160px",
-              marginRight: "25px",
-              backgroundColor: "#B71C1C",
-            }}
+            backgroundColor="#B71C1C"
             startIcon={<EditIcon />}
-          >
-            Edit Source
-          </Button>
+            width="160px"
+            label="Edit Source"
+          />
           {this.props.handleDB && (
-            <Button
-              variant="contained"
-              color="primary"
+            <InvertedIconButton
               onClick={this.props.handleDB}
-              style={{
-                width: "160px",
-                marginRight: "25px",
-                backgroundColor: "#388E3C",
-              }}
+              backgroundColor="#388E3C"
               startIcon={<StorageIcon />}
-            >
-              Add From DB
-            </Button>
+              width="160px"
+              label="Add From DB"
+            />
           )}
-          <Button
-            variant="contained"
-            color="primary"
+          <InvertedIconButton
             onClick={this.handleAdd.bind(this)}
-            style={{
-              width: "160px",
-              border: "solid",
-              borderColor: "#000000",
-              borderWidth: "1px",
-            }}
+            width="160px"
             startIcon={<AddCircleOutlineIcon />}
-          >
-            Add Row
-          </Button>
+            label="Add Row"
+          />
         </div>
       </div>
     );
