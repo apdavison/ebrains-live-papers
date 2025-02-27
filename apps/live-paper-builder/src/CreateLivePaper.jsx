@@ -18,7 +18,6 @@ import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import CloseIcon from "@mui/icons-material/Close";
 import TextField from "@mui/material/TextField";
 import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
-import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import MomentUtils from "@date-io/moment";
 import axios from "axios";
@@ -70,17 +69,6 @@ const styles = (theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
-  },
-});
-
-const defaultMaterialTheme = createTheme({
-  palette: {
-    primary: {
-      // light: will be calculated from palette.primary.main,
-      main: "#00A595",
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
-    },
   },
 });
 
@@ -1320,7 +1308,6 @@ class CreateLivePaper extends React.Component {
                       </div>
                       <div>
                         <div>
-                          <ThemeProvider theme={defaultMaterialTheme}>
                             <MuiPickersUtilsProvider utils={MomentUtils}>
                               <DatePicker
                                 label="Year"
@@ -1341,7 +1328,6 @@ class CreateLivePaper extends React.Component {
                                 }}
                               />
                             </MuiPickersUtilsProvider>
-                          </ThemeProvider>
                         </div>
                       </div>
                       <br />

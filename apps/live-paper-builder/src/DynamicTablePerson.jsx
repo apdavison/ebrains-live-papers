@@ -6,7 +6,7 @@ import ForwardIcon from "@mui/icons-material/Forward";
 import Tooltip from "@mui/material/Tooltip";
 import arrayMove from "array-move";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import { InvertedIconButton } from "./Buttons";
+import { StandardIconButton } from "./Buttons";
 
 export default class DynamicTablePerson extends React.Component {
   handleAdd() {

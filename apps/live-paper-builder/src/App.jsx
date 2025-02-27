@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import axios from "axios";
 import ContextMain from "./ContextMain";
 import CreateLivePaperLoadPDFData from "./CreateLivePaperLoadPDFData";
@@ -10,6 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import WarningBox from "./WarningBox";
 import RainbowRow from "./RainbowRow";
 import { WideButton } from "./Buttons";
@@ -33,6 +33,17 @@ import {
   updateHash,
 } from "./globals";
 import { compareArrayoOfObjectsByOrder, replaceNullWithEmptyStrings } from "./utils";
+
+const defaultMaterialTheme = createTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#00A595",
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+  },
+});
 
 
 class App extends React.Component {
@@ -467,6 +478,7 @@ class App extends React.Component {
     let [kgStatus] = this.context.kgStatus;
 
     return (
+      <ThemeProvider theme={defaultMaterialTheme}>
       <div className="mycontainer" style={{ textAlign: "left" }}>
         <LoadingIndicatorModal open={this.state.loading} />
         <div
@@ -639,6 +651,7 @@ class App extends React.Component {
         {loadProjectListModal}
         {errorModal}
       </div>
+      </ThemeProvider>
     );
   }
 }
