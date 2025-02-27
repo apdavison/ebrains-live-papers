@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import MaterialIconSelector from "./MaterialIconSelector";
 import HelpIcon from "@mui/icons-material/Help";
