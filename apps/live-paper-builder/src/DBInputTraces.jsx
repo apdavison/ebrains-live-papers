@@ -2,7 +2,6 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
@@ -461,10 +460,10 @@ export class KGContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <KGContentTraceVersionsPanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}
@@ -710,10 +709,10 @@ export class AllenBrainContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <AllenBrainContentTracePanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}

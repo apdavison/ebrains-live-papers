@@ -591,10 +591,10 @@ export class KGContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <KGContentModelVersionsPanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}
@@ -803,10 +803,10 @@ export class ModelDBContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <ModelDBContentModelPanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}
@@ -1045,10 +1045,10 @@ export class OSBContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <OSBContentModelPanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}
@@ -1250,10 +1250,10 @@ export class BioModelsContent extends React.Component {
               tooltip: "Show Filters",
             },
           ]}
-          detailPanel={(rowData) => {
+          detailPanel={(rowObj) => {
             return (
               <BioModelsContentModelPanel
-                data={rowData}
+                data={rowObj.rowData}
                 addInstanceCollection={this.props.addInstanceCollection}
                 removeInstanceCollection={this.props.removeInstanceCollection}
                 checkInstanceInCollection={this.props.checkInstanceInCollection}
