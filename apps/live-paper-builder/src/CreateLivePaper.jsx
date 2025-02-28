@@ -2,7 +2,6 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import Grid from "@mui/material/Grid";
-import { withSnackbar } from "notistack";
 
 import { withStyles } from "@mui/styles";
 import MuiDialogTitle from "@mui/material/DialogTitle";
@@ -21,6 +20,7 @@ import axios from "axios";
 import axiosRetry from "axios-retry";
 import showdown from "showdown";
 import showdownKatex from "showdown-katex";
+import { enqueueSnackbar, closeSnackbar } from "notistack";
 
 import ContextMain from "./ContextMain";
 import DynamicTablePerson from "./DynamicTablePerson";
@@ -244,7 +244,7 @@ class CreateLivePaper extends React.Component {
       resources: temp_resources,
     });
 
-    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Section deleted!", "success");
+    showNotification(enqueueSnackbar, closeSnackbar, "Section deleted!", "success");
   }
 
   moveDownResourceSection(order) {
@@ -443,7 +443,7 @@ class CreateLivePaper extends React.Component {
     console.log(lp_data);
     render(lp_data);
 
-    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Preview generated...", "success");
+    showNotification(enqueueSnackbar, closeSnackbar, "Preview generated...", "success");
   }
 
   handleDownload() {
@@ -482,8 +482,8 @@ class CreateLivePaper extends React.Component {
     render(lp_data, timestamp);
 
     showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
+      enqueueSnackbar,
+      closeSnackbar,
       "HTML file downloaded...",
       "success"
     );
@@ -506,8 +506,8 @@ class CreateLivePaper extends React.Component {
     link.click();
 
     showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
+      enqueueSnackbar,
+      closeSnackbar,
       ".lpp file downloaded...",
       "success"
     );
@@ -1019,8 +1019,8 @@ class CreateLivePaper extends React.Component {
           setCollabID={this.setCollabID}
           setLivePaperTitle={this.setLivePaperTitle}
           setLivePaperModifiedDate={this.setLivePaperModifiedDate}
-          enqueueSnackbar={this.props.enqueueSnackbar}
-          closeSnackbar={this.props.closeSnackbar}
+          enqueueSnackbar={enqueueSnackbar}
+          closeSnackbar={closeSnackbar}
         />
       );
     }
@@ -1032,8 +1032,8 @@ class CreateLivePaper extends React.Component {
           data={this.state}
           open={this.state.submitOpen}
           onClose={this.handleSubmitClose}
-          enqueueSnackbar={this.props.enqueueSnackbar}
-          closeSnackbar={this.props.closeSnackbar}
+          enqueueSnackbar={enqueueSnackbar}
+          closeSnackbar={closeSnackbar}
         />
       );
     }
@@ -1828,8 +1828,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_traces") {
@@ -1842,8 +1842,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_models") {
@@ -1856,8 +1856,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_generic") {
@@ -2053,4 +2053,4 @@ class CreateLivePaper extends React.Component {
     );
   }
 }
-export default withSnackbar(CreateLivePaper);
+export default CreateLivePaper;

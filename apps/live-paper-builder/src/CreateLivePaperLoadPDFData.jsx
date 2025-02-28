@@ -3,7 +3,6 @@ import axios from "axios";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import Paper from "@mui/material/Paper";
-import { withSnackbar } from "notistack";
 import { withStyles } from "@mui/styles";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import Typography from "@mui/material/Typography";
@@ -910,4 +909,4 @@ class CreateLivePaperLoadPDFData extends React.Component {
     }
   }
 }
-export default withSnackbar(CreateLivePaperLoadPDFData);
+export default CreateLivePaperLoadPDFData;
