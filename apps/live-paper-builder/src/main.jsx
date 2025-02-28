@@ -24,7 +24,6 @@ function initLoad() {
 }
 
 function renderApp(auth) {
-  console.log(auth);
   ReactDOM.render(
     <Router>
       <Routes>

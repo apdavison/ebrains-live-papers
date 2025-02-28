@@ -1,31 +1,26 @@
 import React from "react";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import Grid from "@material-ui/core/Grid";
-import { withSnackbar } from "notistack";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Grid from "@mui/material/Grid";
 
-import { withStyles } from "@material-ui/core/styles";
-import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import Typography from "@material-ui/core/Typography";
-import Tooltip from "@material-ui/core/Tooltip";
-import HelpIcon from "@material-ui/icons/Help";
-import IconButton from "@material-ui/core/IconButton";
-import AcUnitIcon from "@material-ui/icons/AcUnit";
-import TimelineIcon from "@material-ui/icons/Timeline";
-import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
-import LocalPlayIcon from "@material-ui/icons/LocalPlay";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CloseIcon from "@material-ui/icons/Close";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers";
-import { createTheme } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
-import MomentUtils from "@date-io/moment";
+import { withStyles } from "@mui/styles";
+import MuiDialogTitle from "@mui/material/DialogTitle";
+import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
+import HelpIcon from "@mui/icons-material/Help";
+import IconButton from "@mui/material/IconButton";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import LocalPlayIcon from "@mui/icons-material/LocalPlay";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CloseIcon from "@mui/icons-material/Close";
+import TextField from "@mui/material/TextField";
 import axios from "axios";
 import axiosRetry from "axios-retry";
 import showdown from "showdown";
 import showdownKatex from "showdown-katex";
+import { enqueueSnackbar, closeSnackbar } from "notistack";
 
 import ContextMain from "./ContextMain";
 import DynamicTablePerson from "./DynamicTablePerson";
@@ -42,8 +37,8 @@ import SubmitModal from "./SubmitModal";
 import ModalDialog from "./ModalDialog";
 import DialogConfirm from "./DialogConfirm";
 import MarkdownLatexExample from "./MarkdownLatexExample";
-import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import RainbowRow from "./RainbowRow";
 import { StandardButton, StandardIconButton } from "./Buttons";
 import { livePaperPlatformUrl, livePaperDocsUrl, lp_tool_version, updateHash } from "./globals";
@@ -71,17 +66,6 @@ const styles = (theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
-  },
-});
-
-const defaultMaterialTheme = createTheme({
-  palette: {
-    primary: {
-      // light: will be calculated from palette.primary.main,
-      main: "#00A595",
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
-    },
   },
 });
 
@@ -161,9 +145,7 @@ class CreateLivePaper extends React.Component {
       corresponding_author: [{ firstname: "", lastname: "", affiliation: "" }], // "email" removed
       created_author: [{ firstname: "", lastname: "", affiliation: "" }], // "email" removed
       approved_author: { firstname: "", lastname: "", affiliation: "" }, // "email" removed
-      year: new Date()
-        .toISOString()
-        .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
+      year: new Date().getFullYear(),
       associated_paper_title: "",
       live_paper_title: "",
       doi: null,
@@ -262,7 +244,7 @@ class CreateLivePaper extends React.Component {
       resources: temp_resources,
     });
 
-    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Section deleted!", "success");
+    showNotification(enqueueSnackbar, closeSnackbar, "Section deleted!", "success");
   }
 
   moveDownResourceSection(order) {
@@ -461,7 +443,7 @@ class CreateLivePaper extends React.Component {
     console.log(lp_data);
     render(lp_data);
 
-    showNotification(this.props.enqueueSnackbar, this.props.closeSnackbar, "Preview generated...", "success");
+    showNotification(enqueueSnackbar, closeSnackbar, "Preview generated...", "success");
   }
 
   handleDownload() {
@@ -500,8 +482,8 @@ class CreateLivePaper extends React.Component {
     render(lp_data, timestamp);
 
     showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
+      enqueueSnackbar,
+      closeSnackbar,
       "HTML file downloaded...",
       "success"
     );
@@ -524,8 +506,8 @@ class CreateLivePaper extends React.Component {
     link.click();
 
     showNotification(
-      this.props.enqueueSnackbar,
-      this.props.closeSnackbar,
+      enqueueSnackbar,
+      closeSnackbar,
       ".lpp file downloaded...",
       "success"
     );
@@ -747,9 +729,7 @@ class CreateLivePaper extends React.Component {
     if (value === "Standalone Live Paper") {
       this.setState({
         associated_paper_title: "",
-        year: new Date()
-          .toISOString()
-          .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
+        year: new Date().getFullYear(),
         journal: "",
         url: "",
         citation: "",
@@ -765,21 +745,14 @@ class CreateLivePaper extends React.Component {
       paper_published: value === "Published" ? true : false,
       year:
         value === "Published"
-          ? new Date()
-              .toISOString()
-              .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>")
-          : new Date("9999-01-01")
-              .toISOString()
-              .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
+          ? new Date().getFullYear()
+          : 9999
     });
   }
 
-  handleYearChange(value) {
-    console.log(value);
+  handleYearChange(event) {
     this.setState({
-      year: value
-        .toISOString()
-        .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>"),
+      year: parseInt(event.target.value) || 9999
     });
   }
 
@@ -879,7 +852,7 @@ class CreateLivePaper extends React.Component {
   }
 
   makePageTitleString() {
-    const year = new Date(this.state.year).getFullYear();
+    const year = this.state.year;
     const author_data = this.state.authors;
     var page_title = "";
     if (author_data.length === 0) {
@@ -1046,8 +1019,8 @@ class CreateLivePaper extends React.Component {
           setCollabID={this.setCollabID}
           setLivePaperTitle={this.setLivePaperTitle}
           setLivePaperModifiedDate={this.setLivePaperModifiedDate}
-          enqueueSnackbar={this.props.enqueueSnackbar}
-          closeSnackbar={this.props.closeSnackbar}
+          enqueueSnackbar={enqueueSnackbar}
+          closeSnackbar={closeSnackbar}
         />
       );
     }
@@ -1059,8 +1032,8 @@ class CreateLivePaper extends React.Component {
           data={this.state}
           open={this.state.submitOpen}
           onClose={this.handleSubmitClose}
-          enqueueSnackbar={this.props.enqueueSnackbar}
-          closeSnackbar={this.props.closeSnackbar}
+          enqueueSnackbar={enqueueSnackbar}
+          closeSnackbar={closeSnackbar}
         />
       );
     }
@@ -1320,30 +1293,19 @@ class CreateLivePaper extends React.Component {
                         </p>
                       </div>
                       <div>
-                        <div>
-                          <ThemeProvider theme={defaultMaterialTheme}>
-                            <MuiPickersUtilsProvider utils={MomentUtils}>
-                              <DatePicker
-                                label="Year"
-                                inputVariant="outlined"
-                                views={["year"]}
-                                name="year"
-                                value={new Date(this.state.year)}
-                                minDate={new Date("2010-01-01")}
-                                maxDate={new Date()}
-                                onChange={this.handleYearChange}
-                                animateYearScrolling
-                                InputProps={{
-                                  style: {
-                                    borderBottom: "0px",
-                                    padding: "5px 15px 5px 15px",
-                                    width: "100px",
-                                  },
-                                }}
-                              />
-                            </MuiPickersUtilsProvider>
-                          </ThemeProvider>
-                        </div>
+                          <TextField
+                            label="Year of publication"
+                            variant="outlined"
+                            fullWidth={false}
+                            name="year_of_publication"
+                            value={this.state.year === 9999 ? "" : this.state.year.toString()}
+                            onChange={this.handleYearChange}
+                            InputProps={{
+                              style: {
+                                padding: "5px 15px",
+                              },
+                            }}
+                          />
                       </div>
                       <br />
                     </div>
@@ -1866,8 +1828,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_traces") {
@@ -1880,8 +1842,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_models") {
@@ -1894,8 +1856,8 @@ class CreateLivePaper extends React.Component {
                           handleDelete={this.deleteResourceSection}
                           handleMoveDown={this.moveDownResourceSection}
                           handleMoveUp={this.moveUpResourceSection}
-                          enqueueSnackbar={this.props.enqueueSnackbar}
-                          closeSnackbar={this.props.closeSnackbar}
+                          enqueueSnackbar={enqueueSnackbar}
+                          closeSnackbar={closeSnackbar}
                         />
                       );
                     } else if (item["type"] === "section_generic") {
@@ -2091,4 +2053,4 @@ class CreateLivePaper extends React.Component {
     );
   }
 }
-export default withSnackbar(CreateLivePaper);
+export default CreateLivePaper;
