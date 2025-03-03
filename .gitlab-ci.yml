@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
 
 build_production:
   stage: build
@@ -31,3 +32,15 @@ build_staging:
     - docker push docker-registry.ebrains.eu/live-papers/live-papers-apps:staging
   tags:
     - shell-runner
+
+run_tests:
+  stage: test
+  script:
+    - cd apps
+    - sh deployment/write_build_info.sh
+    - cd live-paper-builder
+    - npm ci
+    - npm run test
+  tags:
+    - docker-runner
+  image: docker-registry.ebrains.eu/live-papers/node:22-alpine
