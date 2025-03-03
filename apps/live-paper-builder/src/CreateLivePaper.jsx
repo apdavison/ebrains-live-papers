@@ -19,7 +19,7 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import axiosRetry from "axios-retry";
 import showdown from "showdown";
-import showdownKatex from "showdown-katex";
+import showdownKatex from "./showdown-katex";
 import { enqueueSnackbar, closeSnackbar } from "notistack";
 
 import ContextMain from "./ContextMain";
