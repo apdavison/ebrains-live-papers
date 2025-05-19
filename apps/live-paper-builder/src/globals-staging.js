@@ -2,7 +2,7 @@
 export const livePaperPlatformUrl = "/";
 export const livePaperBuilderUrl = "/builder";
 export const livePaperDocsUrl = "/docs";
-export const baseUrl = "https://live-papers-api.apps.tc.humanbrainproject.eu";
+export const baseUrl = "https://live-papers-api.apps.ebrains.eu";
 export const vf_baseUrl = "https://model-validation-api.apps.ebrains.eu";
 export const mc_baseUrl = "https://model-catalog.apps.ebrains.eu";
 export const nar_baseUrl = "https://nar-browser-app.apps.tc.humanbrainproject.eu/";
