@@ -42,8 +42,8 @@ export default class Traces extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/traces/example_traces_section.png"
+
+                  "./figures/traces/example_traces_section.png"
                 }
                 width="85%"
               />
@@ -100,8 +100,8 @@ export default class Traces extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/traces/example_traces_output.png"
+
+                  "./figures/traces/example_traces_output.png"
                 }
                 width="85%"
               />
@@ -121,8 +121,8 @@ export default class Traces extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/traces/example_traces_output_detail.png"
+
+                  "./figures/traces/example_traces_output_detail.png"
                 }
                 width="85%"
               />

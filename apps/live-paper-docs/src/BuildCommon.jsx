@@ -41,8 +41,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/lp_resource_toolbar.png"
+
+                  "./figures/share_common/lp_resource_toolbar.png"
                 }
                 width="85%"
               />
@@ -57,8 +57,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_example_new.png"
+
+                  "./figures/share_common/resource_example_new.png"
                 }
                 width="85%"
               />
@@ -91,7 +91,7 @@ export default class BuildCommon extends React.Component {
             <div style={{ flex: 0.5 }}>
               <img
                 alt=""
-                src="/figures/share_common/resource_change_icon.png"
+                src="./figures/share_common/resource_change_icon.png"
                 width="100%"
                 style={{ paddingLeft: "40px" }}
               />
@@ -130,8 +130,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_title_bar_marked.png"
+
+                  "./figures/share_common/resource_title_bar_marked.png"
                 }
                 width="85%"
               />
@@ -153,8 +153,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_row.png"
+
+                  "./figures/share_common/resource_add_row.png"
                 }
                 width="85%"
               />
@@ -168,8 +168,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_row_enter.png"
+
+                  "./figures/share_common/resource_add_row_enter.png"
                 }
                 width="85%"
               />
@@ -198,8 +198,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db.png"
+
+                  "./figures/share_common/resource_add_from_db.png"
                 }
                 width="85%"
               />
@@ -214,8 +214,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db_repos.png"
+
+                  "./figures/share_common/resource_add_from_db_repos.png"
                 }
                 width="50%"
               />
@@ -235,8 +235,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db_repos_expand.png"
+
+                  "./figures/share_common/resource_add_from_db_repos_expand.png"
                 }
                 width="85%"
               />
@@ -252,8 +252,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db_repos_done.png"
+
+                  "./figures/share_common/resource_add_from_db_repos_done.png"
                 }
                 width="85%"
               />
@@ -269,8 +269,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db_repos_added.png"
+
+                  "./figures/share_common/resource_add_from_db_repos_added.png"
                 }
                 width="85%"
               />
@@ -293,8 +293,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_expand_table.png"
+
+                  "./figures/share_common/resource_expand_table.png"
                 }
                 width="85%"
               />
@@ -309,8 +309,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_add_from_db_repos_expand_show.png"
+
+                  "./figures/share_common/resource_add_from_db_repos_expand_show.png"
                 }
                 width="85%"
               />
@@ -335,8 +335,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_order_delete.png"
+
+                  "./figures/share_common/resource_order_delete.png"
                 }
                 width="85%"
               />
@@ -360,8 +360,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_edit_source.png"
+
+                  "./figures/share_common/resource_edit_source.png"
                 }
                 width="85%"
               />
@@ -376,8 +376,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_edit_panel.png"
+
+                  "./figures/share_common/resource_edit_panel.png"
                 }
                 width="85%"
               />
@@ -401,8 +401,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_use_tabs.png"
+
+                  "./figures/share_common/resource_use_tabs.png"
                 }
                 width="85%"
               />
@@ -416,8 +416,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_use_tabs_column.png"
+
+                  "./figures/share_common/resource_use_tabs_column.png"
                 }
                 width="85%"
               />
@@ -434,8 +434,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_use_tabs_enter.png"
+
+                  "./figures/share_common/resource_use_tabs_enter.png"
                 }
                 width="85%"
               />
@@ -449,8 +449,8 @@ export default class BuildCommon extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/share_common/resource_use_tabs_enter_demo.png"
+
+                  "./figures/share_common/resource_use_tabs_enter_demo.png"
                 }
                 width="85%"
               />

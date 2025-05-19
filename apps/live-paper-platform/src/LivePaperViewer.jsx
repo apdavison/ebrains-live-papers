@@ -1,5 +1,6 @@
 import React from "react";
-import { withStyles } from "@mui/material/styles";
+import { withStyles } from "@mui/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import Dialog from "@mui/material/Dialog";
@@ -27,6 +28,17 @@ const styles = (theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
+  },
+});
+
+const theme = createTheme({
+  overrides: {
+    MuiTypography: {
+      h6: {
+        fontWeight: "bolder !important",
+        color: "#000000",
+      }
+    },
   },
 });
 
@@ -325,6 +337,7 @@ export default class LivePaperViewer extends React.Component {
     console.log(this.props);
     // console.log(this.state.html_content);
     return (
+      <ThemeProvider theme={theme}>
       <Dialog
         fullScreen
         onClose={this.handleClose}
@@ -374,6 +387,7 @@ export default class LivePaperViewer extends React.Component {
           </iframe>
         </DialogContent>
       </Dialog>
+      </ThemeProvider>
     );
   }
 }

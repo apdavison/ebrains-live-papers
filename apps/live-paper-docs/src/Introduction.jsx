@@ -91,7 +91,7 @@ export default class Introduction extends React.Component {
             <div style={{ flex: 0.5, textAlign: "center" }}>
               <img
                 alt=""
-                src={process.env.PUBLIC_URL + "/figures/index/problem.png"}
+                src={ "./figures/index/problem.png"}
                 width="60%"
                 style={{ paddingTop: "120px" }}
               />
@@ -105,7 +105,7 @@ export default class Introduction extends React.Component {
             <div style={{ flex: 0.5, textAlign: "center" }}>
               <img
                 alt=""
-                src={process.env.PUBLIC_URL + "/figures/index/banner2.png"}
+                src={ "./figures/index/banner2.png"}
                 width="100%"
                 style={{ paddingRight: "40px", paddingTop: "75px" }}
               />
@@ -199,7 +199,7 @@ export default class Introduction extends React.Component {
             <div style={{ flex: 0.5 }}>
               <img
                 alt=""
-                src={process.env.PUBLIC_URL + "/figures/index/find.png"}
+                src={ "./figures/index/find.png"}
                 width="100%"
                 style={{ paddingLeft: "20px" }}
               />
@@ -212,7 +212,7 @@ export default class Introduction extends React.Component {
             <div style={{ flex: 0.5 }}>
               <img
                 alt=""
-                src={process.env.PUBLIC_URL + "/figures/index/create.png"}
+                src={ "./figures/index/create.png"}
                 width="100%"
                 style={{ paddingRight: "40px" }}
               />

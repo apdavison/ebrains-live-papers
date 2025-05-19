@@ -39,8 +39,8 @@ export default class Find extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/find/live_paper_homepage.png"
+
+                  "./figures/find/live_paper_homepage.png"
                 }
                 width="90%"
               />
@@ -51,8 +51,8 @@ export default class Find extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/find/live_paper_migliore_2018.png"
+
+                  "./figures/find/live_paper_migliore_2018.png"
                 }
                 width="90%"
               />

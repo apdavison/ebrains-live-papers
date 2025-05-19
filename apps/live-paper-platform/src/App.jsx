@@ -16,7 +16,6 @@ import saltedMd5 from "salted-md5";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { makeStyles } from "@material-ui/core";
 import Card from '@mui/material/Card';
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
@@ -100,7 +99,7 @@ const TABLE_COLUMNS = [
   },
 ];
 
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiTypography: {
       h6: {
@@ -118,23 +117,15 @@ const theme = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles({
-  root: {
-    width: "100%",
-    marginLeft: "5%",
-    marginRight: "5%",
-    // maxWidth: 325,
-  },
-  media: {
-    height: 140,
-  },
-});
 
 function MediaCard(props) {
-  const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div sx={{
+      width: "100%",
+      marginLeft: "5%",
+      marginRight: "5%",
+    }}>
       <Card
         style={{
           width: "90%",
@@ -145,7 +136,7 @@ function MediaCard(props) {
       >
         <CardActionArea onClick={() => window.open("/#" + props.alias)}>
           <CardMedia
-            className={classes.media}
+            sx={{height: 140}}
             image={props.image_url}
             title={props.title}
             style={{ height: 200, borderBottom: "solid 1px" }}
@@ -231,6 +222,7 @@ export default class App extends React.Component {
       axios
         .get("/cache/summary.json")
         .then((res) => {
+          JSON.parse(res.data);
           console.log("Found listing in server cache!");
           console.log(res);
           this.setState({
@@ -310,6 +302,7 @@ export default class App extends React.Component {
       axios
         .get("/cache/" + lp_id + ".json")
         .then((res) => {
+          JSON.parse(res.data);
           console.log("Found LP in server cache.");
           console.log(res);
           this.setState((prevState) => ({

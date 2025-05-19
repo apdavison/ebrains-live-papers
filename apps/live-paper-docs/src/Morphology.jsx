@@ -42,8 +42,8 @@ export default class Morphology extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/morphology/example_morphology_section.png"
+
+                  "./figures/morphology/example_morphology_section.png"
                 }
                 width="85%"
               />
@@ -99,8 +99,8 @@ export default class Morphology extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/morphology/example_morphology_output.png"
+
+                  "./figures/morphology/example_morphology_output.png"
                 }
                 width="85%"
               />
@@ -116,8 +116,8 @@ export default class Morphology extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/morphology/morphology_viewer.png"
+
+                  "./figures/morphology/morphology_viewer.png"
                 }
                 width="75%"
               />
