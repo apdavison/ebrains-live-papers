@@ -34,7 +34,7 @@ build_staging:
 build_merge_request:
   stage: build
   rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
   script:
     - cd apps
     - sh deployment/write_build_info.sh
