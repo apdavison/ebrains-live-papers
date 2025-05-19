@@ -4,9 +4,8 @@ stages:
 
 build_production:
   stage: build
-  only:
-    variables:
-      - $CI_COMMIT_BRANCH == "main"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
   script:
     - export # debugging environment variables
     - cd apps
@@ -20,9 +19,8 @@ build_production:
 
 build_staging:
   stage: build
-  only:
-    variables:
-      - $CI_COMMIT_BRANCH == "staging"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "staging"
   script:
     - cd apps
     - sh deployment/write_build_info.sh
@@ -30,6 +28,17 @@ build_staging:
     - echo $DOCKER_REGISTRY_USER
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_SECRET docker-registry.ebrains.eu
     - docker push docker-registry.ebrains.eu/live-papers/live-papers-apps:staging
+  tags:
+    - shell-runner
+
+build_merge_request:
+  stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "staging"
+  script:
+    - cd apps
+    - sh deployment/write_build_info.sh
+    - docker build -f deployment/Dockerfile.staging -t live-papers-apps-tmp .
   tags:
     - shell-runner
 
