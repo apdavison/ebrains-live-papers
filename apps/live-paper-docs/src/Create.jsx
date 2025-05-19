@@ -68,8 +68,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_homepage.png"
+
+                  "./figures/create/lp_builder_homepage.png"
                 }
                 width="90%"
               />
@@ -89,8 +89,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_create_home.png"
+
+                  "./figures/create/lp_builder_create_home.png"
                 }
                 width="90%"
               />
@@ -114,8 +114,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_pdf_extract.png"
+
+                  "./figures/create/lp_builder_pdf_extract.png"
                 }
                 width="80%"
               />
@@ -135,8 +135,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_main_filled.png"
+
+                  "./figures/create/lp_builder_main_filled.png"
                 }
                 width="90%"
               />
@@ -154,8 +154,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_resource_panel.png"
+
+                  "./figures/create/lp_builder_resource_panel.png"
                 }
                 width="90%"
               />
@@ -203,8 +203,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_toolbar.png"
+
+                  "./figures/create/lp_builder_toolbar.png"
                 }
                 width="90%"
               />
@@ -222,8 +222,8 @@ export default class Create extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/create/lp_builder_submit_password.png"
+
+                  "./figures/create/lp_builder_submit_password.png"
                 }
                 width="65%"
               />

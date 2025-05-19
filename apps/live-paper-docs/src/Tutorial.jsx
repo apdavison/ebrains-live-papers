@@ -57,7 +57,7 @@ export default class Tutorial extends React.Component {
           <div className="block-little-header">Video Tutorial</div>
           <div className="block-main-header">Demonstration of Live Papers</div>
           <div className="block-text">
-            <div class="video-container">
+            <div className="video-container">
               <YouTube
                 videoId="h6BxdWN1Jj4"
                 opts={opts}
@@ -116,6 +116,7 @@ export default class Tutorial extends React.Component {
                   <a href onClick={() => this.changeTime(121 + 490)}>
                     Live Paper Builder
                   </a>
+                  <ul>
                   <li>
                     <a href onClick={() => this.changeTime(121 + 505)}>
                       EBRAINS account and the Collaboratory
@@ -143,6 +144,7 @@ export default class Tutorial extends React.Component {
                       </li>
                     </ul>
                   </li>
+                  </ul>
                   <ul>
                     <li>
                       <a href onClick={() => this.changeTime(121 + 821)}>

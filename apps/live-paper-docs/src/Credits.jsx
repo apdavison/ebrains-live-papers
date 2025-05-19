@@ -172,7 +172,7 @@ export default class Credits extends React.Component {
             <div style={{ flex: 0.5, textAlign: "center" }}>
               <img
                 alt=""
-                src={process.env.PUBLIC_URL + "/figures/credits/funding.png"}
+                src={ "./figures/credits/funding.png"}
                 width="75%"
                 style={{ paddingTop: "60px" }}
               />

@@ -40,8 +40,8 @@ export default class Models extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/models/example_models_section.png"
+
+                  "./figures/models/example_models_section.png"
                 }
                 width="85%"
               />
@@ -113,8 +113,8 @@ export default class Models extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/models/example_models_output.png"
+
+                  "./figures/models/example_models_output.png"
                 }
                 width="85%"
               />
@@ -131,7 +131,7 @@ export default class Models extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL + "/figures/models/model_catalog.png"
+                   "./figures/models/model_catalog.png"
                 }
                 width="85%"
               />

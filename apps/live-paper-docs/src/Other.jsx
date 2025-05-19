@@ -50,8 +50,8 @@ export default class Other extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/other/example_generic_section.png"
+
+                  "./figures/other/example_generic_section.png"
                 }
                 width="85%"
               />
@@ -71,8 +71,8 @@ export default class Other extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/other/example_custom_section.png"
+
+                  "./figures/other/example_custom_section.png"
                 }
                 width="85%"
               />
@@ -104,8 +104,8 @@ export default class Other extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/other/example_generic_output.png"
+
+                  "./figures/other/example_generic_output.png"
                 }
                 width="85%"
               />
@@ -119,8 +119,8 @@ export default class Other extends React.Component {
               <img
                 alt=""
                 src={
-                  process.env.PUBLIC_URL +
-                  "/figures/other/example_custom_output.png"
+
+                  "./figures/other/example_custom_output.png"
                 }
                 width="85%"
               />
