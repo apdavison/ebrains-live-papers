@@ -676,7 +676,7 @@ export default class App extends React.Component {
                 id="bee280cc-8184-4380-a2cb-a74b131de611"
                 alias="2021-saray-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2021_saray_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2021_saray_et_al.jpg"
                 }
                 image_title={"Saray et al., 2020"}
                 title={
@@ -690,7 +690,7 @@ export default class App extends React.Component {
                 id="93a5c03a-6995-47bc-af9f-4f0d85950d1d"
                 alias="2020-lupascu-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2020_lupascu_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2020_lupascu_et_al.jpg"
                 }
                 image_title={"Lupascu et al., 2020"}
                 title={
@@ -704,7 +704,7 @@ export default class App extends React.Component {
                 id="c1573aeb-d139-42a2-a7fc-fd68319e428e"
                 alias="2018-migliore-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2018_migliore_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2018_migliore_et_al.jpg"
                 }
                 image_title={"Migliore et al., 2018"}
                 title={
@@ -718,7 +718,7 @@ export default class App extends React.Component {
                 id="b6917332-e092-4bf3-bf31-3f0d212ff861"
                 alias="2019-bruce-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2019_bruce_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2019_bruce_et_al.jpg"
                 }
                 image_title={"Bruce et al., 2019"}
                 title={
@@ -732,7 +732,7 @@ export default class App extends React.Component {
                 id="cf895d83-49b8-4c72-b1ac-8b974bbe4eb5"
                 alias="2019-kokh-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2019_kokh_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2019_kokh_et_al.jpg"
                 }
                 image_title={"Kokh et al., 2019"}
                 title={
@@ -746,7 +746,7 @@ export default class App extends React.Component {
                 id="67806cc2-84e0-4bb3-ae52-8cc3e5abf738"
                 alias="2020-hjorth-et-al"
                 image_url={
-                  "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/EBRAINS_live_papers/featured_thumbs/2020_hjorth_et_al.jpg"
+                  "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/featured_thumbs/2020_hjorth_et_al.jpg"
                 }
                 image_title={"Hjorth et al., 2020"}
                 title={"The microcircuits of striatum in silico"}

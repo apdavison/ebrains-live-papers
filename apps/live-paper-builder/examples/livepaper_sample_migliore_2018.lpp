@@ -150,7 +150,7 @@
                 {
                     "type": "URL",
                     "label": "010710HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/010710HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/010710HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -158,7 +158,7 @@
                 {
                     "type": "URL",
                     "label": "011017HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/011017HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/011017HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -166,7 +166,7 @@
                 {
                     "type": "URL",
                     "label": "011023HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/011023HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/011023HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -174,7 +174,7 @@
                 {
                     "type": "URL",
                     "label": "011127HP1",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/011127HP1.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/011127HP1.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -182,7 +182,7 @@
                 {
                     "type": "URL",
                     "label": "031031AM1",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/031031AM1.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/031031AM1.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -190,7 +190,7 @@
                 {
                     "type": "URL",
                     "label": "060314AM2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/060314AM2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/060314AM2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -198,7 +198,7 @@
                 {
                     "type": "URL",
                     "label": "970509HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/970509HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/970509HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -206,7 +206,7 @@
                 {
                     "type": "URL",
                     "label": "970627BHP1",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/970627BHP1.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/970627BHP1.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -214,7 +214,7 @@
                 {
                     "type": "URL",
                     "label": "970717D",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/970717D.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/970717D.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -222,7 +222,7 @@
                 {
                     "type": "URL",
                     "label": "970911C",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/970911C.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/970911C.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -230,7 +230,7 @@
                 {
                     "type": "URL",
                     "label": "971114B",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/971114B.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/971114B.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -238,7 +238,7 @@
                 {
                     "type": "URL",
                     "label": "980120A",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/980120A.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/980120A.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -246,7 +246,7 @@
                 {
                     "type": "URL",
                     "label": "980513B",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/980513B.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/980513B.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -254,7 +254,7 @@
                 {
                     "type": "URL",
                     "label": "990111HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/990111HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/990111HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -262,7 +262,7 @@
                 {
                     "type": "URL",
                     "label": "990611HP2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/990611HP2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/990611HP2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -270,7 +270,7 @@
                 {
                     "type": "URL",
                     "label": "990827IN5HP3",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/990827IN5HP3.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/990827IN5HP3.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -278,7 +278,7 @@
                 {
                     "type": "URL",
                     "label": "dend-050921AM2_axon-051208AM2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/dend-050921AM2_axon-051208AM2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/dend-050921AM2_axon-051208AM2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -286,7 +286,7 @@
                 {
                     "type": "URL",
                     "label": "dend-990803_axon-051208AM2",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/dend-990803_axon-051208AM2.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/dend-990803_axon-051208AM2.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -294,7 +294,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141017_a1-2_idC",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141017_a1-2_idC.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141017_a1-2_idC.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -302,7 +302,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141208_B_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141208_B_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141208_B_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -310,7 +310,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141209_A_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141209_A_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141209_A_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -318,7 +318,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141209_B_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141209_B_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141209_B_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -326,7 +326,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141215_A_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141215_A_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141215_A_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -334,7 +334,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141216_A_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141216_A_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141216_A_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -342,7 +342,7 @@
                 {
                     "type": "URL",
                     "label": "mpg141217_A_idB",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg141217_A_idB.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg141217_A_idB.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -350,7 +350,7 @@
                 {
                     "type": "URL",
                     "label": "mpg150305_A_idB",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/mpg150305_A_idB.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/mpg150305_A_idB.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -358,7 +358,7 @@
                 {
                     "type": "URL",
                     "label": "oh140521_B0_Rat_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140521_B0_Rat_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140521_B0_Rat_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -366,7 +366,7 @@
                 {
                     "type": "URL",
                     "label": "oh140521_B0_Rat_idC",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140521_B0_Rat_idC.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140521_B0_Rat_idC.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -374,7 +374,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idA",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idA.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idA.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -382,7 +382,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idB",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idB.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idB.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -390,7 +390,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idC",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idC.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idC.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -398,7 +398,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idF",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idF.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idF.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -406,7 +406,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idG",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idG.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idG.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -414,7 +414,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idH",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idH.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idH.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -422,7 +422,7 @@
                 {
                     "type": "URL",
                     "label": "oh140807_A0_idJ",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/morphologies/oh140807_A0_idJ.asc",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/morphologies/oh140807_A0_idJ.asc",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": ""
@@ -439,7 +439,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/Ivy_960711AHP3/96711008.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/Ivy_960711AHP3/96711008.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/Ivy_960711AHP3/96711008.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -447,7 +447,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/PVBC_990111ABHP1/99111000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -455,7 +455,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/PVBC_990111ABHP1/99111001.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111001.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111001.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -463,7 +463,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/PVBC_990111ABHP1/99111002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/PVBC_990111ABHP1/99111002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -471,7 +471,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/SP_AA_970911C/97911000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -479,7 +479,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/SP_AA_970911C/97911001.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911001.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911001.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -487,7 +487,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/SP_AA_970911C/97911002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/SP_AA_970911C/97911002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -495,7 +495,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/SP_BS/95810035.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/SP_BS/95810035.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/SP_BS/95810035.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -503,7 +503,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-bAC/SP_BS/95810036.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-bAC/SP_BS/95810036.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-bAC/SP_BS/95810036.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-bAC"
@@ -511,7 +511,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/OLM_980205FHP/98205021.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205021.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205021.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -519,7 +519,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/OLM_980205FHP/98205022.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205022.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205022.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -527,7 +527,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/OLM_980205FHP/98205024.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205024.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205024.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -535,7 +535,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/OLM_980205FHP/98205025.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205025.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/OLM_980205FHP/98205025.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -543,7 +543,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_OLM_970428A1/97428000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_OLM_970428A1/97428000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_OLM_970428A1/97428000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -551,7 +551,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_OLM_970428A1/97428001.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_OLM_970428A1/97428001.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_OLM_970428A1/97428001.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -559,7 +559,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_Tri_970509HP2/97509008.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509008.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509008.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -567,7 +567,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_Tri_970509HP2/97509009.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509009.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509009.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -575,7 +575,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_Tri_970509HP2/97509010.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509010.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509010.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -583,7 +583,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cAC/SO_Tri_970509HP2/97509011.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509011.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cAC/SO_Tri_970509HP2/97509011.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cAC"
@@ -591,7 +591,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/PVBC_981215GHP4/98D15008.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_981215GHP4/98D15008.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_981215GHP4/98D15008.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -599,7 +599,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/PVBC_981215GHP4/98D15009.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_981215GHP4/98D15009.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_981215GHP4/98D15009.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -607,7 +607,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/PVBC_990111HP2/99111004.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_990111HP2/99111004.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_990111HP2/99111004.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -615,7 +615,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/PVBC_990111HP2/99111006.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_990111HP2/99111006.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/PVBC_990111HP2/99111006.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -623,7 +623,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/SP_BS/95817000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -631,7 +631,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/SP_BS/95817001.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817001.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817001.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -639,7 +639,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/SP_BS/95817002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS/95817002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -647,7 +647,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/SP_BS_980513B/98513011.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS_980513B/98513011.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_BS_980513B/98513011.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -655,7 +655,7 @@
                 {
                     "type": "URL",
                     "label": "abf-int-cNAC/SP_Ivy_970717D/97717005.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_Ivy_970717D/97717005.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-int-cNAC/SP_Ivy_970717D/97717005.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "int-cNAC"
@@ -663,7 +663,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810005/95810005.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810005.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810005.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -671,7 +671,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810005/95810006.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810006.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810006.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -679,7 +679,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810005/95810007.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810007.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810007.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -687,7 +687,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810005/95810008.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810008.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810005/95810008.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -695,7 +695,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810010/95810010.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810010/95810010.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810010/95810010.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -703,7 +703,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810011/95810011.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810011/95810011.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810011/95810011.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -711,7 +711,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810012.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810012.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810012.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -719,7 +719,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810013.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810013.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810013.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -727,7 +727,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810014.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810014.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810014.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -735,7 +735,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810015.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810015.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810015.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -743,7 +743,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810026.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810026.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810026.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -751,7 +751,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810027.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810027.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810027.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -759,7 +759,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810028.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810028.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810028.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -767,7 +767,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810012/95810029.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810029.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810012/95810029.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -775,7 +775,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810022/95810022.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810022.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810022.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -783,7 +783,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810022/95810023.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810023.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810023.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -791,7 +791,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810022/95810024.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810024.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810024.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -799,7 +799,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810022/95810025.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810025.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810022/95810025.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -807,7 +807,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810030/95810030.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810030/95810030.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810030/95810030.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -815,7 +815,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810031/95810031.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810031/95810031.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810031/95810031.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -823,7 +823,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810032/95810032.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810032/95810032.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810032/95810032.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -831,7 +831,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810033/95810033.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810033/95810033.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810033/95810033.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -839,7 +839,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810037/95810037.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810037.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810037.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -847,7 +847,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810037/95810038.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810038.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810038.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -855,7 +855,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810037/95810039.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810039.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810039.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -863,7 +863,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810037/95810040.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810040.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810040.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -871,7 +871,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95810037/95810041.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810041.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95810037/95810041.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -879,7 +879,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817003/95817003.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817003/95817003.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817003/95817003.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -887,7 +887,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817004/95817004.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817004/95817004.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817004/95817004.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -895,7 +895,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817005/95817005.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817005/95817005.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817005/95817005.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -903,7 +903,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817005/95817006.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817005/95817006.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817005/95817006.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -911,7 +911,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817007/95817007.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817007/95817007.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817007/95817007.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -919,7 +919,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95817007/95817008.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817007/95817008.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95817007/95817008.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -927,7 +927,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822000/95822000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822000/95822000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822000/95822000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -935,7 +935,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822000/95822001.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822000/95822001.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822000/95822001.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -943,7 +943,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822002/95822002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822002/95822002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822002/95822002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -951,7 +951,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822002/95822003.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822002/95822003.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822002/95822003.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -959,7 +959,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822007/95822009.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822007/95822009.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822007/95822009.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -967,7 +967,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822010/95822010.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822010/95822010.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822010/95822010.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -975,7 +975,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95822010/95822011.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822010/95822011.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95822010/95822011.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -983,7 +983,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95824000/95824000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824000/95824000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824000/95824000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -991,7 +991,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95824004/95824004.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824004/95824004.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824004/95824004.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -999,7 +999,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95824006/95824006.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824006/95824006.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95824006/95824006.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1007,7 +1007,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95831000/95831000.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831000/95831000.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831000/95831000.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1015,7 +1015,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95831002/95831002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831002/95831002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831002/95831002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1023,7 +1023,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95831003/95831003.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831003/95831003.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831003/95831003.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1031,7 +1031,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95831004/95831004.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831004/95831004.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95831004/95831004.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1039,7 +1039,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95912005/95912005.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95912005/95912005.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95912005/95912005.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1047,7 +1047,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95912005/95912006.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95912005/95912006.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95912005/95912006.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1055,7 +1055,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95914002/95914002.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914002.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914002.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1063,7 +1063,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95914002/95914003.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914003.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914003.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1071,7 +1071,7 @@
                 {
                     "type": "URL",
                     "label": "abf-pyr-cAC/95914002/95914004.abf",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914004.abf",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/exp_data/abf-pyr-cAC/95914002/95914004.abf",
                     "view_url": "",
                     "identifier": null,
                     "tab_name": "pyr-cAC"
@@ -1310,7 +1310,7 @@
                 },
                 {
                     "type": "URL",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/models/CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830/CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830.zip",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/models/CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830/CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830.zip",
                     "view_url": "",
                     "label": "CA1_pyr_cACpyr_dend-050921AM2_axon-051208AM2_20170915145830",
                     "identifier": null,
@@ -1318,7 +1318,7 @@
                 },
                 {
                     "type": "URL",
-                    "url": "https://object.cscs.ch/v1/AUTH_c0a333ecf7c045809321ce9d9ecdfdea/Migliore_2018_CA1/models/CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002/CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002.zip",
+                    "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-Migliore_2018_CA1/models/CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002/CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002.zip",
                     "view_url": "",
                     "label": "CA1_pyr_cACpyr_dend-990803_axon-051208AM2_20170909151002",
                     "identifier": null,
