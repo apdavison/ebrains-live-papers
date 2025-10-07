@@ -1,0 +1,47 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "author": [
+        {
+            "id": "https://orcid.org/0000-0002-0148-8023",
+            "type": "Person",
+            "familyName": "Appukuttan",
+            "givenName": "Shailesh"
+        },
+        {
+            "type": "Person",
+            "familyName": "El Haddad",
+            "givenName": "Fatma"
+        },
+        {
+            "id": "https://orcid.org/0000-0002-4793-7541",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Paris-Saclay Institute of Neuroscience, CNRS, Université Paris-Saclay"
+            },
+            "email": "andrew.davison@cnrs.fr",
+            "familyName": "Davison",
+            "givenName": "Andrew P"
+        }
+    ],
+    "codeRepository": "https://gitlab.ebrains.eu/live-papers/live-papers-platform",
+    "dateModified": "2025-05-19",
+    "description": "This repository contains the code for the EBRAINS Live Papers web app.\n\nEBRAINS live papers are structured and interactive supplementary documents to complement journal publications, that allow users to readily access, explore and utilize the various kinds of data underlying scientific studies. Interactivity is a prominent feature with several integrated tools and services that will allow users to download, visualise or simulate data, models and results presented in the corresponding publications.\n\nThe web app allows anyone to view and interact with published live papers. It also includes an authoring tool, the live paper builder, which requires an EBRAINS account.",
+    "downloadUrl": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/archive/2025-05-19/live-papers-platform-2025-05-19.zip",
+    "isPartOf": "https://live-papers.apps.ebrains.eu",
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "name": "EBRAINS Live Papers app",
+    "operatingSystem": [
+        "Linux",
+        "MacOS",
+        "Windows"
+    ],
+    "programmingLanguage": "Javascript",
+    "relatedLink": "https://live-papers.apps.ebrains.eu/docs",
+    "softwareRequirements": "https://react.dev/",
+    "version": "20250519",
+    "continuousIntegration": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/pipelines",
+    "developmentStatus": "active",
+    "issueTracker": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/issues"
+}
