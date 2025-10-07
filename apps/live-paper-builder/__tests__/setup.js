@@ -20,7 +20,7 @@ axios.get.mockImplementation((url, config) => {
       return new Promise(() => {
         return collabList;
       });
-    case "https://live-papers-api.apps.tc.humanbrainproject.eu":
+    case "https://live-papers-api.apps.ebrains.eu":
       return new Promise(() => {
         return aboutApi;
       });
@@ -28,23 +28,23 @@ axios.get.mockImplementation((url, config) => {
       return new Promise(() => {
         return kgVocab;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/http://modeldb.science/api/v1/regions/name":
+    case "https://corsproxy.apps.ebrains.eu/http://modeldb.science/api/v1/regions/name":
       return new Promise(() => {
         return modelDBvocab.regions;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/http://modeldb.science/api/v1/celltypes/name":
+    case "https://corsproxy.apps.ebrains.eu/http://modeldb.science/api/v1/celltypes/name":
       return new Promise(() => {
         return modelDBvocab.cellTypes;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/http://modeldb.science/api/v1/modeltypes/name":
+    case "https://corsproxy.apps.ebrains.eu/http://modeldb.science/api/v1/modeltypes/name":
       return new Promise(() => {
         return modelDBvocab.modelTypes;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/http://modeldb.science/api/v1/modelconcepts/name":
+    case "https://corsproxy.apps.ebrains.eu/http://modeldb.science/api/v1/modelconcepts/name":
       return new Promise(() => {
         return modelDBvocab.concepts;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/http://modeldb.science/api/v1/simenvironments/name":
+    case "https://corsproxy.apps.ebrains.eu/http://modeldb.science/api/v1/simenvironments/name":
       return new Promise(() => {
         return modelDBvocab.environments;
       });
@@ -68,7 +68,7 @@ axios.get.mockImplementation((url, config) => {
       return new Promise(() => {
         return neuromorphoVocab.protocols;
       });
-    case "https://corsproxy.apps.tc.humanbrainproject.eu/https://www.ebi.ac.uk/biomodels/search?query=*%3A*&format=json":
+    case "https://corsproxy.apps.ebrains.eu/https://www.ebi.ac.uk/biomodels/search?query=*%3A*&format=json":
       return new Promise(() => {
         return biomodelsMetadata;
       });
