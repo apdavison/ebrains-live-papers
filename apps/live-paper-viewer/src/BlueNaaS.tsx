@@ -8,7 +8,7 @@ const BLUENAAS_URL = import.meta.env.DEV
   ? `ws://${window.location.host}/ws`
   : BLUENAAS_REMOTE;
 
-function setNestedValue(
+export function setNestedValue(
   obj: Record<string, unknown>,
   path: string,
   value: number
