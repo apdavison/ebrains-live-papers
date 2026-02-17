@@ -1,0 +1,234 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "Advancing the science of consciousness: from ethics to clinical care",
+  "alias": "2023-farisco-et-al",
+  "publication_date": "2023-09-26",
+  "version": "v1",
+  "authors": [
+    {
+      "given_name": "Arnau",
+      "family_name": "Manasanch",
+      "identifier": null,
+      "affiliations": [
+        "Institut d'Investigacions Biom\u00e8diques August Pi i Sunyer (IDIBAPS), Barcelona, Spain"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "The resources from this paper are linked below. You will find the associated dataset and model as well as a Live Figure that is executable in EBRAINS (with an EBRAINS account).",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Michele",
+          "family_name": "Farisco",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Research Ethics and Bioethics, Uppsala University, Uppsala, Sweden",
+            "Biogem Molecular Biology and Genetics Research Institute, Ariano Irpino (AV), Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Kathinka",
+          "family_name": "Evers",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Research Ethics and Bioethics, Uppsala University, Uppsala, Sweden",
+            "Biogem Molecular Biology and Genetics Research Institute, Ariano Irpino (AV), Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Jitka",
+          "family_name": "Annen",
+          "identifier": null,
+          "affiliations": [
+            "GIGA-Consciousness, Coma Science Group, University of Li\u00e8ge, Belgium",
+            "Centre du Cerveau, University Hospital of Li\u00e8ge, Belgium",
+            "Joint International Research Unit on Consciousness, CERVO Brain Research Centre, U Laval, Canada",
+            "International Consciousness Science Institute, Hangzhou Normal University, Hangzhou, China"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Veronique",
+          "family_name": "Baldin",
+          "identifier": null,
+          "affiliations": [
+            "ALIS, French Association of Locked-in Syndrome, Boulogne-Billancourt, France"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Alessandra",
+          "family_name": "Camassa",
+          "identifier": null,
+          "affiliations": [
+            "Institut d'Investigacions Biom\u00e8diques August Pi i Sunyer (IDIBAPS), Barcelona, Spain"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Benedetta",
+          "family_name": "Cecconi",
+          "identifier": null,
+          "affiliations": [
+            "GIGA-Consciousness, Coma Science Group, University of Li\u00e8ge, Belgium"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Gustavo",
+          "family_name": "Deco",
+          "identifier": null,
+          "affiliations": [
+            "Catalan Institution for Research and Advanced Studies, Barcelona, Spain",
+            "Computational Neuroscience Group, Center for Brain and Cognition, Universitat Pompeu Fabra, Barcelona, Spain"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Steven",
+          "family_name": "Laureys",
+          "identifier": null,
+          "affiliations": [
+            "GIGA-Consciousness, Coma Science Group, University of Li\u00e8ge, Belgium",
+            "Centre du Cerveau, University Hospital of Li\u00e8ge, Belgium",
+            "Joint International Research Unit on Consciousness, CERVO Brain Research Centre, U Laval, Canada",
+            "International Consciousness Science Institute, Hangzhou Normal University, Hangzhou, China"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Rajanikant",
+          "family_name": "Panda",
+          "identifier": null,
+          "affiliations": [
+            "GIGA-Consciousness, Coma Science Group, University of Li\u00e8ge, Belgium",
+            "Centre du Cerveau, University Hospital of Li\u00e8ge, Belgium"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Arnau",
+          "family_name": "Manasanch",
+          "identifier": null,
+          "affiliations": [
+            "Institut d'Investigacions Biom\u00e8diques August Pi i Sunyer (IDIBAPS), Barcelona, Spain"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Maria Victoria",
+          "family_name": "S\u00e1nchez-Vives",
+          "identifier": null,
+          "affiliations": [
+            "Institut d'Investigacions Biom\u00e8diques August Pi i Sunyer (IDIBAPS), Barcelona, Spain",
+            "Catalan Institution for Research and Advanced Studies, Barcelona, Spain"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Gorka",
+          "family_name": "Zamora-L\u00f3pez",
+          "identifier": null,
+          "affiliations": [
+            "Computational Neuroscience Group, Center for Brain and Cognition, Universitat Pompeu Fabra, Barcelona, Spain"
+          ],
+          "roles": [
+            "author"
+          ]
+        }
+      ],
+      "publication_date": "2023-09-23",
+      "title": "Advancing the science of consciousness: from ethics to clinical care",
+      "journal": "PsyArXiV",
+      "volume": null,
+      "issue": null,
+      "pagination": null,
+      "abstract": "Significant advances in the scientific investigation of the neurobiology of consciousness have been slow to be translated into clinical settings, limited by factors of conceptual (e.g., what is consciousness?), methodological (e.g., how to identify reliable indicators of consciousness?), and technical (e.g., how to improve sensitivity and specificity of the technological identification of consciousness?) nature. In the present paper we aim at reducing the gap between research, clinical practice, patients\u2019 and their caregivers\u2019 needs regarding disorders of consciousness. By implementing a multidisciplinary and multidimensional approach, the paper focuses on disorders of consciousness: it starts from the review of some of the most promising measures of consciousness from brain activity (i.e., spectral measures, measures of functional connectivity, complexity-based measures). Next the paper introduces brain responses to illusions as a new indicator of consciousness (i.e., a feature that facilitates the attribution of consciousness), and illustrates the clinical operationalization of the indicators of consciousness through the case of virtual reality. Finally, the paper analyzes a set of urgent ethical issues and describes a model for assessing and dealing with those issues, concluding by elaborating key recommendations for improving the clinical treatment of patients with disorders of consciousness through a better translation of research into clinics.",
+      "url": "https://psyarxiv.com/sutrc/",
+      "doi": "https://doi.org/10.31234/osf.io/sutrc"
+    }
+  ],
+  "doi": null,
+  "license": [
+    "GNU General Public License v3.0 or later"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_generic",
+      "title": "Data, Model and Live Figure",
+      "text": "This section includes the data, model and Live Figure presented in the paper.",
+      "data": [
+        {
+          "label": "Live Figure",
+          "links": [
+            {
+              "url": "https://data.kg.ebrains.eu/zip?container=https://data-proxy.ebrains.eu/api/v1/buckets/live-papers?prefix=2023-farisco-et-al/",
+              "service": "download"
+            },
+            {
+              "url": "https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/Live%20Paper%20Ethics%20and%20Clinical%20Care/Live%20Figure/live_figure_clinical_cases.ipynb",
+              "service": "EBRAINS Collaboratory Lab"
+            }
+          ],
+          "type": "URL",
+          "identifier": "f8f1ab49-e9fc-4c30-8add-d7ad85c6fe3c"
+        },
+        {
+          "label": "Results for complexity measures and a read-out of the state of cortical circuits after injury",
+          "links": [
+            {
+              "url": "https://search.kg.ebrains.eu/instances/Dataset/9a05f491-3ef7-47be-93b2-0a6d8cd43ae0",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "fbe0f0b9-43d0-4f52-ae12-e19cc1a7392a"
+        },
+        {
+          "label": "TVB Model",
+          "links": [
+            {
+              "url": "https://wiki.ebrains.eu/bin/view/Collabs/showcase-3-tvb-brain-states-modelling",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "b29a150d-7ff4-4771-ad0c-522b5fa7bbbc"
+        }
+      ]
+    }
+  ],
+  "id": "1c1f53e4-55d1-45a3-a63a-a16c491a07f4"
+}

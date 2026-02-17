@@ -1,0 +1,215 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "Feasibility analysis of semiconductor voltage nanosensors for neuronal membrane potential sensing",
+  "alias": "2019-ludwig-et-al",
+  "publication_date": "2021-08-02",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Antoine",
+      "family_name": "Triller",
+      "identifier": null,
+      "affiliations": [
+        "L'Ecole Normale Sup\u00e9rieure, Institute of Biology (IBENS), Paris Sciences et Lettres (PSL), CNRS UMR 8197, Inserm 1024, Paris, France"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "Here you can find the resources referred to in the manuscript.",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Anastasia",
+          "family_name": "Ludwig",
+          "identifier": null,
+          "affiliations": [
+            "L'Ecole Normale Sup\u00e9rieure, Institute of Biology (IBENS), Paris Sciences et Lettres (PSL), CNRS UMR 8197, Inserm 1024, Paris, France",
+            "Neuroscience Center, Helsinki Institute of Life Science, University of Helsinki, Finland"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Pablo",
+          "family_name": "Serna",
+          "identifier": null,
+          "affiliations": [
+            "L'Ecole Normale Sup\u00e9rieure, Institute of Biology (IBENS), Paris Sciences et Lettres (PSL), CNRS UMR 8197, Inserm 1024, Paris, France"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Lion",
+          "family_name": "Morgenstein",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physics, Institute for Nanotechnology and Advanced Materials, Bar-Ilan University, Ramat-Gan, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Gaoling",
+          "family_name": "Yang",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physics of Complex Systems, Weizmann Institute of Science, Rehovot, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Omri",
+          "family_name": "Bar-Elli",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physics of Complex Systems, Weizmann Institute of Science, Rehovot, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Gloria",
+          "family_name": "Ortiz",
+          "identifier": null,
+          "affiliations": [
+            "Departments of Chemistry, Molecular & Cell Biology, and Helen Wills Neuroscience Institute, University of California, Berkeley, CA, USA"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Evan",
+          "family_name": "Miller",
+          "identifier": null,
+          "affiliations": [
+            "Departments of Chemistry, Molecular & Cell Biology, and Helen Wills Neuroscience Institute, University of California, Berkeley, CA, USA"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Dan",
+          "family_name": "Oron",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physics of Complex Systems, Weizmann Institute of Science, Rehovot, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Asaf",
+          "family_name": "Grupi",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physics, Institute for Nanotechnology and Advanced Materials, Bar-Ilan University, Ramat-Gan, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Shimon",
+          "family_name": "Weiss",
+          "identifier": null,
+          "affiliations": [
+            "Department of Chemistry and Biochemistry, Department of Physiology, and California NanoSystems Institute, University of California Los Angeles, Los Angeles, CA, USA",
+            "Department of Physics, Institute for Nanotechnology and Advanced Materials, Bar-Ilan University, Ramat-Gan, Israel"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Antoine",
+          "family_name": "Triller",
+          "identifier": null,
+          "affiliations": [
+            "L'Ecole Normale Sup\u00e9rieure, Institute of Biology (IBENS), Paris Sciences et Lettres (PSL), CNRS UMR 8197, Inserm 1024, Paris, France"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        }
+      ],
+      "publication_date": "2019-05-26",
+      "title": "Feasibility analysis of semiconductor voltage nanosensors for neuronal membrane potential sensing",
+      "journal": "bioRxiv",
+      "volume": null,
+      "issue": null,
+      "pagination": "838342",
+      "abstract": "In the last decade, optical imaging methods have significantly improved our understanding of the information processing principles in the brain. Although many promising tools have been designed, sensors of membrane potential are lagging behind the rest. Semiconductor nanoparticles are an attractive alternative to classical voltage indicators, such as voltage-sensitive dyes and proteins. Such nanoparticles exhibit high sensitivity to external electric fields via the quantum-confined Stark effect. Here we report the development of lipid-coated semiconductor voltage-sensitive nanorods (vsNRs) that self-insert into the neuronal membrane. We describe a workflow to detect and process the photoluminescent signal of vsNRs after wide-field time-lapse recordings. We also present data indicating that vsNRs are feasible for sensing membrane potential in neurons at a single-particle level. This shows the potential of vsNRs for detection of neuronal activity with unprecedentedly high spatial and temporal resolution.",
+      "url": "https://www.biorxiv.org/content/10.1101/838342v1",
+      "doi": "https://doi.org/10.1101/838342"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/2AAE-GAX",
+  "license": [
+    "Creative Commons Attribution 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_generic",
+      "title": "Use Cases",
+      "text": "The following jupyter notebooks guide the user through the analysis protocols outlined in the manuscript.",
+      "data": [
+        {
+          "label": "Analysis signal of vsNRs",
+          "links": [
+            {
+              "url": "https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2019-ludwig-et-al/Jupyter%20Notebook",
+              "service": "download"
+            },
+            {
+              "url": "https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2019-ludwig-et-al/Jupyter%20Notebook",
+              "service": "EBRAINS Collaboratory Wiki"
+            }
+          ],
+          "type": "URL",
+          "identifier": "2add1101-98d8-45dd-8e53-b204c738eb47"
+        },
+        {
+          "label": "EBRAINS Collab",
+          "links": [
+            {
+              "url": "https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2019-ludwig-et-al/",
+              "service": "download"
+            },
+            {
+              "url": "https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2019-ludwig-et-al/",
+              "service": "EBRAINS Collaboratory Wiki"
+            }
+          ],
+          "type": "URL",
+          "identifier": "e2616e8b-22bd-491c-ac76-cc40058bb95e"
+        }
+      ]
+    },
+    {
+      "order": 1,
+      "type": "section_custom",
+      "title": "Source Code",
+      "text": "<p>The source code is available on github at the following <a href=\"https://github.com/pabloserna/Nanorods\" target=\"_blank\">url</a>.\n   Please refer to the README file for more details.\n</p>",
+      "data": []
+    }
+  ],
+  "id": "b3816c12-2d3a-430e-a6d4-139f0a132de7"
+}

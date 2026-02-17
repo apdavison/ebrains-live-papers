@@ -1,0 +1,107 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "The role of network connectivity on epileptiform activity",
+  "alias": "2021b-giacopelli-et-al",
+  "publication_date": "2021-10-21",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Luca L.",
+      "family_name": "Bologna",
+      "identifier": null,
+      "affiliations": [
+        "Institute of Biophysics, National Research Council, Palermo, Italy"
+      ],
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "given_name": "Giuseppe",
+      "family_name": "Giacopelli",
+      "identifier": null,
+      "affiliations": [
+        "Department of Mathematics and Informatics, University of Palermo, Italy",
+        "Institute of Biophysics, National Research Council, Palermo, Italy"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "Models and Web App: the models used in the paper and the Web Application are available at the links reported below:",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Giuseppe",
+          "family_name": "Giacopelli",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Domenico",
+          "family_name": "Tegolo",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Michele",
+          "family_name": "Migliore",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        }
+      ],
+      "publication_date": "2021-10-12",
+      "title": "The role of network connectivity on epileptiform activity",
+      "journal": "Scientific Reports",
+      "volume": "11",
+      "issue": null,
+      "pagination": "20792",
+      "abstract": "A number of potentially important mechanisms have been identified as key players to generate epileptiform activity, such as genetic mutations, activity-dependent alteration of synaptic functions, and functional network reorganization at the macroscopic level. Here we study how network connectivity at cellular level can affect the onset of epileptiform activity, using computational model networks with different wiring properties. The model suggests that networks connected as in real brain circuits are more resistant to generate seizure-like activity. The results suggest new experimentally testable predictions on the cellular network connectivity in epileptic individuals, and highlight the importance of using the appropriate network connectivity to investigate epileptiform activity with computational models.",
+      "url": "https://www.nature.com/articles/s41598-021-00283-w",
+      "doi": "https://doi.org/10.1038/s41598-021-00283-w"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/MZV9-ECW",
+  "license": [
+    "Creative Commons Attribution 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_custom",
+      "title": "Model",
+      "text": "<p>A reduced self-consistent set of files able to reproduce Figure 4 of the paper is available on <a target=\"_blank\" href=\"https://modeldb.science/266910\">ModelDB</a>.</p>",
+      "data": []
+    },
+    {
+      "order": 1,
+      "type": "section_custom",
+      "title": "Web Application",
+      "text": "<p>The Web Application will be available on <a target=\"_blank\" href=\"https://bsp-gtalg.cineca.it/eeg/\">CINECA</a>.</p>",
+      "data": []
+    }
+  ],
+  "id": "9ef99ad2-233a-49d1-9499-6c1b6dd641f6"
+}

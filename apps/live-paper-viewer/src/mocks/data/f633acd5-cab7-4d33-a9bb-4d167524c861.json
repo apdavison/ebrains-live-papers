@@ -1,0 +1,494 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "The cortical microcircuitry of predictions and context: a multi-scale perspective",
+  "alias": "2023-muckli-et-al",
+  "publication_date": "2023-09-25",
+  "version": "v1",
+  "authors": [
+    {
+      "given_name": "Michele",
+      "family_name": "Svanera",
+      "identifier": null,
+      "affiliations": [
+        "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK",
+        "Imaging Centre for Excellence, Queen Elizabeth University Hospital, University of Glasgow, UK"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": null,
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Lars",
+          "family_name": "Muckli",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK",
+            "Imaging Centre for Excellence, Queen Elizabeth University Hospital, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Lucy S.",
+          "family_name": "Petro",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK",
+            "Imaging Centre for Excellence, Queen Elizabeth University Hospital, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Clement",
+          "family_name": "Abbatecola",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK",
+            "Imaging Centre for Excellence, Queen Elizabeth University Hospital, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Ahsan",
+          "family_name": "Adeel",
+          "identifier": null,
+          "affiliations": [
+            "CMI Lab, Department of Computing Science and Mathematics, University of Stirling, UK",
+            "Oxford Computational Neuroscience Lab, Nuffield Department of Surgical Sciences, University of Oxford, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Johanna",
+          "family_name": "Bergmann",
+          "identifier": null,
+          "affiliations": [
+            "Max Planck Institute for Human Cognitive and Brain Sciences, Leipzig, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Nicolas",
+          "family_name": "Deperrois",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physiology, University of Bern, Switzerland",
+            "Kirchhoff-Institut f\u00fcr Physik, Heidelberg University, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Alain",
+          "family_name": "Destexhe",
+          "identifier": null,
+          "affiliations": [
+            "Paris-Saclay Institute of Neuroscience, Centre National de la Recherche Scientifique, Universit\u00e9 Paris-Saclay, Saclay, France"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Nikolaus",
+          "family_name": "Kriegeskorte",
+          "identifier": null,
+          "affiliations": [
+            "Zuckerman Mind Brain Behavior Institute, Columbia University, New York, USA"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Christiaan N.",
+          "family_name": "Levelt",
+          "identifier": null,
+          "affiliations": [
+            "Netherlands Institute for Neuroscience, Royal Netherlands Academy of Arts and Sciences, Amsterdam, the Netherlands",
+            "Department of Molecular and Cellular Neurobiology, Center for Neurogenomics and Cognitive Research, VU University, Amsterdam, the Netherlands"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Wolfgang",
+          "family_name": "Maass",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Theoretical Computer Science, Graz University of Technology, Austria"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Andrew T.",
+          "family_name": "Morgan",
+          "identifier": null,
+          "affiliations": [
+            "Section on Functional Imaging Methods, Laboratory of Brain and Cognition, National Institute of Mental Health, Bethesda, USA",
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Paolo",
+          "family_name": "Papale",
+          "identifier": null,
+          "affiliations": [
+            "Cognitive and Systems Neuroscience Group, Swammerdam Institute for Life Sciences, University of Amsterdam, the Netherlands"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Cyriel M. A.",
+          "family_name": "Pennartz",
+          "identifier": null,
+          "affiliations": [
+            "Cognitive and Systems Neuroscience Group, Swammerdam Institute for Life Sciences, University of Amsterdam, the Netherlands",
+            "Amsterdam Brain and Cognition, University of Amsterdam, the Netherlands"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Benjamin",
+          "family_name": "Peters",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Mihai A.",
+          "family_name": "Petrovici",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physiology, University of Bern, Switzerland",
+            "Kirchhoff-Institut f\u00fcr Physik, Heidelberg University, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "William A.",
+          "family_name": "Phillips",
+          "identifier": null,
+          "affiliations": [
+            "Department of Psychology, University of Stirling, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Pieter R.",
+          "family_name": "Roelfsema",
+          "identifier": null,
+          "affiliations": [
+            "Department of Vision & Cognition, Netherlands Institute for Neuroscience (KNAW), Amsterdam, the Netherlands",
+            "Department of Integrative Neurophysiology, Centre for Neurogenomics and Cognitive Research, VU University Amsterdam, the Netherlands",
+            "Department of Neurosurgery, Academic Medical Centre, Amsterdam, the Netherlands",
+            "Laboratory of Visual Brain Therapy, Sorbonne Universit\u00e9, INSERM, CNRS, Institut de la Vision, Paris, France"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Robert N.S.",
+          "family_name": "Sachdev",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biology, Humboldt Universit\u00e4t zu Berlin, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Koen",
+          "family_name": "Seignette",
+          "identifier": null,
+          "affiliations": [
+            "Molecular Visual Plasticity Group, Netherlands Institute for Neuroscience, Royal Netherlands Academy of Arts and Sciences, Amsterdam, the Netherlands"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Matthew W.",
+          "family_name": "Self",
+          "identifier": null,
+          "affiliations": [
+            "Department of Vision & Cognition, Netherlands Institute for Neuroscience (KNAW), Amsterdam, the Netherlands"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Fraser W.",
+          "family_name": "Smith",
+          "identifier": null,
+          "affiliations": [
+            "School of Psychology, University of East Anglia, Norwich, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Johan F.",
+          "family_name": "Storm",
+          "identifier": null,
+          "affiliations": [
+            "Brain Signalling Group, Department of Physiology, Institute of Basic Medicine, University of Oslo, Norway"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Michele",
+          "family_name": "Svanera",
+          "identifier": null,
+          "affiliations": [
+            "Centre for Cognitive Neuroimaging, School of Psychology and Neuroscience, College of Medical, Veterinary and Life Sciences, University of Glasgow, UK",
+            "Imaging Centre for Excellence, Queen Elizabeth University Hospital, University of Glasgow, UK"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Wim",
+          "family_name": "Vanduffel",
+          "identifier": null,
+          "affiliations": [
+            "Laboratory for Neuro- and Psychophysiology",
+            "Leuven Brain Institute, KU Leuven, Belgium",
+            "Athinoula A. Martinos Center for Biomedical Imaging, Massachusetts General Hospital, Charlestown, USA",
+            "Department of Radiology, Harvard Medical School, Boston, USA"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Walter",
+          "family_name": "Senn",
+          "identifier": null,
+          "affiliations": [
+            "Department of Physiology, University of Bern, Switzerland",
+            "Kirchhoff-Institut f\u00fcr Physik, Heidelberg University, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Matthew E.",
+          "family_name": "Larkum",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biology, Humboldt Universit\u00e4t zu Berlin, Germany",
+            "Neurocure Center for Excellence, Charit\u00e9 Universit\u00e4tsmedizin Berlin & Humboldt Universit\u00e4t, Germany"
+          ],
+          "roles": [
+            "author"
+          ]
+        }
+      ],
+      "publication_date": "2023-09-20",
+      "title": "The cortical microcircuitry of predictions and context: a multi-scale perspective",
+      "journal": "Zenodo",
+      "volume": null,
+      "issue": null,
+      "pagination": null,
+      "abstract": "Conscious cognition depends on the ability of the neocortex to generate internal models of the outside world. During wakefulness, the neocortex maintains and updates knowledge of the world and uses this knowledge through top-down projections to make predictions, test hypotheses, and/or contextualise input from the senses. How are these information streams combined in cortical microcircuits? Is their computational function to test internal models on the basis of their predictions or to contextualise sensory signals, or both? In addition to their somatic integration zones, many pyramidal neurons have a site of top-down and other contextual  information integration near the top of the apical dendrite\u2019s trunk. This architecture enables top-down contextualisation of bottom-up information, amplifying or attenuating sensory responses depending on prior knowledge and current context. However, current deep neural network models of sensory processing lack such a mechanism, and cognitive theories do not reach the explanatory level of intracellular two-compartment integration. In this interactive \u2018live\u2019 paper, we envision how a continued synthesis of multi-scale, multi-species experimental data and theoretical and data-driven models will drive further insights into the biophysics, microcircuitry and dynamics of context-sensitive two-compartment neurons, and their role in predictive cognition.",
+      "url": null,
+      "doi": "https://doi.org/10.5281/zenodo.8380093"
+    }
+  ],
+  "doi": null,
+  "license": [
+    "GNU General Public License v3.0 or later"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_custom",
+      "title": "Main Figure (with links)",
+      "text": "<p>\n  To access the Jupyter notebook, simply click on any of the four quadrants\n  below.\n</p>\n<p align=\"center\">\n  <a\n    href=\"https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Human%2BDNN.ipynb\"\n    target=\"_blank\"\n    rel=\"noreferrer noopener\"\n    ><img\n      src=\"https://raw.githubusercontent.com/Muckli-lab/multi-scale_live-paper/main/misc/Fig3_1.png\"\n      width=\"49%\"\n  /></a>\n  <a\n    href=\"https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Monkey.ipynb\"\n    target=\"_blank\"\n    rel=\"noreferrer noopener\"\n    ><img\n      src=\"https://raw.githubusercontent.com/Muckli-lab/multi-scale_live-paper/main/misc/Fig3_2.png\"\n      width=\"49%\"\n  /></a>\n  <a\n    href=\"https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Mice.ipynb\"\n    target=\"_blank\"\n    rel=\"noreferrer noopener\"\n    ><img\n      src=\"https://raw.githubusercontent.com/Muckli-lab/multi-scale_live-paper/main/misc/Fig3_3.png\"\n      width=\"49%\"\n  /></a>\n  <a\n    href=\"https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Human%2BDNN.ipynb\"\n    target=\"_blank\"\n    rel=\"noreferrer noopener\"\n    ><img\n      src=\"https://raw.githubusercontent.com/Muckli-lab/multi-scale_live-paper/main/misc/Fig3_4.png\"\n      width=\"49%\"\n  /></a>\n</p>\n",
+      "data": []
+    },
+    {
+      "order": 1,
+      "type": "section_generic",
+      "title": "Live figure Collabs links",
+      "text": "Multispecies partial visual occlusion tasks to parameterise contextual feedback responses in non-stimulated primary visual cortex.",
+      "data": [
+        {
+          "label": "Human and DNN",
+          "links": [
+            {
+              "url": "https://data.kg.ebrains.eu/zip?container=https://data-proxy.ebrains.eu/api/v1/buckets/live-papers?prefix=2023-muckli-et-al/",
+              "service": "download"
+            },
+            {
+              "url": "https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Human%2BDNN.ipynb",
+              "service": "EBRAINS Collaboratory Lab"
+            }
+          ],
+          "type": "URL",
+          "identifier": "7db8ede7-565e-4999-a8d3-dfc4ef014922"
+        },
+        {
+          "label": "Mice",
+          "links": [
+            {
+              "url": "https://data.kg.ebrains.eu/zip?container=https://data-proxy.ebrains.eu/api/v1/buckets/live-papers?prefix=2023-muckli-et-al/",
+              "service": "download"
+            },
+            {
+              "url": "https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Mice.ipynb",
+              "service": "EBRAINS Collaboratory Lab"
+            }
+          ],
+          "type": "URL",
+          "identifier": "434a4827-c192-4afa-a7bc-a6fb58bf7972"
+        },
+        {
+          "label": "Monkey",
+          "links": [
+            {
+              "url": "https://data.kg.ebrains.eu/zip?container=https://data-proxy.ebrains.eu/api/v1/buckets/live-papers?prefix=2023-muckli-et-al/",
+              "service": "download"
+            },
+            {
+              "url": "https://lab.ch.ebrains.eu/hub/user-redirect/lab/tree/shared/The%20cortical%20microcircuitry%20of%20predictions%20and%20context%20-%20A%20multi-scale%20perspective/notebooks/Monkey.ipynb",
+              "service": "EBRAINS Collaboratory Lab"
+            }
+          ],
+          "type": "URL",
+          "identifier": "f09d0036-3928-440d-870d-ffd848701629"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "type": "section_generic",
+      "title": "Data availability",
+      "text": "The human, monkey and mouse occlusion data are available on EBRAINS to download, or as Jupyter notebooks that can be used to reproduce the experimental data.  Access to this resource requires free user registration at <a href='https://www.ebrains.eu/page/sign-up'>this link</a>.",
+      "data": [
+        {
+          "label": "Human fMRI",
+          "links": [
+            {
+              "url": "https://doi.org/10.25493/Z60A-BGY",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "95305997-478f-4ec1-8882-d474a1f7debe"
+        },
+        {
+          "label": "Mice",
+          "links": [
+            {
+              "url": "https://doi.org/10.25493/NXRY-0W6",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "68ec7095-6b22-4980-b91b-d5d08a84fded"
+        },
+        {
+          "label": "Monkey",
+          "links": [
+            {
+              "url": "https://doi.org/10.25493/KABE-GS0",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "233d7d7c-83c8-4b23-8a2c-6ea7ccc0beff"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "type": "section_generic",
+      "title": "Model availability",
+      "text": "List of models used in the live paper.",
+      "data": [
+        {
+          "label": "Adversarial dreaming model",
+          "links": [
+            {
+              "url": "https://doi.org/10.25493/A1WA-5RG",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "cd51b2de-c011-427e-91b4-c2ec9b26c0be"
+        },
+        {
+          "label": "Deep Neural Network for Image Completion",
+          "links": [
+            {
+              "url": "https://doi.org/10.25493/5Z86-K1Z",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "0339c303-8262-4c68-92ed-7bb73ca925d4"
+        },
+        {
+          "label": "Recurrent DNN with feedbacks",
+          "links": [
+            {
+              "url": "https://search.kg.ebrains.eu/instances/eae6a13b-4006-49df-bdcc-ec27c2409e72",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "e1a3ae56-3b12-4f42-9b96-b66f00f5a92e"
+        }
+      ]
+    }
+  ],
+  "id": "f633acd5-cab7-4d33-a9bb-4d167524c861"
+}

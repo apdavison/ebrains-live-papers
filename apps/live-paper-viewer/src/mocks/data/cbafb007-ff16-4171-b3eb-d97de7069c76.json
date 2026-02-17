@@ -1,0 +1,201 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "Cerebellar Golgi cell models predict dendritic processing and mechanisms of synaptic plasticity",
+  "alias": "2020-masoli-et-al-b",
+  "publication_date": "2021-08-10",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Egidio",
+      "family_name": "D'Angelo",
+      "identifier": null,
+      "affiliations": [
+        "Department of Brain and Behavioral Sciences, University of Pavia, Italy",
+        "Brain Connectivity Center, IRCCS Mondino Foundation, Pavia, Italy"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": null,
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Stefano",
+          "family_name": "Masoli",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Alessandra",
+          "family_name": "Ottaviani",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Stefano",
+          "family_name": "Casali",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Egidio",
+          "family_name": "D'Angelo",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy",
+            "Brain Connectivity Center, IRCCS Mondino Foundation, Pavia, Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        }
+      ],
+      "publication_date": "2020-12-30",
+      "title": "Cerebellar Golgi cell models predict dendritic processing and mechanisms of synaptic plasticity",
+      "journal": "PLOS Computational Biology",
+      "volume": "16",
+      "issue": null,
+      "pagination": "e1007937",
+      "abstract": "The Golgi cells are the main inhibitory interneurons of the cerebellar granular layer. Although recent works have highlighted the complexity of their dendritic organization and synaptic inputs, the mechanisms through which these neurons integrate complex input patterns remained unknown. Here we have used 8 detailed morphological reconstructions to develop multicompartmental models of Golgi cells, in which Na, Ca, and K channels were distributed along dendrites, soma, axonal initial segment and axon. The models faithfully reproduced a rich pattern of electrophysiological and pharmacological properties and predicted the operating mechanisms of these neurons. Basal dendrites turned out to be more tightly electrically coupled to the axon initial segment than apical dendrites. During synaptic transmission, parallel fibers caused slow Ca-dependent depolarizations in apical dendrites that boosted the axon initial segment encoder and Na-spike backpropagation into basal dendrites, while inhibitory synapses effectively shunted backpropagating currents. This oriented dendritic processing set up a coincidence detector controlling voltage-dependent NMDA receptor unblock in basal dendrites, which, by regulating local calcium influx, may provide the basis for spike-timing dependent plasticity anticipated by theory.",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007937",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1007937"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/FA9E-CM0",
+  "license": [
+    "Creative Commons Attribution Non Commercial 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_generic",
+      "title": "Electrophysiological data",
+      "text": "Electrophysiological data available in the HBP Knowledge Graph and are listed below:",
+      "data": [
+        {
+          "label": "Characterization of spatial distribution of activity in cerebellar cortical slices",
+          "links": [
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/08cb7b89-9fd1-4374-a845-667d079daddf",
+              "service": "download"
+            },
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/08cb7b89-9fd1-4374-a845-667d079daddf",
+              "service": "EBRAINS Knowledge Graph Search UI"
+            }
+          ],
+          "type": "URL",
+          "identifier": "8ba7dda4-cb3d-4c5e-8e97-78026c5dcb6c"
+        },
+        {
+          "label": "Investigation of spatial distribution of excitation in cerebellar cortical slices",
+          "links": [
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/071117f4-3d05-400b-8e2a-696adb93346f",
+              "service": "download"
+            },
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/071117f4-3d05-400b-8e2a-696adb93346f",
+              "service": "EBRAINS Knowledge Graph Search UI"
+            }
+          ],
+          "type": "URL",
+          "identifier": "0e59cccb-7ccc-4311-86f8-2407682e0f7a"
+        },
+        {
+          "label": "Recordings of cerebellar neuronal firing induced by currents steps",
+          "links": [
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/5e245cf67a42a14a56bc43913f7bf28a",
+              "service": "download"
+            },
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/5e245cf67a42a14a56bc43913f7bf28a",
+              "service": "EBRAINS Knowledge Graph Search UI"
+            }
+          ],
+          "type": "URL",
+          "identifier": "0ed8c37b-8e64-4854-85ed-907f99a7c900"
+        },
+        {
+          "label": "Recordings of spontaneous firing of cerebellar interneurons (Golgi cells)",
+          "links": [
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/4197a2f5d71432349fb37ff3ad429580",
+              "service": "download"
+            },
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/4197a2f5d71432349fb37ff3ad429580",
+              "service": "EBRAINS Knowledge Graph Search UI"
+            }
+          ],
+          "type": "URL",
+          "identifier": "5b604601-aa75-4e80-afca-376d19efa08f"
+        },
+        {
+          "label": "Whole cell patch-clamp recordings of cerebellar Golgi cells",
+          "links": [
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/17196b79-04db-4ea4-bb69-d20aab6f1d62",
+              "service": "download"
+            },
+            {
+              "url": "https://kg.ebrains.eu/search/?facet_type[0]=Dataset&q=%22golgi%20cells%22#Dataset/17196b79-04db-4ea4-bb69-d20aab6f1d62",
+              "service": "EBRAINS Knowledge Graph Search UI"
+            }
+          ],
+          "type": "URL",
+          "identifier": "1aefb236-13a0-4b48-abef-45795a97bc7c"
+        }
+      ]
+    },
+    {
+      "order": 1,
+      "type": "section_morphology",
+      "title": "Morphologies",
+      "text": "The morphology for the dendrites and the soma is in .asc format. Modified from neuromorpho.org",
+      "data": [
+        {
+          "label": "Golgi cell morphology 1",
+          "links": [
+            {
+              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-cerebellum_circuits/BlueNaaS_models/live_paper_GoC/pair-140514-C2-1_split_1.asc",
+              "service": "download"
+            }
+          ],
+          "type": "URL",
+          "identifier": "a7c79241-49d5-4356-98a7-9a9c21a8eecc"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "type": "section_custom",
+      "title": "Cerebellar Golgi cells simulation with BlueNaaS",
+      "text": "<p><br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig. 1C,1D,3A,3B of the paper:\n   <br>\n   <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n   <br>\n   <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n   <br>\n   <span style=\"margin-left:25px\">> To correctly run a simulation, the temperature need to be set at 32\u00b0, the vinit at -70mV and, to match the paper experiments, and fixed time step at 0.025.  Valid positive current injections are from 0.1 to 1nA. </span>\n</p>\n<div style=\"margin-left:25px\">\n   <table>\n      <tbody>\n         <tr>\n            <td>\n               <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_b/resources/cerebellum_circuits/BlueNaaS_models/live_paper_GoC/GoC_morfo1.zip')\">Golgi cell Morphology 1.\n               <i class=\"material-icons right\">play_arrow</i>\n               </button>\n            </td>\n         </tr>\n      </tbody>\n   </table>\n</div>",
+      "data": []
+    }
+  ],
+  "id": "cbafb007-ff16-4171-b3eb-d97de7069c76"
+}

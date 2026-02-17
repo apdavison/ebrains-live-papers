@@ -1,0 +1,107 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "Response Dynamics in an Olivocerebellar Spiking Neural Network With Non-linear Neuron Properties",
+  "alias": "2019-geminiani-et-al",
+  "publication_date": "2021-09-28",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Alice",
+      "family_name": "Geminiani",
+      "identifier": null,
+      "affiliations": [
+        "Department of Brain and Behavioral Sciences, University of Pavia, Italy",
+        "NEARLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "Data and models: all data and models used in the paper are available at the links reported below, grouped into the following categories:",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Alice",
+          "family_name": "Geminiani",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy",
+            "NEARLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Alessandra",
+          "family_name": "Pedrocchi",
+          "identifier": null,
+          "affiliations": [
+            "NEARLab, Department of Electronics, Information and Bioengineering, Politecnico di Milano, Milan, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Egidio",
+          "family_name": "D'Angelo",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy",
+            "Brain Connectivity Center, IRCCS Mondino Foundation, Pavia, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Claudia",
+          "family_name": "Casellato",
+          "identifier": null,
+          "affiliations": [
+            "Department of Brain and Behavioral Sciences, University of Pavia, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        }
+      ],
+      "publication_date": "2019-10-01",
+      "title": "Response Dynamics in an Olivocerebellar Spiking Neural Network With Non-linear Neuron Properties",
+      "journal": "Frontiers in Computational Neuroscience",
+      "volume": "13",
+      "issue": null,
+      "pagination": "68",
+      "abstract": "Sensorimotor signals are integrated and processed by the cerebellar circuit to predict accurate control of actions. In order to investigate how single neuron dynamics and geometrical modular connectivity affect cerebellar processing, we have built an olivocerebellar Spiking Neural Network (SNN) based on a novel simplification algorithm for single point models (Extended Generalized Leaky Integrate and Fire, EGLIF) capturing essential non-linear neuronal dynamics (e.g., pacemaking, bursting, adaptation, oscillation and resonance). EGLIF models specifically tuned for each neuron type were embedded into an olivocerebellar scaffold reproducing realistic spatial organization and physiological convergence and divergence ratios of connections. In order to emulate the circuit involved in an eye blink response to two associated stimuli, we modeled two adjacent olivocerebellar microcomplexes with a common mossy fiber input but different climbing fiber inputs (either on or off). EGLIF-SNN model simulations revealed the emergence of fundamental response properties in Purkinje cells (burstpause) and deep nuclei cells (pause-burst) similar to those reported in vivo. The expression of these properties depended on the specific activation of climbing fibers in the microcomplexes and did not emerge with scaffold models using simplified point neurons. This result supports the importance of embedding SNNs with realistic neuronal dynamics and appropriate connectivity and anticipates the scale-up of EGLIF-SNN and the embedding of plasticity rules required to investigate cerebellar functioning at multiple scales.",
+      "url": "https://www.frontiersin.org/articles/10.3389/fncom.2019.00068/full",
+      "doi": "https://doi.org/10.3389/fncom.2019.00068"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/3XVH-RS7",
+  "license": [
+    "Creative Commons Attribution Non Commercial 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_custom",
+      "title": "Source Code",
+      "text": "<p>The source code, used for the simulations described in paper, can be accessed and downloaded at the following github <a href=\"https://github.com/AliceGem/E-GLIF\" target=\"_blank\">link</a>.\n   <br>\n   <br>\n   Please refer to the README file of the github repository for more details.\n</p>",
+      "data": []
+    },
+    {
+      "order": 1,
+      "type": "section_custom",
+      "title": "Test Simulations",
+      "text": "<p>\n   <span class=\"txt_style1\">The simulations of the olivocerebellar microcircuit presented in the paper are available as a python Jupyter Notebook on EBRAINS, in the following collaboratory:  \n   <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/cerebellum\" target=\"_blank\">\n   <span class=\"color_link\">Use Case: olivocerebellar scaffold with E-GLIF neurons</span></a>.\n   <br>\n   <br>\n\n   Please refer to the python code and the inline comments in the notebook, for details on how to reproduce raster plots and spike histograms reported in Figs. 2 to 7 of the paper, for glomeruli, Granule cells, Golgi cells, Purkinje cells, Molecular Layer Interneurons and Deep Cerebellar Nuclei neurons.\n   </span>\n</p>",
+      "data": []
+    }
+  ],
+  "id": "9d00321b-f927-4153-8c98-8f59e24bd5c6"
+}

@@ -1,0 +1,114 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "On the structural connectivity of large-scale models of brain networks at cellular level",
+  "alias": "2021-giacopelli-et-al",
+  "publication_date": "2021-08-02",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Domenico",
+      "family_name": "Tegolo",
+      "identifier": null,
+      "affiliations": [
+        "Department of Mathematics and Informatics, University of Palermo, Italy",
+        "Institute of Biophysics, National Research Council, Palermo, Italy"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "Models and Web App: all the models used in the paper and the Web Application are available at the links reported below:",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Giuseppe",
+          "family_name": "Giacopelli",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Domenico",
+          "family_name": "Tegolo",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        },
+        {
+          "given_name": "Emiliano",
+          "family_name": "Spera",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Michele",
+          "family_name": "Migliore",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        }
+      ],
+      "publication_date": "2021-02-23",
+      "title": "On the structural connectivity of large-scale models of brain networks at cellular level",
+      "journal": "Scientific Reports",
+      "volume": "11",
+      "issue": null,
+      "pagination": "4345",
+      "abstract": "The brain\u2019s structural connectivity plays a fundamental role in determining how neuron networks generate, process, and transfer information within and between brain regions. The underlying mechanisms are extremely difficult to study experimentally and, in many cases, large-scale model networks are of great help. However, the implementation of these models relies on experimental findings that are often sparse and limited. Their predicting power ultimately depends on how closely a model\u2019s connectivity represents the real system. Here we argue that the data-driven probabilistic rules, widely used to build neuronal network models, may not be appropriate to represent the dynamics of the corresponding biological system. To solve this problem, we propose to use a new mathematical framework able to use sparse and limited experimental data to quantitatively reproduce the structural connectivity of biological brain networks at cellular level.",
+      "url": "https://www.nature.com/articles/s41598-021-83759-z.pdf",
+      "doi": "https://doi.org/10.1038/s41598-021-83759-z"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/DAM6-FX7",
+  "license": [
+    "Creative Commons Attribution Non Commercial 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_custom",
+      "title": "Data",
+      "text": "<p>\n   <span class=\"txt_style1\">The connectivity matrices of the Markram's model can be found\n   <a href=\"https://bbp.epfl.ch/nmc-portal/downloads\" target=\"_blank\">\n   <span class=\"color_link\">here.</span>\n   </a>\n   </span>\n</p>",
+      "data": []
+    },
+    {
+      "order": 1,
+      "type": "section_custom",
+      "title": "Custom SectionModelDB link and test simulation",
+      "text": "<p>The code to reproduce qualitatively the raster plots in figures 3A, 3B and 3C is available on \n   <a href=\"https://modeldb.science/266506\" target=\"_blank\">ModelDB</a>.\n</p>",
+      "data": []
+    },
+    {
+      "order": 2,
+      "type": "section_custom",
+      "title": "Web Application",
+      "text": "<p>\n   <span class=\"txt_style1\">A Web Application to run the code is available here\n   <a href=\"https://bsp-gtalg.cineca.it/connect/\" target=\"_blank\">\n   <span class=\"color_link\">CINECA.</span>\n   </a>\n   </span>\n</p>",
+      "data": []
+    }
+  ],
+  "id": "88f46758-bb66-4a0f-a1b2-e914d93d2978"
+}

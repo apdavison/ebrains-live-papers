@@ -1,0 +1,103 @@
+{
+  "lp_tool_version": "2.0.dev.0",
+  "title": "Graph-theoretical derivation of brain structural connectivity",
+  "alias": "2020-giacopelli-et-al",
+  "publication_date": "2021-08-03",
+  "version": "1",
+  "authors": [
+    {
+      "given_name": "Domenico",
+      "family_name": "Tegolo",
+      "identifier": null,
+      "affiliations": [
+        "Department of Mathematics and Informatics, University of Palermo, Italy",
+        "Institute of Biophysics, National Research Council, Palermo, Italy"
+      ],
+      "roles": [
+        "author",
+        "corresponding author"
+      ]
+    }
+  ],
+  "abstract": "Models and Web App: all the models used in the paper and the Web Application are available at the links reported below:",
+  "related_publications": [
+    {
+      "authors": [
+        {
+          "given_name": "Giuseppe",
+          "family_name": "Giacopelli",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Michele",
+          "family_name": "Migliore",
+          "identifier": null,
+          "affiliations": [
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author"
+          ]
+        },
+        {
+          "given_name": "Domenico",
+          "family_name": "Tegolo",
+          "identifier": null,
+          "affiliations": [
+            "Department of Mathematics and Informatics, University of Palermo, Italy",
+            "Institute of Biophysics, National Research Council, Palermo, Italy"
+          ],
+          "roles": [
+            "author",
+            "corresponding author"
+          ]
+        }
+      ],
+      "publication_date": "2020-03-03",
+      "title": "Graph-theoretical derivation of brain structural connectivity",
+      "journal": "Applied Mathematics and Computation",
+      "volume": "377",
+      "issue": null,
+      "pagination": "125150",
+      "abstract": "Brain connectivity at the single neuron level can provide fundamental insights into how information is integrated and propagated within and between brain regions. However, it is almost impossible to adequately study this problem experimentally and, despite intense efforts in the field, no mathematical description has been obtained so far. Here, we present a mathematical framework based on a graph-theoretical approach that, starting from experimental data obtained from a few small subsets of neurons, can quantitatively explain and predict the corresponding full network properties. This model also changes the paradigm with which large-scale model networks can be built, from using probabilistic/empiric connections or limited data, to a process that can algorithmically generate neuronal networks connected as in the real system.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0096300320301193",
+      "doi": "https://doi.org/10.1016/j.amc.2020.125150"
+    }
+  ],
+  "doi": "https://doi.org/10.25493/RHR6-3F4",
+  "license": [
+    "Creative Commons Attribution Non Commercial 4.0 International"
+  ],
+  "collab_id": "livepapers",
+  "sections": [
+    {
+      "order": 0,
+      "type": "section_custom",
+      "title": "Data",
+      "text": "<p>\n   <span class=\"txt_style1\">The connectivity matrices of the Markram's model can be found\n   <a href=\"https://bbp.epfl.ch/nmc-portal/downloads\" target=\"_blank\">\n   <span class=\"color_link\">here.</span>\n   </a>\n   </span>\n</p>",
+      "data": []
+    },
+    {
+      "order": 1,
+      "type": "section_custom",
+      "title": "ModelDB link and test simulation",
+      "text": "<p>A reduced self-consistent set of files to reproduce the figures 3B and 5A of the paper is available on\n   <a href=\"https://modeldb.science/261881\" target=\"_blank\">ModelDB</a>.",
+      "data": []
+    },
+    {
+      "order": 2,
+      "type": "section_custom",
+      "title": "Web Application",
+      "text": "<p>\n   <span class=\"txt_style1\">A Web Application to run the code is available at this <a target=\"_blank\" href=\"https://bsp-gtalg.cineca.it/model/\">link</a>*.\n   <br>\n   <br>\n   <small><i>* in order to access the web application you need an account on the HBP Collaboratory Platform. If you do not have one, please request it by sending an email to: <b>support AT humanbrainproject.eu</b></i></small>\n   </span>\n</p>",
+      "data": []
+    }
+  ],
+  "id": "d36d1804-5b02-4e9b-bfbd-04f0de59686b"
+}
