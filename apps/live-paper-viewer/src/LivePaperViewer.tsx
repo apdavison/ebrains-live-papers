@@ -38,7 +38,7 @@ function RelatedPublication({ pub }: { pub: Publication }) {
     <div>
       <AuthorList authors={pub.authors} />
       ({pubDate.getFullYear()})
-      <p>{pub.title}. {pub.journal} {pub.volume}:{pub.pagination} <a href={pub.doi}>{pub.doi}</a></p>
+      <p>{pub.title}. {pub.journal} {pub.volume}:{pub.pagination} <a href={pub.doi ?? undefined}>{pub.doi}</a></p>
       {/* abstract should be hidden unless publication is expanded. Do we need Markdown for publication abstract? */}
       {pub.abstract}
     </div>

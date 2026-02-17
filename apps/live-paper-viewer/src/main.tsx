@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     path: "/",
     Component: App,
     loader: async () => {
-      let livepapers = await fetchPublishedLivePapers();
+      const livepapers = await fetchPublishedLivePapers();
       return { data: livepapers };
     },
   },
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     Component: LivePaperViewer,
     loader: async ({ params }) => {
       if (params.livePaperId) {
-        let lp = await fetchPublishedLivePaper(params.livePaperId);
+        const lp = await fetchPublishedLivePaper(params.livePaperId);
         return { lp: lp };
       }
     },

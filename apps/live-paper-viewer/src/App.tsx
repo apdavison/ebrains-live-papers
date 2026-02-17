@@ -15,11 +15,11 @@ function App() {
       {data.data.map((lp: LivePaperSummary) => (
         <div key={lp.id}>
           <p>
-            <a href={lp.alias}>{lp.title}</a>
+            <a href={lp.alias ?? undefined}>{lp.title}</a>
           </p>
           <p>Live Paper published | {lp.publication_date}</p>
           <p>
-            <a href={lp.doi}>{lp.doi}</a>
+            <a href={lp.doi ?? undefined}>{lp.doi}</a>
           </p>
           <p>Version {lp.version}</p>
           <Markdown rehypePlugins={[rehypeRaw]}>
