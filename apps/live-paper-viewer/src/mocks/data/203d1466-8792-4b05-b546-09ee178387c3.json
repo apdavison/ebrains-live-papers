@@ -255,8 +255,74 @@
       "order": 1,
       "type": "section_custom",
       "title": "ModelDB link and test simulations",
-      "text": "<script\n  type=\"text/javascript\"\n  src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_mccauley_et_al/mccauley_et_al_2020.js\"\n></script>\n<p><link\n  rel=\"stylesheet\"\n  type=\"text/css\"\n  href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_mccauley_et_al/mccauley_et_al_2020.css\"\n/></p>\n<div id=\"collapsetitle\">\n  <p>\n    A reduced self-consistent set of files needed to reproduce&nbsp;Fig. 6c of\n    the paper is available on\n    <a\n      href=\"https://modeldb.science/257027\"\n      target=\"_blank\"\n      >ModelDB</a\n    >\n    <br />\n    <br />\n    After selecting the options corresponding to the modulation of the NMDA\n    receptor weights and the AMPA recovery time, simulation will reproduce the\n    temporal summation of composite glutamatergic EPSPs at the stimulation\n    frequency of 10 Hz (Fig. 6c of the paper).<br /><br />\n    The simulations were run to mimic glutamatergic EPSPs during the L phase\n    (&amp;#964<sub>rec</sub>=10 and w<sub>NMDA</sub>=0.009, the default\n    settings) and in conditions that mimic the reduced NMDA receptor expression\n    in the D phase (&amp;#964<sub>rec</sub>=10 and w<sub>NMDA</sub>=0.00243,\n    green line), the reduced AMPA EPSP summation during the D phase due to\n    retraction of astrocytic processes (&amp;#964<sub>rec</sub>=20 and\n    w<sub>NMDA</sub>=0.009, yellow line), or both effects at the same time\n    (&amp;#964<sub>rec</sub>=20 and w<sub>NMDA</sub>=0.00243, brown line).<br />\n    <br />\n    <em\n      >HOWTO: Change settings by turning \"on\" the\n      <b>\"Reset/set parameters\"</b> switch to run simulation with your own NMDA\n      and AMPA receptor configuration.<br />\n      Turn \"on\" the <b>\"Persistent plot\"</b> switch to compare plots of\n      different simulations.</em\n    >\n  </p>\n  <div class=\"divider\"></div>\n  <div style=\"position: relative; margin-left: 25px; margin-right: 25px\">\n    <div id=\"plots\" class=\"plots\">\n      <div id=\"plot-title\" style=\"text-align: center\"></div>\n      <br />\n      <div class=\"row\">\n        <div class=\"col s6 offset-s3\" id=\"plotlyChart_01\"></div>\n      </div>\n    </div>\n    <div class=\"overlay\" id=\"error-msg\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          An error occurred while connecting to the server\n          <br />\n          Please try again in a few seconds\n        </div>\n      </div>\n    </div>\n    <div class=\"overlay\" id=\"loader\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          Launching simulation. Please wait ...\n          <div class=\"progress\">\n            <div class=\"indeterminate\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div id=\"paper-sim\" class=\"col s12\" style=\"margin-top: 10px\">\n      <div style=\"margin-left: 25px; margin-right: 25px\">\n        <div class=\"divider\"></div>\n        <h6><strong>Settings</strong></h6>\n        <div style=\"overflow-x: auto\">\n          <br />\n          <table class=\"centered\">\n            <tr>\n              <tbody>\n                <tr id=\"paramsrow\">\n                  <td><em>&tau;</em><sub>rec</sub></td>\n                  <td>\n                    <div class=\"settings input-field col s12\">\n                      <input\n                        type=\"number\"\n                        id=\"taur\"\n                        step=\"0.001\"\n                        min=\"0\"\n                        max=\"\"\n                        style=\"min-width: 55px\"\n                      />\n                      <label for=\"taur\"></label>\n                    </div>\n                  </td>\n                  <td><em>w</em><sub>NMDA</sub></td>\n                  <td>\n                    <div class=\"settings input-field col s12\">\n                      <input\n                        type=\"number\"\n                        id=\"wNMDA\"\n                        step=\"0.001\"\n                        min=\"0\"\n                        max=\"\"\n                        style=\"min-width: 55px\"\n                      />\n                      <label for=\"wNMDA\"></label>\n                    </div>\n                  </td>\n                  <td>\n                    <!-- Switch -->\n                    <div\n                      class=\"switch tooltipped\"\n                      data-position=\"top\"\n                      data-html=\"true\"\n                      data-tooltip=\"'Reset' to reproduce Fig. 1B, Fig. 1C and Fig. 1D. 'Set' to insert your own simulation parameters.\"\n                    >\n                      <label>\n                        <input id=\"switch\" type=\"checkbox\" />\n                        <span class=\"lever\"></span>\n                        <br />\n                        Reset/Set\n                        <br />\n                        parameters\n                      </label>\n                    </div>\n                  </td>\n                  <th\n                    style=\"\n                      border: 1px solid black;\n                      border-color: #e2e2e2;\n                      border-left: none;\n                    \"\n                  ></th>\n                  <td>\n                    <div\n                      class=\"switch tooltipped\"\n                      data-position=\"top\"\n                      data-html=\"true\"\n                      data-tooltip=\"'Keep lines' to prevent the plots to be cleaned up\"\n                    >\n                      <label>\n                        <input id=\"switch-lines\" type=\"checkbox\" />\n                        <span class=\"lever\"></span>\n                        <br />\n                        Persistent\n                        <br />\n                        plots\n                      </label>\n                    </div>\n                  </td>\n\n                  <th\n                    style=\"\n                      border: 1px solid black;\n                      border-color: #e2e2e2;\n                      border-right: none;\n                    \"\n                  ></th>\n                  <td>\n                    <div class=\"col s5 offset-s1\">\n                      <button\n                        type=\"submit\"\n                        style=\"margin: 6px; width: 120px\"\n                        class=\"col s12 waves-effect waves-light btn\"\n                        id=\"run\"\n                      >\n                        Run\n                      </button>\n                    </div>\n                  </td>\n                </tr>\n                <tr>\n                  <label id=\"message\" style=\"color: red; display: none\"\n                    >**Please select a value between 0 and 5</label\n                  >\n                </tr>\n              </tbody>\n            </tr>\n          </table>\n        </div>\n        <br />\n      </div>\n      <br />\n    </div>\n  </div>\n</div>",
-      "data": []
+      "text": "A reduced self-consistent set of files needed to reproduce Fig. 6c of the paper is available on <a href=\"https://modeldb.science/257027\" target=\"_blank\">ModelDB</a>.\n\nAfter selecting the options corresponding to the modulation of the NMDA receptor weights and the AMPA recovery time, simulation will reproduce the temporal summation of composite glutamatergic EPSPs at the stimulation frequency of 10 Hz (Fig. 6c of the paper).\n\nThe simulations were run to mimic glutamatergic EPSPs during the L phase (\u03c4<sub>rec</sub>=10 and w<sub>NMDA</sub>=0.009, the default settings) and in conditions that mimic the reduced NMDA receptor expression in the D phase (\u03c4<sub>rec</sub>=10 and w<sub>NMDA</sub>=0.00243, green line), the reduced AMPA EPSP summation during the D phase due to retraction of astrocytic processes (\u03c4<sub>rec</sub>=20 and w<sub>NMDA</sub>=0.009, yellow line), or both effects at the same time (\u03c4<sub>rec</sub>=20 and w<sub>NMDA</sub>=0.00243, brown line).\n\n*HOWTO: Change settings by turning \"on\" the **\"Reset/set parameters\"** switch to run simulation with your own NMDA and AMPA receptor configuration. Turn \"on\" the **\"Persistent plot\"** switch to compare plots of different simulations.*",
+      "data": [
+        {
+          "label": "Test simulation",
+          "type": "bluenaas",
+          "identifier": "mccauley-sim-01",
+          "links": [],
+          "config": {
+            "modelURL": "https://data-proxy.ebrains.eu/api/v1/buckets/live-paper-2020-mccauley-et-al/mccauley_et_al_2020_03.zip",
+            "defaultParameters": {
+              "h": {
+                "FUNCTIONS": [
+                  "locnmda()",
+                  "change_taurec()"
+                ]
+              },
+              "tstop": 200,
+              "v_init": -70,
+              "weightNMDA": 0.009,
+              "taurec": 10
+            },
+            "parameterFields": [
+              {
+                "id": "wNMDA",
+                "label": "w<sub>NMDA</sub>",
+                "default": 0.009,
+                "min": 0,
+                "max": 0.009,
+                "step": 0.0001,
+                "path": "weightNMDA"
+              },
+              {
+                "id": "taur",
+                "label": "\u03c4<sub>rec</sub>",
+                "default": 10,
+                "min": 0,
+                "max": 50,
+                "step": 1,
+                "path": "taurec"
+              }
+            ],
+            "switches": [
+              {
+                "id": "reset-set",
+                "label": "Reset/Set parameters"
+              },
+              {
+                "id": "persistent-plots",
+                "label": "Persistent plots"
+              }
+            ],
+            "recordedVectors": {
+              "TIME": "t",
+              "v(0.5)": "v"
+            },
+            "charts": [
+              {
+                "title": "Voltage",
+                "xaxis": "t (ms)",
+                "yaxis": "V (mV)",
+                "variables": [
+                  "v(0.5)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "id": "203d1466-8792-4b05-b546-09ee178387c3"

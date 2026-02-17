@@ -5,7 +5,6 @@ import { RouterProvider } from "react-router/dom";
 
 import "./index.css";
 import App from "./App";
-import BlueNaaS from "./BlueNaaS";
 import LivePaperViewer from "./LivePaperViewer";
 
 const { fetchPublishedLivePapers, fetchPublishedLivePaper } =
@@ -22,11 +21,7 @@ const router = createBrowserRouter([
       return { data: livepapers };
     },
   },
-  {
-    path: "/bluenaas-tmp",
-    Component: BlueNaaS
-  },
-  {
+{
     path: "/:livePaperId",
     Component: LivePaperViewer,
     loader: async ({ params }) => {

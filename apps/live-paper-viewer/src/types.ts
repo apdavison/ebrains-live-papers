@@ -14,10 +14,50 @@ export interface Link {
   service: string;
 }
 
+export interface BlueNaaSParameterField {
+  id: string;
+  label: string;
+  default: number;
+  min: number;
+  max: number;
+  step: number;
+  path: string;
+}
+
+export interface BlueNaaSSwitch {
+  id: string;
+  label: string;
+  tooltip?: string;
+  onParameters?: Record<string, unknown>;
+}
+
+export interface BlueNaaSPreset {
+  label: string;
+  values: Record<string, number>;
+}
+
+export interface BlueNaaSChart {
+  title: string;
+  xaxis: string;
+  yaxis: string;
+  variables: string[];
+}
+
+export interface BlueNaaSConfig {
+  modelURL: string;
+  defaultParameters: Record<string, unknown>;
+  parameterFields: BlueNaaSParameterField[];
+  switches?: BlueNaaSSwitch[];
+  presets?: BlueNaaSPreset[];
+  recordedVectors: Record<string, string>;
+  charts: BlueNaaSChart[];
+}
+
 export interface LivePaperDataItem {
   label: string;
   links: Link[];
   type: string;
+  config?: BlueNaaSConfig;
   identifier: string;
 }
 

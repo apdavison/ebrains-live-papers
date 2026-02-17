@@ -107,8 +107,168 @@
       "order": 1,
       "type": "section_custom",
       "title": "ModelDB link and test simulations",
-      "text": "<script\n  type=\"text/javascript\"\n  src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_martinello_et_al/martinello_et_al_2019.js\"\n></script>\n<p><link\n  rel=\"stylesheet\"\n  type=\"text/css\"\n  href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_martinello_et_al/martinello_et_al_2019.css\"\n/></p>\n<div id=\"collapsetitle\">\n  <p>\n    A reduced self-consistent set of files needed to reproduce&nbsp;Fig. 4b,c\n    and d of the paper is available on\n    <a\n      href=\"https://modeldb.science/245417\"\n      target=\"_blank\"\n      >ModelDB</a\n    >\n    <br />\n    <br />\n    The simulations will reproduce functional effects of Km removal in mossy\n    fiber boutons.<br /><br />\n    The default settings will reproduce control condition in Fig. 4b,c (Single\n    AP) and Fig. 4d (50Hz Train) of the paper, which refer to the last action\n    potential and all action potentials shown in Fig. 3a and Fig. 3d\n    respectively.<br />\n    <br />\n    <em\n      >HOW TO: Change settings by turning \"on\" the\n      <b>\"Reset/set parameters\"</b> switch to run simulation with your own\n      conductance configuration. Set g<sub>KM</sub>=0.0 or both conductances to\n      0.0 to reproduce respectively red and blue lines of the Fig. 4b,c,d.<br />\n      Use the <b>\"Single AP/50 Hz Train\"</b> switch to simulate a single current\n      injection or a 50Hz current pulses train, respectively.<br />\n      Turn \"on\" the <b>\"Persistent plot\"</b> switch to compare plots of\n      different simulations.</em\n    >\n  </p>\n  <div class=\"divider\"></div>\n  <div style=\"position: relative; margin-left: 25px; margin-right: 25px\">\n    <div id=\"plots\" class=\"plots\">\n      <div id=\"plot-title\" style=\"text-align: center\"></div>\n      <br />\n      <div class=\"row\">\n        <div class=\"col s6\" id=\"plotlyChart_01\"></div>\n        <div class=\"col s6\" id=\"plotlyChart_02\"></div>\n      </div>\n    </div>\n    <div class=\"overlay\" id=\"error-msg\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          An error occurred while connecting to the server\n          <br />\n          Please try again in a few seconds\n        </div>\n      </div>\n    </div>\n    <div class=\"overlay\" id=\"loader\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          Launching simulation. Please wait ...\n          <div class=\"progress\">\n            <div class=\"indeterminate\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div id=\"paper-sim\" class=\"col s12\" style=\"margin-top: 10px\">\n      <div style=\"margin-left: 25px; margin-right: 25px\">\n        <div class=\"divider\"></div>\n        <h6><strong>Settings</strong></h6>\n        <div style=\"overflow-x: auto\">\n          <br />\n          <table class=\"centered\">\n            <tr>\n              <tbody>\n                <tr id=\"paramsrow\">\n                  <td>\n                    <em>g<sub>KM</sub></em>\n                  </td>\n                  <td>\n                    <div class=\"settings input-field col s12\">\n                      <input\n                        type=\"number\"\n                        id=\"gkm\"\n                        step=\"0.001\"\n                        min=\"0\"\n                        max=\"5\"\n                        style=\"min-width: 55px\"\n                      />\n                      <label for=\"gkm\"></label>\n                    </div>\n                  </td>\n                  <td>\n                    <em>g<sub>Ca</sub></em>\n                  </td>\n                  <td>\n                    <div class=\"settings input-field col s12\">\n                      <input\n                        type=\"number\"\n                        id=\"gca\"\n                        step=\"0.001\"\n                        min=\"0\"\n                        max=\"5\"\n                        style=\"min-width: 55px\"\n                      />\n                      <label for=\"gca\"></label>\n                    </div>\n                  </td>\n                  <td>\n                    <!-- Switch -->\n                    <div\n                      class=\"switch tooltipped\"\n                      data-position=\"top\"\n                      data-html=\"true\"\n                      data-tooltip=\"'Reset' to reproduce Fig. 1B, Fig. 1C and Fig. 1D. 'Set' to insert your own simulation parameters.\"\n                    >\n                      <label>\n                        <input id=\"switch\" type=\"checkbox\" />\n                        <span class=\"lever\"></span>\n                        <br />\n                        Reset/Set\n                        <br />\n                        parameters\n                      </label>\n                    </div>\n                  </td>\n                  <th\n                    style=\"\n                      border: 1px solid black;\n                      border-color: #e2e2e2;\n                      border-left: none;\n                    \"\n                  ></th>\n                  <td>\n                    <div\n                      class=\"switch tooltipped\"\n                      data-position=\"top\"\n                      data-html=\"true\"\n                      data-tooltip=\"'Keep lines' to prevent the plots to be cleaned up\"\n                    >\n                      <label>\n                        <input id=\"switch-lines\" type=\"checkbox\" />\n                        <span class=\"lever\"></span>\n                        <br />\n                        Persistent\n                        <br />\n                        plots\n                      </label>\n                    </div>\n                  </td>\n                  <td>\n                    <div\n                      class=\"switch tooltipped\"\n                      data-position=\"top\"\n                      data-html=\"true\"\n                      data-tooltip=\"Switch single or train.\"\n                    >\n                      <label>\n                        <input id=\"switch_s_t\" type=\"checkbox\" />\n                        <span class=\"lever\"></span>\n                        <br />\n                        Single AP/\n                        <br />\n                        50 Hz Train\n                      </label>\n                    </div>\n                  </td>\n\n                  <th\n                    style=\"\n                      border: 1px solid black;\n                      border-color: #e2e2e2;\n                      border-right: none;\n                    \"\n                  ></th>\n                  <td>\n                    <div class=\"col s5 offset-s1\">\n                      <button\n                        type=\"submit\"\n                        style=\"margin: 6px; width: 120px\"\n                        class=\"col s12 waves-effect waves-light btn\"\n                        id=\"run\"\n                      >\n                        Run\n                      </button>\n                    </div>\n                  </td>\n                </tr>\n                <tr>\n                  <label id=\"message\" style=\"color: red; display: none\"\n                    >**Please select a value between 0 and 5</label\n                  >\n                </tr>\n              </tbody>\n            </tr>\n          </table>\n        </div>\n        <br />\n      </div>\n      <br />\n    </div>\n  </div>\n</div>",
-      "data": []
+      "text": "A reduced self-consistent set of files needed to reproduce Fig. 4b,c and d of the paper is available on <a href=\"https://modeldb.science/245417\" target=\"_blank\">ModelDB</a>.\n\nThe simulations will reproduce functional effects of Km removal in mossy fiber boutons.\n\nThe default settings will reproduce control condition in Fig. 4b,c (Single AP) and Fig. 4d (50Hz Train) of the paper, which refer to the last action potential and all action potentials shown in Fig. 3a and Fig. 3d respectively.\n\n*HOW TO: Change settings by turning \"on\" the **\"Reset/set parameters\"** switch to run simulation with your own conductance configuration. Set g<sub>KM</sub>=0.0 or both conductances to 0.0 to reproduce respectively red and blue lines of the Fig. 4b,c,d. Use the **\"Single AP/50 Hz Train\"** switch to simulate a single current injection or a 50Hz current pulses train, respectively. Turn \"on\" the **\"Persistent plot\"** switch to compare plots of different simulations.*",
+      "data": [
+        {
+          "label": "Test simulation",
+          "type": "bluenaas",
+          "identifier": "martinello-sim-01",
+          "links": [],
+          "config": {
+            "modelURL": "https://data-proxy.ebrains.eu/api/v1/buckets/live-paper-2019-martinello-et-al/neuronservice_eg_llb_dev_changed_mod_path_mod.zip",
+            "defaultParameters": {
+              "soma": {
+                "gbar_kmb": 0.005,
+                "gcanbar_can": 0.6
+              },
+              "tstop": 600,
+              "v_init": -80,
+              "stim[0]": {
+                "amp": 0.03
+              },
+              "stim[1]": {
+                "amp": 0.0
+              },
+              "stim[2]": {
+                "amp": 0.0
+              },
+              "stim[3]": {
+                "amp": 0.0
+              },
+              "stim[4]": {
+                "amp": 0.0
+              },
+              "stim[5]": {
+                "amp": 0.0
+              },
+              "stim[6]": {
+                "amp": 0.0
+              },
+              "stim[7]": {
+                "amp": 0.0
+              },
+              "stim[8]": {
+                "amp": 0.0
+              },
+              "stim[9]": {
+                "amp": 0.0
+              },
+              "stim[10]": {
+                "amp": 0.0
+              },
+              "stim[11]": {
+                "amp": 0.0
+              },
+              "stim[12]": {
+                "amp": 0.0
+              },
+              "stim[13]": {
+                "amp": 0.0
+              },
+              "stim[14]": {
+                "amp": 0.0
+              },
+              "stim[15]": {
+                "amp": 0.0
+              },
+              "stim[16]": {
+                "amp": 0.0
+              },
+              "stim[17]": {
+                "amp": 0.0
+              },
+              "stim[18]": {
+                "amp": 0.0
+              },
+              "stim[19]": {
+                "amp": 0.0
+              }
+            },
+            "parameterFields": [
+              {
+                "id": "gkm",
+                "label": "g<sub>KM</sub>",
+                "default": 0.005,
+                "min": 0,
+                "max": 5,
+                "step": 0.001,
+                "path": "soma.gbar_kmb"
+              },
+              {
+                "id": "gca",
+                "label": "g<sub>Ca</sub>",
+                "default": 0.6,
+                "min": 0,
+                "max": 5,
+                "step": 0.001,
+                "path": "soma.gcanbar_can"
+              }
+            ],
+            "switches": [
+              {
+                "id": "reset-set",
+                "label": "Reset/Set parameters",
+                "tooltip": "Reset to reproduce Fig. 4b,c,d. Set to use your own parameters."
+              },
+              {
+                "id": "persistent-plots",
+                "label": "Persistent plots",
+                "tooltip": "Keep previous simulation results on the chart"
+              },
+              {
+                "id": "single-train",
+                "label": "Single AP / 50 Hz Train",
+                "tooltip": "Switch between single current injection and 50Hz train",
+                "onParameters": {
+                  "stim[0]": { "amp": 0.03 },
+                  "stim[1]": { "amp": 0.03 },
+                  "stim[2]": { "amp": 0.03 },
+                  "stim[3]": { "amp": 0.03 },
+                  "stim[4]": { "amp": 0.03 },
+                  "stim[5]": { "amp": 0.03 },
+                  "stim[6]": { "amp": 0.03 },
+                  "stim[7]": { "amp": 0.03 },
+                  "stim[8]": { "amp": 0.03 },
+                  "stim[9]": { "amp": 0.03 },
+                  "stim[10]": { "amp": 0.03 },
+                  "stim[11]": { "amp": 0.03 },
+                  "stim[12]": { "amp": 0.03 },
+                  "stim[13]": { "amp": 0.03 },
+                  "stim[14]": { "amp": 0.03 },
+                  "stim[15]": { "amp": 0.03 },
+                  "stim[16]": { "amp": 0.03 },
+                  "stim[17]": { "amp": 0.03 },
+                  "stim[18]": { "amp": 0.03 },
+                  "stim[19]": { "amp": 0.03 }
+                }
+              }
+            ],
+            "recordedVectors": {
+              "TIME": "t",
+              "v(0.5)": "v",
+              "cai(0.5)": "cai"
+            },
+            "charts": [
+              {
+                "title": "Voltage",
+                "xaxis": "t (ms)",
+                "yaxis": "V (mV)",
+                "variables": [
+                  "v(0.5)"
+                ]
+              },
+              {
+                "title": "Calcium",
+                "xaxis": "t (ms)",
+                "yaxis": "Cai (mM)",
+                "variables": [
+                  "cai(0.5)"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "id": "04ac2988-b717-469d-88ce-d54d02036eb1"

@@ -1,464 +1,381 @@
-import { useEffect, useState } from "react";
+import { useState, useCallback } from "react";
 import Plot from "react-plotly.js";
+import type { BlueNaaSConfig } from "./types";
 import "./BlueNaaS.css";
 
-const BLUENAAS_URL = "wss://bluenaas-single-cell-svc.apps.ebrains.eu/ws";
+const BLUENAAS_REMOTE = "wss://bluenaas-single-cell-svc.apps.ebrains.eu/ws";
+const BLUENAAS_URL = import.meta.env.DEV
+  ? `ws://${window.location.host}/ws`
+  : BLUENAAS_REMOTE;
 
-function BlueNaaS() {
-  //{ modelURL }: { modelURL: string }) {
-  const modelURL = 'https://data-proxy.ebrains.eu/api/v1/buckets/live-paper-2019-solinas-et-al/solinas_test_06.zip';
+function setNestedValue(
+  obj: Record<string, unknown>,
+  path: string,
+  value: number
+): Record<string, unknown> {
+  const result = structuredClone(obj);
+  const parts = path.replace(/\[(\d+)\]/g, ".$1").split(".");
+  let current: Record<string, unknown> = result;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const key = parts[i];
+    if (current[key] === undefined || current[key] === null) {
+      current[key] = {};
+    }
+    current = current[key] as Record<string, unknown>;
+  }
+  const lastKey = parts[parts.length - 1];
+  current[lastKey] = value;
+  return result;
+}
 
-  const [messages, setMessages] = useState([]);
-  const [ws, setWs] = useState(null);
+type Status = "idle" | "loading" | "error" | "ready";
 
-  const recorded_vectors = {
-    TIME: "t",
-    "soma(0.5)": "v",
-    "branch[38](0.1)": "v_vec_base",
-    "spine1_head[0]_v": "v_vec_spine1_01",
-    "spine1_head[1]_v": "v_vec_spine1_02",
-    "spine1_head[2]_v": "v_vec_spine1_03",
-    "spine1_head[3]_v": "v_vec_spine1_04",
-    "spine1_head[4]_v": "v_vec_spine1_05",
-    "spine1_head[5]_v": "v_vec_spine1_06",
-    "spine1_head[6]_v": "v_vec_spine1_07",
-    "spine1_head[7]_v": "v_vec_spine1_08",
-    "spine1_head[8]_v": "v_vec_spine1_09",
-    "spine1_head[9]_v": "v_vec_spine1_10",
-    "spine1_head[10]_v": "v_vec_spine1_11",
-    "spine2_head[0]_v": "v_vec_spine2_01",
-    "spine2_head[1]_v": "v_vec_spine2_02",
-    "spine2_head[2]_v": "v_vec_spine2_03",
-    "spine2_head[3]_v": "v_vec_spine2_04",
-    "spine2_head[4]_v": "v_vec_spine2_05",
-    "spine2_head[5]_v": "v_vec_spine2_06",
-    theta1: "theta1",
-    theta2: "theta2",
-    theta3: "theta3",
-    "spine1_head[0]_cai": "cai_vec_spine1_01",
-    "spine1_head[1]_cai": "cai_vec_spine1_02",
-    "spine1_head[2]_cai": "cai_vec_spine1_03",
-    "spine1_head[3]_cai": "cai_vec_spine1_04",
-    "spine1_head[4]_cai": "cai_vec_spine1_05",
-    "spine1_head[5]_cai": "cai_vec_spine1_06",
-    "spine1_head[6]_cai": "cai_vec_spine1_07",
-    "spine1_head[7]_cai": "cai_vec_spine1_08",
-    "spine1_head[8]_cai": "cai_vec_spine1_09",
-    "spine1_head[9]_cai": "cai_vec_spine1_10",
-    "spine1_head[10]_cai": "cai_vec_spine1_11",
-    "spine2_head[0]_cai": "cai_vec_spine2_01",
-    "spine2_head[1]_cai": "cai_vec_spine2_02",
-    "spine2_head[2]_cai": "cai_vec_spine2_03",
-    "spine2_head[3]_cai": "cai_vec_spine2_04",
-    "spine2_head[4]_cai": "cai_vec_spine2_05",
-    "spine2_head[5]_cai": "cai_vec_spine2_06",
-  };
+function BlueNaaS({ config }: { config: BlueNaaSConfig }) {
+  const [parameterValues, setParameterValues] = useState<
+    Record<string, number>
+  >(() =>
+    Object.fromEntries(
+      config.parameterFields.map((f) => [f.id, f.default])
+    )
+  );
+  const [status, setStatus] = useState<Status>("idle");
+  const [plotData, setPlotData] = useState<Plotly.Data[][]>(
+    () => config.charts.map(() => [])
+  );
+  const [persistentPlots, setPersistentPlots] = useState(false);
+  const [parametersEnabled, setParametersEnabled] = useState(false);
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const [customSwitchState, setCustomSwitchState] = useState<
+    Record<string, boolean>
+  >(() =>
+    Object.fromEntries(
+      (config.switches ?? [])
+        .filter((s) => s.id !== "persistent-plots" && s.id !== "reset-set")
+        .map((s) => [s.id, false])
+    )
+  );
 
-  const v_var = [
-    "soma(0.5)",
-    "branch[38](0.1)",
-    "spine1_head[0]_v",
-    "spine1_head[1]_v",
-    "spine1_head[2]_v",
-    "spine1_head[3]_v",
-    "spine1_head[4]_v",
-    "spine1_head[5]_v",
-    "spine1_head[6]_v",
-    "spine1_head[7]_v",
-    "spine1_head[8]_v",
-    "spine1_head[9]_v",
-    "spine1_head[10]_v",
-    "spine2_head[0]_v",
-    "spine2_head[1]_v",
-    "spine2_head[2]_v",
-    "spine2_head[3]_v",
-    "spine2_head[4]_v",
-    "spine2_head[5]_v",
-  ];
+  const validate = useCallback(() => {
+    for (const field of config.parameterFields) {
+      const val = parameterValues[field.id];
+      if (val < field.min || val > field.max) {
+        return `Please select a value for ${field.label} between ${field.min} and ${field.max}`;
+      }
+    }
+    return null;
+  }, [parameterValues, config.parameterFields]);
 
-  const cai_var = [
-    "theta1",
-    "theta2",
-    "theta3",
-    "spine1_head[0]_cai",
-    "spine1_head[1]_cai",
-    "spine1_head[2]_cai",
-    "spine1_head[3]_cai",
-    "spine1_head[4]_cai",
-    "spine1_head[5]_cai",
-    "spine1_head[6]_cai",
-    "spine1_head[7]_cai",
-    "spine1_head[8]_cai",
-    "spine1_head[9]_cai",
-    "spine1_head[10]_cai",
-    "spine2_head[0]_cai",
-    "spine2_head[1]_cai",
-    "spine2_head[2]_cai",
-    "spine2_head[3]_cai",
-    "spine2_head[4]_cai",
-    "spine2_head[5]_cai",
-  ];
+  const handleParameterChange = useCallback(
+    (id: string, value: number) => {
+      setParameterValues((prev) => ({ ...prev, [id]: value }));
+    },
+    []
+  );
 
-  const margin = {
-    l: 60,
-    r: 25,
-    b: 60,
-    t: 35,
-    pad: 15,
-  };
+  const applyPreset = useCallback(
+    (values: Record<string, number>) => {
+      setParameterValues((prev) => ({ ...prev, ...values }));
+    },
+    []
+  );
 
-  const layout_01 = {
-    title: { text: "Voltage" },
-    xaxis: { title: { text: "t (ms)" } },
-    yaxis: { title: { text: "V (mV)" } },
-    legend: { orientation: "v" },
-    showlegend: true,
-    margin: margin,
-    autosize: false,
-    width: 800,
-  };
+  const runSimulation = useCallback(() => {
+    const error = validate();
+    if (error) {
+      setValidationError(error);
+      return;
+    }
+    setValidationError(null);
+    setStatus("loading");
 
-  const default_parameters = {
-    panel: { nBPAP: 1, nstim: 70, FUNCTIONS: ["set_pulse()"] },
-    tstop: 250,
-  };
+    let params = structuredClone(config.defaultParameters);
 
-  useEffect(() => {
-    console.log("loading bluenaas widget");
-    const websocket = new WebSocket(BLUENAAS_URL);
-    setWs(websocket);
+    // Apply parameter overrides from active custom switches
+    for (const sw of config.switches ?? []) {
+      if (sw.onParameters && customSwitchState[sw.id]) {
+        Object.assign(params, structuredClone(sw.onParameters));
+      }
+    }
 
-    websocket.onopen = () => console.log("Connected to WebSocket server");
-    websocket.onmessage = (event) => {
-      setMessages((prevMessages) => [...prevMessages, event.data]);
+    if (parametersEnabled) {
+      for (const field of config.parameterFields) {
+        params = setNestedValue(
+          params as Record<string, unknown>,
+          field.path,
+          parameterValues[field.id]
+        );
+      }
+    }
+
+    const ws = new WebSocket(BLUENAAS_URL);
+
+    ws.onerror = () => {
+      setStatus("error");
     };
-    websocket.onclose = () => console.log("Disconnected from WebSocket server");
 
-    // Cleanup on unmount
-    return () => websocket.close();
-  }, []);
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ cmd: "set_url", data: config.modelURL }));
+      ws.send(JSON.stringify({ cmd: "set_params", data: params }));
+      ws.send(
+        JSON.stringify({
+          cmd: "run_simulation",
+          data: config.recordedVectors,
+        })
+      );
+    };
+
+    ws.onmessage = (evt) => {
+      const received = JSON.parse(evt.data);
+      const data = received.data;
+      const time: number[] = data["TIME"];
+
+      const newPlotData = config.charts.map((chart) => {
+        const traces: Plotly.Data[] = chart.variables.map((varName) => ({
+          x: time,
+          y: data[varName] as number[],
+          mode: "lines" as const,
+          name: varName,
+        }));
+        return traces;
+      });
+
+      setPlotData((prev) => {
+        if (persistentPlots) {
+          return prev.map((existing, i) => [
+            ...existing,
+            ...newPlotData[i],
+          ]);
+        }
+        return newPlotData;
+      });
+
+      setStatus("ready");
+      ws.close();
+    };
+  }, [
+    config,
+    customSwitchState,
+    parameterValues,
+    parametersEnabled,
+    persistentPlots,
+    validate,
+  ]);
+
+  const margin = { l: 60, r: 25, b: 60, t: 35, pad: 15 };
+
+  const hasPersistentPlotsSwitch = config.switches?.some(
+    (s) => s.id === "persistent-plots"
+  );
+  const hasResetSetSwitch = config.switches?.some(
+    (s) => s.id === "reset-set"
+  );
 
   return (
     <div className="bluenaas-outer">
-      <div id="plots" className="plots">
+      <div className="plots">
         <div className="row">
-          <div className="col s9 center-text">
-            <br />
-            {/* <div id="plotlyChart_01"></div>
-            <div id="plotlyChart_02"></div> */}
-            <Plot
-              data={[
-                {
-                  x: [1, 2, 3],
-                  y: [2, 6, 3],
-                  type: "scatter",
-                  mode: "lines+markers",
-                  marker: { color: "red" },
-                },
-                { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-              ]}
-              layout={layout_01}
-            />
-          </div>
-          <div className="col s3">
-            <div className="center-text">
-              <h6>
-                <strong>Settings</strong>
-              </h6>
-            </div>
-            <div className="settings input-field col s12">
-              Tstop
-              <input
-                type="number"
-                id="tstop"
-                step="1"
-                min="0"
-                value={default_parameters.tstop}
+          {config.charts.map((chart, i) => (
+            <div
+              key={chart.title}
+              className={`col s${Math.floor(12 / config.charts.length)}`}
+            >
+              <Plot
+                data={plotData[i]}
+                layout={{
+                  title: { text: chart.title },
+                  xaxis: { title: { text: chart.xaxis } },
+                  yaxis: { title: { text: chart.yaxis } },
+                  legend: { orientation: "v" },
+                  showlegend: true,
+                  margin,
+                  autosize: true,
+                }}
+                useResizeHandler
+                style={{ width: "100%", height: "450px" }}
               />
             </div>
-            <br />
-            <div className="settings input-field col s12">
-              nBPAP
-              <input
-                type="number"
-                id="nbpap"
-                step="0.1"
-                min="0"
-                value={default_parameters.panel.nBPAP}
-              />
-            </div>
-            <br />
-            <div className="settings input-field col s12">
-              nStim
-              <input
-                type="number"
-                id="nstim"
-                step="1"
-                min="0"
-                value={default_parameters.panel.nstim}
-              />
-            </div>
-            <p className="center-text">
-              <strong>Set defaults</strong>
-            </p>
-            <div className="row justify-content-md-center">
-              <button
-                type="button"
-                className="col s4 waves-effect waves-teal btn-flat"
-                id="ltp11"
-              >
-                LTP11
-              </button>
-              <button
-                type="button"
-                className="col s4 waves-effect waves-teal btn-flat"
-                id="ltp12"
-              >
-                LTP12
-              </button>
-              <button
-                type="button"
-                className="col s4 waves-effect waves-teal btn-flat"
-                id="ltp14"
-              >
-                LTP14
-              </button>
-              <br />
-              <br />
-              <br />
-              <button
-                type="submit"
-                className="col s12 waves-effect waves-light btn"
-                id="run"
-              >
-                Run
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-      <br />
-      <br />
-      {/* <div className="overlay" id="error-msg">
-        <div className="loader-class">
-          <div className="row center-text">
-            An error occurred while connecting to the server
-            <br />
-            Please try again in a few seconds
-          </div>
-        </div>
-      </div> */}
 
-      {/* <div className="overlay" id="loader">
-        <div className="loader-class">
-          <div className="row center-text">
-            Launching simulation. Please wait ...
-            <div className="progress">
-              <div className="indeterminate"></div>
+      {status === "loading" && (
+        <div className="overlay" style={{ opacity: 1, zIndex: 10 }}>
+          <div className="loader-class">
+            <div className="row center-text">
+              Launching simulation. Please wait ...
+              <div className="progress">
+                <div className="indeterminate"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div> */}
+      )}
+
+      {status === "error" && (
+        <div className="overlay" style={{ opacity: 1, zIndex: 10 }}>
+          <div className="loader-class">
+            <div className="row center-text">
+              An error occurred while connecting to the server
+              <br />
+              Please try again in a few seconds
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="divider" />
+      <h6>
+        <strong>Settings</strong>
+      </h6>
+      <div style={{ overflowX: "auto" }}>
+        <table className="centered">
+          <tbody>
+            <tr>
+              {config.parameterFields.map((field) => (
+                <td key={field.id}>
+                  <span dangerouslySetInnerHTML={{ __html: field.label }} />
+                  <div className="settings input-field col s12">
+                    <input
+                      type="number"
+                      id={field.id}
+                      step={field.step}
+                      min={field.min}
+                      max={field.max}
+                      value={parameterValues[field.id]}
+                      disabled={!parametersEnabled && hasResetSetSwitch}
+                      onChange={(e) =>
+                        handleParameterChange(
+                          field.id,
+                          parseFloat(e.target.value)
+                        )
+                      }
+                      style={{ minWidth: "55px" }}
+                    />
+                  </div>
+                </td>
+              ))}
+
+              {hasResetSetSwitch && (
+                <td>
+                  <div className="switch">
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={parametersEnabled}
+                        onChange={(e) =>
+                          setParametersEnabled(e.target.checked)
+                        }
+                      />
+                      <span className="lever" />
+                      <br />
+                      Reset/Set
+                      <br />
+                      parameters
+                    </label>
+                  </div>
+                </td>
+              )}
+
+              {hasPersistentPlotsSwitch && (
+                <>
+                  <th
+                    style={{
+                      border: "1px solid #e2e2e2",
+                      borderLeft: "none",
+                    }}
+                  />
+                  <td>
+                    <div className="switch">
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={persistentPlots}
+                          onChange={(e) =>
+                            setPersistentPlots(e.target.checked)
+                          }
+                        />
+                        <span className="lever" />
+                        <br />
+                        Persistent
+                        <br />
+                        plots
+                      </label>
+                    </div>
+                  </td>
+                </>
+              )}
+
+              {config.switches
+                ?.filter(
+                  (s) =>
+                    s.id !== "persistent-plots" && s.id !== "reset-set"
+                )
+                .map((sw) => (
+                  <td key={sw.id}>
+                    <div className="switch">
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={customSwitchState[sw.id] ?? false}
+                          onChange={(e) =>
+                            setCustomSwitchState((prev) => ({
+                              ...prev,
+                              [sw.id]: e.target.checked,
+                            }))
+                          }
+                        />
+                        <span className="lever" />
+                        <br />
+                        {sw.label}
+                      </label>
+                    </div>
+                  </td>
+                ))}
+
+              <th
+                style={{
+                  border: "1px solid #e2e2e2",
+                  borderRight: "none",
+                }}
+              />
+              <td>
+                <button
+                  type="submit"
+                  className="waves-effect waves-light btn"
+                  onClick={runSimulation}
+                  style={{ margin: "6px", width: "120px" }}
+                >
+                  Run
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {validationError && (
+        <label style={{ color: "red" }}>{validationError}</label>
+      )}
+
+      {config.presets && config.presets.length > 0 && (
+        <div style={{ textAlign: "center", marginTop: "10px" }}>
+          <strong>Set defaults</strong>
+          <div className="row" style={{ justifyContent: "center" }}>
+            {config.presets.map((preset) => (
+              <button
+                key={preset.label}
+                type="button"
+                className="col s4 waves-effect waves-teal btn-flat"
+                onClick={() => applyPreset(preset.values)}
+              >
+                {preset.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
 export default BlueNaaS;
-
-/*
-var model_url = 'https://data-proxy.ebrains.eu/api/v1/buckets/live-paper-2019-solinas-et-al/solinas_test_06.zip';
-
-var default_parameters = {'panel' : {'nBPAP':  1, 'nstim': 70,
-    'FUNCTIONS':['set_pulse()']}, 'tstop' : 250}
-
-
-var fadeinval = 1200;
-var fadeoutval = 600;
-
-$(document).ready(function () {
-
-
-    $('#tstop').val(default_parameters['tstop']);
-    $('#nbpap').val(default_parameters['panel']['nBPAP']);
-    $('#nstim').val(default_parameters['panel']['nstim']);
-
-    $("#ltp11").click(function(){
-        set_default_params(250, 1, 70);
-    });
-
-    $("#ltp12").click(function(){
-        set_default_params(250, 2, 50);
-    });
-
-    $("#ltp14").click(function(){
-        set_default_params(250, 4, 25);
-    });
-
-
-    var plotlyChart_01 = document.getElementById("plotlyChart_01");
-    var plotlyChart_02 = document.getElementById("plotlyChart_02");
-
-    var margin = {
-        l: 60,
-        r: 25,
-        b: 60,
-        t: 35,
-        pad: 15
-    }
-
-    var layout_01= {
-        title: 'Voltage',
-        xaxis:{title:'t (ms)'},
-        yaxis:{title:'V (mV)'},
-        legend: { "orientation":"v"},
-        showlegend:true,
-        margin: margin,
-        autosize: false,
-        width: 1000,
-    };
-
-    var layout_02= {
-        title: 'Cai',
-        xaxis:{title:'t (ms)'},
-        yaxis:{title:'Cai (mM)'},
-        legend: { "orientation":"v"},
-        showlegend:true,
-        margin: margin,
-        autosize: false,
-    };
-
-
-    Plotly.newPlot(plotlyChart_01, [{x:[], y:[]}], layout_01, {displayModeBar: false}, {responsive: true});
-    Plotly.newPlot(plotlyChart_02, [{x:[], y:[]}], layout_02, {displayModeBar: false}, {responsive: true});
-
-    resize_plots();
-    $(window).resize(function(){
-        resize_plots();
-    });
-    $(".collapsible").click(function () {
-        resize_plots();
-    });
-
-    $("#tstop,#nbpap,#nstim").keyup(validate_parameters)
-
-    $("#tstop,#nbpap,#nstim").on("change", validate_parameters);
-
-    $('#run').click(function() {
-            default_parameters['tstop'] = parseFloat($('#tstop').val());
-            default_parameters['panel']['nBPAP'] = parseFloat($('#nbpap').val());
-            default_parameters['panel']['nstim'] = parseFloat($('#nstim').val());
-            $('#error-msg').animate({opacity: 0}, 0);
-            $('#plots').animate({opacity: 0}, fadeoutval);
-            $('#loader').animate({opacity: 1}, fadeinval);
-			var xmin = 100;
-			var xmax = 180;
-			layout_01['xaxis']['autorange'] = false;
-			layout_01['xaxis']['range'] = [xmin, xmax];
-			layout_02['xaxis']['autorange'] = false;
-			layout_02['xaxis']['range'] = [xmin, xmax];
-            var ws = new WebSocket('wss://bluenaas-single-cell-svc.apps.ebrains.eu/ws');
-            ws.onerror = function(evt){ws_on_error(evt)}
-            ws.onopen = function(){ws_on_open(ws, default_parameters)}
-            ws.onmessage = function(evt){ws_on_message(ws, evt, layout_01, layout_02)}
-    });
-
-    $("#run").click();
-});
-
-
-// open websocket connection
-
-function ws_on_open(ws, params){
-    ws.send(JSON.stringify({'cmd': 'set_url', 'data': model_url}));
-    ws.send(JSON.stringify({"cmd": 'set_params', "data": params}))
-    ws.send(JSON.stringify({'cmd': 'run_simulation', 'data': recorded_vectors}))
-}
-
-// handle errors event
-
-function ws_on_error(evt){
-    console.log("entered in on error");
-    $('#plots').animate({opacity: 0}, fadeoutval);
-    $('#loader').animate({opacity: 0}, fadeoutval);
-    const wait = time => new Promise(
-        res => setTimeout(() => res(), time)
-    );
-    wait(fadeinval + fadeoutval)
-        .then(() => $('#error-msg').animate({opacity: 1}, fadeinval));
-
-}
-
-
-// handle received message
-function ws_on_message(ws, evt, layout_01, layout_02) {
-    var received_msg = JSON.parse(evt.data);
-    var time = received_msg["data"]["TIME"];
-    var v_traces = [];
-    var cai_traces = [];
-
-    for (var i = 0; i < v_var.length; i++){
-
-        v_traces.push({x:time, y:received_msg["data"][v_var[i]], mode: 'lines', name:v_var[i]})
-    }
-
-    for (var i = 0; i < cai_var.length; i++){
-        var crr_cai = []
-        if (cai_var[i]=="theta1" || cai_var[i]=="theta2" || cai_var[i] == "theta3"){
-            for (var j = 0; j < time.length; j++){
-                crr_cai.push(received_msg["data"][cai_var[i]][0]);
-            }
-        } else {
-            crr_cai = received_msg["data"][cai_var[i]]
-        }
-        cai_traces.push({x:time, y:crr_cai, mode: 'lines', name:cai_var[i]})
-    }
-
-    Plotly.react(plotlyChart_01, v_traces, layout_01);
-    Plotly.react(plotlyChart_02, cai_traces, layout_02);
-    $('#error-msg').animate({opacity: 0}, 0);
-    $('#plots').animate({opacity: 1}, fadeinval);
-    $('#loader').animate({opacity: 0}, fadeoutval);
-    ws.close();
-}
-
-function resize_plots(){
-    var plotdiv = document.getElementById("collapsetitle");
-    var plot_width = Math.trunc((plotdiv.offsetWidth-150)*0.75);
-
-    var plotlyChart_01 = document.getElementById("plotlyChart_01");
-    var plotlyChart_02 = document.getElementById("plotlyChart_02");
-
-    var layout_01 = plotlyChart_01.layout;
-    var layout_02= plotlyChart_02.layout;
-
-    var data_01 = plotlyChart_01.data;
-    var data_02= plotlyChart_02.data;
-
-    layout_01["width"] = plot_width;
-    layout_02["width"] = plot_width;
-
-    Plotly.react(plotlyChart_01, data_01, layout_01);
-    Plotly.react(plotlyChart_02, data_02, layout_02);
-}
-
-function validate_parameters(){
-    var val_tstop=$('#tstop').val();
-    var val_nbpap=$('#nbpap').val();
-    var val_nstim=$('#nstim').val();
-    if(val_tstop<0 || val_tstop>5000 || val_nbpap<0 || val_nbpap>500 || val_nstim<0 || val_nstim>500){
-        $("#message").show();
-        $("#run").attr("disabled", true);
-    }
-    else{
-        $("#message").hide();
-        $("#run").attr("disabled", false);
-    }
-}
-
-function set_default_params(tstop=250, nbpap=1, nstim=70){
-    $("#tstop").val(tstop);
-    $("#nbpap").val(nbpap);
-    $("#nstim").val(nstim);
-}
-
-*/

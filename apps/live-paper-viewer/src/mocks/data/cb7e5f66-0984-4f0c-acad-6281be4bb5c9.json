@@ -99,8 +99,180 @@
       "order": 1,
       "type": "section_custom",
       "title": "ModelDB link and test simulations",
-      "text": "<script\n  type=\"text/javascript\"\n  src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_solinas_et_al/solinas_et_al_2019.js\"\n></script>\n<p><link\n  rel=\"stylesheet\"\n  type=\"text/css\"\n  href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_solinas_et_al/solinas_et_al_2019.css\"\n/></p>\n<div id=\"collapsetitle\">\n  <p>\n    A reduced self-consistent set of files needed to reproduce&nbsp;Fig.3A,3B\n    and Fig.4A,4B of the paper is available on\n    <a\n      href=\"https://modeldb.science/244412\"\n      target=\"_blank\"\n      >ModelDB</a\n    >\n    <br />\n    <br />\n    The model shows how the back-propagating action potentials in the oblique\n    dendrites of CA1 neurons collide at the spines with a locally elicited EPSP\n    to trigger the release of a retrograde messenger or Brain-Derived\n    Neurotrophic Factor inducing the late expression of spike timing-dependent\n    plasticity.<br />\n    <br />\n    <em\n      >HOWTO: Change settings by clicking the <strong>\"LTP11\"</strong> or\n      <strong>\"LTP14\"</strong> buttons in order to set the default parameters to\n      be used for reproducing the manuscript's figures Fig.3A,3B and Fig.4A,4B\n      respectively. Alternatively you can manually set the \"Tstop\", \"nBPAP\" and\n      \"nStim\" parameters. Once the parameters are set, click the\n      <strong>\"Run\"</strong> button to launch the simulation. After the plots\n      are dispayed, you can toggle on/off individual trace visualization by\n      double clicking on trace names in the legend. Finally, you can zoom in by\n      clicking and dragging and zoom out by double clicking inside the plots or\n      by dragging the cursor after positioning it on the x-tick/y-tick axis\n      values.</em\n    >\n    <br />\n    <br />\n  </p>\n\n  <div style=\"position: relative; margin-left: 25px; margin-right: 25px\">\n    <div id=\"plots\" class=\"plots\">\n      <div class=\"row\">\n        <div class=\"col s9\" style=\"text-align: center\">\n          <br />\n          <div id=\"plotlyChart_01\"></div>\n          <div id=\"plotlyChart_02\"></div>\n        </div>\n        <div class=\"col s3\">\n          <div style=\"text-align: center\">\n            <h6><strong>Settings</strong></h6>\n          </div>\n          <div class=\"settings input-field col s12\">\n            Tstop\n            <input type=\"number\" id=\"tstop\" step=\"1\" min=\"0\" />\n          </div>\n          <br />\n          <div class=\"settings input-field col s12\">\n            nBPAP\n            <input type=\"number\" id=\"nbpap\" step=\"0.1\" min=\"0\" />\n          </div>\n          <br />\n          <div class=\"settings input-field col s12\">\n            nStim\n            <input type=\"number\" id=\"nstim\" step=\"1\" min=\"0\" />\n          </div>\n          <p style=\"text-align: center\"><strong>Set defaults</strong></p>\n          <div class=\"row justify-content-md-center\">\n            <button\n              type=\"button\"\n              class=\"col s4 waves-effect waves-teal btn-flat\"\n              id=\"ltp11\"\n            >\n              LTP11\n            </button>\n            <button\n              type=\"button\"\n              class=\"col s4 waves-effect waves-teal btn-flat\"\n              id=\"ltp12\"\n            >\n              LTP12\n            </button>\n            <button\n              type=\"button\"\n              class=\"col s4 waves-effect waves-teal btn-flat\"\n              id=\"ltp14\"\n            >\n              LTP14\n            </button>\n            <br />\n            <br />\n            <br />\n            <button\n              type=\"submit\"\n              style=\"margin: 6px\"\n              class=\"col s12 waves-effect waves-light btn\"\n              id=\"run\"\n            >\n              Run\n            </button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <br />\n    <br />\n    <div class=\"overlay\" id=\"error-msg\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          An error occurred while connecting to the server\n          <br />\n          Please try again in a few seconds\n        </div>\n      </div>\n    </div>\n\n    <div class=\"overlay\" id=\"loader\">\n      <div class=\"loader-class\">\n        <div style=\"text-align: center\" class=\"row\">\n          Launching simulation. Please wait ...\n          <div class=\"progress\">\n            <div class=\"indeterminate\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
-      "data": []
+      "text": "A reduced self-consistent set of files needed to reproduce Fig.3A,3B and Fig.4A,4B of the paper is available on <a href=\"https://modeldb.science/244412\" target=\"_blank\">ModelDB</a>.\n\nThe model shows how the back-propagating action potentials in the oblique dendrites of CA1 neurons collide at the spines with a locally elicited EPSP to trigger the release of a retrograde messenger or Brain-Derived Neurotrophic Factor inducing the late expression of spike timing-dependent plasticity.\n\n*HOWTO: Change settings by clicking the **\"LTP11\"** or **\"LTP14\"** buttons in order to set the default parameters to be used for reproducing the manuscript's figures Fig.3A,3B and Fig.4A,4B respectively. Alternatively you can manually set the \"Tstop\", \"nBPAP\" and \"nStim\" parameters. Once the parameters are set, click the **\"Run\"** button to launch the simulation. After the plots are displayed, you can toggle on/off individual trace visualization by double clicking on trace names in the legend. Finally, you can zoom in by clicking and dragging and zoom out by double clicking inside the plots or by dragging the cursor after positioning it on the x-tick/y-tick axis values.*",
+      "data": [
+        {
+          "label": "Test simulation",
+          "type": "bluenaas",
+          "identifier": "solinas-sim-01",
+          "links": [],
+          "config": {
+            "modelURL": "https://data-proxy.ebrains.eu/api/v1/buckets/live-paper-2019-solinas-et-al/solinas_test_06.zip",
+            "defaultParameters": {
+              "panel": {
+                "nBPAP": 1,
+                "nstim": 70,
+                "FUNCTIONS": [
+                  "set_pulse()"
+                ]
+              },
+              "tstop": 250
+            },
+            "parameterFields": [
+              {
+                "id": "tstop",
+                "label": "Tstop",
+                "default": 250,
+                "min": 0,
+                "max": 5000,
+                "step": 1,
+                "path": "tstop"
+              },
+              {
+                "id": "nbpap",
+                "label": "nBPAP",
+                "default": 1,
+                "min": 0,
+                "max": 500,
+                "step": 0.1,
+                "path": "panel.nBPAP"
+              },
+              {
+                "id": "nstim",
+                "label": "nStim",
+                "default": 70,
+                "min": 0,
+                "max": 500,
+                "step": 1,
+                "path": "panel.nstim"
+              }
+            ],
+            "presets": [
+              {
+                "label": "LTP11",
+                "values": {
+                  "tstop": 250,
+                  "nbpap": 1,
+                  "nstim": 70
+                }
+              },
+              {
+                "label": "LTP12",
+                "values": {
+                  "tstop": 250,
+                  "nbpap": 2,
+                  "nstim": 50
+                }
+              },
+              {
+                "label": "LTP14",
+                "values": {
+                  "tstop": 250,
+                  "nbpap": 4,
+                  "nstim": 25
+                }
+              }
+            ],
+            "recordedVectors": {
+              "TIME": "t",
+              "soma(0.5)": "v",
+              "branch[38](0.1)": "v_vec_base",
+              "spine1_head[0]_v": "v_vec_spine1_01",
+              "spine1_head[1]_v": "v_vec_spine1_02",
+              "spine1_head[2]_v": "v_vec_spine1_03",
+              "spine1_head[3]_v": "v_vec_spine1_04",
+              "spine1_head[4]_v": "v_vec_spine1_05",
+              "spine1_head[5]_v": "v_vec_spine1_06",
+              "spine1_head[6]_v": "v_vec_spine1_07",
+              "spine1_head[7]_v": "v_vec_spine1_08",
+              "spine1_head[8]_v": "v_vec_spine1_09",
+              "spine1_head[9]_v": "v_vec_spine1_10",
+              "spine1_head[10]_v": "v_vec_spine1_11",
+              "spine2_head[0]_v": "v_vec_spine2_01",
+              "spine2_head[1]_v": "v_vec_spine2_02",
+              "spine2_head[2]_v": "v_vec_spine2_03",
+              "spine2_head[3]_v": "v_vec_spine2_04",
+              "spine2_head[4]_v": "v_vec_spine2_05",
+              "spine2_head[5]_v": "v_vec_spine2_06",
+              "theta1": "theta1",
+              "theta2": "theta2",
+              "theta3": "theta3",
+              "spine1_head[0]_cai": "cai_vec_spine1_01",
+              "spine1_head[1]_cai": "cai_vec_spine1_02",
+              "spine1_head[2]_cai": "cai_vec_spine1_03",
+              "spine1_head[3]_cai": "cai_vec_spine1_04",
+              "spine1_head[4]_cai": "cai_vec_spine1_05",
+              "spine1_head[5]_cai": "cai_vec_spine1_06",
+              "spine1_head[6]_cai": "cai_vec_spine1_07",
+              "spine1_head[7]_cai": "cai_vec_spine1_08",
+              "spine1_head[8]_cai": "cai_vec_spine1_09",
+              "spine1_head[9]_cai": "cai_vec_spine1_10",
+              "spine1_head[10]_cai": "cai_vec_spine1_11",
+              "spine2_head[0]_cai": "cai_vec_spine2_01",
+              "spine2_head[1]_cai": "cai_vec_spine2_02",
+              "spine2_head[2]_cai": "cai_vec_spine2_03",
+              "spine2_head[3]_cai": "cai_vec_spine2_04",
+              "spine2_head[4]_cai": "cai_vec_spine2_05",
+              "spine2_head[5]_cai": "cai_vec_spine2_06"
+            },
+            "charts": [
+              {
+                "title": "Voltage",
+                "xaxis": "t (ms)",
+                "yaxis": "V (mV)",
+                "variables": [
+                  "soma(0.5)",
+                  "branch[38](0.1)",
+                  "spine1_head[0]_v",
+                  "spine1_head[1]_v",
+                  "spine1_head[2]_v",
+                  "spine1_head[3]_v",
+                  "spine1_head[4]_v",
+                  "spine1_head[5]_v",
+                  "spine1_head[6]_v",
+                  "spine1_head[7]_v",
+                  "spine1_head[8]_v",
+                  "spine1_head[9]_v",
+                  "spine1_head[10]_v",
+                  "spine2_head[0]_v",
+                  "spine2_head[1]_v",
+                  "spine2_head[2]_v",
+                  "spine2_head[3]_v",
+                  "spine2_head[4]_v",
+                  "spine2_head[5]_v"
+                ]
+              },
+              {
+                "title": "Cai",
+                "xaxis": "t (ms)",
+                "yaxis": "Cai (mM)",
+                "variables": [
+                  "theta1",
+                  "theta2",
+                  "theta3",
+                  "spine1_head[0]_cai",
+                  "spine1_head[1]_cai",
+                  "spine1_head[2]_cai",
+                  "spine1_head[3]_cai",
+                  "spine1_head[4]_cai",
+                  "spine1_head[5]_cai",
+                  "spine1_head[6]_cai",
+                  "spine1_head[7]_cai",
+                  "spine1_head[8]_cai",
+                  "spine1_head[9]_cai",
+                  "spine1_head[10]_cai",
+                  "spine2_head[0]_cai",
+                  "spine2_head[1]_cai",
+                  "spine2_head[2]_cai",
+                  "spine2_head[3]_cai",
+                  "spine2_head[4]_cai",
+                  "spine2_head[5]_cai"
+                ]
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "id": "cb7e5f66-0984-4f0c-acad-6281be4bb5c9"
