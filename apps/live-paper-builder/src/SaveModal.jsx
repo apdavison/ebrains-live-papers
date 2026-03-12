@@ -118,7 +118,7 @@ export default class SaveModal extends React.Component {
 
   async checkLivePaperNameUnique(name) {
     let flag = null;
-    const url = baseUrl + "/livepapers/?name=" + name;
+    const url = baseUrl + "/livepapers/?title=" + name;
     const config = {
       cancelToken: this.signal.token,
       headers: { Authorization: "Bearer " + this.context.auth[0].token },
