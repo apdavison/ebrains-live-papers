@@ -193,21 +193,21 @@
       "order": 2,
       "type": "section_custom",
       "title": "Cerebellar Golgi cells simulation with BlueNaaS",
-      "text": null,
+      "text": "<p><br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig. 1C,1D,3A,3B of the paper:\n   <br>\n   <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n   <br>\n   <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n   <br>\n   <span style=\"margin-left:25px\">> To correctly run a simulation, the temperature need to be set at 32\u00b0, the vinit at -70mV and, to match the paper experiments, and fixed time step at 0.025.  Valid positive current injections are from 0.1 to 1nA. </span>\n</p>",
       "data": [
         {
           "label": "BlueNaaS simulations",
           "links": [],
-          "type": "bluenaas-launch-buttons",
+          "type": "link-buttons",
           "config": {
-            "columns": 1,
             "buttons": [
               {
                 "label": "Golgi cell Morphology 1.",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_b/resources/cerebellum_circuits/BlueNaaS_models/live_paper_GoC/GoC_morfo1.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_b/resources/cerebellum_circuits/BlueNaaS_models/live_paper_GoC/GoC_morfo1.zip",
+                "icon": "play_arrow"
               }
             ],
-            "introText": "<p><br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig. 1C,1D,3A,3B of the paper:\n   <br>\n   <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n   <br>\n   <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n   <br>\n   <span style=\"margin-left:25px\">> To correctly run a simulation, the temperature need to be set at 32°, the vinit at -70mV and, to match the paper experiments, and fixed time step at 0.025.  Valid positive current injections are from 0.1 to 1nA. </span>\n</p>"
+            "columns": 1
           },
           "identifier": "bluenaas-buttons-2"
         }

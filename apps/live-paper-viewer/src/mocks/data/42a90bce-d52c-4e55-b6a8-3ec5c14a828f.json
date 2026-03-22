@@ -1,6 +1,6 @@
 {
   "lp_tool_version": "2.0.dev.0",
-  "title": "Basal Ganglia Neuromodulation Over Multiple Temporal and Structural Scales—Simulations of Direct Pathway MSNs Investigate the Fast Onset of Dopaminergic Effects and Predict the Role of Kv4.2",
+  "title": "Basal Ganglia Neuromodulation Over Multiple Temporal and Structural Scales\u2014Simulations of Direct Pathway MSNs Investigate the Fast Onset of Dopaminergic Effects and Predict the Role of Kv4.2",
   "alias": "2018-lindroos-et-al",
   "publication_date": "2021-08-10",
   "version": "1",
@@ -58,7 +58,7 @@
         },
         {
           "given_name": "Marko",
-          "family_name": "Filipović",
+          "family_name": "Filipovi\u0107",
           "identifier": null,
           "affiliations": [
             "Bernstein Center Freiburg, University of Freiburg, Freiburg im Breisgau, Germany"
@@ -72,7 +72,7 @@
           "family_name": "Keller",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -137,7 +137,7 @@
         },
         {
           "given_name": "Juan",
-          "family_name": "Pérez-Fernández",
+          "family_name": "P\u00e9rez-Fern\u00e1ndez",
           "identifier": null,
           "affiliations": [
             "Department of Neuroscience, The Karolinska Institute, Stockholm, Sweden"
@@ -183,7 +183,7 @@
         }
       ],
       "publication_date": "2018-02-06",
-      "title": "Basal Ganglia Neuromodulation Over Multiple Temporal and Structural Scales—Simulations of Direct Pathway MSNs Investigate the Fast Onset of Dopaminergic Effects and Predict the Role of Kv4.2",
+      "title": "Basal Ganglia Neuromodulation Over Multiple Temporal and Structural Scales\u2014Simulations of Direct Pathway MSNs Investigate the Fast Onset of Dopaminergic Effects and Predict the Role of Kv4.2",
       "journal": "Frontiers in Neural Circuits",
       "volume": "12",
       "issue": null,
@@ -365,37 +365,41 @@
       "order": 2,
       "type": "section_custom",
       "title": "Test simulations",
-      "text": null,
+      "text": "<p>\n   Simulations of the single-cell medium spiny neuron model from the article using the BSP Neuron As A Service (NaaS) tool. Recommended current clamp parameters: amp 0.33 nA, tstop 1000 ms (default) or 3000 ms, dur 800 ms (default) or 2800 ms. Models implement dopaminergic modulation of the excitability at fixed dopamine levels, low (DA LO), medium (DA 0.5) and full effect (DA 1.0), as well as transient response to the dynamic dopamine application (DA(T)).\n</p>",
       "data": [
         {
           "label": "BlueNaaS simulations",
           "links": [],
-          "type": "bluenaas-launch-buttons",
+          "type": "link-buttons",
           "config": {
-            "columns": 3,
             "buttons": [
               {
                 "label": "MSN D1 no DA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1.zip",
+                "icon": "play_arrow"
               },
               {
                 "label": "MSN D1 DA (t)",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_dynamic.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_dynamic.zip",
+                "icon": "play_arrow"
               },
               {
                 "label": "MSN D1 DA Lo",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_full.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_full.zip",
+                "icon": "play_arrow"
               },
               {
                 "label": "MSN D1 DA 0.5",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_fixed_half.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_fixed_half.zip",
+                "icon": "play_arrow"
               },
               {
                 "label": "MSN D1 DA 1.0",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_fixed_full.zip"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1_fixed_full.zip",
+                "icon": "play_arrow"
               }
             ],
-            "introText": "<p>\n   Simulations of the single-cell medium spiny neuron model from the article using the BSP Neuron As A Service (NaaS) tool. Recommended current clamp parameters: amp 0.33 nA, tstop 1000 ms (default) or 3000 ms, dur 800 ms (default) or 2800 ms. Models implement dopaminergic modulation of the excitability at fixed dopamine levels, low (DA LO), medium (DA 0.5) and full effect (DA 1.0), as well as transient response to the dynamic dopamine application (DA(T)).\n</p>"
+            "columns": 3
           },
           "identifier": "bluenaas-buttons-2"
         }

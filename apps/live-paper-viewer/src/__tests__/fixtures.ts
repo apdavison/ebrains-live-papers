@@ -1,7 +1,7 @@
 import type {
   BlueNaaSConfig,
-  BlueNaaSLaunchButtonsConfig,
   BlueNaaSDemoGridConfig,
+  LinkButtonsConfig,
   TabbedCollapsibleConfig,
 } from "../types";
 import martinelloData from "../mocks/data/04ac2988-b717-469d-88ce-d54d02036eb1.json";
@@ -30,7 +30,7 @@ function extractConfig<T>(data: MockLivePaper, type?: string): T {
 export const martinelloConfig = extractConfig<BlueNaaSConfig>(martinelloData);
 export const mccauleyConfig = extractConfig<BlueNaaSConfig>(mccauleyData);
 export const solinasConfig = extractConfig<BlueNaaSConfig>(solinasData);
-export const miglioreButtonsConfig = extractConfig<BlueNaaSLaunchButtonsConfig>(miglioreData, "bluenaas-launch-buttons");
+export const miglioreButtonsConfig = extractConfig<LinkButtonsConfig>(miglioreData, "link-buttons");
 export const eyalDemoGridConfig = extractConfig<BlueNaaSDemoGridConfig>(eyal2016Data, "bluenaas-demo-grid");
 export const lupascuTabbedConfig = extractConfig<TabbedCollapsibleConfig>(lupascuData, "tabbed-collapsible");
 export const hjorthTabbedConfig = extractConfig<TabbedCollapsibleConfig>(hjorthData, "tabbed-collapsible");

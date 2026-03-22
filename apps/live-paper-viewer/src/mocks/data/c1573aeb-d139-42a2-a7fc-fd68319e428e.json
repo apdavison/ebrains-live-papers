@@ -61,7 +61,7 @@
           "family_name": "Romani",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -72,7 +72,7 @@
           "family_name": "Courcol",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -83,7 +83,7 @@
           "family_name": "Antonel",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -94,7 +94,7 @@
           "family_name": "Van Geit",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -147,10 +147,10 @@
         },
         {
           "given_name": "Christian A.",
-          "family_name": "Rössert",
+          "family_name": "R\u00f6ssert",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -161,7 +161,7 @@
           "family_name": "Shi",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -190,12 +190,12 @@
           ]
         },
         {
-          "given_name": "Tamás F.",
+          "given_name": "Tam\u00e1s F.",
           "family_name": "Freund",
           "identifier": null,
           "affiliations": [
             "Institute of Experimental Medicine, Budapest, Hungary",
-            "Faculty of Information Technology and Bionics, Pázmány Péter Catholic University, Budapest, Hungary"
+            "Faculty of Information Technology and Bionics, P\u00e1zm\u00e1ny P\u00e9ter Catholic University, Budapest, Hungary"
           ],
           "roles": [
             "author"
@@ -203,11 +203,11 @@
         },
         {
           "given_name": "Szabolcs",
-          "family_name": "Káli",
+          "family_name": "K\u00e1li",
           "identifier": null,
           "affiliations": [
             "Institute of Experimental Medicine, Budapest, Hungary",
-            "Faculty of Information Technology and Bionics, Pázmány Péter Catholic University, Budapest, Hungary"
+            "Faculty of Information Technology and Bionics, P\u00e1zm\u00e1ny P\u00e9ter Catholic University, Budapest, Hungary"
           ],
           "roles": [
             "author"
@@ -218,7 +218,7 @@
           "family_name": "Muller",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -226,10 +226,10 @@
         },
         {
           "given_name": "Felix",
-          "family_name": "Schürmann",
+          "family_name": "Sch\u00fcrmann",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -240,7 +240,7 @@
           "family_name": "Markram",
           "identifier": null,
           "affiliations": [
-            "Blue Brain Project, École Polytechnique Fédérale de Lausanne, Geneva, Switzerland"
+            "Blue Brain Project, \u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne, Geneva, Switzerland"
           ],
           "roles": [
             "author"
@@ -1560,51 +1560,58 @@
       "order": 2,
       "type": "section_custom",
       "title": "ModelDB link and test simulations",
-      "text": null,
+      "text": "<p>A reduced self-consistent set of files needed to reproduce&nbsp;Fig.4A of the paper is available on\n    <a href=\"https://modeldb.science/244688\" target=\"_blank\">ModelDB</a>.\n    <br>\n    <br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig.4A:\n    <br>\n    <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n    <br>\n    <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n</p>",
       "data": [
         {
           "label": "BlueNaaS simulations",
           "links": [],
-          "type": "bluenaas-launch-buttons",
+          "type": "link-buttons",
           "config": {
-            "columns": 4,
             "buttons": [
               {
                 "label": "int bAC 0.6 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_bAC_011023HP2_20180116154023/CA1_int_bAC_011023HP2_20180116154023.zip?amp=0.6"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_bAC_011023HP2_20180116154023/CA1_int_bAC_011023HP2_20180116154023.zip?amp=0.6",
+                "icon": "play_arrow"
               },
               {
                 "label": "int cAC 0.4 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cAC_980120A_20180115155814/CA1_int_cAC_980120A_20180115155814.zip?amp=0.4"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cAC_980120A_20180115155814/CA1_int_cAC_980120A_20180115155814.zip?amp=0.4",
+                "icon": "play_arrow"
               },
               {
                 "label": "int cNAC 0.4 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cNAC_980513B_20180119155127/CA1_int_cNAC_980513B_20180119155127.zip?amp=0.4"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cNAC_980513B_20180119155127/CA1_int_cNAC_980513B_20180119155127.zip?amp=0.4",
+                "icon": "play_arrow"
               },
               {
                 "label": "pyr cAC 0.4 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855.zip?amp=0.4",
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855/CA1_pyr_cACpyr_mpg141208_B_idA_20170915151855.zip?amp=0.4",
+                "icon": "play_arrow",
                 "tooltip": "Available soon"
               },
               {
                 "label": "int bAC 1.0 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_bAC_971114B_20180117154233/CA1_int_bAC_971114B_20180117154233.zip?amp=1.0",
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_bAC_971114B_20180117154233/CA1_int_bAC_971114B_20180117154233.zip?amp=1.0",
+                "icon": "play_arrow",
                 "tooltip": "Available soon"
               },
               {
                 "label": "int cAC 0.6 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cAC_980513B_20180119155952/CA1_int_cAC_980513B_20180119155952.zip?amp=0.6"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cAC_980513B_20180119155952/CA1_int_cAC_980513B_20180119155952.zip?amp=0.6",
+                "icon": "play_arrow"
               },
               {
                 "label": "int cNAC 0.8 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cNAC_060314AM2_20180120154747/CA1_int_cNAC_060314AM2_20180120154747.zip?amp=0.8"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_int_cNAC_060314AM2_20180120154747/CA1_int_cNAC_060314AM2_20180120154747.zip?amp=0.8",
+                "icon": "play_arrow"
               },
               {
                 "label": "pyr cAC 0.8 nA",
-                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008.zip?amp=0.8"
+                "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_migliore_et_al/models/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008/CA1_pyr_cACpyr_mpg141209_A_idA_20170912152008.zip?amp=0.8",
+                "icon": "play_arrow"
               }
             ],
-            "introText": "<p>A reduced self-consistent set of files needed to reproduce&nbsp;Fig.4A of the paper is available on\n    <a href=\"https://modeldb.science/244688\" target=\"_blank\">ModelDB</a>.\n    <br>\n    <br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig.4A:\n    <br>\n    <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n    <br>\n    <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n</p>"
+            "columns": 4
           },
           "identifier": "bluenaas-buttons-2"
         }

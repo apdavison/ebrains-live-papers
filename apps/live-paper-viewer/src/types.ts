@@ -53,18 +53,6 @@ export interface BlueNaaSConfig {
   charts: BlueNaaSChart[];
 }
 
-export interface BlueNaaSLaunchButton {
-  label: string;
-  bluenaasUrl: string;
-  tooltip?: string;
-}
-
-export interface BlueNaaSLaunchButtonsConfig {
-  introText?: string;
-  columns: number;
-  buttons: BlueNaaSLaunchButton[];
-}
-
 export interface BlueNaaSDemoGridItem {
   morphologyImageUrl: string;
   bluenaasUrl: string;
@@ -90,9 +78,11 @@ export interface LinkButton {
   label: string;
   url: string;
   icon?: string;
+  tooltip?: string;
 }
 
 export interface LinkButtonsConfig {
+  columns?: number;
   buttons: LinkButton[];
 }
 
@@ -140,7 +130,6 @@ export interface LivePaperDataItem {
   type: string;
   config?:
     | BlueNaaSConfig
-    | BlueNaaSLaunchButtonsConfig
     | BlueNaaSDemoGridConfig
     | LinkButtonsConfig
     | NeoViewerConfig
