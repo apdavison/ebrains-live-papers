@@ -53,11 +53,42 @@ export interface BlueNaaSConfig {
   charts: BlueNaaSChart[];
 }
 
+export interface BlueNaaSLaunchButton {
+  label: string;
+  bluenaasUrl: string;
+  tooltip?: string;
+}
+
+export interface BlueNaaSLaunchButtonsConfig {
+  introText?: string;
+  columns: number;
+  buttons: BlueNaaSLaunchButton[];
+}
+
+export interface BlueNaaSDemoGridItem {
+  morphologyImageUrl: string;
+  bluenaasUrl: string;
+  plotIframeUrl: string;
+}
+
+export interface BlueNaaSDemoGridAdditionalContent {
+  heading: string;
+  items: {
+    imageUrl: string;
+    bluenaasUrl: string;
+  }[];
+}
+
+export interface BlueNaaSDemoGridConfig {
+  items: BlueNaaSDemoGridItem[];
+  additionalContent?: BlueNaaSDemoGridAdditionalContent;
+}
+
 export interface LivePaperDataItem {
   label: string;
   links: Link[];
   type: string;
-  config?: BlueNaaSConfig;
+  config?: BlueNaaSConfig | BlueNaaSLaunchButtonsConfig | BlueNaaSDemoGridConfig;
   identifier: string;
 }
 

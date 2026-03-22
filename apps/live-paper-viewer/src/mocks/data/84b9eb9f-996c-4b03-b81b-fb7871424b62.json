@@ -217,8 +217,38 @@
       "order": 2,
       "type": "section_custom",
       "title": "Cerebellar granule cells simulation with BlueNaaS",
-      "text": "<p><br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig. 6A of the paper:\n   <br>\n   <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n   <br>\n   <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n   <br>\n   <span style=\"margin-left:25px\">> To correctly run a simulation, the temperature need to be set at 32\u00b0, the vinit at -70mV and, to match the paper experiments, the positive current injections are: 10, 16 and 22pA. </span>\n</p>\n<div style=\"margin-left:25px\">\n   <table>\n      <tbody>\n         <tr>\n            <td>\n               <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_non_adapting_low_ahp.zip')\">Regular\n               <i class=\"material-icons right\">play_arrow</i>\n               </button>\n            </td>\n            <td>\n               <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_mild_adapting.zip')\">Mild adapting\n               <i class=\"material-icons right\">play_arrow</i>\n               </button>\n            </td>\n            <td>\n               <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_adapting.zip')\">Strong adapting\n               <i class=\"material-icons right\">play_arrow</i>\n               </button>\n            </td>\n            <td>\n               <span class=\"d-inline-block\" tabindex=\"0\" data-toggle=\"tooltip\" title=\"Available soon\">\n               <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_accellerating.zip')\">Accelerating\n               <i class=\"material-icons right\">play_arrow</i>\n               </button>\n               </span>\n            </td>\n         </tr>\n      </tbody>\n   </table>\n</div>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "BlueNaaS simulations",
+          "links": [],
+          "type": "bluenaas-launch-buttons",
+          "config": {
+            "columns": 4,
+            "buttons": [
+              {
+                "label": "Regular",
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_non_adapting_low_ahp.zip"
+              },
+              {
+                "label": "Mild adapting",
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_mild_adapting.zip"
+              },
+              {
+                "label": "Strong adapting",
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_adapting.zip"
+              },
+              {
+                "label": "Accelerating",
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_masoli_et_al_a/resources/cerebellum_circuits/BlueNaaS_models/live_paper_grc/SM_GrC2019_accellerating.zip",
+                "tooltip": "Available soon"
+              }
+            ],
+            "introText": "<p><br>Use the BSP Neuron As A Service (NaaS) tool to do in silico experiments with the single cell models shown in Fig. 6A of the paper:\n   <br>\n   <span style=\"margin-left:25px\">> Start by clicking on any button below to run a simulation.</span>\n   <br>\n   <span style=\"margin-left:25px\">> After entering the NaaS page, click on the \"Simulation\" tab, adjust the current strength with the appropriate value, and run the simulation by clicking the \"Start simulation\" button.</span>\n   <br>\n   <span style=\"margin-left:25px\">> To correctly run a simulation, the temperature need to be set at 32°, the vinit at -70mV and, to match the paper experiments, the positive current injections are: 10, 16 and 22pA. </span>\n</p>"
+          },
+          "identifier": "bluenaas-buttons-2"
+        }
+      ]
     },
     {
       "order": 3,

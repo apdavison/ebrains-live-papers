@@ -73,8 +73,8 @@
           "family_name": "Benavides-Piccione",
           "identifier": null,
           "affiliations": [
-            "Departamento de Neurobiolog\u00eda Funcional y de Sistemas, Instituto Cajal, Madrid, Spain",
-            "Laboratorio Cajal de Circuitos Corticales (CTB), Universidad Polit\u00e9cnica de Madrid, Madrid, Spain"
+            "Departamento de Neurobiología Funcional y de Sistemas, Instituto Cajal, Madrid, Spain",
+            "Laboratorio Cajal de Circuitos Corticales (CTB), Universidad Politécnica de Madrid, Madrid, Spain"
           ],
           "roles": [
             "author"
@@ -85,8 +85,8 @@
           "family_name": "DeFelipe",
           "identifier": null,
           "affiliations": [
-            "Departamento de Neurobiolog\u00eda Funcional y de Sistemas, Instituto Cajal, Madrid, Spain",
-            "Laboratorio Cajal de Circuitos Corticales (CTB), Universidad Polit\u00e9cnica de Madrid, Madrid, Spain"
+            "Departamento de Neurobiología Funcional y de Sistemas, Instituto Cajal, Madrid, Spain",
+            "Laboratorio Cajal de Circuitos Corticales (CTB), Universidad Politécnica de Madrid, Madrid, Spain"
           ],
           "roles": [
             "author"
@@ -134,7 +134,7 @@
       "volume": "12",
       "issue": null,
       "pagination": "181",
-      "abstract": "We present detailed models of pyramidal cells from human neocortex, including models on their excitatory synapses, dendritic spines, dendritic NMDA- and somatic/axonal Na+ spikes that provided new insights into signal processing and computational capabilities of these principal cells. Six human layer 2 and layer 3 pyramidal cells (HL2/L3 PCs) were modeled, integrating detailed anatomical and physiological data from both fresh and postmortem tissues from human temporal cortex. The models predicted particularly large AMPA- and NMDA-conductances per synaptic contact (0.88 and 1.31 nS, respectively) and a steep dependence of the NMDA-conductance on voltage. These estimates were based on intracellular recordings from synaptically-connected HL2/L3 pairs, combined with extra-cellular current injections and use of synaptic blockers, and the assumption of five contacts per synaptic connection. A large dataset of high-resolution reconstructed HL2/L3 dendritic spines provided estimates for the EPSPs at the spine head (12.7 \u00b1 4.6 mV), spine base (9.7 \u00b1 5.0 mV), and soma (0.3 \u00b1 0.1 mV), and for the spine neck resistance (50\u201380 M\u03a9). Matching the shape and firing pattern of experimental somatic Na+-spikes provided estimates for the density of the somatic/axonal excitable membrane ion channels, predicting that 134 \u00b1 28 simultaneously activated HL2/L3-HL2/L3 synapses are required for generating (with 50% probability) a somatic Na+ spike. Dendritic NMDA spikes were triggered in the model when 20 \u00b1 10 excitatory spinous synapses were simultaneously activated on individual dendritic branches. The particularly large number of basal dendrites in HL2/L3 PCs and the distinctive cable elongation of their terminals imply that ~25 NMDA-spikes could be generated independently and simultaneously in these cells, as compared to ~14 in L2/3 PCs from the rat somatosensory cortex. These multi-sites non-linear signals, together with the large (~30,000) excitatory synapses/cell, equip human L2/L3 PCs with enhanced computational capabilities. Our study provides the most comprehensive model of any human neuron to-date demonstrating the biophysical and computational distinctiveness of human cortical neurons.",
+      "abstract": "We present detailed models of pyramidal cells from human neocortex, including models on their excitatory synapses, dendritic spines, dendritic NMDA- and somatic/axonal Na+ spikes that provided new insights into signal processing and computational capabilities of these principal cells. Six human layer 2 and layer 3 pyramidal cells (HL2/L3 PCs) were modeled, integrating detailed anatomical and physiological data from both fresh and postmortem tissues from human temporal cortex. The models predicted particularly large AMPA- and NMDA-conductances per synaptic contact (0.88 and 1.31 nS, respectively) and a steep dependence of the NMDA-conductance on voltage. These estimates were based on intracellular recordings from synaptically-connected HL2/L3 pairs, combined with extra-cellular current injections and use of synaptic blockers, and the assumption of five contacts per synaptic connection. A large dataset of high-resolution reconstructed HL2/L3 dendritic spines provided estimates for the EPSPs at the spine head (12.7 ± 4.6 mV), spine base (9.7 ± 5.0 mV), and soma (0.3 ± 0.1 mV), and for the spine neck resistance (50–80 MΩ). Matching the shape and firing pattern of experimental somatic Na+-spikes provided estimates for the density of the somatic/axonal excitable membrane ion channels, predicting that 134 ± 28 simultaneously activated HL2/L3-HL2/L3 synapses are required for generating (with 50% probability) a somatic Na+ spike. Dendritic NMDA spikes were triggered in the model when 20 ± 10 excitatory spinous synapses were simultaneously activated on individual dendritic branches. The particularly large number of basal dendrites in HL2/L3 PCs and the distinctive cable elongation of their terminals imply that ~25 NMDA-spikes could be generated independently and simultaneously in these cells, as compared to ~14 in L2/3 PCs from the rat somatosensory cortex. These multi-sites non-linear signals, together with the large (~30,000) excitatory synapses/cell, equip human L2/L3 PCs with enhanced computational capabilities. Our study provides the most comprehensive model of any human neuron to-date demonstrating the biophysical and computational distinctiveness of human cortical neurons.",
       "url": "https://www.frontiersin.org/articles/10.3389/fncel.2018.00181/full",
       "doi": "https://doi.org/10.3389/fncel.2018.00181"
     }
@@ -149,8 +149,62 @@
       "order": 0,
       "type": "section_custom",
       "title": "Demonstration",
-      "text": "<div class=\"row\">\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_03_model_448.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell03_1204_H42_02.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130303.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\t\t\t\n   </div>\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_03_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell03_789_H41_03.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060303.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\n   </div>\n</div>\n<div class=\"row\">\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_11_model_937.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell11_1125_H41_06.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060311.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\n   </div>\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_08_model_602.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell08_876_H41_05_Cell2.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060308.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\t\t\t\n   </div>\n</div>\n<div class=\"row\">\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_05_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.6&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell05_675_H42_04.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130305.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\t\t\t\n   </div>\n   <div class=\"col-md-1\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_06_model_263.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell06_945_H42_05.png\">\n      </a>\n   </div>\n   <div class = \"col-md-5\">\n      <iframe src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130306.html\"\n         height=270px width=100% frameBorder=\"0\"></iframe>\t\t\t\n   </div>\n</div>\n<br>\n<div class=\"rainbow-row\">\n   <div></div>\n   <div></div>\n   <div></div>\n   <div></div>\n   <div></div>\n   <div></div>\n   <div></div>\n   <div></div>\n</div>\n<h4>\n   <strong>\n      <center>Model response to clustered vs non clustered input</center>\n   </strong>\n</h4>\n<div class=\"row\">\n   <div class=\"col-md-6\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/clustered_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/clustered.png\">\n      </a>\n   </div>\n   <div class = \"col-md-6\">\n      <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/distributed_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/non_clustered.png\">\n      </a>\t\t\n   </div>\n</div>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "Demonstration",
+          "links": [],
+          "type": "bluenaas-demo-grid",
+          "config": {
+            "items": [
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_03_model_448.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell03_1204_H42_02.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130303.html"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_03_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell03_789_H41_03.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060303.html"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_11_model_937.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell11_1125_H41_06.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060311.html"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_08_model_602.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell08_876_H41_05_Cell2.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060308.html"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_05_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.6&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell05_675_H42_04.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130305.html"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_06_model_263.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37",
+                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell06_945_H42_05.png",
+                "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130306.html"
+              }
+            ],
+            "additionalContent": {
+              "heading": "Model response to clustered vs non clustered input",
+              "items": [
+                {
+                  "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/clustered_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
+                  "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/clustered.png"
+                },
+                {
+                  "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/distributed_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
+                  "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/non_clustered.png"
+                }
+              ]
+            }
+          },
+          "identifier": "demo-grid-0"
+        }
+      ]
     },
     {
       "order": 1,

@@ -15,7 +15,7 @@ function App() {
       {data.data.map((lp: LivePaperSummary) => (
         <div key={lp.id}>
           <p>
-            <a href={lp.alias ?? undefined}>{lp.title}</a>
+            <a href={lp.alias ?? undefined}>[{lp.alias}] {lp.title}</a>
           </p>
           <p>Live Paper published | {lp.publication_date}</p>
           <p>

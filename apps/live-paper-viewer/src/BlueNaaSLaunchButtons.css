@@ -1,0 +1,13 @@
+.bluenaas-launch-buttons {
+  margin-left: 25px;
+}
+
+.bluenaas-launch-buttons .button-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.bluenaas-launch-buttons .button-grid button {
+  text-transform: none;
+  white-space: nowrap;
+}
