@@ -1,0 +1,11 @@
+.tabbed-collapsible {
+  margin: 16px 0;
+}
+
+.tabbed-collapsible-content {
+  margin-top: 8px;
+}
+
+.collapsible-label {
+  font-weight: 500;
+}

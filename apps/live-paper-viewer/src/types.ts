@@ -84,11 +84,67 @@ export interface BlueNaaSDemoGridConfig {
   additionalContent?: BlueNaaSDemoGridAdditionalContent;
 }
 
+// --- LinkButtons widget ---
+
+export interface LinkButton {
+  label: string;
+  url: string;
+  icon?: string;
+}
+
+export interface LinkButtonsConfig {
+  buttons: LinkButton[];
+}
+
+// --- NeoViewer widget ---
+
+export interface NeoViewerSource {
+  source: string;
+  height?: number;
+  downSampleFactor?: number;
+  segmentId?: number;
+  signalId?: number;
+  showSignals?: boolean;
+  showSpikeTrains?: boolean;
+  ioType?: string;
+}
+
+export interface NeoViewerConfig {
+  sources: NeoViewerSource[];
+}
+
+// --- TabbedCollapsible layout widget ---
+
+export interface TabbedCollapsibleItem {
+  id: string;
+  label: string;
+  children: LivePaperDataItem[];
+}
+
+export interface TabbedCollapsibleTab {
+  id: string;
+  label: string;
+  items: TabbedCollapsibleItem[];
+}
+
+export interface TabbedCollapsibleConfig {
+  introText?: string;
+  tabs: TabbedCollapsibleTab[];
+}
+
+// --- Data item ---
+
 export interface LivePaperDataItem {
   label: string;
   links: Link[];
   type: string;
-  config?: BlueNaaSConfig | BlueNaaSLaunchButtonsConfig | BlueNaaSDemoGridConfig;
+  config?:
+    | BlueNaaSConfig
+    | BlueNaaSLaunchButtonsConfig
+    | BlueNaaSDemoGridConfig
+    | LinkButtonsConfig
+    | NeoViewerConfig
+    | TabbedCollapsibleConfig;
   identifier: string;
 }
 

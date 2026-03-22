@@ -1,0 +1,36 @@
+.collapsible-item {
+  border: 1px solid #ddd;
+  margin-bottom: -1px;
+}
+
+.collapsible-item:first-child {
+  border-radius: 2px 2px 0 0;
+}
+
+.collapsible-item:last-child {
+  border-radius: 0 0 2px 2px;
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  user-select: none;
+  background: #fff;
+}
+
+.collapsible-header:hover {
+  background: #f5f5f5;
+}
+
+.collapsible-arrow {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #757575;
+}
+
+.collapsible-body {
+  padding: 16px;
+  border-top: 1px solid #ddd;
+}

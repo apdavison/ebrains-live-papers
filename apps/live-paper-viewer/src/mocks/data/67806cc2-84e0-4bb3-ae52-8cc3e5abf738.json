@@ -186,8 +186,982 @@
       "order": 1,
       "type": "section_custom",
       "title": "Single-cell models",
-      "text": "<div ng-app=\"neo-visualizer\">\n   <div class=\"collapsible\">\n      <div class=\"row\">\n         <div class=\"col s12\">\n            <ul class=\"tabs\">\n               <li class=\"tab col s3\">\n                  <a href=\"#SPN\">SPN</a>\n               </li>\n               <li class=\"tab col s3\">\n                  <a href=\"#FS\">FS</a>\n               </li>\n               <li class=\"tab col s3\">\n                  <a href=\"#LTS\">LTS</a>\n               </li>\n               <li class=\"tab col s3\">\n                  <a href=\"#ChIN\">ChIN</a>\n               </li>\n            </ul>\n         </div>\n      </div>\n      <div id=\"SPN\" class=\"col s12\">\n         <div style=\"margin-left:25px; margin-right:25px;\">\n            <ul class=\"collapsible\" data-collapsible=\"expandable\">\n               <li>\n                  <div class=\"collapsible-header\">str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IV_ch3_354.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IV_ch3_358.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_397.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_399.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_400.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_409.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-dspn-e150917_c10_D1-mWT-P270-20-v20190521</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c10_D1-mWT-P270-20-v20190521.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c10_D1-mWT-P270-20-v20190521.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch3_505.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch3_509.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_547.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_548.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_549.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_550.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-dspn-e150917_c6_D1-m21-6-DE-v20190503</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c6_D1-m21-6-DE-v20190503.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c6_D1-m21-6-DE-v20190503.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IV_ch5_499.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IV_ch5_502.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_541.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_543.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_544.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_553.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch1_505.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch1_509.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_547.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_549.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_550.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_560.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-ispn-e150908_c4_D2-m51-5-DE-v20190611</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150908_c4_D2-m51-5-DE-v20190611.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150908_c4_D2-m51-5-DE-v20190611.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IV_ch1_508.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_543.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_545.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_546.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_547.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_548.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-ispn-e150917_c11_D2-mWT-MSN1-v20190603</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150917_c11_D2-mWT-MSN1-v20190603.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150917_c11_D2-mWT-MSN1-v20190603.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch5_505.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch5_509.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_548.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_549.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_550.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_560.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-ispn-e151123_c1_D2-mWT-P270-09-v20190527</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e151123_c1_D2-mWT-P270-09-v20190527.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e151123_c1_D2-mWT-P270-09-v20190527.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IV_ch1_497.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IV_ch1_503.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_537.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_539.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_540.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_552.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-ispn-e160118_c10_D2-m46-3-DE-v20190529</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e160118_c10_D2-m46-3-DE-v20190529.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e160118_c10_D2-m46-3-DE-v20190529.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IV_ch3_498.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IV_ch3_502.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_537.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_539.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_540.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_553.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n            </ul>\n            <br>\n         </div>\n      </div>\n      <div id=\"FS\" class=\"col s12\">\n         <div style=\"margin-left:25px; margin-right:25px;\">\n            <ul class=\"collapsible\" data-collapsible=\"expandable\">\n               <li>\n                  <div class=\"collapsible-header\">str-fs-e160628_FS2-mMTC180800A-IDB-v20190226</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e160628_FS2-mMTC180800A-IDB-v20190226.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e160628_FS2-mMTC180800A-IDB-v20190226.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_483.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_487.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_494.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_525.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_528.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_531.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_535.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_542.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_479.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_483.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_489.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_518.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_520.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_524.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_530.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_538.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-fs-e161205_FS1-mMTC180800A-IDB-v20190312</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161205_FS1-mMTC180800A-IDB-v20190312.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161205_FS1-mMTC180800A-IDB-v20190312.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_583.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_587.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_593.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_714.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_716.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_720.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_726.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_733.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n               <li>\n                  <div class=\"collapsible-header\">str-fs-e180418_FS5-mMTC251001A-IDB-v20190301</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model &nbsp; &nbsp; \n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e180418_FS5-mMTC251001A-IDB-v20190301.zip')\">Run<i class=\"material-icons right\">play_arrow</i></button> \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e180418_FS5-mMTC251001A-IDB-v20190301.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IV_ch7_1855.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDrest_ch7_1917.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1932.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1936.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1940.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1945.ibw\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n            </ul>\n            <br>\n         </div>\n      </div>\n      <div id=\"LTS\" class=\"col s12\">\n         <div style=\"margin-left:25px; margin-right:25px;\">\n            <ul class=\"collapsible\" data-collapsible=\"expandable\">\n               <li>\n                  <div class=\"collapsible-header\">str-lts-Experiment-9862_20181211</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model parameters &nbsp; &nbsp; \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/optim/2020Q1/lts/str-lts-Experiment-9862_20181211.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                     20181211_7_8_slice_L4_long.pxp (478 MB) <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/original/Experiment-9862/20181211_7_8_slice_L4_long.pxp')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </span>\n                     &nbsp; <br> &nbsp;\n                     <p>Selected traces</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_641.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_644.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_648.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_755.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_757.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_760.txt\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n            </ul>\n            <br>\n         </div>\n      </div>\n      <div id=\"ChIN\" class=\"col s12\">\n         <div style=\"margin-left:25px; margin-right:25px;\">\n            <ul class=\"collapsible\" data-collapsible=\"expandable\">\n               <li>\n                  <div class=\"collapsible-header\">str-chin-sbj4-170614_cell6-v20190816</div>\n                  <div class=\"collapsible-body\">\n                     <p>\n                        Model parameters &nbsp; &nbsp; \n                        &nbsp; &nbsp;\n                        <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/optim/2020Q1/chin/str-chin-sbj4-170614_cell6-v20200221.zip')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </p>\n                     <p>Experimental data</p>\n                     <span>\n                     sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN.pxp (81 MB) <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/original/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN.pxp')\">Download<i class=\"material-icons right\">save_alt</i></button>\n                     </span>\n                     &nbsp; <br> &nbsp;\n                     <p>Selected traces</p>\n                     <span>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_623.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_628.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_633.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IDthresh_ch3_670.txt\" height=300 downsamplefactor=4></visualizer-view>\n                        <visualizer-view source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IDthresh_ch3_679.txt\" height=300 downsamplefactor=4></visualizer-view>\n                     </span>\n                  </div>\n               </li>\n            </ul>\n            <br>\n         </div>\n      </div>\n   </div>\n</div>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "Single-cell models",
+          "type": "tabbed-collapsible",
+          "identifier": "hjorth-models",
+          "links": [],
+          "config": {
+            "tabs": [
+              {
+                "id": "spn",
+                "label": "SPN",
+                "items": [
+                  {
+                    "id": "str-dspn-e150602-c1-D1-mWT-0728MSN01-v20190508",
+                    "label": "str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-dspn-e150602-c1-D1-mWT-0728MSN01-v20190508-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150602_c1_D1-mWT-0728MSN01-v20190508.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-dspn-e150602-c1-D1-mWT-0728MSN01-v20190508-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IV_ch3_354.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IV_ch3_358.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_397.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_399.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_400.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150602_c1_2_D1_D2/ECall_IDthresh_ch3_409.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-dspn-e150917-c10-D1-mWT-P270-20-v20190521",
+                    "label": "str-dspn-e150917_c10_D1-mWT-P270-20-v20190521",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-dspn-e150917-c10-D1-mWT-P270-20-v20190521-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c10_D1-mWT-P270-20-v20190521.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c10_D1-mWT-P270-20-v20190521.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-dspn-e150917-c10-D1-mWT-P270-20-v20190521-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch3_505.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch3_509.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_547.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_548.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_549.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch3_550.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-dspn-e150917-c6-D1-m21-6-DE-v20190503",
+                    "label": "str-dspn-e150917_c6_D1-m21-6-DE-v20190503",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-dspn-e150917-c6-D1-m21-6-DE-v20190503-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c6_D1-m21-6-DE-v20190503.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c6_D1-m21-6-DE-v20190503.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-dspn-e150917-c6-D1-m21-6-DE-v20190503-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IV_ch5_499.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IV_ch5_502.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_541.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_543.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_544.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c6_D1/ECBL_IDthresh_ch5_553.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-dspn-e150917-c9-d1-mWT-1215MSN03-v20190521",
+                    "label": "str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-dspn-e150917-c9-d1-mWT-1215MSN03-v20190521-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/dspn/str-dspn-e150917_c9_d1-mWT-1215MSN03-v20190521.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-dspn-e150917-c9-d1-mWT-1215MSN03-v20190521-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch1_505.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch1_509.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_547.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_549.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_550.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/dspn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_560.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-ispn-e150908-c4-D2-m51-5-DE-v20190611",
+                    "label": "str-ispn-e150908_c4_D2-m51-5-DE-v20190611",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-ispn-e150908-c4-D2-m51-5-DE-v20190611-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150908_c4_D2-m51-5-DE-v20190611.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150908_c4_D2-m51-5-DE-v20190611.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-ispn-e150908-c4-D2-m51-5-DE-v20190611-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IV_ch1_508.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_543.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_545.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_546.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_547.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150908_c4_5_D2_D1/ECall_IDthresh_ch1_548.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-ispn-e150917-c11-D2-mWT-MSN1-v20190603",
+                    "label": "str-ispn-e150917_c11_D2-mWT-MSN1-v20190603",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-ispn-e150917-c11-D2-mWT-MSN1-v20190603-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150917_c11_D2-mWT-MSN1-v20190603.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e150917_c11_D2-mWT-MSN1-v20190603.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-ispn-e150917-c11-D2-mWT-MSN1-v20190603-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch5_505.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IV_ch5_509.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_548.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_549.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_550.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/150917_c9_11_D1_D1_D2/ECBL_IDthresh_ch1_560.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-ispn-e151123-c1-D2-mWT-P270-09-v20190527",
+                    "label": "str-ispn-e151123_c1_D2-mWT-P270-09-v20190527",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-ispn-e151123-c1-D2-mWT-P270-09-v20190527-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e151123_c1_D2-mWT-P270-09-v20190527.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e151123_c1_D2-mWT-P270-09-v20190527.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-ispn-e151123-c1-D2-mWT-P270-09-v20190527-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IV_ch1_497.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IV_ch1_503.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_537.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_539.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_540.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/151123_c1_2_D2_D1/ECall_IDthresh_ch1_552.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-ispn-e160118-c10-D2-m46-3-DE-v20190529",
+                    "label": "str-ispn-e160118_c10_D2-m46-3-DE-v20190529",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-ispn-e160118-c10-D2-m46-3-DE-v20190529-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e160118_c10_D2-m46-3-DE-v20190529.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/model/2020Q1/ispn/str-ispn-e160118_c10_D2-m46-3-DE-v20190529.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-ispn-e160118-c10-D2-m46-3-DE-v20190529-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IV_ch3_498.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IV_ch3_502.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_537.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_539.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_540.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.1.6/msn/ephys/2019Q3/ispn/original/160118_c9_11_D1_D2_D2/ECall_IDthresh_ch3_553.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "fs",
+                "label": "FS",
+                "items": [
+                  {
+                    "id": "str-fs-e160628-FS2-mMTC180800A-IDB-v20190226",
+                    "label": "str-fs-e160628_FS2-mMTC180800A-IDB-v20190226",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-fs-e160628-FS2-mMTC180800A-IDB-v20190226-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e160628_FS2-mMTC180800A-IDB-v20190226.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e160628_FS2-mMTC180800A-IDB-v20190226.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-fs-e160628-FS2-mMTC180800A-IDB-v20190226-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_483.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_487.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IV_ch5_494.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_525.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_528.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_531.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_535.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/160628_FS2/ECall_IDthresh_ch5_542.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-fs-e161024-FS16-mDR-rat-Mar-13-08-1-536-R-v20190225",
+                    "label": "str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-fs-e161024-FS16-mDR-rat-Mar-13-08-1-536-R-v20190225-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161024_FS16-mDR-rat-Mar-13-08-1-536-R-v20190225.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-fs-e161024-FS16-mDR-rat-Mar-13-08-1-536-R-v20190225-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_479.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_483.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IV_ch1_489.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_518.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_520.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_524.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_530.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161024_FS16/ECall_IDthresh_ch1_538.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-fs-e161205-FS1-mMTC180800A-IDB-v20190312",
+                    "label": "str-fs-e161205_FS1-mMTC180800A-IDB-v20190312",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-fs-e161205-FS1-mMTC180800A-IDB-v20190312-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161205_FS1-mMTC180800A-IDB-v20190312.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e161205_FS1-mMTC180800A-IDB-v20190312.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-fs-e161205-FS1-mMTC180800A-IDB-v20190312-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_583.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_587.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IV_ch3_593.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_714.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_716.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_720.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_726.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/161205_FS1/ECall_IDthresh_ch3_733.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "str-fs-e180418-FS5-mMTC251001A-IDB-v20190301",
+                    "label": "str-fs-e180418_FS5-mMTC251001A-IDB-v20190301",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-fs-e180418-FS5-mMTC251001A-IDB-v20190301-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Run",
+                              "url": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e180418_FS5-mMTC251001A-IDB-v20190301.zip",
+                              "icon": "play_arrow"
+                            },
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/model/2020Q1/fs/str-fs-e180418_FS5-mMTC251001A-IDB-v20190301.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-fs-e180418-FS5-mMTC251001A-IDB-v20190301-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IV_ch7_1855.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDrest_ch7_1917.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1932.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1936.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1940.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/fs/original/180418_FS5/ECall_IDthresh_ch7_1945.ibw",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "lts",
+                "label": "LTS",
+                "items": [
+                  {
+                    "id": "str-lts-Experiment-9862-20181211",
+                    "label": "str-lts-Experiment-9862_20181211",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-lts-Experiment-9862-20181211-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/optim/2020Q1/lts/str-lts-Experiment-9862_20181211.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-lts-Experiment-9862-20181211-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_641.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_644.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECall_IV_ch3_648.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_755.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_757.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/derived/Experiment-9862/ECalllong_IV_ch3_760.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "chin",
+                "label": "ChIN",
+                "items": [
+                  {
+                    "id": "str-chin-sbj4-170614-cell6-v20190816",
+                    "label": "str-chin-sbj4-170614_cell6-v20190816",
+                    "children": [
+                      {
+                        "type": "link-buttons",
+                        "label": "Model",
+                        "identifier": "str-chin-sbj4-170614-cell6-v20190816-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/optim/2020Q1/chin/str-chin-sbj4-170614_cell6-v20200221.zip",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "neo-viewer",
+                        "label": "Experimental data",
+                        "identifier": "str-chin-sbj4-170614-cell6-v20190816-viewer",
+                        "links": [],
+                        "config": {
+                          "sources": [
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_623.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_628.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IV_ch3_633.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IDthresh_ch3_670.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            },
+                            {
+                              "source": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/derived/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN/EC2_IDthresh_ch3_679.txt",
+                              "height": 300,
+                              "downSampleFactor": 4
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "order": 2,
