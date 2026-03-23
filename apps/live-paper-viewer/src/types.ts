@@ -79,6 +79,7 @@ export interface LinkButton {
   url: string;
   icon?: string;
   tooltip?: string;
+  downloadFilename?: string;
 }
 
 export interface LinkButtonsConfig {

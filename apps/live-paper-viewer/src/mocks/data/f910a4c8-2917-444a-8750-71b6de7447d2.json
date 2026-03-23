@@ -120,8 +120,29 @@
       "order": 0,
       "type": "section_custom",
       "title": "Experimental neuron data",
-      "text": "<!-- download experimental neurons param button  -->\n<h5>\n  <p>Download experimental neurons' data</p>\n</h5>\n<p>\n  <button onclick=\"funcGetExperimNeuronsPyr()\" hspace=\"50\">\n    Download all pyramidals\n  </button>\n  <button onclick=\"funcGetExperimNeuronsInt()\">\n    Download all interneurons\n  </button>\n  <br />\n</p>\n<script>\n  var myData = null;\n  function funcGetExperimNeuronsPyr(){\n\n      var originalNeuronsNames = '';\n\n      // retrieve JSON file\n      myURL = 'https://data-proxy.ebrains.eu/api/permalinks/b2b340d5-270d-42a7-99de-439eb6bd49f8'\n      $.getJSON(myURL, function (data) {\n          originalNeuronsNames = Object.keys(data)\n          myData = data;\n          //return (originalNeuronsNames)\n\n\n\n          // DOWNLOAD\n          //Convert JSON string to BLOB.\n          var json = JSON.stringify(myData);\n          json = [json];\n          var blob11 = new Blob(json, { type: \"text/plain;charset=utf-8\" });\n          //console.log(blob1);\n          //Check the Browser.\n          var isIE = false || !!document.documentMode;\n          if (isIE) {\n              window.navigator.msSaveBlob(blob11, \"OriginalPyramidals.json\");\n          } else {\n              var url = window.URL || window.webkitURL;\n              link = url.createObjectURL(blob11);\n              var a = document.createElement(\"a\");\n              a.download = \"OriginalPyramidals.json\";\n              a.href = link;\n              document.body.appendChild(a);\n              a.click();\n              document.body.removeChild(a);\n      }\n\n      });\n  }\n\n  var myData = null;\n  function funcGetExperimNeuronsInt(){\n\n      var originalNeuronsNames = '';\n\n\n      // retrieve JSON file\n      myURL = 'https://data-proxy.ebrains.eu/api/permalinks/0aa27cb1-e5bd-4865-8ca3-7086f9e83f87'\n      $.getJSON(myURL, function (data) {\n          originalNeuronsNames = Object.keys(data)\n          //return (originalNeuronsNames)\n          myData = data;\n          //return (myData)\n\n\n          // DOWNLOAD\n          //Convert JSON string to BLOB.\n          var json = JSON.stringify(myData);\n          json = [json];\n          var blob1 = new Blob(json, { type: \"text/plain;charset=utf-8\" });\n          //console.log(blob1);\n          //Check the Browser.\n          var isIE = false || !!document.documentMode;\n          if (isIE) {\n              window.navigator.msSaveBlob(blob1, \"OriginalInterneurons.json\");\n          } else {\n              var url = window.URL || window.webkitURL;\n              link = url.createObjectURL(blob1);\n              var a = document.createElement(\"a\");\n              a.download = \"OriginalInterneurons.json\";\n              a.href = link;\n              document.body.appendChild(a);\n              a.click();\n              document.body.removeChild(a);\n          }\n\n      });\n  }\n</script>",
-      "data": []
+      "text": "Download experimental neurons' data",
+      "data": [
+        {
+          "type": "link-buttons",
+          "config": {
+            "buttons": [
+              {
+                "label": "Download all pyramidals",
+                "url": "https://data-proxy.ebrains.eu/api/permalinks/b2b340d5-270d-42a7-99de-439eb6bd49f8",
+                "downloadFilename": "OriginalPyramidals.json",
+                "icon": "file_download"
+              },
+              {
+                "label": "Download all interneurons",
+                "url": "https://data-proxy.ebrains.eu/api/permalinks/0aa27cb1-e5bd-4865-8ca3-7086f9e83f87",
+                "downloadFilename": "OriginalInterneurons.json",
+                "icon": "file_download"
+              }
+            ]
+          },
+          "identifier": "marasco-download-experimental-data"
+        }
+      ]
     },
     {
       "order": 1,
