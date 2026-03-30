@@ -2,6 +2,7 @@ import type {
   BlueNaaSConfig,
   BlueNaaSDemoGridConfig,
   LinkButtonsConfig,
+  NGLViewerConfig,
   TabbedCollapsibleConfig,
 } from "../types";
 import martinelloData from "../mocks/data/04ac2988-b717-469d-88ce-d54d02036eb1.json";
@@ -11,6 +12,8 @@ import miglioreData from "../mocks/data/c1573aeb-d139-42a2-a7fc-fd68319e428e.jso
 import eyal2016Data from "../mocks/data/9c00022b-82be-435e-b23f-bf4ee4cacc28.json";
 import lupascuData from "../mocks/data/93a5c03a-6995-47bc-af9f-4f0d85950d1d.json";
 import hjorthData from "../mocks/data/67806cc2-84e0-4bb3-ae52-8cc3e5abf738.json";
+import bruceData from "../mocks/data/b6917332-e092-4bf3-bf31-3f0d212ff861.json";
+import kokhData from "../mocks/data/cf895d83-49b8-4c72-b1ac-8b974bbe4eb5.json";
 
 interface MockLivePaper {
   sections: { data: { type?: string; config?: Record<string, unknown> }[] }[];
@@ -34,3 +37,5 @@ export const miglioreButtonsConfig = extractConfig<LinkButtonsConfig>(miglioreDa
 export const eyalDemoGridConfig = extractConfig<BlueNaaSDemoGridConfig>(eyal2016Data, "bluenaas-demo-grid");
 export const lupascuTabbedConfig = extractConfig<TabbedCollapsibleConfig>(lupascuData, "tabbed-collapsible");
 export const hjorthTabbedConfig = extractConfig<TabbedCollapsibleConfig>(hjorthData, "tabbed-collapsible");
+export const bruceNGLConfig = extractConfig<NGLViewerConfig>(bruceData, "ngl-viewer");
+export const kokhNGLConfig = extractConfig<NGLViewerConfig>(kokhData, "ngl-viewer");

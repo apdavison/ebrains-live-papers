@@ -2,6 +2,7 @@ import BlueNaaS from "./BlueNaaS";
 import BlueNaaSDemoGrid from "./BlueNaaSDemoGrid";
 import LinkButtons from "./LinkButtons";
 import NeoViewer from "./NeoViewer";
+import NGLViewer from "./NGLViewer";
 import TabbedCollapsible from "./TabbedCollapsible";
 import type {
   LivePaperDataItem,
@@ -10,6 +11,7 @@ import type {
   BlueNaaSDemoGridConfig,
   LinkButtonsConfig,
   NeoViewerConfig,
+  NGLViewerConfig,
   TabbedCollapsibleConfig,
 } from "./types";
 
@@ -25,6 +27,9 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
   }
   if (item.type === "neo-viewer" && item.config) {
     return <NeoViewer config={item.config as NeoViewerConfig} />;
+  }
+  if (item.type === "ngl-viewer" && item.config) {
+    return <NGLViewer config={item.config as NGLViewerConfig} />;
   }
   if (item.type === "tabbed-collapsible" && item.config) {
     return <TabbedCollapsible config={item.config as TabbedCollapsibleConfig} />;

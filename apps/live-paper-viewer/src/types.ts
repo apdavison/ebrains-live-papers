@@ -123,6 +123,38 @@ export interface TabbedCollapsibleConfig {
   tabs: TabbedCollapsibleTab[];
 }
 
+// --- NGL Molecular Viewer widget ---
+
+export interface NGLRepresentation {
+  type: string;
+  color: string;
+  sele: string;
+  name?: string;
+  opacity?: number;
+  visible?: boolean;
+  isolevelType?: string;
+  isolevel?: number;
+  opaqueBack?: boolean;
+}
+
+export interface NGLFileConfig {
+  url: string;
+  representations: NGLRepresentation[];
+  asTrajectory?: boolean;
+}
+
+export interface NGLCheckbox {
+  label: string;
+  representationNames: string[];
+  defaultChecked?: boolean;
+}
+
+export interface NGLViewerConfig {
+  files: NGLFileConfig[];
+  checkboxes?: NGLCheckbox[];
+  showTooltip?: boolean;
+}
+
 // --- Data item ---
 
 export interface LivePaperDataItem {
@@ -134,7 +166,8 @@ export interface LivePaperDataItem {
     | BlueNaaSDemoGridConfig
     | LinkButtonsConfig
     | NeoViewerConfig
-    | TabbedCollapsibleConfig;
+    | TabbedCollapsibleConfig
+    | NGLViewerConfig;
   identifier: string;
 }
 

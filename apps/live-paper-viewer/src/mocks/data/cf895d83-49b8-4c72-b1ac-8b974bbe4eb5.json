@@ -95,8 +95,164 @@
       "order": 0,
       "type": "section_custom",
       "title": "Structural data",
-      "text": "<script src=\"https://unpkg.com/ngl\"></script>\n<style>\n   /* Modals take up 3/4 of page in both directions */\n   .modal { width: 75% !important ; height: 75% !important; } \n   /* class below stops occasional scroll when zooming in NGL because canvas resizes */\n   .ngl-modal {overflow-y: hidden;}\n   /* Leave 10% for modal footer containing close button */\n   .modal-content { width: 100% !important ; height: 90% !important ;}\n   /* Basic canvas can take up all of modal content */\n   .ngl-basic-canvas {width:100% !important ; height:100% !important ;}\n   /* When using checkboxes, leave space to right of canvas */\n   .ngl-checkbox-canvas {width:75% !important ; height:100% !important ;}\n   /* Fix strange bug in subscript in collapsible headers */\n   .collapsible-header sub {bottom:-1.5em !important;}\n   .tabs .tab a:focus.active {color:#000000; background-color: #ffb74d;}\n   .center-al {text-align:center;}\n</style>\n<!-- Step 1: Modal windows:\n   - Create a modal with a unique id for every modal button you are creating.\n   This id is used in the corresponding link in the table above. \n   - Give modal div ngl-modal class\n   - In the the modal content div, give a title in bold tags then create a\n   div, again with a unique id, for storing the canvas for NGL.\n   - Give canvas div ngl-basic-canvas class when there are no controls\n   - Give canvas div ngl-checkbox-canvas class to leave space on the right\n   for checkboxes\n   -->\n<!-- Structure only modals -->\n<div id=\"view_5j2x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J2X</b> -->\n      <div id=\"mol_5j2x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J9X</b> -->\n      <div id=\"mol_5j9x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_2yki\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 2YKI</b> -->\n      <div id=\"mol_2yki\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<!-- Javascript -->\n<script>\n   // Step 2: Initialise materialize components and every modal window defined above.\n   //   - For each modal, define which function to call when opening or \n   //     closing the modal\n   $(document).ready(function(){\n       // Materialized component classes\n    //    $('.collapsible').collapsible();\n    //    $('.tabs').tabs();\n    //    $('.modal').modal();\n\n       // Structure modals\n       $('#view_5j2x').modal({\n           onOpenEnd: show_5j2x,\n           onCloseEnd: clear_5j2x\n       });\n\n       $('#view_5j9x').modal({\n           onOpenEnd : show_5j9x,\n           onCloseEnd : clear_5j9x\n       });\n\n       $('#view_2yki').modal({\n           onOpenEnd : show_2yki,\n           onCloseEnd : clear_2yki\n       });\n   });\n\n\n   // Step 3: Common functions for NGL views //////////////////////////////////\n   // These are general functions for showing certain data type.\n   // Here I have 4 for:\n   //      Single structure\n   //      Two structures with checkboxes to show hide\n   //      Two structures and grids with checkboxes to show hide\n   //      MD trajectory - currently needs to be in a single file format \n   //                      eg gro traj or pdb traj\n\n\n   // General function to remove canvas element from from molview  \n   // Need to do this or you get new canvas when you reopen a modal\n   function clearCanvas(molview){\n   $(molview).find('canvas').remove();\n   }\n\n   // Open simple structure view  ///////////////////////////////////////////////\n   function showStructure(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"surface\", { \n   color: \"lightgray\",\n   sele: \"polymer\" ,\n   opacity: 0.8});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n\n\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureA(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 96 , 102 , 133 , 135 , 137 , 138 , 139 , 150 , 162 , 170 , 102 , 152 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 96 , 102 , 133 , 135 , 137 , 138 , 139 , 150 , 162 , 170 , 102 , 152 ) and  _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureO(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 96 , 98, 102 , 106, 107, 133 , 135 , 137, 138 , 139 , 150 , 162 ,  154 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 96 , 98, 102 , 106, 107, 133 , 135 , 137, 138 , 139 , 150 , 162 ,  154 ) and  _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureB(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 98 , 102 , 103 , 106 ,110 , 133, 135 ,  138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 20, 154, 132 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 98 , 102 , 103 , 106 ,110 , 133, 135 ,  138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 20, 154, 132 ) and  _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureC(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 20, 51 ,  54 , 58 ,  102 , 110 , 133, 134 , 135 , 136 , 138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 154, 132 ) and  not _H\";\n   var resiSeleR = \" ( 20, 51 ,  54 , 58 ,  102 , 110 , 133, 134 , 135 , 136 , 138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 154, 132 ) and  _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n\n\n   function showStructureB(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" (  20 , 51 ,  54 , 96 ,  102 , 110 , 103, 106 , 135 ,  138 , 139 , 150 ,  170 , 184 ,  154 ) and  not _H\";\n   var resiSeleR = \" ( 20 , 51 ,  54 , 96 ,  102 , 110 , 103, 106 , 135 ,  138 , 139 , 150 ,  170 , 184 ,  154 ) and  _C\";\n\n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n\n\n   ////////////////////////////////////////////////////////////////////////////////\n   ///-------------- func. helix-type for compounds\n\n   function showComplex(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   ///stage.tooltip.remove();\n   //stage.removeAllComponents();\n\n   ///-showing atom/residue name/number\n   var tooltip = document.createElement(\"div\");\n   Object.assign(tooltip.style, {\n   display: \"none\",\n   position: \"absolute\",\n   zIndex: 10,\n   pointerEvents: \"none\",\n   backgroundColor: \"rgba(0, 0, 0, 0.6)\",\n   color: \"lightgrey\",\n   padding: \"0.5em\",\n   fontFamily: \"sans-serif\"\n   });\n   stage.viewer.container.appendChild(tooltip);\n   ///----- -------------\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el)\n   }\n\n   function createElement (name, properties, style) {\n   var el = document.createElement(name)\n   Object.assign(el, properties)\n   Object.assign(el.style, style)\n   return el\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and  _C\";\n   var resiSeleHe = \" ( 51 ,  54 , 58 , 93, 93 , 96 , 102 , 107 , 108 , 110 , 135, 136, 138 , 139 , 150 , 154 , 162 , 170, 184 , 186 ) and not _H\";\n   var resiSeleHeO = \" ( 51 ,  54 , 58  ) and  _C\";\n   var resiSeleHeY = \" ( 107 , 108 , 110 ) and  _C\";\n   var resiSeleHeR = \" (  135, 136 ,  138 , 139 ) and  _C\";\n   var resiSeleHeC = \" (  102 , 154) and  _C\";\n   var resiSeleHeB = \" (  96  ) and  _C\";\n   var resiSeleHeM = \" ( 150 , 162,  170 ) and  _C\";\n   var resiSeleHeG = \" (  184 , 186 ) and  _C\";\n   var resiSeleHeW = \" (  93  ) and  _C\";\n\n   // Load both structures\n   Promise.all([\n   stage.loadFile(options.file1).then(function(o){\n   return o\n   }),\n\n   ]).then(function(ol){\n\n   // Show first structure\n\n   ol[0].addRepresentation(\"cartoon\", { \n   color: \"white\",\n   sele: \"polymer\"\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   name: \"str1lig\",\n   sele: resiSeleHe,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"white\",\n   name: \"str1lig\",\n   sele: resiSeleHeW,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"orange\",\n   name: \"str1lig\",\n   sele: resiSeleHeO,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"yellow\",\n   name: \"str1lig\",\n   sele: resiSeleHeY,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   name: \"str1lig\",\n   sele: resiSeleHeC,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"blue\",\n   name: \"str1lig\",\n   sele: resiSeleHeB,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"magenta\",\n   name: \"str1lig\",\n   sele: resiSeleHeM,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"gray\",\n   name: \"str1lig\",\n   sele: resiSeleHeG,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   name: \"str1lig\",\n   sele: resiSeleHeR,\n   visible: struct1CheckBox.checked\n   });\n\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele\n   });\n\n   ///-showing atom/residue name/number\n   stage.signals.hovered.add(function (pickingProxy) {\n   if (pickingProxy && (pickingProxy.atom || pickingProxy.bond)){\n   var atom = pickingProxy.atom || pickingProxy.closestBondAtom;\n   var cp = pickingProxy.canvasPosition;\n   tooltip.innerText = \"ATOM: \" + atom.qualifiedName();\n   tooltip.style.bottom = cp.y + 3 + \"px\";\n   tooltip.style.left = cp.x + 3 + \"px\";\n   tooltip.style.display = \"block\";\n   }else{\n   tooltip.style.display = \"none\";\n   }\n   });             \n   ///----------------------------\n   stage.autoView()\n\n   })\n\n\n   // With Materialize, checkbox must be wrapped in a label tag with\n   // label text in a span tag\n   var struct1Lab =  createElement(\"label\", {}, {\n   zIndex: \"20\",\n   top: \"15%\", left: \"77%\"\n   })\n\n   addElement(struct1Lab)\n\n   // Create first checkbox\n   var struct1CheckBox = createElement(\"input\", {\n   type: \"checkbox\",\n   id: \"str1check\",\n   className: \"filled-in\",\n   checked: true,\n   onchange: function (e) {\n   stage.getRepresentationsByName(\"str1lig\").setVisibility(e.target.checked)\n   }\n   }, { top: \"0px\", left: \"0px\" })\n\n   struct1CheckBox.setAttribute(\"class\", \"filled-in\")\n   struct1Lab.appendChild(struct1CheckBox)\n\n   // Object for label text\n   var struct1InText = createElement(\"span\", {\n   innerHTML: options.strDesc1,\n   for: \"str1check\",\n   }, { top: \"0px\", left: \"0px\" })\n\n   struct1Lab.appendChild(struct1InText)\n\n\n   }\n\n\n\n   ////////////////////////////////////////////////////////////////////////////////\n   ///-------------- func. loop-type for compounds\n   function showComplex1(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   //stage.tooltip.remove();\n   //stage.removeAllComponents();\n\n   ///-showing atom/residue name/number\n   var tooltip = document.createElement(\"div\");\n   Object.assign(tooltip.style, {\n   display: \"none\",\n   position: \"absolute\",\n   zIndex: 10,\n   pointerEvents: \"none\",\n   backgroundColor: \"rgba(0, 0, 0, 0.6)\",\n   color: \"lightgrey\",\n   padding: \"0.5em\",\n   fontFamily: \"sans-serif\"\n   });\n   stage.viewer.container.appendChild(tooltip);\n   ///----- -------------\n\n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n\n\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   })\n   stage.viewer.container.appendChild(el)\n   }\n\n   function createElement (name, properties, style) {\n   var el = document.createElement(name)\n   Object.assign(el, properties)\n   Object.assign(el.style, style)\n   return el\n   }\n\n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and  _C\";\n   var resiSeleHe = \" ( 51 ,  54 , 58 , 93, 93 , 96 , 102 , 107 , 108 , 110 , 135, 136, 138  , 150 ,   184 , 186 ) and not _H\";\n   var resiSeleHeO = \" ( 51 ,  54 , 58  ) and  _C\";\n   var resiSeleHeY = \" ( 107 , 108 , 110 ) and  _C\";\n   var resiSeleHeR = \" (  135, 136 ,  138  ) and  _C\";\n   var resiSeleHeC = \" (  102 ) and  _C\";\n   var resiSeleHeB = \" (  96  ) and  _C\";\n   var resiSeleHeM = \" ( 150  ) and  _C\";\n   var resiSeleHeG = \" (  184 , 186 ) and  _C\";\n   var resiSeleHeW = \" (  93  ) and  _C\";\n\n   // Load both structures\n   Promise.all([\n   stage.loadFile(options.file2).then(function(o){\n   return o\n   }),\n\n   ]).then(function(ol){\n\n   // Show first structure\n\n   ol[0].addRepresentation(\"cartoon\", { \n   color: \"white\",\n   sele: \"polymer\"\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   name: \"str1lig\",\n   sele: resiSeleHe,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"white\",\n   name: \"str1lig\",\n   sele: resiSeleHeW,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"orange\",\n   name: \"str1lig\",\n   sele: resiSeleHeO,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"yellow\",\n   name: \"str1lig\",\n   sele: resiSeleHeY,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   name: \"str1lig\",\n   sele: resiSeleHeC,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"blue\",\n   name: \"str1lig\",\n   sele: resiSeleHeB,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"magenta\",\n   name: \"str1lig\",\n   sele: resiSeleHeM,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"gray\",\n   name: \"str1lig\",\n   sele: resiSeleHeG,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   name: \"str1lig\",\n   sele: resiSeleHeR,\n   visible: struct1CheckBox.checked\n   });\n\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele\n   });\n\n   ///-showing atom/residue name/number\n   stage.signals.hovered.add(function (pickingProxy) {\n   if (pickingProxy && (pickingProxy.atom || pickingProxy.bond)){\n   var atom = pickingProxy.atom || pickingProxy.closestBondAtom;\n   var cp = pickingProxy.canvasPosition;\n   tooltip.innerText = \"ATOM: \" + atom.qualifiedName();\n   tooltip.style.bottom = cp.y + 3 + \"px\";\n   tooltip.style.left = cp.x + 3 + \"px\";\n   tooltip.style.display = \"block\";\n   }else{\n   tooltip.style.display = \"none\";\n   }\n   });             \n\n   stage.autoView()\n\n   })\n\n\n   // With Materialize, checkbox must be wrapped in a label tag with\n   // label text in a span tag\n   var struct1Lab =  createElement(\"label\", {}, {\n   zIndex: \"20\",\n   top: \"15%\", left: \"77%\"\n   })\n\n   addElement(struct1Lab)\n\n   // Create first checkbox\n   var struct1CheckBox = createElement(\"input\", {\n   type: \"checkbox\",\n   id: \"str1check\",\n   className: \"filled-in\",\n   checked: true,\n   onchange: function (e) {\n   stage.getRepresentationsByName(\"str1lig\").setVisibility(e.target.checked)\n   }\n   }, { top: \"0px\", left: \"0px\" })\n\n   struct1CheckBox.setAttribute(\"class\", \"filled-in\")\n   struct1Lab.appendChild(struct1CheckBox)\n\n   // Object for label text\n   var struct1InText = createElement(\"span\", {\n   innerHTML: options.strDesc2,\n   for: \"str1check\",\n   }, { top: \"0px\", left: \"0px\" })\n\n   struct1Lab.appendChild(struct1InText)\n\n\n   }\n\n\n   ////////////////////////////////////////////////////////////////////////////////\n\n\n\n\n\n\n   ////////// Step 4: Specific functions for each modal //////////////////////////////\n\n   // functions to open and close single structure modals\n   function show_5j2x(){\n   showStructure({\n   file: \"https://files.rcsb.org/download/5J2X.cif\", \n   molview: \"mol_5j2x\"\n   });\n   }\n\n   function clear_5j2x(){\n   clearCanvas(\"#mol_5j2x\");\n   }\n\n   function show_5j9x(){\n   showStructure({\n   file: \"https://files.rcsb.org/download/5J9X.cif\", \n   molview: \"mol_5j9x\"\n   });\n   }\n\n   function clear_5j9x(){\n   clearCanvas(\"#mol_5j9x\");\n   }\n\n   function show_2yki(){\n   showStructure({\n   file: \"https://files.rcsb.org/download/2YKI.cif\", \n   molview: \"mol_2yki\"\n   });\n   }\n\n   function clear_2yki(){\n   clearCanvas(\"#mol_2yki\");\n   }\n</script>\n<p><b>Representative 3D experimental structural data:</b></p>\n<div style=\"margin-left:5px\">\n   <table class=\"striped\">\n      <tbody>\n         <tr>\n            <td>\n               Complex of HSP90 with a resorcinol-type compound bound to loop-type conformation (shown in Fig.1A)\n            </td>\n            <td>\n               PDB<br><a href=\"https://www.rcsb.org/structure/5J2X\">5J2X</a>\n            </td>\n            <td>\n               <a href=\"https://files.rcsb.org/download/5J2X.pdb\" class=\"waves-effect waves-light center-al\">\n               <i class=\"material-icons\">archive</i><br>Download\n               </a>\n            </td>\n            <td>\n               <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_5j2x\" >\n               <i class=\"material-icons\">3d_rotation</i><br>View\n               </a>\n            </td>\n         </tr>\n         <tr>\n            <td>\n               Complex of HSP90 with a recorcinol-type compound bound to the helix-type conformation of the binding site (shown in Fig.1B)\n            </td>\n            <td>\n               PDB<br><a href=\"https://www.rcsb.org/structure/5J9X\">5J9X</a>\n            </td>\n            <td>\n               <a href=\"https://files.rcsb.org/download/5J9X.pdb\" class=\"waves-effect waves-light center-al\">\n               <i class=\"material-icons\">archive</i><br>Download\n               </a>\n            </td>\n            <td>\n               <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_5j9x\" >\n               <i class=\"material-icons\">3d_rotation</i><br>View\n               </a>\n            </td>\n         </tr>\n         <td>\n            Complex of HSP90 with a tricyclic compound bound to helix-type conformation of the binding site (shown in Fig.1D)\n         </td>\n         <td>\n            PDB<br><a href=\"https://www.rcsb.org/structure/2YKI\">2YKI</a>\n         </td>\n         <td>\n            <a href=\"https://files.rcsb.org/download/2YKI.pdb\" class=\"waves-effect waves-light center-al\">\n            <i class=\"material-icons\">archive</i><br>Download\n            </a>\n         </td>\n         <td>\n            <a class=\"waves-effect waves-light modal-trigger\" href=\"#view_2yki\" >\n            <i class=\"material-icons\">3d_rotation</i><br>View\n            </a>\n         </td>\n         </tr>\n      </tbody>\n   </table>\n</div>\n<p><br/></p>\n<p><b>1D/2D structure data of molecular compound used in the study:</b></p>\n<div style=\"margin-left:5px\">\n   <table class=\"striped\">\n      <tbody>\n         <tr>\n            <td>\n               1D structures (SMILES format):\n            </td>\n            <td class=\"right\">\n               <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/data/HSP90-94.smi\" class=\"waves-effect waves-light modal-trigger center-al\">\n               <i class=\"material-icons\">archive</i><br>Download\n               </a>\n            </td>\n         </tr>\n         <td>\n            2D structures (sdf format):\n         </td>\n         <td class=\"right\">\n            <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/data/HSP90-94-maestro.sdf\" class=\"waves-effect waves-light modal-trigger center-al\">\n            <i class=\"material-icons\">archive</i><br>Download\n            </a>\n         </td>\n         </tr>\n      </tbody>\n   </table>\n</div>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "Complex of HSP90 with a resorcinol-type compound bound to loop-type conformation (PDB: 5J2X)",
+          "links": [
+            {
+              "url": "https://www.rcsb.org/structure/5J2X",
+              "service": "RCSB PDB"
+            },
+            {
+              "url": "https://files.rcsb.org/download/5J2X.pdb",
+              "service": "Download PDB"
+            }
+          ],
+          "type": "ngl-viewer",
+          "identifier": "ngl_5j2x",
+          "config": {
+            "files": [
+              {
+                "url": "https://files.rcsb.org/download/5J2X.cif",
+                "representations": [
+                  {
+                    "type": "cartoon",
+                    "color": "residueindex",
+                    "sele": "polymer"
+                  },
+                  {
+                    "type": "surface",
+                    "color": "lightgray",
+                    "sele": "polymer",
+                    "opacity": 0.8
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "element",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "cyan",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Complex of HSP90 with a resorcinol-type compound bound to helix-type conformation (PDB: 5J9X)",
+          "links": [
+            {
+              "url": "https://www.rcsb.org/structure/5J9X",
+              "service": "RCSB PDB"
+            },
+            {
+              "url": "https://files.rcsb.org/download/5J9X.pdb",
+              "service": "Download PDB"
+            }
+          ],
+          "type": "ngl-viewer",
+          "identifier": "ngl_5j9x",
+          "config": {
+            "files": [
+              {
+                "url": "https://files.rcsb.org/download/5J9X.cif",
+                "representations": [
+                  {
+                    "type": "cartoon",
+                    "color": "residueindex",
+                    "sele": "polymer"
+                  },
+                  {
+                    "type": "surface",
+                    "color": "lightgray",
+                    "sele": "polymer",
+                    "opacity": 0.8
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "element",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "cyan",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Complex of HSP90 with a tricyclic compound bound to helix-type conformation (PDB: 2YKI)",
+          "links": [
+            {
+              "url": "https://www.rcsb.org/structure/2YKI",
+              "service": "RCSB PDB"
+            },
+            {
+              "url": "https://files.rcsb.org/download/2YKI.pdb",
+              "service": "Download PDB"
+            }
+          ],
+          "type": "ngl-viewer",
+          "identifier": "ngl_2yki",
+          "config": {
+            "files": [
+              {
+                "url": "https://files.rcsb.org/download/2YKI.cif",
+                "representations": [
+                  {
+                    "type": "cartoon",
+                    "color": "residueindex",
+                    "sele": "polymer"
+                  },
+                  {
+                    "type": "surface",
+                    "color": "lightgray",
+                    "sele": "polymer",
+                    "opacity": 0.8
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "element",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                  },
+                  {
+                    "type": "ball+stick",
+                    "color": "cyan",
+                    "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "1D/2D structure data",
+          "links": [],
+          "type": "link-buttons",
+          "identifier": "kokh_structure_downloads",
+          "config": {
+            "buttons": [
+              {
+                "label": "1D structures (SMILES format)",
+                "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/data/HSP90-94.smi",
+                "icon": "archive"
+              },
+              {
+                "label": "2D structures (sdf format)",
+                "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/data/HSP90-94-maestro.sdf",
+                "icon": "archive"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "order": 1,
@@ -121,8 +277,636 @@
       "order": 2,
       "type": "section_custom",
       "title": "Models",
-      "text": "<script src=\"https://unpkg.com/ngl\"></script>\n<style>\n   /* Modals take up 3/4 of page in both directions */\n   .modal { width: 75% !important ; height: 75% !important; } \n   /* class below stops occasional scroll when zooming in NGL because canvas resizes */\n   .ngl-modal {overflow-y: hidden;}\n   /* Leave 10% for modal footer containing close button */\n   .modal-content { width: 100% !important ; height: 90% !important ;}\n   /* Basic canvas can take up all of modal content */\n   .ngl-basic-canvas {width:100% !important ; height:100% !important ;}\n   /* When using checkboxes, leave space to right of canvas */\n   .ngl-checkbox-canvas {width:75% !important ; height:100% !important ;}\n   /* Fix strange bug in subscript in collapsible headers */\n   .collapsible-header sub {bottom:-1.5em !important;}\n   .tabs .tab a:focus.active {color:#000000; background-color: #ffb74d;}\n   .center-al {text-align:center;}\n</style>\n<!-- Step 1: Modal windows:\n   - Create a modal with a unique id for every modal button you are creating.\n   This id is used in the corresponding link in the table above. \n   - Give modal div ngl-modal class\n   - In the the modal content div, give a title in bold tags then create a\n   div, again with a unique id, for storing the canvas for NGL.\n   - Give canvas div ngl-basic-canvas class when there are no controls\n   - Give canvas div ngl-checkbox-canvas class to leave space on the right\n   for checkboxes\n   -->\n<!-- Structure only modals -->\n<div id=\"view_A_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J9X</b> -->\n      <div id=\"mol_A_5j9x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_O_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J9X</b> -->\n      <div id=\"mol_O_5j9x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_B_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J9X</b> -->\n      <div id=\"mol_B_5j9x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_C_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J9X</b> -->\n      <div id=\"mol_C_5j9x\" class=\"ngl-basic-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<!--- Model with selection  --->\n<div id=\"view_check_5lnz\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5LNZ</b> -->\n      <div id=\"mol_check_5lnz\" class=\"ngl-checkbox-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_check_5j2x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J2X</b> -->\n      <div id=\"mol_check_5j2x\" class=\"ngl-checkbox-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<div id=\"view_check_5j9x\" class=\"modal ngl-modal\">\n   <div class=\"modal-content\">\n      <!-- <b>PDB: 5J2X</b> -->\n      <div id=\"mol_check_5j9x\" class=\"ngl-checkbox-canvas\"></div>\n   </div>\n   <div class=\"modal-footer\">\n      <a href=\"javascript:void(0);\" class=\"modal-close waves-effect waves-green btn-flat\">Close</a>\n   </div>\n</div>\n<!-- Javascript -->\n<script>\n   // Step 2: Initialise materialize components and every modal window defined above.\n   //   - For each modal, define which function to call when opening or \n   //     closing the modal\n   $(document).ready(function(){\n       // Materialized component classes\n    //    $('.collapsible').collapsible();\n    //    $('.tabs').tabs();\n    //    $('.modal').modal();\n   \n       // Structure modals   \n       $('#view_A_5j9x').modal({\n           onOpenEnd: show_A_5j9x,\n           onCloseEnd: clear_A_5j9x\n       });\n   \n       $('#view_O_5j9x').modal({\n           onOpenEnd: show_O_5j9x,\n           onCloseEnd: clear_O_5j9x\n       });\n   \n       $('#view_B_5j9x').modal({\n           onOpenEnd: show_B_5j9x,\n           onCloseEnd: clear_B_5j9x\n       });\n   \n       $('#view_C_5j9x').modal({\n           onOpenEnd: show_C_5j9x,\n           onCloseEnd: clear_C_5j9x\n       });\n   \n       $('#view_check_5lnz').modal({\n           onOpenEnd : show_check_5lnz,\n           onCloseEnd : clear_check_5lnz\n       });\n   \n       $('#view_check_5j2x').modal({\n           onOpenEnd : show_check_5j2x,\n           onCloseEnd : clear_check_5j2x\n       });\n   \n       $('#view_check_5j9x').modal({\n           onOpenEnd : show_check_5j9x,\n           onCloseEnd : clear_check_5j9x\n       });\n   });\n   \n   \n   // Step 3: Common functions for NGL views //////////////////////////////////\n   // These are general functions for showing certain data type.\n   // Here I have 4 for:\n   //      Single structure\n   //      Two structures with checkboxes to show hide\n   //      Two structures and grids with checkboxes to show hide\n   //      MD trajectory - currently needs to be in a single file format \n   //                      eg gro traj or pdb traj\n   \n   \n   // General function to remove canvas element from from molview  \n   // Need to do this or you get new canvas when you reopen a modal\n   function clearCanvas(molview){\n   $(molview).find('canvas').remove();\n   }\n   \n   // Open simple structure view  ///////////////////////////////////////////////\n   function showStructure(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"surface\", { \n   color: \"lightgray\",\n   sele: \"polymer\" ,\n   opacity: 0.8});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   \n   \n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureA(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 96 , 102 , 133 , 135 , 137 , 138 , 139 , 150 , 162 , 170 , 102 , 152 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 96 , 102 , 133 , 135 , 137 , 138 , 139 , 150 , 162 , 170 , 102 , 152 ) and  _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureO(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 96 , 98, 102 , 106, 107, 133 , 135 , 137, 138 , 139 , 150 , 162 ,  154 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 96 , 98, 102 , 106, 107, 133 , 135 , 137, 138 , 139 , 150 , 162 ,  154 ) and  _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureB(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 51 ,  54 , 58 , 98 , 102 , 103 , 106 ,110 , 133, 135 ,  138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 20, 154, 132 ) and  not _H\";\n   var resiSeleR = \" ( 51 ,  54 , 58 , 98 , 102 , 103 , 106 ,110 , 133, 135 ,  138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 20, 154, 132 ) and  _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   \n   /////////////////////  show resuidues from LR on all compounds\n   function showStructureC(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" ( 20, 51 ,  54 , 58 ,  102 , 110 , 133, 134 , 135 , 136 , 138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 154, 132 ) and  not _H\";\n   var resiSeleR = \" ( 20, 51 ,  54 , 58 ,  102 , 110 , 133, 134 , 135 , 136 , 138 , 139 , 150 , 162 , 170 , 184 , 61, 97 , 154, 132 ) and  _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   \n   \n   function showStructureB(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   stage.tooltip.remove();\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   // Internal functions\n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el);\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C\";\n   var resiSele = \" (  20 , 51 ,  54 , 96 ,  102 , 110 , 103, 106 , 135 ,  138 , 139 , 150 ,  170 , 184 ,  154 ) and  not _H\";\n   var resiSeleR = \" ( 20 , 51 ,  54 , 96 ,  102 , 110 , 103, 106 , 135 ,  138 , 139 , 150 ,  170 , 184 ,  154 ) and  _C\";\n   \n   stage.loadFile(options.file).then(function(o){\n   o.addRepresentation(\"cartoon\", { \n   color: \"residueindex\",\n   sele: \"polymer\" });\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: resiSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   sele: resiSeleR});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele});\n   o.addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   sele: ligCSele});\n   o.autoView();\n   });\n   }\n   \n   \n   ////////////////////////////////////////////////////////////////////////////////\n   ///-------------- func. helix-type for compounds\n   \n   function showComplex(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   ///stage.tooltip.remove();\n   //stage.removeAllComponents();\n   \n   ///-showing atom/residue name/number\n   var tooltip = document.createElement(\"div\");\n   Object.assign(tooltip.style, {\n   display: \"none\",\n   position: \"absolute\",\n   zIndex: 10,\n   pointerEvents: \"none\",\n   backgroundColor: \"rgba(0, 0, 0, 0.6)\",\n   color: \"lightgrey\",\n   padding: \"0.5em\",\n   fontFamily: \"sans-serif\"\n   });\n   stage.viewer.container.appendChild(tooltip);\n   ///----- -------------\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   });\n   stage.viewer.container.appendChild(el)\n   }\n   \n   function createElement (name, properties, style) {\n   var el = document.createElement(name)\n   Object.assign(el, properties)\n   Object.assign(el.style, style)\n   return el\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and  _C\";\n   var resiSeleHe = \" ( 51 ,  54 , 58 , 93, 93 , 96 , 102 , 107 , 108 , 110 , 135, 136, 138 , 139 , 150 , 154 , 162 , 170, 184 , 186 ) and not _H\";\n   var resiSeleHeO = \" ( 51 ,  54 , 58  ) and  _C\";\n   var resiSeleHeY = \" ( 107 , 108 , 110 ) and  _C\";\n   var resiSeleHeR = \" (  135, 136 ,  138 , 139 ) and  _C\";\n   var resiSeleHeC = \" (  102 , 154) and  _C\";\n   var resiSeleHeB = \" (  96  ) and  _C\";\n   var resiSeleHeM = \" ( 150 , 162,  170 ) and  _C\";\n   var resiSeleHeG = \" (  184 , 186 ) and  _C\";\n   var resiSeleHeW = \" (  93  ) and  _C\";\n   \n   // Load both structures\n   Promise.all([\n   stage.loadFile(options.file1).then(function(o){\n   return o\n   }),\n   \n   ]).then(function(ol){\n   \n   // Show first structure\n   \n   ol[0].addRepresentation(\"cartoon\", { \n   color: \"white\",\n   sele: \"polymer\"\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   name: \"str1lig\",\n   sele: resiSeleHe,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"white\",\n   name: \"str1lig\",\n   sele: resiSeleHeW,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"orange\",\n   name: \"str1lig\",\n   sele: resiSeleHeO,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"yellow\",\n   name: \"str1lig\",\n   sele: resiSeleHeY,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   name: \"str1lig\",\n   sele: resiSeleHeC,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"blue\",\n   name: \"str1lig\",\n   sele: resiSeleHeB,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"magenta\",\n   name: \"str1lig\",\n   sele: resiSeleHeM,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"gray\",\n   name: \"str1lig\",\n   sele: resiSeleHeG,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   name: \"str1lig\",\n   sele: resiSeleHeR,\n   visible: struct1CheckBox.checked\n   });\n   \n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele\n   });\n   \n   ///-showing atom/residue name/number\n   stage.signals.hovered.add(function (pickingProxy) {\n   if (pickingProxy && (pickingProxy.atom || pickingProxy.bond)){\n   var atom = pickingProxy.atom || pickingProxy.closestBondAtom;\n   var cp = pickingProxy.canvasPosition;\n   tooltip.innerText = \"ATOM: \" + atom.qualifiedName();\n   tooltip.style.bottom = cp.y + 3 + \"px\";\n   tooltip.style.left = cp.x + 3 + \"px\";\n   tooltip.style.display = \"block\";\n   }else{\n   tooltip.style.display = \"none\";\n   }\n   });             \n   ///----------------------------\n   stage.autoView()\n   \n   })\n   \n   \n   // With Materialize, checkbox must be wrapped in a label tag with\n   // label text in a span tag\n   var struct1Lab =  createElement(\"label\", {}, {\n   zIndex: \"20\",\n   top: \"15%\", left: \"77%\"\n   })\n   \n   addElement(struct1Lab)\n   \n   // Create first checkbox\n   var struct1CheckBox = createElement(\"input\", {\n   type: \"checkbox\",\n   id: \"str1check\",\n   className: \"filled-in\",\n   checked: true,\n   onchange: function (e) {\n   stage.getRepresentationsByName(\"str1lig\").setVisibility(e.target.checked)\n   }\n   }, { top: \"0px\", left: \"0px\" })\n   \n   struct1CheckBox.setAttribute(\"class\", \"filled-in\")\n   struct1Lab.appendChild(struct1CheckBox)\n   \n   // Object for label text\n   var struct1InText = createElement(\"span\", {\n   innerHTML: options.strDesc1,\n   for: \"str1check\",\n   }, { top: \"0px\", left: \"0px\" })\n   \n   struct1Lab.appendChild(struct1InText)\n   \n   \n   }\n   \n   \n   \n   ////////////////////////////////////////////////////////////////////////////////\n   ///-------------- func. loop-type for compounds\n   function showComplex1(options){\n   var stage = new NGL.Stage(options.molview, {backgroundColor: \"white\"});\n   stage.handleResize();\n   //stage.tooltip.remove();\n   //stage.removeAllComponents();\n   \n   ///-showing atom/residue name/number\n   var tooltip = document.createElement(\"div\");\n   Object.assign(tooltip.style, {\n   display: \"none\",\n   position: \"absolute\",\n   zIndex: 10,\n   pointerEvents: \"none\",\n   backgroundColor: \"rgba(0, 0, 0, 0.6)\",\n   color: \"lightgrey\",\n   padding: \"0.5em\",\n   fontFamily: \"sans-serif\"\n   });\n   stage.viewer.container.appendChild(tooltip);\n   ///----- -------------\n   \n   window.addEventListener( \"resize\", function(event){\n   stage.handleResize();\n   }, false );\n   \n   \n   function addElement (el) {\n   Object.assign(el.style, {\n   position: \"absolute\",\n   zIndex: 10\n   })\n   stage.viewer.container.appendChild(el)\n   }\n   \n   function createElement (name, properties, style) {\n   var el = document.createElement(name)\n   Object.assign(el, properties)\n   Object.assign(el.style, style)\n   return el\n   }\n   \n   var ligSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H\";\n   var ligCSele = \"not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and  _C\";\n   var resiSeleHe = \" ( 51 ,  54 , 58 , 93, 93 , 96 , 102 , 107 , 108 , 110 , 135, 136, 138  , 150 ,   184 , 186 ) and not _H\";\n   var resiSeleHeO = \" ( 51 ,  54 , 58  ) and  _C\";\n   var resiSeleHeY = \" ( 107 , 108 , 110 ) and  _C\";\n   var resiSeleHeR = \" (  135, 136 ,  138  ) and  _C\";\n   var resiSeleHeC = \" (  102 ) and  _C\";\n   var resiSeleHeB = \" (  96  ) and  _C\";\n   var resiSeleHeM = \" ( 150  ) and  _C\";\n   var resiSeleHeG = \" (  184 , 186 ) and  _C\";\n   var resiSeleHeW = \" (  93  ) and  _C\";\n   \n   // Load both structures\n   Promise.all([\n   stage.loadFile(options.file2).then(function(o){\n   return o\n   }),\n   \n   ]).then(function(ol){\n   \n   // Show first structure\n   \n   ol[0].addRepresentation(\"cartoon\", { \n   color: \"white\",\n   sele: \"polymer\"\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   name: \"str1lig\",\n   sele: resiSeleHe,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"white\",\n   name: \"str1lig\",\n   sele: resiSeleHeW,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"orange\",\n   name: \"str1lig\",\n   sele: resiSeleHeO,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"yellow\",\n   name: \"str1lig\",\n   sele: resiSeleHeY,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"cyan\",\n   name: \"str1lig\",\n   sele: resiSeleHeC,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"blue\",\n   name: \"str1lig\",\n   sele: resiSeleHeB,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"magenta\",\n   name: \"str1lig\",\n   sele: resiSeleHeM,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"gray\",\n   name: \"str1lig\",\n   sele: resiSeleHeG,\n   visible: struct1CheckBox.checked\n   });\n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"red\",\n   name: \"str1lig\",\n   sele: resiSeleHeR,\n   visible: struct1CheckBox.checked\n   });\n   \n   ol[0].addRepresentation(\"ball+stick\", { \n   color: \"element\",\n   sele: ligSele\n   });\n   \n   ///-showing atom/residue name/number\n   stage.signals.hovered.add(function (pickingProxy) {\n   if (pickingProxy && (pickingProxy.atom || pickingProxy.bond)){\n   var atom = pickingProxy.atom || pickingProxy.closestBondAtom;\n   var cp = pickingProxy.canvasPosition;\n   tooltip.innerText = \"ATOM: \" + atom.qualifiedName();\n   tooltip.style.bottom = cp.y + 3 + \"px\";\n   tooltip.style.left = cp.x + 3 + \"px\";\n   tooltip.style.display = \"block\";\n   }else{\n   tooltip.style.display = \"none\";\n   }\n   });             \n   \n   stage.autoView()\n   \n   })\n   \n   \n   // With Materialize, checkbox must be wrapped in a label tag with\n   // label text in a span tag\n   var struct1Lab =  createElement(\"label\", {}, {\n   zIndex: \"20\",\n   top: \"15%\", left: \"77%\"\n   })\n   \n   addElement(struct1Lab)\n   \n   // Create first checkbox\n   var struct1CheckBox = createElement(\"input\", {\n   type: \"checkbox\",\n   id: \"str1check\",\n   className: \"filled-in\",\n   checked: true,\n   onchange: function (e) {\n   stage.getRepresentationsByName(\"str1lig\").setVisibility(e.target.checked)\n   }\n   }, { top: \"0px\", left: \"0px\" })\n   \n   struct1CheckBox.setAttribute(\"class\", \"filled-in\")\n   struct1Lab.appendChild(struct1CheckBox)\n   \n   // Object for label text\n   var struct1InText = createElement(\"span\", {\n   innerHTML: options.strDesc2,\n   for: \"str1check\",\n   }, { top: \"0px\", left: \"0px\" })\n   \n   struct1Lab.appendChild(struct1InText)\n   \n   \n   }\n   \n   \n   ////////////////////////////////////////////////////////////////////////////////\n   \n   \n   \n   \n   \n   \n   ////////// Step 4: Specific functions for each modal //////////////////////////////\n   \n   // functions to open and close single structure modals\n   function show_A_5j9x(){\n   showStructureA({\n   file: \"https://files.rcsb.org/download/5J9X.cif\", \n   molview: \"mol_A_5j9x\"\n   });\n   }\n   function clear_A_5j9x(){\n   clearCanvas(\"#mol_A_5j9x\");\n   }\n   \n   \n   function show_O_5j9x(){\n   showStructureO({\n   file: \"https://files.rcsb.org/download/5J9X.cif\", \n   molview: \"mol_O_5j9x\"\n   });\n   }\n   \n   function clear_O_5j9x(){\n   clearCanvas(\"#mol_O_5j9x\");\n   }\n   \n   function show_C_5j9x(){\n   showStructureA({\n   file: \"https://files.rcsb.org/download/5J9X.cif\", \n   molview: \"mol_C_5j9x\"\n   });\n   }\n   function clear_C_5j9x(){\n   clearCanvas(\"#mol_C_5j9x\");\n   }\n   \n   function show_B_5j9x(){\n   showStructureB({\n   file: \"https://files.rcsb.org/download/5J9X.cif\", \n   molview: \"mol_B_5j9x\"\n   });\n   }\n   function clear_B_5j9x(){\n   clearCanvas(\"#mol_B_5j9x\");\n   }\n   \n   function show_check_5lnz(){\n   showComplex({\n   file1: \"https://files.rcsb.org/download/5LNZ.cif\",\n   strDesc1: \"View contact residues\",\n   molview: \"mol_check_5lnz\"\n   });\n   }\n   \n   function clear_check_5lnz(){\n   clearCanvas(\"#mol_check_5lnz\");\n   }\n   \n   function show_check_5j2x(){\n   showComplex1({\n   file2: \"https://files.rcsb.org/download/5J2X.cif\",\n   strDesc2: \"View contact residues\",\n   molview: \"mol_check_5j2x\"\n   });\n   }\n   \n   function clear_check_5j2x(){\n   clearCanvas(\"#mol_check_5j2x\");\n   }\n   \n   function show_check_5j9x(){\n   showComplex({\n   file1: \"https://files.rcsb.org/download/5J9X.cif\",\n   strDesc1: \"View contact residues\",\n   molview: \"mol_check_5j9x\"\n   });\n   }\n   \n   function clear_check_5j9x(){\n   clearCanvas(\"#mol_check_5j9x\");\n   }\n</script>\n<ul class=\"collapsible\" data-collapsible=\"expandable\">\n   <li>\n      <div class=\"collapsible-header amber lighten-5\">\n         <p><b>Exploring clustering of dissociation trajectories by the overall protein-ligand contact similarity</b></p>\n      </div>\n      <div class=\"collapsible-body\">\n         <div style=\"margin-left:5px\">\n            <table class=\"striped\">\n               <tbody>\n                  <tr>\n                     <td>\n                        <b>All compounds<br>(Fig. 5)</b>\n                     </td>\n                     <td>\n                        <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/Cluster_IF.png\" target=\"_blank\">\n                        <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/Cluster_IF.png\" style=\"width:430px;height:130px;border:0;\">\n                        </a>\n                        <br>\n                        Claster composition\n                     </td>\n                     <td>\n                        Helix-binding compounds (PDB 5J9X)\n                     </td>\n                     <td>\n                        <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_check_5j9x\" >\n                        <i class=\"material-icons\">3d_rotation</i><br>View\n                        </a>\n                     </td>\n                     <td>\n                        Loop-binding compounds (PDB 5J2X)\n                     </td>\n                     <td>\n                        <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_check_5j2x\" >\n                        <i class=\"material-icons\">3d_rotation</i><br>View\n                        </a>\n                     </td>\n                  </tr>\n                  <tr>\n                     <td>\n                        <b>Indazole-type compounds<br>(Fig. 6)</b>\n                     </td>\n                     <td>\n                        <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/In/Cluster_IF.png\" target=\"_blank\">\n                        <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/In/Cluster_IF.png\" style=\"width:430px;height:130px;border:0;\">\n                        </a>\n                        <br>\n                        Claster composition\n                     </td>\n                     <td>\n                        Indazole-type compounds  (PDB 5LNZ)\n                     </td>\n                     <td>\n                        <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_check_5lnz\" >\n                        <i class=\"material-icons\">3d_rotation</i><br>View\n                        </a>\n                     </td>\n                  </tr>\n                  </tobody>\n            </table>\n         </div>\n      </div>\n   </li>\n</ul>\n<ul class=\"collapsible\" data-collapsible=\"expandable\">\n   <li>\n      <div class=\"collapsible-header amber lighten-5\">\n         <p><b>Exploring Regression Models for prediction of unbinding rates</b></p>\n      </div>\n      <div class=\"collapsible-body\">\n         <div style=\"margin-left:5px\">\n            <div ng-app=\"neo-visualizer\">\n               <div class=\"collapsible\">\n                  <div class=\"row\">\n                     <div class=\"col s12\">\n                        <ul class=\"tabs\">\n                           <li class=\"tab col s3\">\n                              <a href=\"#modelA\">MODEL A</a>\n                           </li>\n                           <li class=\"tab col s3\">\n                              <a href=\"#modelB\">MODEL B</a>\n                           </li>\n                           <li class=\"tab col s3\">\n                              <a href=\"#modelC\">MODEL C</a>\n                           </li>\n                        </ul>\n                     </div>\n                  </div>\n                  <div id=\"modelA\" class=\"col s12\">\n                     <div style=\"margin-left:25px; margin-right:25px;\">\n                        <ul class=\"collapsible\" data-collapsible=\"expandable\">\n                           <li>\n                              <table class=\"striped\">\n                                 <tbody>\n                                    <tr>\n                                       <td>\n                                          <b>All compounds</b>\n                                       </td>\n                                       <td>\n                                          Model evaluation (Fig.8)\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/RM_evaluation.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td class=\"right\">\n                                          Residue contribution to the Linear Regression model\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/LR_coef.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Residues with a large contribution to the LR model\n                                       </td>\n                                       <td>\n                                          <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_A_5j9x\" >\n                                          <i class=\"material-icons\">3d_rotation</i><br>View\n                                          </a>\n                                       </td>\n                                    </tr>\n                                 </tbody>\n                              </table>\n                           </li>\n                           <li>\n                              <table class=\"striped\">\n                                 <tbody>\n                                    <tr>\n                                       <td>\n                                          <b>Outliers excluded</b>\n                                       </td>\n                                       <td>\n                                          Model evaluation (Fig.8)\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/noOut/RM_evaluation.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Residue contribution to the Linear Regression model\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/noOut/LR_coef.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Residues with a large contribution to the LR model\n                                       </td>\n                                       <td>\n                                          <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_O_5j9x\" >\n                                          <i class=\"material-icons\">3d_rotation</i><br>View\n                                          </a>\n                                       </td>\n                                    </tr>\n                                 </tbody>\n                              </table>\n                           </li>\n                           </li>\n                        </ul>\n                     </div>\n                     <br>\n                  </div>\n                  <div id=\"modelB\" class=\"col s12\">\n                     <div style=\"margin-left:25px; margin-right:25px;\">\n                        <ul class=\"collapsible\" data-collapsible=\"expandable\">\n                           <li>\n                              <table class=\"striped\">\n                                 <tbody>\n                                    <tr>\n                                       <td>\n                                          <b>All compounds</b>\n                                       </td>\n                                       <td>\n                                          Model evaluation\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelB/RM_evaluation.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Residue contribution to the Linear Regression model\n                                       </td>\n                                       <td>\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelB/LR_coef.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons left\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Position of residues with a large contribution to Linear Regression model\n                                       </td>\n                                       <td>\n                                          <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_B_5j9x\" >\n                                          <i class=\"material-icons left\">3d_rotation</i><br>View\n                                          </a>\n                                       </td>\n                                    </tr>\n                                 </tbody>\n                              </table>\n                           </li>\n                        </ul>\n                     </div>\n                     <br>\n                  </div>\n                  <div id=\"modelC\" class=\"col s12\">\n                     <div style=\"margin-left:25px; margin-right:25px;\">\n                        <ul class=\"collapsible\" data-collapsible=\"expandable\">\n                           <li>\n                              <table class=\"striped\">\n                                 <tbody>\n                                    <tr>\n                                       <td>\n                                          <b>All compounds</b>\n                                       </td>\n                                       <td>\n                                          Model evaluation (Fig.8)\n                                       </td>\n                                       <td class=\"center\">\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelC/RM_evaluation.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Residue contribution to the Linear Regression model\n                                       </td>\n                                       <td class=\"center\">\n                                          <a href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelC/LR_coef.png\" target=\"_blank\" class=\"waves-effect waves-light center-al\">\n                                          <i class=\"material-icons\">timeline</i><br>View\n                                          </a>\n                                       </td>\n                                       <td>\n                                          Position of residues with a large contribution to Linear Regression model\n                                       </td>\n                                       <td class=\"center\">\n                                          <a class=\"waves-effect waves-light modal-trigger center-al\" href=\"#view_C_5j9x\" >\n                                          <i class=\"material-icons\">3d_rotation</i><br>View\n                                          </a>\n                                       </td>\n                                    </tr>\n                                 </tbody>\n                              </table>\n                           </li>\n                        </ul>\n                     </div>\n                     <br>\n                  </div>\n               </div>\n            </div>\n         </div>\n      </div>\n   </li>\n</ul>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "Clustering of dissociation trajectories by protein-ligand contact similarity",
+          "links": [],
+          "type": "tabbed-collapsible",
+          "identifier": "kokh_clustering",
+          "config": {
+            "tabs": [
+              {
+                "id": "clustering",
+                "label": "Clustering analysis",
+                "items": [
+                  {
+                    "id": "clustering_all",
+                    "label": "All compounds (Fig. 5)",
+                    "children": [
+                      {
+                        "label": "Cluster composition",
+                        "links": [
+                          {
+                            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/Cluster_IF.png",
+                            "service": "View plot"
+                          }
+                        ],
+                        "type": "link-buttons",
+                        "identifier": "kokh_cluster_all_img",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Cluster composition plot",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/Cluster_IF.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "All compounds - contact residues (PDB: 5J9X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_check_5j9x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J9X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "white",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 93, 93, 96, 102, 107, 108, 110, 135, 136, 138, 139, 150, 154, 162, 170, 184, 186 ) and not _H",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "white",
+                                  "sele": "( 93 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "orange",
+                                  "sele": "( 51, 54, 58 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "yellow",
+                                  "sele": "( 107, 108, 110 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "( 102, 154 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "blue",
+                                  "sele": "( 96 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "magenta",
+                                  "sele": "( 150, 162, 170 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "gray",
+                                  "sele": "( 184, 186 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 135, 136, 138, 139 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                }
+                              ]
+                            }
+                          ],
+                          "checkboxes": [
+                            {
+                              "label": "View contact residues",
+                              "representationNames": [
+                                "str1lig"
+                              ],
+                              "defaultChecked": true
+                            }
+                          ],
+                          "showTooltip": true
+                        }
+                      },
+                      {
+                        "label": "All compounds - contact residues (PDB: 5J2X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_check_5j2x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J2X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "white",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 93, 93, 96, 102, 107, 108, 110, 135, 136, 138, 150, 184, 186 ) and not _H",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "white",
+                                  "sele": "( 93 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "orange",
+                                  "sele": "( 51, 54, 58 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "yellow",
+                                  "sele": "( 107, 108, 110 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "( 102 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "blue",
+                                  "sele": "( 96 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "magenta",
+                                  "sele": "( 150 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "gray",
+                                  "sele": "( 184, 186 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 135, 136, 138 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                }
+                              ]
+                            }
+                          ],
+                          "checkboxes": [
+                            {
+                              "label": "View contact residues",
+                              "representationNames": [
+                                "str1lig"
+                              ],
+                              "defaultChecked": true
+                            }
+                          ],
+                          "showTooltip": true
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "clustering_indazole",
+                    "label": "Indazole-type compounds (Fig. 6)",
+                    "children": [
+                      {
+                        "label": "Cluster composition",
+                        "links": [
+                          {
+                            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/In/Cluster_IF.png",
+                            "service": "View plot"
+                          }
+                        ],
+                        "type": "link-buttons",
+                        "identifier": "kokh_cluster_in_img",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Cluster composition plot",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/In/Cluster_IF.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Indazole-type compounds - contact residues (PDB: 5LNZ)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_check_5lnz",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5LNZ.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "white",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 93, 93, 96, 102, 107, 108, 110, 135, 136, 138, 139, 150, 154, 162, 170, 184, 186 ) and not _H",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "white",
+                                  "sele": "( 93 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "orange",
+                                  "sele": "( 51, 54, 58 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "yellow",
+                                  "sele": "( 107, 108, 110 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "( 102, 154 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "blue",
+                                  "sele": "( 96 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "magenta",
+                                  "sele": "( 150, 162, 170 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "gray",
+                                  "sele": "( 184, 186 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 135, 136, 138, 139 ) and _C",
+                                  "name": "str1lig"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                }
+                              ]
+                            }
+                          ],
+                          "checkboxes": [
+                            {
+                              "label": "View contact residues",
+                              "representationNames": [
+                                "str1lig"
+                              ],
+                              "defaultChecked": true
+                            }
+                          ],
+                          "showTooltip": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "label": "Regression Models for prediction of unbinding rates",
+          "links": [],
+          "type": "tabbed-collapsible",
+          "identifier": "kokh_regression_models",
+          "config": {
+            "tabs": [
+              {
+                "id": "modelA",
+                "label": "MODEL A",
+                "items": [
+                  {
+                    "id": "model_a_all",
+                    "label": "All compounds",
+                    "children": [
+                      {
+                        "label": "Helix-type conformation - all compounds (PDB: 5J9X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_A_5j9x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J9X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "residueindex",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and _C"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Model plots",
+                        "links": [],
+                        "type": "link-buttons",
+                        "identifier": "ngl_A_5j9x_plots",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Model evaluation",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/RM_evaluation.png",
+                              "icon": "timeline"
+                            },
+                            {
+                              "label": "LR coefficients",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/ALL/LR_coef.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "model_a_noout",
+                    "label": "Outliers excluded",
+                    "children": [
+                      {
+                        "label": "Helix-type conformation - outliers excluded (PDB: 5J9X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_O_5j9x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J9X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "residueindex",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and _C"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Model plots",
+                        "links": [],
+                        "type": "link-buttons",
+                        "identifier": "ngl_O_5j9x_plots",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Model evaluation",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/noOut/RM_evaluation.png",
+                              "icon": "timeline"
+                            },
+                            {
+                              "label": "LR coefficients",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelA/noOut/LR_coef.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "modelB",
+                "label": "MODEL B",
+                "items": [
+                  {
+                    "id": "model_b_all",
+                    "label": "All compounds",
+                    "children": [
+                      {
+                        "label": "Loop-type conformation - all compounds (PDB: 5J9X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_B_5j9x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J9X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "residueindex",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and _C"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Model plots",
+                        "links": [],
+                        "type": "link-buttons",
+                        "identifier": "ngl_B_5j9x_plots",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Model evaluation",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelB/RM_evaluation.png",
+                              "icon": "timeline"
+                            },
+                            {
+                              "label": "LR coefficients",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelB/LR_coef.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "modelC",
+                "label": "MODEL C",
+                "items": [
+                  {
+                    "id": "model_c_all",
+                    "label": "All compounds",
+                    "children": [
+                      {
+                        "label": "All compounds (PDB: 5J9X)",
+                        "links": [],
+                        "type": "ngl-viewer",
+                        "identifier": "ngl_C_5j9x",
+                        "config": {
+                          "files": [
+                            {
+                              "url": "https://files.rcsb.org/download/5J9X.cif",
+                              "representations": [
+                                {
+                                  "type": "cartoon",
+                                  "color": "residueindex",
+                                  "sele": "polymer"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "red",
+                                  "sele": "( 51, 54, 58, 96, 102, 133, 135, 137, 138, 139, 150, 162, 170, 102, 152 ) and _C"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "element",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and not _H"
+                                },
+                                {
+                                  "type": "ball+stick",
+                                  "color": "cyan",
+                                  "sele": "not polymer and not water and not ACE and not NME and not NHE and not CTR and not NTR and not DMS and _C"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "label": "Model plots",
+                        "links": [],
+                        "type": "link-buttons",
+                        "identifier": "ngl_C_5j9x_plots",
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Model evaluation",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelC/RM_evaluation.png",
+                              "icon": "timeline"
+                            },
+                            {
+                              "label": "LR coefficients",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2019_kokh_et_al/Plots/ModelC/LR_coef.png",
+                              "icon": "timeline"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "order": 3,
