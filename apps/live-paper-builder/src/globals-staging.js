@@ -2,10 +2,10 @@
 export const livePaperPlatformUrl = "/";
 export const livePaperBuilderUrl = "/builder";
 export const livePaperDocsUrl = "/docs";
-export const baseUrl = "https://live-papers-api.apps.ebrains.eu";
+export const baseUrl = "https://live-papers-api.apps.dev-adacloud.ebrains.eu";
 export const vf_baseUrl = "https://model-validation-api.apps.ebrains.eu";
 export const mc_baseUrl = "https://model-catalog.apps.ebrains.eu";
-export const nar_baseUrl = "https://nar-browser-app.apps.tc.humanbrainproject.eu/";
+export const nar_baseUrl = "https://nar-browser-app.apps.tc.humanbrainproject.eu";
 export const modelDB_baseUrl = "http://modeldb.science/api/v1";
 export const modelDB_viewUrl = "https://senselab.med.yale.edu/modeldb";
 export const osb_baseUrl = "https://www.opensourcebrain.org";
