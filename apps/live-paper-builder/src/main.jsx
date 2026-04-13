@@ -13,13 +13,12 @@ function initLoad() {
   console.log(window.location.pathname);
   if (window.location.pathname.includes("BulkEntryWizard")) {
     renderApp(null);
+  } else if (import.meta.env.DEV && import.meta.env.VITE_DEV_TOKEN) {
+    // In development, if VITE_DEV_TOKEN is set in .env.local, use it directly.
+    // See .env.local.example for setup instructions.
+    renderApp({ token: import.meta.env.VITE_DEV_TOKEN });
   } else {
     initAuth(renderApp);
-    // for local development, comment out the previous line, set a valid token below,and uncomment the next 4 lines
-    // const auth = {
-    //   token: "eyJ..."
-    // }
-    // renderApp(auth);
   }
 }
 
