@@ -222,7 +222,6 @@ export default class App extends React.Component {
       axios
         .get("/cache/summary.json")
         .then((res) => {
-          JSON.parse(res.data);
           console.log("Found listing in server cache!");
           console.log(res);
           this.setState({
@@ -302,7 +301,6 @@ export default class App extends React.Component {
       axios
         .get("/cache/" + lp_id + ".json")
         .then((res) => {
-          JSON.parse(res.data);
           console.log("Found LP in server cache.");
           console.log(res);
           this.setState((prevState) => ({
