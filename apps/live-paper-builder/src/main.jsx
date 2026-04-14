@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import initAuth from "./auth";
 import { ContextMainProvider } from "./ContextMain";
@@ -23,7 +23,7 @@ function initLoad() {
 }
 
 function renderApp(auth) {
-  ReactDOM.render(
+  createRoot(document.getElementById("root")).render(
     <Router>
       <Routes>
         {["/BulkEntryWizard", "/builder/BulkEntryWizard"].map((path, index) => {
@@ -61,8 +61,7 @@ function renderApp(auth) {
           );
         })}
       </Routes>
-    </Router>,
-    document.getElementById("root")
+    </Router>
   );
 }
 

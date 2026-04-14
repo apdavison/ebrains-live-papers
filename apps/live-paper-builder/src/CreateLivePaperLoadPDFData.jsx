@@ -5,7 +5,6 @@ import DialogContent from "@mui/material/DialogContent";
 import Paper from "@mui/material/Paper";
 import { withStyles } from "@mui/styles";
 import MuiDialogTitle from "@mui/material/DialogTitle";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import TextField from "@mui/material/TextField";
@@ -35,8 +34,8 @@ const styles = (theme) => ({
 const MyDialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+    <MuiDialogTitle className={classes.root} {...other}>
+      {children}
       {onClose ? (
         <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
@@ -159,7 +158,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
           data["associated_paper_issue"] = result["issue"];
           data["associated_paper_pagination"] = result["page"];
 
-          data["year"] = result["created"]["date-time"];
+          data["year"] = new Date(result["created"]["date-time"]).getFullYear();
 
           data["url"] = result["link"][0]["URL"];
 
@@ -381,7 +380,6 @@ class CreateLivePaperLoadPDFData extends React.Component {
 
         <Paper
           variant="outlined"
-          elevation={3}
           style={{
             marginTop: "30px",
             padding: "20px",
@@ -509,7 +507,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
             <div>
               <strong>Year: </strong>
               <br />
-              {this.state.dataExtracted["year"].slice(0, 4)}
+              {this.state.dataExtracted["year"]}
               <br />
               <br />
             </div>

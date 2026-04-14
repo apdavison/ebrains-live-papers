@@ -5,7 +5,6 @@ import Grid from "@mui/material/Grid";
 
 import { withStyles } from "@mui/styles";
 import MuiDialogTitle from "@mui/material/DialogTitle";
-import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import HelpIcon from "@mui/icons-material/Help";
 import IconButton from "@mui/material/IconButton";
@@ -103,8 +102,8 @@ function Footer({ children }) {
 const MyDialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+    <MuiDialogTitle className={classes.root} {...other}>
+      {children}
       {onClose ? (
         <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
@@ -989,7 +988,6 @@ class CreateLivePaper extends React.Component {
   }
 
   setLivePaperModifiedDate(value) {
-    console.log(value);
     this.setState({
       modified_date: value,
     });
@@ -998,10 +996,6 @@ class CreateLivePaper extends React.Component {
   verifyDataBeforeSubmit() {}
 
   render() {
-    console.log(this.state);
-    // console.log(this.props.data);
-    // console.log(this.context.auth[0].token);
-
     let [kgStatus] = this.context.kgStatus;
     let canSave = kgStatus.includes("read-only") ? false : true;
 

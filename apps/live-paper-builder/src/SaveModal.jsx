@@ -63,6 +63,14 @@ export default class SaveModal extends React.Component {
       flag = false;
       this.setState({ live_paper_title_unique: false });
     }
+
+    // at least one author with a name must be specified
+    const hasName = (p) => (p.firstname || "").trim() !== "" || (p.lastname || "").trim() !== "";
+    if (!this.props.data.authors || !this.props.data.authors.some(hasName)) {
+      this.setState({ error: "At least one author with a first or last name must be specified." });
+      flag = false;
+    }
+
     return flag;
   }
 
@@ -292,6 +300,28 @@ export default class SaveModal extends React.Component {
         });
       }
     });
+
+    // strip author entries with no name (empty firstname and lastname)
+    const hasName = (p) => (p.firstname || "").trim() !== "" || (p.lastname || "").trim() !== "";
+    payload.authors = (payload.authors || []).filter(hasName);
+    if (payload.corresponding_author) {
+      payload.corresponding_author = payload.corresponding_author.filter(hasName);
+      if (payload.corresponding_author.length === 0) payload.corresponding_author = null;
+    }
+    if (payload.created_author) {
+      payload.created_author = payload.created_author.filter(hasName);
+      if (payload.created_author.length === 0) payload.created_author = null;
+    }
+    if (payload.approved_author) {
+      if (!hasName(payload.approved_author)) payload.approved_author = null;
+    }
+
+    // convert year to YYYY-MM-DD date string as required by API
+    if (payload.year === 9999 || payload.year === null || payload.year === undefined) {
+      payload.year = null;
+    } else if (typeof payload.year === "number") {
+      payload.year = `${payload.year}-01-01`;
+    }
 
     // console.log(replaceEmptyStringsWithNull(payload));
     return replaceEmptyStringsWithNull(payload);
