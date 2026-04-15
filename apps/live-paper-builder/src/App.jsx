@@ -326,7 +326,7 @@ class App extends React.Component {
   }
 
   getCollabList(auth, attempt = 0) {
-    const url = vf_baseUrl + "/projects?only_editable=true";
+    const url = baseUrl + "/projects?only_editable=true";
     if (!auth.token) {
       console.log("ERROR: auth token not available!");
     }

@@ -16,7 +16,7 @@ axios.CancelToken.source.mockResolvedValue({token: "MOCKCANCELTOKEN"});
 
 axios.get.mockImplementation((url, config) => {
   switch (url) {
-    case "https://model-validation-api.apps.ebrains.eu/projects?only_editable=true":
+    case "https://live-papers-api.apps.ebrains.eu/projects?only_editable=true":
       return new Promise(() => {
         return collabList;
       });
