@@ -54,4 +54,6 @@ export const updateHash = (value) => {
 };
 
 // To access certain APIs that give CORS related issues
-export const corsProxy = "https://corsproxy.apps.ebrains.eu/";
+export const corsProxy = import.meta.env.DEV
+    ? "/cors-proxy/"
+    : "https://corsproxy.apps.ebrains.eu/";
