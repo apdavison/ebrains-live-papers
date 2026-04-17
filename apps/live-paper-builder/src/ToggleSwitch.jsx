@@ -9,7 +9,7 @@ and optionLabels are optional.
 Usage: <ToggleSwitch id="id" checked={value} onChange={checked => setValue(checked)}} />
 */
 
-const ToggleSwitch = ({ id, name, checked, onChange, optionLabels, small, disabled }) => {
+const ToggleSwitch = ({ id, name, checked, onChange, optionLabels = ["Yes", "No"], small, disabled }) => {
   function handleKeyPress(e) {
     if (e.keyCode !== 32) return;
 
@@ -51,10 +51,6 @@ const ToggleSwitch = ({ id, name, checked, onChange, optionLabels, small, disabl
   );
 };
 
-// Set optionLabels for rendering.
-ToggleSwitch.defaultProps = {
-  optionLabels: ["Yes", "No"],
-};
 
 ToggleSwitch.propTypes = {
   id: PropTypes.string.isRequired,

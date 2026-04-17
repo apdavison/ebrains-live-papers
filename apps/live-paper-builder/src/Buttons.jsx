@@ -89,6 +89,7 @@ function StandardIconButton(props) {
 }
 
 function InvertedIconButton(props) {
+  const { backgroundColor, width, startIcon, onClick, label, ...rest } = props;
   return (
     <Button
       variant="contained"
@@ -96,16 +97,17 @@ function InvertedIconButton(props) {
       style={{
         ...baseButtonStyle,
         fontWeight: "normal",
-        width: props.width || "150px",
+        width: width || "150px",
         color: "#ffffff",
-        backgroundColor: props.backgroundColor,
+        backgroundColor: backgroundColor,
         overflowX: "hidden",
         marginRight: "25px"
       }}
-      startIcon={props.startIcon}
-      onClick={props.onClick}
+      startIcon={startIcon}
+      onClick={onClick}
+      {...rest}
     >
-      {props.label}
+      {label}
     </Button>
   )
 }

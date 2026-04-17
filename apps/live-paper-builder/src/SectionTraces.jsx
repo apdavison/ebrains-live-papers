@@ -389,7 +389,7 @@ export default class SectionTraces extends React.Component {
   }
 
   handleFieldChange(event) {
-    console.log(event);
+    //console.log(event);
     const target = event.target;
     let value = target.value;
     const name = target.name;

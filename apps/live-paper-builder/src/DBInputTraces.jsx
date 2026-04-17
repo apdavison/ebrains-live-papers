@@ -365,13 +365,17 @@ class KGContentTraceVersionsPanel extends React.Component {
             <Typography variant="subtitle1">
               <b>Versions</b>
             </Typography>
-            <Link href={this.props.data.view_url} target="_blank" rel="noreferrer" underline="none">
+            {this.props.data.view_url && (
               <InvertedIconButton
                 backgroundColor="#01579b"
                 startIcon={<OpenInNewIcon />}
                 label="Open Page"
+                component="a"
+                href={this.props.data.view_url}
+                target="_blank"
+                rel="noreferrer"
               />
-            </Link>
+            )}
           </Grid>
         </Grid>
         {this.props.data.instances.length === 0 ? (
