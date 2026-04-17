@@ -674,7 +674,7 @@ export default class SectionTraces extends React.Component {
                   <span style={{ paddingRight: "10px" }}>
                     <strong>Note:</strong> This section employs the{" "}
                     <a href="https://neo-viewer.brainsimulation.eu/" target="_blank" rel="noopener noreferrer">
-                      NEO Viewer
+                      Neo Viewer
                     </a>{" "}
                     to visualize each of the listed data files. If you wish to list data without including this
                     tool, please replace this section with a section of type <strong>'Generic Listing'</strong>.

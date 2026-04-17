@@ -28,18 +28,17 @@ import SwitchMultiWay from "./SwitchMultiWay";
 import ToggleSwitch from "./ToggleSwitch";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import ViewColumnIcon from "@mui/icons-material/ViewColumn";
-import { InvertedButton, StandardButton, StandardIconButton } from "./Buttons";
+import { InvertedButton, InvertedIconButton, StandardButton, StandardIconButton } from "./Buttons";
 import { readRemoteFile } from "react-papaparse";
 import {
-  nar_baseUrl,
   allenbrain_baseUrl,
   allenbrain_downloadUrl,
   allenbrain_viewTraceUrl,
-  querySizeLimit,
   filterKGTracesKeys,
   corsProxy,
 } from "./globals";
-import { buildQuery, showNotification, formatLabel } from "./utils";
+import { showNotification, formatLabel } from "./utils";
+import { fetchRecordings } from "./datastore";
 
 const styles = (theme) => ({
   root: {
@@ -754,7 +753,6 @@ export class AllenBrainContent extends React.Component {
 }
 
 export class FilterPanelKG extends React.Component {
-  signal = axios.CancelToken.source();
   static contextType = ContextMain;
 
   constructor(props, context) {
@@ -775,52 +773,15 @@ export class FilterPanelKG extends React.Component {
 
   getListTracesKG() {
     console.log("Query KG");
-    let config = {
-      cancelToken: this.signal.token,
-      headers: {
-        Authorization: "Bearer " + this.context.auth[0].token,
-      },
-    };
-    let query = buildQuery(this.state.configFilters);
-    let url =
-      nar_baseUrl +
-      "/recordings/?" +
-      encodeURI(query) +
-      "&summary=false&size=" +
-      querySizeLimit +
-      "&from_index=0";
+    const token = this.context.auth[0].token;
     this.setState({ loading: true });
-    axios
-      .get(url, config)
-      .then((res) => {
-        console.log(res.data.results);
-        let traces = [];
-        res.data.results.forEach((item) =>
-          traces.push({
-            id: item.identifier,
-            label: item.label,
-            modality: item.modality,
-            stimulation: item.stimulation,
-            timestamp: item.timestamp,
-            species: item.recorded_from ? item.recorded_from.species : null,
-            cell_type: item.recorded_from ? item.recorded_from.cell_type : null,
-            instances: item.data_location,
-            view_url: item.part_of ? item.part_of.uri : null,
-            parent_name: item.part_of ? item.part_of.name : null,
-            parent_id: item.part_of ? item.part_of.identifier : null,
-          })
-        );
-
+    fetchRecordings(token, this.state.configFilters)
+      .then((traces) => {
         console.log(traces);
         this.props.setListTraces(traces, false, null);
       })
       .catch((err) => {
-        if (axios.isCancel(err)) {
-          console.log("errorUpdate: ", err.message);
-        } else {
-          // Something went wrong. Save the error in state and re-render.
-          this.props.setListTraces([], false, err);
-        }
+        this.props.setListTraces([], false, err);
       });
   }
 
