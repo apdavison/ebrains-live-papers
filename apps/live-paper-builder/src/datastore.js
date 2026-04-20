@@ -90,9 +90,9 @@ function buildCacheLabel(filters) {
     return "recordings";
   }
   const parts = Object.entries(filters)
-    .filter(([, values]) => values && values.length > 0)
+    .filter(([, value]) => value)
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([key, values]) => `${key}=${values.sort().join(",")}`)
+    .map(([key, value]) => `${key}=${value}`)
     .join("&");
   return parts ? `recordings:${parts}` : "recordings";
 }

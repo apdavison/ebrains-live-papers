@@ -49,6 +49,9 @@ export default function SingleSelect(props) {
           input={<Input />}
           MenuProps={MenuProps}
         >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
           {props.itemNames.map((name) => (
             <MenuItem key={name} value={name}>
               <ListItemText primary={name} />

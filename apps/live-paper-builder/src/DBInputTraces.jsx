@@ -21,6 +21,7 @@ import LoadingIndicator from "./LoadingIndicator";
 import ContextMain from "./ContextMain";
 import TextField from "@mui/material/TextField";
 import MultipleSelect from "./MultipleSelect";
+import SingleSelect from "./SingleSelect";
 import axios from "axios";
 import Tooltip from "@mui/material/Tooltip";
 import Link from "@mui/material/Link";
@@ -791,8 +792,7 @@ export class FilterPanelKG extends React.Component {
 
   handleFiltersChange(event) {
     const newConfig = { ...this.state.configFilters };
-    newConfig[event.target.name] =
-      typeof event.target.value === "string" ? [event.target.value] : event.target.value;
+    newConfig[event.target.name] = event.target.value || null;
     this.setState({ configFilters: newConfig });
   }
 
@@ -800,14 +800,13 @@ export class FilterPanelKG extends React.Component {
     return (
       <div>
         <h6>Please specify filters to search KG:</h6>
-        <em>Note: you can select multiple values for each filter</em>
         <form>
           {this.props.showFilters.map((filter) => (
-            <MultipleSelect
+            <SingleSelect
               itemNames={!this.props.validKGFilterValues ? [] : this.props.validKGFilterValues[filter]}
               label={formatLabel(filter)}
               name={filter}
-              value={this.state.configFilters[filter] || []}
+              value={this.state.configFilters[filter] || ""}
               handleChange={this.handleFiltersChange}
               key={filter}
             />

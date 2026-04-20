@@ -22,17 +22,17 @@ function buildRecordingActivityQuery(filters) {
   if (filters) {
     console.log(filters);
     if (filters.species) {
-      speciesFilter.filter = filters.species[0];
+      speciesFilter.filter = filters.species;
       speciesFilter.required = true;
       useSpeciesFilter = true;
     }
     if (filters.brain_region) {
-      brainRegionFilter.filter = filters.brain_region[0];
+      brainRegionFilter.filter = filters.brain_region;
       brainRegionFilter.required = true;
       useBrainRegionFilter = true;
     }
     if (filters.cell_type) {
-      cellTypeFilter.filter = filters.cell_type[0];
+      cellTypeFilter.filter = filters.cell_type;
       cellTypeFilter.required = true;
       useCellTypeFilter = true;
     }
