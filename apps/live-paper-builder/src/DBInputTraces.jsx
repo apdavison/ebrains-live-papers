@@ -22,6 +22,7 @@ import ContextMain from "./ContextMain";
 import TextField from "@mui/material/TextField";
 import MultipleSelect from "./MultipleSelect";
 import SingleSelect from "./SingleSelect";
+import TypeAheadSelect from "./TypeAheadSelect";
 import axios from "axios";
 import Tooltip from "@mui/material/Tooltip";
 import Link from "@mui/material/Link";
@@ -801,16 +802,19 @@ export class FilterPanelKG extends React.Component {
       <div>
         <h6>Please specify filters to search KG:</h6>
         <form>
-          {this.props.showFilters.map((filter) => (
-            <SingleSelect
-              itemNames={!this.props.validKGFilterValues ? [] : this.props.validKGFilterValues[filter]}
-              label={formatLabel(filter)}
-              name={filter}
-              value={this.state.configFilters[filter] || ""}
-              handleChange={this.handleFiltersChange}
-              key={filter}
-            />
-          ))}
+          {this.props.showFilters.map((filter) => {
+            const itemNames = !this.props.validKGFilterValues ? [] : this.props.validKGFilterValues[filter];
+            const commonProps = {
+              itemNames,
+              label: formatLabel(filter),
+              name: filter,
+              value: this.state.configFilters[filter] || "",
+              handleChange: this.handleFiltersChange,
+            };
+            return filter === "brain_region"
+              ? <TypeAheadSelect key={filter} {...commonProps} />
+              : <SingleSelect key={filter} {...commonProps} />;
+          })}
         </form>
       </div>
     );
