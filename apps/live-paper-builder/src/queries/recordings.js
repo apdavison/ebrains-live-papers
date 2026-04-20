@@ -1,73 +1,171 @@
 import {
   buildKGQuery,
-  simpleProperty,
-  linkProperty,
+  simpleProperty as S,
+  linkProperty as L,
+  reverseLinkProperty as R
 } from "ebrains-kg-query";
 
-const FILTER_KEY_TO_KG_TYPE = {
-  species: "Species",
-  brain_region: "UBERONParcellation",
-  cell_type: "CellType",
-};
+// const FILTER_KEY_TO_KG_TYPE = {
+//   species: "Species",
+//   brain_region: "UBERONParcellation",
+//   cell_type: "CellType",
+// };
 
 function buildRecordingActivityQuery(filters) {
-  // Build studyTarget filter linkProperties for the DatasetVersion (isPartOf).
-  // Each active filter adds a required, type-filtered studyTarget entry
-  // so the KG only returns RecordingActivities whose parent DatasetVersion
-  // has a matching study target.
-  const datasetStudyTargetFilters = [];
+  //const datasetStudyTargetFilters = [];
+  const speciesFilter = {};
+  let useSpeciesFilter = false;
+  const brainRegionFilter = {};
+  let useBrainRegionFilter = false;
+  const cellTypeFilter = {};
+  let useCellTypeFilter = false;
   if (filters) {
-    for (const [key, values] of Object.entries(filters)) {
-      const kgType = FILTER_KEY_TO_KG_TYPE[key];
-      if (kgType && values && values.length > 0) {
-        for (const value of values) {
-          datasetStudyTargetFilters.push(
-            linkProperty("studyTarget", [simpleProperty("name")], {
-              type: kgType,
-              filter: value,
-              required: true,
-              expectSingle: true,
-            })
-          );
-        }
-      }
+    console.log(filters);
+    if (filters.species) {
+      speciesFilter.filter = filters.species[0];
+      speciesFilter.required = true;
+      useSpeciesFilter = true;
+    }
+    if (filters.brain_region) {
+      brainRegionFilter.filter = filters.brain_region[0];
+      brainRegionFilter.required = true;
+      useBrainRegionFilter = true;
+    }
+    if (filters.cell_type) {
+      cellTypeFilter.filter = filters.cell_type[0];
+      cellTypeFilter.required = true;
+      useCellTypeFilter = true;
     }
   }
 
-  const isPartOfStructure = [
-    simpleProperty("@id"),
-    simpleProperty("fullName"),
-    simpleProperty("shortName"),
-    ...datasetStudyTargetFilters,
-  ];
-
   return buildKGQuery("RecordingActivity", [
-    simpleProperty("@id"),
-    simpleProperty("lookupLabel"),
-    simpleProperty("internalIdentifier"),
-    simpleProperty("startTime"),
-    linkProperty(
+    S("@id"),
+    S("lookupLabel"),
+    S("internalIdentifier"),
+    S("startTime"),
+    L(
       "studyTarget",
-      [simpleProperty("@id"), simpleProperty("name"), simpleProperty("@type")],
+      [S("@id"), S("name"), S("@type")],
       { expectSingle: false }
     ),
-    linkProperty(
+    L(
       "output",
       [
-        simpleProperty("@id"),
-        simpleProperty("name"),
-        simpleProperty("contentDescription"),
-        simpleProperty("IRI"),
+        S("@id"),
+        S("name"),
+        S("contentDescription"),
+        S("IRI"),
+        L("format/name")
       ],
       { expectSingle: false }
     ),
-    linkProperty("isPartOf", isPartOfStructure),
-    linkProperty(
+    L(
+      "isPartOf",
+      [
+        S("@id"),
+        S("fullName"),
+        S("shortName"),
+      ]
+    ),
+    L(
       "device",
-      [simpleProperty("@type"), simpleProperty("name")],
+      [S("@type"), S("name")],
       { expectSingle: false }
     ),
+    L(
+      "input",  // TissueSampleState (patched cell)
+      [
+        S("@id"),
+        S("lookupLabel"),
+        L(
+           "descendedFrom",   // TissueSampleState (slice)
+           [
+              S("lookupLabel"),
+              L(
+                "descendedFrom",   // SubjectState
+                [
+                  S("@id"),
+                  S("lookupLabel"),
+                  R(
+                    "isStudiedStateOf",   // Subject
+                    "studiedState",
+                    [
+                      S("@id"),
+                      S("lookupLabel"),
+                      L("species/species/name", [], speciesFilter)
+                    ],
+                    {required: useSpeciesFilter}
+                 )
+               ],
+               {required: useSpeciesFilter}
+             ),
+             R(
+              "isStudiedStateOf",   // TissueSample (slice)
+              "studiedState",
+              [
+                S("@id"),
+                S("lookupLabel"),
+                L("anatomicalLocation/name", [], brainRegionFilter)   // todo: add typeFilter
+              ],
+              {required: useBrainRegionFilter}
+            )
+           ],
+           {required: useSpeciesFilter || useBrainRegionFilter}
+        ),
+        R(
+          "isStudiedStateOf",   // TissueSample (cell)
+          "studiedState",
+          [
+            S("@id"),
+            S("lookupLabel"),
+            L("anatomicalLocation/name", [], cellTypeFilter) // todo: add typeFilter
+          ],
+          {required: useCellTypeFilter}
+        )
+      ],
+      { expectSingle: false, required: useSpeciesFilter || useCellTypeFilter || useBrainRegionFilter }
+    )
   ]);
 }
+
+//   return buildKGQuery("RecordingActivity", [
+//     S("@id"),
+//     S("lookupLabel"),
+//     S("internalIdentifier"),
+//     S("startTime"),
+//     L(
+//       "studyTarget",
+//       [S("@id"), S("name"), S("@type")],
+//       { expectSingle: false }
+//     ),
+//     L(
+//       "output",
+//       [
+//         S("@id"),
+//         S("name"),
+//         S("contentDescription"),
+//         S("IRI"),
+//         L("format/name")
+//       ],
+//       { expectSingle: false }
+//     ),
+//     L(
+//       "isPartOf",
+//       [
+//         S("@id"),
+//         S("fullName"),
+//         S("shortName"),
+//         ...datasetStudyTargetFilters,
+//       ],
+//       {required: true}),
+//     L(
+//       "device",
+//       [S("@type"), S("name")],
+//       { expectSingle: false }
+//     ),
+//   ]);
+// }
+
+
 
 export { buildRecordingActivityQuery };
