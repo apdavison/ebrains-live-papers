@@ -21,7 +21,7 @@
     "ace-builds": "^1.39.0",
     "array-move": "^3.0.1",
     "axios": "^0.21.1",
-    "ebrains-kg-query": "file:../../../../data/ebrains-kg-query",
+    "ebrains-kg-query": "^0.1.0",
     "axios-retry": "^3.1.9",
     "html-react-parser": "^1.2.4",
     "keycloak-js": "^26.2.0",
