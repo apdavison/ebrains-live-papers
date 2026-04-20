@@ -662,7 +662,7 @@ export class ModelDBContentModelPanel extends React.Component {
               <b>Model Details:</b>
             </Typography>
             <Link
-              href={modelDB_viewUrl + "/ShowModel.cshtml?model=" + this.props.data.id}
+              href={modelDB_viewUrl + "/" + this.props.data.id}
               target="_blank"
               rel="noreferrer"
               underline="none"
@@ -731,9 +731,9 @@ export class ModelDBContentModelPanel extends React.Component {
                   instance_id={"0"}
                   instance_name={""}
                   source_url={
-                    modelDB_viewUrl + "/eavBinDown?o=" + this.props.data.id + "&a=23&mime=application/zip"
+                    modelDB_viewUrl + "/download/" + this.props.data.id
                   }
-                  view_url={modelDB_viewUrl + "/ShowModel.cshtml?model=" + this.props.data.id}
+                  view_url={modelDB_viewUrl + "/" + this.props.data.id}
                   addInstanceCollection={this.props.addInstanceCollection}
                   removeInstanceCollection={this.props.removeInstanceCollection}
                 />

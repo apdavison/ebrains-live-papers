@@ -105,7 +105,7 @@ function HelpContentCustom() {
         <br />
         To view a complete list of the CSS and JS dependencies, check&nbsp;
         <a
-          href="https://github.com/appukuttan-shailesh/ebrains-live-papers/blob/main/apps/live-paper-platform/src/templates/LivePaper_v0.1.njk#L485-L498"
+          href="https://github.com/appukuttan-shailesh/ebrains-live-papers/blob/8b8af0516057c465e18090e06fa816f10f628cea/apps/live-paper-platform/src/templates/LivePaper_v0.1.njk#L507-L514"
           target="_blank"
           rel="noreferrer"
         >
