@@ -10,6 +10,7 @@
   --font-heading: 'Merriweather', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --max-width: 1180px;
+  --content-width: 860px;
   --sidebar-width: 220px;
 }
 

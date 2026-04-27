@@ -134,6 +134,22 @@ function LivePaperViewer() {
     <>
       <Header />
       <main className="article-page">
+        <header className="article-header">
+          <h1 className="article-title">{lp.title}</h1>
+          <AuthorList authors={lp.authors} />
+          <div className="article-meta">
+            {lp.publication_date && (
+              <span>Published {formatDate(lp.publication_date)}</span>
+            )}
+            {lp.version && <span>Version {lp.version}</span>}
+            {lp.license.length > 0 && <span>{lp.license.join(", ")}</span>}
+            {lp.doi && <DoiCopy doi={lp.doi} />}
+          </div>
+          {lp.related_publications.length > 0 && (
+            <RelatedPublication pub={lp.related_publications[0]} />
+          )}
+        </header>
+
         <div className="article-layout">
           <aside className="toc-sidebar">
             <nav aria-label="Article sections">
@@ -150,22 +166,6 @@ function LivePaperViewer() {
           </aside>
 
           <article className="article-content">
-            <header className="article-header">
-              <h1 className="article-title">{lp.title}</h1>
-              <AuthorList authors={lp.authors} />
-              <div className="article-meta">
-                {lp.publication_date && (
-                  <span>Published {formatDate(lp.publication_date)}</span>
-                )}
-                {lp.version && <span>Version {lp.version}</span>}
-                {lp.license.length > 0 && <span>{lp.license.join(", ")}</span>}
-                {lp.doi && <DoiCopy doi={lp.doi} />}
-              </div>
-              {lp.related_publications.length > 0 && (
-                <RelatedPublication pub={lp.related_publications[0]} />
-              )}
-            </header>
-
             {lp.abstract && (
               <section id="abstract" className="abstract-block">
                 <h2 className="abstract-heading">Abstract</h2>
