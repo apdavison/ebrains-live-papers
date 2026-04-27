@@ -1,0 +1,36 @@
+.copies-gen {
+  padding: 8px 0;
+}
+
+.copies-gen__controls {
+  max-width: 500px;
+}
+
+.copies-gen__controls p {
+  margin: 6px 0;
+}
+
+.copies-gen__quantity {
+  width: 100px;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.copies-gen__status {
+  color: #2e7d32;
+  font-style: italic;
+}
+
+.copies-gen__plots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 700px) {
+  .copies-gen__plots {
+    grid-template-columns: 1fr;
+  }
+}

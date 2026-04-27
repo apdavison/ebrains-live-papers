@@ -1,5 +1,6 @@
 import BlueNaaS from "./BlueNaaS";
 import BlueNaaSDemoGrid from "./BlueNaaSDemoGrid";
+import CopiesGenerator from "./CopiesGenerator";
 import LinkButtons from "./LinkButtons";
 import NeoViewer from "./NeoViewer";
 import NGLViewer from "./NGLViewer";
@@ -11,6 +12,7 @@ import type {
   Link,
   BlueNaaSConfig,
   BlueNaaSDemoGridConfig,
+  CopiesGeneratorConfig,
   LinkButtonsConfig,
   NeoViewerConfig,
   NGLViewerConfig,
@@ -25,6 +27,9 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
   }
   if (item.type === "bluenaas-demo-grid" && item.config) {
     return <BlueNaaSDemoGrid config={item.config as BlueNaaSDemoGridConfig} />;
+  }
+  if (item.type === "copies-generator" && item.config) {
+    return <CopiesGenerator config={item.config as CopiesGeneratorConfig} />;
   }
   if (item.type === "link-buttons" && item.config) {
     return <LinkButtons config={item.config as LinkButtonsConfig} />;

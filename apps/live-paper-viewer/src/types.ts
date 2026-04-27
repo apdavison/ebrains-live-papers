@@ -161,6 +161,37 @@ export interface TabbedDataTablesConfig {
   tabs: DataTableTab[];
 }
 
+// --- Copies Generator widget ---
+
+export interface SpikeBoundary {
+  x: number[];
+  yMax: number[];
+  yMin: number[];
+}
+
+export interface CopiesGeneratorNeuronType {
+  id: string;
+  label: string;
+  group: "pyramidal" | "interneuron";
+  typeFilter?: string;
+  maxAll: number;
+  maxClassified: number;
+}
+
+export interface CopiesGeneratorGroup {
+  allUrl: string;
+  classifiedUrl: string;
+  boundaries: Record<string, SpikeBoundary>;
+}
+
+export interface CopiesGeneratorConfig {
+  neuronTypes: CopiesGeneratorNeuronType[];
+  pyramidal: CopiesGeneratorGroup;
+  interneuron: CopiesGeneratorGroup;
+  stimulusLevels: number[];
+  defaultQuantity: number;
+}
+
 // --- NGL Molecular Viewer widget ---
 
 export interface NGLRepresentation {
@@ -202,6 +233,7 @@ export interface LivePaperDataItem {
   config?:
     | BlueNaaSConfig
     | BlueNaaSDemoGridConfig
+    | CopiesGeneratorConfig
     | LinkButtonsConfig
     | NeoViewerConfig
     | ParameterSimulationConfig
