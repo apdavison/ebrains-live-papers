@@ -2,6 +2,7 @@ import BlueNaaS from "./BlueNaaS";
 import BlueNaaSDemoGrid from "./BlueNaaSDemoGrid";
 import CopiesGenerator from "./CopiesGenerator";
 import IframeGrid from "./IframeGrid";
+import SBAComposer from "./SBAComposer";
 import LinkButtons from "./LinkButtons";
 import NeoViewer from "./NeoViewer";
 import NGLViewer from "./NGLViewer";
@@ -15,6 +16,7 @@ import type {
   BlueNaaSDemoGridConfig,
   CopiesGeneratorConfig,
   IframeGridConfig,
+  SBAComposerConfig,
   LinkButtonsConfig,
   NeoViewerConfig,
   NGLViewerConfig,
@@ -35,6 +37,9 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
   }
   if (item.type === "iframe-grid" && item.config) {
     return <IframeGrid config={item.config as IframeGridConfig} />;
+  }
+  if (item.type === "sba-composer" && item.config) {
+    return <SBAComposer config={item.config as SBAComposerConfig} />;
   }
   if (item.type === "link-buttons" && item.config) {
     return <LinkButtons config={item.config as LinkButtonsConfig} />;

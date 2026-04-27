@@ -161,6 +161,19 @@ export interface TabbedDataTablesConfig {
   tabs: DataTableTab[];
 }
 
+// --- SBA Composer widget ---
+
+export interface SBAComposerCommand {
+  method: string;
+  params: Record<string, unknown>;
+}
+
+export interface SBAComposerConfig {
+  composerUrl: string;
+  buttonLabel?: string;
+  commands: SBAComposerCommand[];
+}
+
 // --- Iframe Grid widget ---
 
 export interface IframeGridItem {
@@ -247,6 +260,7 @@ export interface LivePaperDataItem {
     | BlueNaaSDemoGridConfig
     | CopiesGeneratorConfig
     | IframeGridConfig
+    | SBAComposerConfig
     | LinkButtonsConfig
     | NeoViewerConfig
     | ParameterSimulationConfig

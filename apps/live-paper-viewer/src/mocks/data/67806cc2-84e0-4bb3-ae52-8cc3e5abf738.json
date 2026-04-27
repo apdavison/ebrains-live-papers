@@ -179,8 +179,41 @@
       "order": 0,
       "type": "section_custom",
       "title": "Striatum anatomy",
-      "text": "<p>\n   Location of the striatum within the mouse brain, cell composition and neuron circuitry\n</p>\n<ul>\n   <li>\n      Dorsal striatum (transparent light blue) and reference volume (500 &mu;m cube, red) are shown\n      using SBA Composer (<a href=\"https://sba-dev.incf.org/composer/?template=ABA_v3\">Scalable Brain Atlas Composer</a>, INCF):\n      <script type=\"text/javascript\" src=\"https://scalablebrainatlas.incf.org/js/sba-interface.js\"></script>\n      <script type=\"text/javascript\">\n         var sbaInterface;\n         \n         function onclickHandler(evt) {\n           const sbaUrl = 'https://scalablebrainatlas.incf.org/composer-dev/?template=ABA_v3';\n           sbaInterface = sbaInterface || new sbaInterface_class(sbaUrl);\n         \n           const x3dFileContents = '<X3D profile=\"Interchange\" version=\"3.3\" xmlns:xsd=\"http://www.web3d.org/specifications/x3d-3.3.xsd\">'+\n           '<Scene>'+\n           '  <Transform translation=\"-2.0 0.5 1.0\">'+\n           '  <Shape>'+\n           '    <Appearance><Material diffuseColor=\"#FF0000\"></Material></Appearance>'+\n           '    <Box size=\"0.5 0.5 0.5\"></Box>'+\n           '  </Shape>'+\n           '  </Transform>'+\n           '</Scene>'+\n           '</X3D>';\n           const sbaCommand = {\n             \"method\": \"Composer.import\",\n             \"params\": {\n               \"name\": \"Region of interest, 500 um cube\",\n               \"mime\": \"model/x3d+xml\",\n               \"contents\": x3dFileContents\n             }\n           }\n           sbaInterface.send(sbaCommand);\n         \n           sbaCommand2 = {\n             \"method\": \"Composer.scene\",\n             \"params\": {\n               \"name\": \"dorsal striatum, STRd\",\n               \"regions\": {\n                 \"STRd\": [\"#98D6F9\", 0.9]\n               }\n             }\n           }\n           sbaInterface.send(sbaCommand2);\n         \n         }\n      </script>\n      <br>\n      <br>\n      <button class=\"btn waves-effect waves-light\" onclick=\"onclickHandler()\">View<i class=\"material-icons right\">3d_rotation</i></button>\n      &nbsp;&nbsp;&nbsp; \n      <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/images/striatum_roi.png')\">View<i class=\"material-icons right\">bubble_chart</i></button>\n   </li>\n   <li>\n      <br>\n      Striatal microcircuit structure\n      <p>\n         The C57BL/7J mouse striatum is around 21.5 mm<sup>3</sup> (Allen Mouse Brain) with a total of 1.72 million neurons,\n         which corresponds to a density of 80,500 neurons/mm<sup>3</sup>. The cell populations are subdivided as follows assuming 95% of striatal projection neurons, in equal proportion for the direct pathway and indirect pathway (dSPN and iSPN, respectively), 1.3% fast-spiking interneurons (FS), 1.1% cholinergic interneurons (ChIN) and 0.8% low threshold-spiking interneurons (LTS). The striatal circuitry is generic for the entire structure.\n      </p>\n      <button class=\"btn waves-effect waves-light\" onclick=\"window.open('https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/images/circuitry.png')\">View<i class=\"material-icons right\">bubble_chart</i></button>\n   </li>\n</ul>",
-      "data": []
+      "text": "<p>\n   Location of the striatum within the mouse brain, cell composition and neuron circuitry\n</p>\n<ul>\n   <li>\n      Dorsal striatum (transparent light blue) and reference volume (500 &mu;m cube, red) are shown\n      using SBA Composer (<a href=\"https://sba-dev.incf.org/composer/?template=ABA_v3\">Scalable Brain Atlas Composer</a>, INCF).\n      &nbsp;&nbsp;\n      <a class=\"btn waves-effect waves-light\" href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/images/striatum_roi.png\" target=\"_blank\">View<i class=\"material-icons right\">bubble_chart</i></a>\n   </li>\n   <li>\n      <br>\n      Striatal microcircuit structure\n      <p>\n         The C57BL/7J mouse striatum is around 21.5 mm<sup>3</sup> (Allen Mouse Brain) with a total of 1.72 million neurons,\n         which corresponds to a density of 80,500 neurons/mm<sup>3</sup>. The cell populations are subdivided as follows assuming 95% of striatal projection neurons, in equal proportion for the direct pathway and indirect pathway (dSPN and iSPN, respectively), 1.3% fast-spiking interneurons (FS), 1.1% cholinergic interneurons (ChIN) and 0.8% low threshold-spiking interneurons (LTS). The striatal circuitry is generic for the entire structure.\n      </p>\n      <a class=\"btn waves-effect waves-light\" href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/images/circuitry.png\" target=\"_blank\">View<i class=\"material-icons right\">bubble_chart</i></a>\n   </li>\n</ul>",
+      "data": [
+        {
+          "label": "",
+          "links": [],
+          "type": "sba-composer",
+          "identifier": "sba-composer-hjorth",
+          "config": {
+            "composerUrl": "https://scalablebrainatlas.incf.org/composer-dev/?template=ABA_v3",
+            "buttonLabel": "View in SBA Composer",
+            "commands": [
+              {
+                "method": "Composer.import",
+                "params": {
+                  "name": "Region of interest, 500 um cube",
+                  "mime": "model/x3d+xml",
+                  "contents": "<X3D profile=\"Interchange\" version=\"3.3\" xmlns:xsd=\"http://www.web3d.org/specifications/x3d-3.3.xsd\"><Scene>  <Transform translation=\"-2.0 0.5 1.0\">  <Shape>    <Appearance><Material diffuseColor=\"#FF0000\"></Material></Appearance>    <Box size=\"0.5 0.5 0.5\"></Box>  </Shape>  </Transform></Scene></X3D>"
+                }
+              },
+              {
+                "method": "Composer.scene",
+                "params": {
+                  "name": "dorsal striatum, STRd",
+                  "regions": {
+                    "STRd": [
+                      "#98D6F9",
+                      0.9
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "order": 1,
