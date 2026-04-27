@@ -3,7 +3,9 @@ import type {
   BlueNaaSDemoGridConfig,
   LinkButtonsConfig,
   NGLViewerConfig,
+  ParameterSimulationConfig,
   TabbedCollapsibleConfig,
+  TabbedDataTablesConfig,
 } from "../types";
 import martinelloData from "../mocks/data/04ac2988-b717-469d-88ce-d54d02036eb1.json";
 import mccauleyData from "../mocks/data/203d1466-8792-4b05-b546-09ee178387c3.json";
@@ -39,3 +41,5 @@ export const lupascuTabbedConfig = extractConfig<TabbedCollapsibleConfig>(lupasc
 export const hjorthTabbedConfig = extractConfig<TabbedCollapsibleConfig>(hjorthData, "tabbed-collapsible");
 export const bruceNGLConfig = extractConfig<NGLViewerConfig>(bruceData, "ngl-viewer");
 export const kokhNGLConfig = extractConfig<NGLViewerConfig>(kokhData, "ngl-viewer");
+export const bruceTablesConfig = extractConfig<TabbedDataTablesConfig>(bruceData, "tabbed-data-tables");
+export const lupascuParamSimConfig = extractConfig<ParameterSimulationConfig>(lupascuData, "parameter-simulation");

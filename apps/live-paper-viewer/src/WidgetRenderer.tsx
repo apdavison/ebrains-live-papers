@@ -3,7 +3,9 @@ import BlueNaaSDemoGrid from "./BlueNaaSDemoGrid";
 import LinkButtons from "./LinkButtons";
 import NeoViewer from "./NeoViewer";
 import NGLViewer from "./NGLViewer";
+import ParameterSimulation from "./ParameterSimulation";
 import TabbedCollapsible from "./TabbedCollapsible";
+import TabbedDataTables from "./TabbedDataTables";
 import type {
   LivePaperDataItem,
   Link,
@@ -12,7 +14,9 @@ import type {
   LinkButtonsConfig,
   NeoViewerConfig,
   NGLViewerConfig,
+  ParameterSimulationConfig,
   TabbedCollapsibleConfig,
+  TabbedDataTablesConfig,
 } from "./types";
 
 function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
@@ -31,8 +35,14 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
   if (item.type === "ngl-viewer" && item.config) {
     return <NGLViewer config={item.config as NGLViewerConfig} />;
   }
+  if (item.type === "parameter-simulation" && item.config) {
+    return <ParameterSimulation config={item.config as ParameterSimulationConfig} />;
+  }
   if (item.type === "tabbed-collapsible" && item.config) {
     return <TabbedCollapsible config={item.config as TabbedCollapsibleConfig} />;
+  }
+  if (item.type === "tabbed-data-tables" && item.config) {
+    return <TabbedDataTables config={item.config as TabbedDataTablesConfig} />;
   }
   return (
     <li>

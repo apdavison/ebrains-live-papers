@@ -11,6 +11,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "mathjs": "^15.2.0",
     "neural-activity-visualizer-react": "^2.0.0",
     "ngl": "^2.4.0",
     "plotly.js": "^3.1.1",

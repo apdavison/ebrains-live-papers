@@ -123,6 +123,44 @@ export interface TabbedCollapsibleConfig {
   tabs: TabbedCollapsibleTab[];
 }
 
+// --- Parameter Simulation widget ---
+
+export interface ParameterField {
+  id: string;
+  labelHtml: string;
+  default: number;
+  min: number;
+  max: number;
+  step: number;
+}
+
+export interface ParameterSimulationConfig {
+  parameters: ParameterField[];
+  /** mathjs expression string; variable names must match parameter ids plus "t" (time) */
+  formula: string;
+  xAxisLabel: string;
+  yAxisLabel: string;
+  timeSteps: number;
+}
+
+// --- Tabbed Data Tables widget ---
+
+export interface DataTableRow {
+  cells: string[];
+  isSummary?: boolean;
+}
+
+export interface DataTableTab {
+  id: string;
+  label: string;
+  headers: string[];
+  rows: DataTableRow[];
+}
+
+export interface TabbedDataTablesConfig {
+  tabs: DataTableTab[];
+}
+
 // --- NGL Molecular Viewer widget ---
 
 export interface NGLRepresentation {
@@ -166,7 +204,9 @@ export interface LivePaperDataItem {
     | BlueNaaSDemoGridConfig
     | LinkButtonsConfig
     | NeoViewerConfig
+    | ParameterSimulationConfig
     | TabbedCollapsibleConfig
+    | TabbedDataTablesConfig
     | NGLViewerConfig;
   identifier: string;
 }
