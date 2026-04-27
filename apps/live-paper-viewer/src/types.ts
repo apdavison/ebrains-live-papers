@@ -161,6 +161,18 @@ export interface TabbedDataTablesConfig {
   tabs: DataTableTab[];
 }
 
+// --- Iframe Grid widget ---
+
+export interface IframeGridItem {
+  src: string;
+  height?: number;
+  caption?: string;
+}
+
+export interface IframeGridConfig {
+  rows: IframeGridItem[][];
+}
+
 // --- Copies Generator widget ---
 
 export interface SpikeBoundary {
@@ -234,6 +246,7 @@ export interface LivePaperDataItem {
     | BlueNaaSConfig
     | BlueNaaSDemoGridConfig
     | CopiesGeneratorConfig
+    | IframeGridConfig
     | LinkButtonsConfig
     | NeoViewerConfig
     | ParameterSimulationConfig

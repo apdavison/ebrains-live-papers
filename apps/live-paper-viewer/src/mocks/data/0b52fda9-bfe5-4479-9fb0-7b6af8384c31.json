@@ -123,8 +123,37 @@
       "order": 0,
       "type": "section_custom",
       "title": "Demonstration",
-      "text": "<link href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/css/gwdiframe_style.css\" rel=\"stylesheet\" data-version=\"5\" data-exports-type=\"gwd-iframe\">\n<script type=\"text/javascript\" src=\"https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js\"></script>\n<script data-source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/js/googbase_min.js\" data-version=\"4\" data-exports-type=\"googbase\" src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/js/googbase_min.js\"></script>\n<script data-source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/js/gwd_webcomponents_min.js\" data-version=\"6\" data-exports-type=\"gwd_webcomponents\" src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/js/gwd_webcomponents_min.js\"></script>\n<script data-source=\"./static/js/gwdiframe_min.js\" data-version=\"5\" data-exports-type=\"gwd-iframe\" src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/js/gwdiframe_min.js\"></script>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/static/css/amsalem_et_al_2020.css\">\n\n<div class=\"\" style=\"text-align:center; display:block; overflow:auto\">\n   <div class=\"col-md-5\" style=\"text-align:center\">\n      <gwd-iframe id=\"gwd-iframe_1-llb\" \n         source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/morphs/detailed_model/cell1.html\" \n         class=\"gwd-iframe-1ixy-llb\" scrolling=\"no\"></gwd-iframe>\n      <p>\n         <a target=\"_blank\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/neuron_reduce/detailed.zip?dt=0.025&tstop=2500&dur=0&amp=0&celsius=37\">\n         Click here to run simulation \n         </a>\n      </p>\n   </div>\n   <div class=\"col-md-2\" style=\"text-align:center;padding: 10% 0\">\n      <div class=\"gwd-p-1ae8-llb gwd-span-1qfx\" style=\"text-align:center;\">\u2192</div>\n      <div class=\"gwd-span-1skk-llb\" style=\"text-align:center\">Neuron Reduce</div>\n   </div>\n   <div class=\"col-md-5\" style=\"text-align:center\">\n      <gwd-iframe id=\"gwd-iframe_2-llb\" source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/morphs/simplified_model/cell1_reduced.html\" class=\"gwd-iframe-1ixy-llb\" scrolling=\"no\"></gwd-iframe>\n      <p>\n         <a target=\"_blank\" href=\"https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/neuron_reduce/simplified.zip?dt=0.025&tstop=2500&dur=0&amp=0&celsius=37\"> \n         Click here to run simulation \n         </a> \n      </p>\n   </div>\n</div>\n\n<div class=\"\" style=\"text-align:center;\">\n    <div style=\"padding: 3px 0\">\n        <div class=\"col-md-offset-3 col-md-2 gwd-left-arrow-llb gwd-span-1qfx\" scrolling=\"no\" style=\"text-align:center;\">\u2192</div>\n    </div>\n    <div style=\"padding: 9px 0\">\n        <div class=\"col-md-offset-2 col-md-2 gwd-right-arrow-llb gwd-span-1qfx\" scrolling=\"no\" style=\"text-align:center;\">\u2192</div>\n    </div>\n</div>\n\n<div class=\"\" style=\"text-align:center; display:block; overflow:auto;width:100%\">\n    <gwd-iframe id=\"ccfedb82-4def-4711-8f43-7e5561c54dd0\" source=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/traces/test133.html\" class=\"gwd-visualizer-view-1iw1-llb\" scrolling=\"no\"></gwd-iframe>\n</div>\n<br>\n<div class=\"\">Detailed instruction and source code is available on GitHub: <a target=\"_blank\" href=https://github.com/orena1/neuron_reduce>https://github.com/orena1/neuron_reduce</div>",
-      "data": []
+      "text": "<p>Comparison of detailed and simplified neuron models produced by <a href=\"https://github.com/orena1/neuron_reduce\" target=\"_blank\">Neuron Reduce</a>. The left panel shows the detailed morphology; the right panel shows the reduced model. The lower panel shows voltage traces and spike-time statistics for a representative test case.</p><p style=\"text-align:center\"><strong>Detailed model</strong> &nbsp;\u2192 Neuron Reduce \u2192&nbsp; <strong>Simplified model</strong></p>",
+      "data": [
+        {
+          "label": "",
+          "links": [],
+          "type": "iframe-grid",
+          "identifier": "iframe-grid-amsalem",
+          "config": {
+            "rows": [
+              [
+                {
+                  "src": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/morphs/detailed_model/cell1.html",
+                  "height": 400,
+                  "caption": "Detailed model"
+                },
+                {
+                  "src": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/morphs/simplified_model/cell1_reduced.html",
+                  "height": 400,
+                  "caption": "Simplified model"
+                }
+              ],
+              [
+                {
+                  "src": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_amsalem_et_al/traces/test133.html",
+                  "height": 500
+                }
+              ]
+            ]
+          }
+        }
+      ]
     }
   ],
   "id": "0b52fda9-bfe5-4479-9fb0-7b6af8384c31"
