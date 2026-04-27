@@ -1,3 +1,4 @@
+import type React from "react";
 import { useLoaderData } from "react-router";
 import type { LivePaperSummary, Person } from "./types";
 import Header from "./Header";
@@ -22,8 +23,15 @@ function formatAuthors(authors: Person[]): string {
 
 function PaperCard({ lp }: { lp: LivePaperSummary }) {
   const href = lp.alias ?? lp.id;
+
+  function handleClick(e: React.MouseEvent) {
+    if (window.getSelection()?.toString()) return;
+    if ((e.target as HTMLElement).closest("a")) return;
+    window.location.href = href;
+  }
+
   return (
-    <article className="paper-card">
+    <article className="paper-card" onClick={handleClick}>
       <h2 className="paper-card-title">
         <a href={href}>{lp.title}</a>
       </h2>
@@ -76,7 +84,7 @@ function App() {
           </div>
         </div>
         <div className="paper-grid">
-          {data.data.map((lp: LivePaperSummary) => (
+          {[...data.data].reverse().map((lp: LivePaperSummary) => (
             <PaperCard key={lp.id} lp={lp} />
           ))}
         </div>
