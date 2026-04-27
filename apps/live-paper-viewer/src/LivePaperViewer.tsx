@@ -5,6 +5,7 @@ import rehypeRaw from "rehype-raw";
 import type { Contributor, Publication, LivePaperSection } from "./types";
 import Section from "./Section";
 import Header from "./Header";
+import Footer from "./Footer";
 import "./LivePaperViewer.css";
 
 const slugify = (s: string) =>
@@ -134,6 +135,7 @@ function LivePaperViewer() {
           </article>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

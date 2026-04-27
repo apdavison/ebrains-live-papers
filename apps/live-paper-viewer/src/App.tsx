@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 import type { LivePaperSummary, Person } from "./types";
 import Header from "./Header";
+import Footer from "./Footer";
 import "./App.css";
 
 function formatDate(dateStr: string | null): string {
@@ -60,6 +61,7 @@ function App() {
           ))}
         </div>
       </main>
+      <Footer />
     </>
   );
 }
