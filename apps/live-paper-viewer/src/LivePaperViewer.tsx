@@ -2,30 +2,41 @@ import { useLoaderData } from "react-router";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import type { Person, Publication, LivePaperSection } from "./types";
+import type { Contributor, Publication, LivePaperSection } from "./types";
 import Section from "./Section";
-import "./App.css";
+import Header from "./Header";
+import "./LivePaperViewer.css";
 
+const slugify = (s: string) =>
+  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-function joinItems(index: number, size: number) {
-    if (index < size - 2) {
-        return ", ";
-    } else if (index < size - 1) {
-        return " and ";
-    } else {
-        return "";
-    }
+function formatDate(dateStr: string | null): string {
+  if (!dateStr) return "";
+  return new Date(dateStr).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
-function AuthorList({ authors }: { authors: Person[] }) {
+function AuthorList({ authors }: { authors: Contributor[] }) {
   return (
-    <div>
-      {authors.map((author, index, arr) => (
-        <span key={`${author.family_name}=${author.given_name}`}>
-          {author.given_name}&nbsp;{author.family_name}
-          {author.identifier ? <a href={author.identifier}>ID</a> : ""}
-          {joinItems(index, arr.length)}
-          {/* todo: when clicking on name, show affiliation, plus perhaps links like "Search for other contributions by this author" */}
+    <div className="article-authors">
+      {authors.map((author, index) => (
+        <span key={`${author.family_name}-${author.given_name}`}>
+          {author.given_name} {author.family_name}
+          {author.identifier && (
+            <a
+              className="article-author-orcid"
+              href={author.identifier}
+              target="_blank"
+              rel="noreferrer"
+              title="ORCID profile"
+            >
+              iD
+            </a>
+          )}
+          {index < authors.length - 1 ? ", " : ""}
         </span>
       ))}
     </div>
@@ -33,39 +44,96 @@ function AuthorList({ authors }: { authors: Person[] }) {
 }
 
 function RelatedPublication({ pub }: { pub: Publication }) {
-    const pubDate = new Date(pub.publication_date);
+  const year = new Date(pub.publication_date).getFullYear();
+  const authorNames = pub.authors
+    .slice(0, 3)
+    .map(a => `${a.family_name} ${a.given_name[0]}.`)
+    .join(", ");
+  const etAl = pub.authors.length > 3 ? " et al." : "";
+  const parts = [
+    `${authorNames}${etAl} (${year}).`,
+    pub.title + ".",
+    pub.journal,
+    pub.volume ?? "",
+    pub.pagination ? `:${pub.pagination}` : "",
+  ].filter(Boolean).join(" ");
+
   return (
-    <div>
-      <AuthorList authors={pub.authors} />
-      ({pubDate.getFullYear()})
-      <p>{pub.title}. {pub.journal} {pub.volume}:{pub.pagination} <a href={pub.doi ?? undefined}>{pub.doi}</a></p>
-      {/* abstract should be hidden unless publication is expanded. Do we need Markdown for publication abstract? */}
-      {pub.abstract}
+    <div className="related-publication">
+      <details>
+        <summary>Related publication</summary>
+        <p className="related-publication-cite">
+          {parts}
+          {pub.doi && (
+            <> <a href={pub.doi} target="_blank" rel="noreferrer">{pub.doi}</a></>
+          )}
+        </p>
+      </details>
     </div>
   );
 }
 
 function LivePaperViewer() {
   const { lp } = useLoaderData();
-  console.log(lp);
+
+  const tocItems = lp.sections.map((s: LivePaperSection) => ({
+    title: s.title,
+    id: slugify(s.title),
+  }));
 
   return (
     <>
-      <h1>{lp.title}</h1>
-      <p>open access - {lp.license}</p>
-      <p>Published {lp.publication_date}</p>
-      <p>Version: {lp.version}</p>
-      {/* todo: if version > 1, need also date when first version was published */}
-      <p>
-        <a href="{lp.doi}">{lp.doi}</a>
-      </p>
-      <AuthorList authors={lp.authors} />
+      <Header />
+      <main className="article-page">
+        <div className="article-layout">
+          <aside className="toc-sidebar">
+            <nav aria-label="Article sections">
+              <p className="toc-sidebar-title">Contents</p>
+              <ul className="toc-list">
+                {lp.abstract && <li><a href="#abstract">Abstract</a></li>}
+                {tocItems.map((item: { title: string; id: string }) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`}>{item.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
 
-      <RelatedPublication pub={lp.related_publications[0]} />
+          <article className="article-content">
+            <header className="article-header">
+              <h1 className="article-title">{lp.title}</h1>
+              <AuthorList authors={lp.authors} />
+              <div className="article-meta">
+                {lp.publication_date && (
+                  <span>Published {formatDate(lp.publication_date)}</span>
+                )}
+                {lp.version && <span>Version {lp.version}</span>}
+                {lp.license.length > 0 && <span>{lp.license.join(", ")}</span>}
+                {lp.doi && (
+                  <a className="article-meta-doi" href={lp.doi} target="_blank" rel="noreferrer">
+                    DOI
+                  </a>
+                )}
+              </div>
+              {lp.related_publications.length > 0 && (
+                <RelatedPublication pub={lp.related_publications[0]} />
+              )}
+            </header>
 
-      <Markdown rehypePlugins={[rehypeRaw]}>{lp.abstract}</Markdown>
+            {lp.abstract && (
+              <section id="abstract" className="abstract-block">
+                <h2 className="abstract-heading">Abstract</h2>
+                <Markdown rehypePlugins={[rehypeRaw]}>{lp.abstract}</Markdown>
+              </section>
+            )}
 
-      {lp.sections.map((section: LivePaperSection) => <Section data={section} key={section.order} />)}
+            {lp.sections.map((section: LivePaperSection) => (
+              <Section data={section} key={section.order} id={slugify(section.title)} />
+            ))}
+          </article>
+        </div>
+      </main>
     </>
   );
 }

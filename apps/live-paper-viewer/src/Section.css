@@ -1,0 +1,17 @@
+.paper-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 80px;
+}
+
+.paper-section h2 {
+  font-size: 1.35rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.section-widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
