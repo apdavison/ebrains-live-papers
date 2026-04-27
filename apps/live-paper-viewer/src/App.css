@@ -11,6 +11,59 @@
   border-bottom: 2px solid var(--color-border);
 }
 
+.listing-about {
+  max-width: 980px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+.listing-about p {
+  margin: 0 0 1rem;
+}
+
+.listing-about-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.listing-about-btn {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.listing-about-btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.listing-about-btn--primary:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+.listing-about-btn--secondary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.listing-about-btn--secondary:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
 .paper-grid {
   display: grid;
   grid-template-columns: 1fr;

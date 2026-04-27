@@ -55,6 +55,26 @@ function App() {
       <Header />
       <main className="listing-page">
         <h1>Live Papers</h1>
+        <div className="listing-about">
+          <p>
+            Live Papers are interactive, web-based companions to peer-reviewed publications.
+            Each Live Paper provides direct access to the data, code, and models described in
+            the associated article, enabling readers to explore results and run simulations
+            without leaving the browser.
+          </p>
+          <p>
+            Live Papers are developed on the <a href="https://ebrains.eu" target="_blank" rel="noreferrer">EBRAINS</a> research
+            infrastructure and are freely available to the scientific community.
+          </p>
+          <div className="listing-about-actions">
+            <a href="https://live-papers.apps.ebrains.eu/docs" target="_blank" rel="noreferrer" className="listing-about-btn listing-about-btn--secondary">
+              Learn more about Live Papers
+            </a>
+            <a href="https://live-papers.apps.ebrains.eu/builder" target="_blank" rel="noreferrer" className="listing-about-btn listing-about-btn--primary">
+              Publish a Live Paper
+            </a>
+          </div>
+        </div>
         <div className="paper-grid">
           {data.data.map((lp: LivePaperSummary) => (
             <PaperCard key={lp.id} lp={lp} />
