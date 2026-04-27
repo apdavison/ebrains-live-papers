@@ -9,6 +9,8 @@ import NGLViewer from "./NGLViewer";
 import ParameterSimulation from "./ParameterSimulation";
 import TabbedCollapsible from "./TabbedCollapsible";
 import TabbedDataTables from "./TabbedDataTables";
+import { useState, useEffect, useRef } from "react";
+import "./WidgetRenderer.css";
 import type {
   LivePaperDataItem,
   Link,
@@ -25,40 +27,29 @@ import type {
   TabbedDataTablesConfig,
 } from "./types";
 
-function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
-  if (item.type === "bluenaas" && item.config) {
+function renderWidget(item: LivePaperDataItem) {
+  if (item.type === "bluenaas" && item.config)
     return <BlueNaaS config={item.config as BlueNaaSConfig} />;
-  }
-  if (item.type === "bluenaas-demo-grid" && item.config) {
+  if (item.type === "bluenaas-demo-grid" && item.config)
     return <BlueNaaSDemoGrid config={item.config as BlueNaaSDemoGridConfig} />;
-  }
-  if (item.type === "copies-generator" && item.config) {
+  if (item.type === "copies-generator" && item.config)
     return <CopiesGenerator config={item.config as CopiesGeneratorConfig} />;
-  }
-  if (item.type === "iframe-grid" && item.config) {
+  if (item.type === "iframe-grid" && item.config)
     return <IframeGrid config={item.config as IframeGridConfig} />;
-  }
-  if (item.type === "sba-composer" && item.config) {
+  if (item.type === "sba-composer" && item.config)
     return <SBAComposer config={item.config as SBAComposerConfig} />;
-  }
-  if (item.type === "link-buttons" && item.config) {
+  if (item.type === "link-buttons" && item.config)
     return <LinkButtons config={item.config as LinkButtonsConfig} />;
-  }
-  if (item.type === "neo-viewer" && item.config) {
+  if (item.type === "neo-viewer" && item.config)
     return <NeoViewer config={item.config as NeoViewerConfig} />;
-  }
-  if (item.type === "ngl-viewer" && item.config) {
+  if (item.type === "ngl-viewer" && item.config)
     return <NGLViewer config={item.config as NGLViewerConfig} />;
-  }
-  if (item.type === "parameter-simulation" && item.config) {
+  if (item.type === "parameter-simulation" && item.config)
     return <ParameterSimulation config={item.config as ParameterSimulationConfig} />;
-  }
-  if (item.type === "tabbed-collapsible" && item.config) {
+  if (item.type === "tabbed-collapsible" && item.config)
     return <TabbedCollapsible config={item.config as TabbedCollapsibleConfig} />;
-  }
-  if (item.type === "tabbed-data-tables" && item.config) {
+  if (item.type === "tabbed-data-tables" && item.config)
     return <TabbedDataTables config={item.config as TabbedDataTablesConfig} />;
-  }
   return (
     <li>
       {item.label}
@@ -68,6 +59,36 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
         </span>
       ))}
     </li>
+  );
+}
+
+function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
+  const widget = renderWidget(item);
+  const [open, setOpen] = useState(false);
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    function handleOutsideClick(e: MouseEvent) {
+      if (!footerRef.current?.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [open]);
+
+  if (!import.meta.env.DEV) return widget;
+  return (
+    <div>
+      {widget}
+      <div className="widget-dev-footer" ref={footerRef}>
+        <span className="widget-dev-label" onClick={() => setOpen(o => !o)}>
+          {item.type}
+        </span>
+        {open && item.config && (
+          <pre className="widget-dev-tooltip">{JSON.stringify(item.config, null, 2)}</pre>
+        )}
+      </div>
+    </div>
   );
 }
 
