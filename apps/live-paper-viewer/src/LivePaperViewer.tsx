@@ -21,25 +21,51 @@ function formatDate(dateStr: string | null): string {
 }
 
 function AuthorList({ authors }: { authors: Contributor[] }) {
+  const allAffiliations: string[] = [];
+  for (const author of authors) {
+    for (const aff of author.affiliations) {
+      if (!allAffiliations.includes(aff)) allAffiliations.push(aff);
+    }
+  }
+  const affIndex = new Map(allAffiliations.map((a, i) => [a, i + 1]));
+
   return (
-    <div className="article-authors">
-      {authors.map((author, index) => (
-        <span key={`${author.family_name}-${author.given_name}`}>
-          {author.given_name} {author.family_name}
-          {author.identifier && (
-            <a
-              className="article-author-orcid"
-              href={author.identifier}
-              target="_blank"
-              rel="noreferrer"
-              title="ORCID profile"
-            >
-              iD
-            </a>
-          )}
-          {index < authors.length - 1 ? ", " : ""}
-        </span>
-      ))}
+    <div>
+      <div className="article-authors">
+        {authors.map((author, index) => (
+          <span key={`${author.family_name}-${author.given_name}`}>
+            {author.given_name} {author.family_name}
+            {allAffiliations.length > 1 && (
+              <sup className="article-author-affiliation-num">
+                {author.affiliations
+                  .map(a => affIndex.get(a) as number)
+                  .sort((a, b) => a - b)
+                  .join(",")}
+              </sup>
+            )}
+            {author.identifier && (
+              <a
+                className="article-author-orcid"
+                href={author.identifier}
+                target="_blank"
+                rel="noreferrer"
+                title="ORCID profile"
+              >
+                iD
+              </a>
+            )}
+            {index < authors.length - 1 ? ", " : ""}
+          </span>
+        ))}
+      </div>
+      {allAffiliations.length === 1 && (
+        <p className="article-affiliations-single">{allAffiliations[0]}</p>
+      )}
+      {allAffiliations.length > 1 && (
+        <ol className="article-affiliations">
+          {allAffiliations.map(aff => <li key={aff}>{aff}</li>)}
+        </ol>
+      )}
     </div>
   );
 }
@@ -69,6 +95,9 @@ function RelatedPublication({ pub }: { pub: Publication }) {
             <> <a href={pub.doi} target="_blank" rel="noreferrer">{pub.doi}</a></>
           )}
         </p>
+        {pub.abstract && (
+          <p className="related-publication-abstract">{pub.abstract}</p>
+        )}
       </details>
     </div>
   );

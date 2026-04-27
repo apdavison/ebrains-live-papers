@@ -94,6 +94,29 @@
   line-height: 1.6;
 }
 
+.article-author-affiliation-num {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.article-affiliations {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.article-affiliations-single {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
 .article-author-orcid {
   font-size: 0.75rem;
   color: var(--color-primary);
@@ -165,6 +188,14 @@
   line-height: 1.5;
   color: var(--color-text);
 }
+
+.related-publication-abstract {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
 
 /* --- Abstract --- */
 
