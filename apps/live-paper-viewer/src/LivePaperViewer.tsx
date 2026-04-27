@@ -42,7 +42,7 @@ function formatDate(dateStr: string | null): string {
 function AuthorList({ authors }: { authors: Contributor[] }) {
   const allAffiliations: string[] = [];
   for (const author of authors) {
-    for (const aff of author.affiliations) {
+    for (const aff of author.affiliations ?? []) {
       if (!allAffiliations.includes(aff)) allAffiliations.push(aff);
     }
   }
@@ -54,9 +54,9 @@ function AuthorList({ authors }: { authors: Contributor[] }) {
         {authors.map((author, index) => (
           <span key={`${author.family_name}-${author.given_name}`}>
             {author.given_name} {author.family_name}
-            {allAffiliations.length > 1 && (
+            {allAffiliations.length > 1 && (author.affiliations?.length ?? 0) > 0 && (
               <sup className="article-author-affiliation-num">
-                {author.affiliations
+                {(author.affiliations ?? [])
                   .map(a => affIndex.get(a) as number)
                   .sort((a, b) => a - b)
                   .join(",")}
