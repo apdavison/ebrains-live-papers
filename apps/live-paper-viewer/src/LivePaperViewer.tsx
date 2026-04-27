@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -7,6 +8,24 @@ import Section from "./Section";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./LivePaperViewer.css";
+
+function DoiCopy({ doi }: { doi: string }) {
+  const [copied, setCopied] = useState(false);
+
+  function handleClick() {
+    navigator.clipboard.writeText(doi).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  return (
+    <button className="doi-copy" onClick={handleClick} title="Copy DOI">
+      {doi}
+      <span className="doi-copy-label">{copied ? "Copied!" : "Copy"}</span>
+    </button>
+  );
+}
 
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -140,11 +159,7 @@ function LivePaperViewer() {
                 )}
                 {lp.version && <span>Version {lp.version}</span>}
                 {lp.license.length > 0 && <span>{lp.license.join(", ")}</span>}
-                {lp.doi && (
-                  <a className="article-meta-doi" href={lp.doi} target="_blank" rel="noreferrer">
-                    DOI
-                  </a>
-                )}
+                {lp.doi && <DoiCopy doi={lp.doi} />}
               </div>
               {lp.related_publications.length > 0 && (
                 <RelatedPublication pub={lp.related_publications[0]} />
