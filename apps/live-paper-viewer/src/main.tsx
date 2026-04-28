@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router/dom";
 import "./index.css";
 import App from "./App";
 import LivePaperViewer from "./LivePaperViewer";
+import Docs from "./docs/Docs";
 
 const { fetchPublishedLivePapers, fetchPublishedLivePaper } =
   import.meta.env.VITE_MOCK_API === "true"
@@ -21,7 +22,15 @@ const router = createBrowserRouter([
       return { data: livepapers };
     },
   },
-{
+  {
+    path: "/docs",
+    Component: Docs,
+  },
+  {
+    path: "/docs/:page",
+    Component: Docs,
+  },
+  {
     path: "/:livePaperId",
     Component: LivePaperViewer,
     loader: async ({ params }) => {

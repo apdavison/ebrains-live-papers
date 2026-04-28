@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./Header.css";
 
 function Header() {
@@ -15,7 +16,7 @@ function Header() {
           <a href="/" className="site-header-title">Live Papers</a>
         </div>
         <nav className="site-header-nav">
-          <a href="https://live-papers.apps.ebrains.eu/docs" target="_blank" rel="noreferrer">About</a>
+          <Link to="/docs">About</Link>
           <a href="https://live-papers.apps.ebrains.eu/builder" target="_blank" rel="noreferrer">Publish</a>
         </nav>
       </div>
