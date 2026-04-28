@@ -136,7 +136,7 @@ function NGLViewer({ config }: { config: NGLViewerConfig }) {
   return (
     <>
       <button
-        className="btn waves-effect waves-light ngl-view-btn"
+        className="app-btn ngl-view-btn"
         onClick={() => setIsOpen(true)}
       >
         <i className="material-icons">3d_rotation</i>

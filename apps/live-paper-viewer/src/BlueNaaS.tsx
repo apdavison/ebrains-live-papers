@@ -341,7 +341,7 @@ function BlueNaaS({ config }: { config: BlueNaaSConfig }) {
               <td>
                 <button
                   type="submit"
-                  className="waves-effect waves-light btn"
+                  className="app-btn"
                   onClick={runSimulation}
                   style={{ margin: "6px", width: "120px" }}
                 >
@@ -365,7 +365,7 @@ function BlueNaaS({ config }: { config: BlueNaaSConfig }) {
               <button
                 key={preset.label}
                 type="button"
-                className="col s4 waves-effect waves-teal btn-flat"
+                className="app-btn app-btn--outline"
                 onClick={() => applyPreset(preset.values)}
               >
                 {preset.label}

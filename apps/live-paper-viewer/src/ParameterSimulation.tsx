@@ -138,7 +138,7 @@ function ParameterSimulation({ config }: { config: ParameterSimulationConfig }) 
 
           <div className="param-sim__actions">
             <button
-              className="waves-effect waves-light btn"
+              className="app-btn"
               onClick={handlePlot}
             >
               Plot

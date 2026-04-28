@@ -152,7 +152,7 @@ function CopiesGenerator({ config }: { config: CopiesGeneratorConfig }) {
 
         <p>
           <button
-            className="waves-effect waves-light btn"
+            className="app-btn"
             onClick={handleGetCopies}
             disabled={status === "loading"}
           >
@@ -165,7 +165,7 @@ function CopiesGenerator({ config }: { config: CopiesGeneratorConfig }) {
 
         <p>
           <button
-            className="waves-effect waves-light btn"
+            className="app-btn"
             onClick={() => setShowPlots(true)}
             disabled={status !== "ready"}
           >
@@ -175,7 +175,7 @@ function CopiesGenerator({ config }: { config: CopiesGeneratorConfig }) {
 
         <p>
           <button
-            className="waves-effect waves-light btn"
+            className="app-btn"
             onClick={handleDownload}
             disabled={status !== "ready"}
           >

@@ -35,7 +35,7 @@ function Modal({ isOpen, onClose, children }: ModalProps) {
       <div className="modal-content">{children}</div>
       <div className="modal-footer">
         <button
-          className="btn-flat modal-close-btn"
+          className="modal-close-btn"
           onClick={() => dialogRef.current?.close()}
         >
           Close
