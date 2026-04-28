@@ -48,7 +48,7 @@ run_tests:
     - cd apps
     - sh deployment/write_build_info.sh
     - cd live-paper-builder
-    - npm ci
+    - npm ci --legacy-peer-deps
     - npm run test
   tags:
     - docker-runner
