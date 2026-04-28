@@ -15,3 +15,10 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+.widget-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin: 0 0 0.4rem;
+}

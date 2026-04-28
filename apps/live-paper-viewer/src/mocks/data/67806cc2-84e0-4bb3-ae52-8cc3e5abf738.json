@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "abstract": "Data and models used in the paper are available at the links reported below.",
+  "abstract": "This live paper contains links and interactive previews for the data and models used in Hjorth J., Kozlov A., Carannante I. et al. (2021). The microcircuits of striatum in silico. *Proceedings of the National Academy of Sciences* 117:9554-9565.",
   "related_publications": [
     {
       "authors": [
@@ -222,7 +222,7 @@
       "text": null,
       "data": [
         {
-          "label": "Single-cell models",
+          "label": "",
           "type": "tabbed-collapsible",
           "identifier": "hjorth-models",
           "links": [],
@@ -1072,8 +1072,8 @@
                     "children": [
                       {
                         "type": "link-buttons",
-                        "label": "Model",
-                        "identifier": "str-lts-Experiment-9862-20181211-links",
+                        "label": "Model parameters",
+                        "identifier": "str-lts-Experiment-9862-20181211-model-links",
                         "links": [],
                         "config": {
                           "buttons": [
@@ -1086,8 +1086,23 @@
                         }
                       },
                       {
+                        "type": "link-buttons",
+                        "label": "Experimental data : 20181211_7_8_slice_L4_long.pxp (478 MB)",
+                        "identifier": "str-lts-Experiment-9862-20181211-data-links",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/lts/original/Experiment-9862/20181211_7_8_slice_L4_long.pxp",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
                         "type": "neo-viewer",
-                        "label": "Experimental data",
+                        "label": "Selected traces",
                         "identifier": "str-lts-Experiment-9862-20181211-viewer",
                         "links": [],
                         "config": {
@@ -1140,7 +1155,7 @@
                       {
                         "type": "link-buttons",
                         "label": "Model",
-                        "identifier": "str-chin-sbj4-170614-cell6-v20190816-links",
+                        "identifier": "str-chin-sbj4-170614-cell6-v20190816-links-model",
                         "links": [],
                         "config": {
                           "buttons": [
@@ -1153,8 +1168,23 @@
                         }
                       },
                       {
+                        "type": "link-buttons",
+                        "label": "Experimental data: sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN.pxp (81 MB)",
+                        "identifier": "str-chin-sbj4-170614-cell6-v20190816-links-data",
+                        "links": [],
+                        "config": {
+                          "buttons": [
+                            {
+                              "label": "Download",
+                              "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2020_hjorth_et_al/resources/Grillner_SGA2_T6.2.4/striatum/interneurons/ephys/2019Q3/chin/original/sbj4-170614_cell6_original__md_20170614_cell_5_6_ChIN.pxp",
+                              "icon": "save_alt"
+                            }
+                          ]
+                        }
+                      },
+                      {
                         "type": "neo-viewer",
-                        "label": "Experimental data",
+                        "label": "Selected traces",
                         "identifier": "str-chin-sbj4-170614-cell6-v20190816-viewer",
                         "links": [],
                         "config": {

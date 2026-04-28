@@ -31,13 +31,13 @@ function DownloadButton({ button }: { button: LinkButton }) {
 
   return (
     <a
-      className={`btn waves-effect waves-light${downloading ? " disabled" : ""}`}
+      className={`app-btn app-btn--outline${downloading ? " disabled" : ""}`}
       href={button.url}
       onClick={onClick}
       title={button.tooltip}
     >
       {button.label}
-      {button.icon && <i className="material-icons right">{button.icon}</i>}
+      {button.icon && <i className="material-icons">{button.icon}</i>}
     </a>
   );
 }
@@ -58,14 +58,14 @@ function LinkButtons({ config }: { config: LinkButtonsConfig }) {
         ) : (
           <a
             key={button.url}
-            className="btn waves-effect waves-light"
+            className="app-btn app-btn--outline"
             href={button.url}
             target="_blank"
             rel="noopener noreferrer"
             title={button.tooltip}
           >
             {button.label}
-            {button.icon && <i className="material-icons right">{button.icon}</i>}
+            {button.icon && <i className="material-icons">{button.icon}</i>}
           </a>
         )
       )}

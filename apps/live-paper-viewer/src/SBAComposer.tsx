@@ -31,9 +31,9 @@ function SBAComposer({ config }: { config: SBAComposerConfig }) {
   }
 
   return (
-    <button className="btn waves-effect waves-light" onClick={handleClick}>
+    <button className="app-btn" onClick={handleClick}>
       {config.buttonLabel ?? "View"}
-      <i className="material-icons right">3d_rotation</i>
+      <i className="material-icons">3d_rotation</i>
     </button>
   );
 }

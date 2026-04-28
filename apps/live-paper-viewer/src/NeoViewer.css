@@ -2,6 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  --nv-primary: #ee6e73;
+  --nv-primary: var(--color-primary);
   --nv-border-radius: 2px;
 }

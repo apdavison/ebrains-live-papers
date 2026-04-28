@@ -36,7 +36,7 @@
   padding: 8px 16px;
   font-size: 14px;
   text-transform: uppercase;
-  color: #ee6e73;
+  color: var(--color-primary);
 }
 
 .modal-close-btn:hover {

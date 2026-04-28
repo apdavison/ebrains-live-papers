@@ -76,9 +76,12 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [open]);
 
-  if (!import.meta.env.DEV) return widget;
+  const label = item.label ? <p className="widget-label">{item.label}</p> : null;
+
+  if (!import.meta.env.DEV) return <>{label}{widget}</>;
   return (
     <div>
+      {label}
       {widget}
       <div className="widget-dev-footer" ref={footerRef}>
         <span className="widget-dev-label" onClick={() => setOpen(o => !o)}>
