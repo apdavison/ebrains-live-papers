@@ -50,16 +50,27 @@ function renderWidget(item: LivePaperDataItem) {
     return <TabbedCollapsible config={item.config as TabbedCollapsibleConfig} />;
   if (item.type === "tabbed-data-tables" && item.config)
     return <TabbedDataTables config={item.config as TabbedDataTablesConfig} />;
-  return (
-    <li>
-      {item.label}
-      {item.links.map((link: Link) => (
-        <span key={link.url}>
-          <a href={link.url}>{link.service}</a>
-        </span>
-      ))}
-    </li>
-  );
+  if (item.type === "URL") {
+    return (
+      <div className="url-item">
+        <span className="url-item-label">{item.label}</span>
+        <div className="url-item-links">
+          {item.links.map((link: Link) => (
+            <a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="app-btn app-btn--outline"
+            >
+              {link.service}
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return null;
 }
 
 function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
@@ -76,7 +87,7 @@ function WidgetRenderer({ item }: { item: LivePaperDataItem }) {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [open]);
 
-  const label = item.label ? <p className="widget-label">{item.label}</p> : null;
+  const label = (item.label && item.type !== "URL") ? <p className="widget-label">{item.label}</p> : null;
 
   if (!import.meta.env.DEV) return <>{label}{widget}</>;
   return (
