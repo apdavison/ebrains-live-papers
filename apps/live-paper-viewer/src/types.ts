@@ -54,22 +54,13 @@ export interface BlueNaaSConfig {
 }
 
 export interface BlueNaaSDemoGridItem {
-  morphologyImageUrl: string;
+  imageUrl: string;
   bluenaasUrl: string;
-  plotIframeUrl: string;
-}
-
-export interface BlueNaaSDemoGridAdditionalContent {
-  heading: string;
-  items: {
-    imageUrl: string;
-    bluenaasUrl: string;
-  }[];
+  plotIframeUrl?: string;
 }
 
 export interface BlueNaaSDemoGridConfig {
   items: BlueNaaSDemoGridItem[];
-  additionalContent?: BlueNaaSDemoGridAdditionalContent;
 }
 
 // --- LinkButtons widget ---

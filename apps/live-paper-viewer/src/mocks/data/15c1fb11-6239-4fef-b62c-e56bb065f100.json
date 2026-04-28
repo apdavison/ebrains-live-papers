@@ -159,50 +159,55 @@
             "items": [
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_03_model_448.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell03_1204_H42_02.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell03_1204_H42_02.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130303.html"
               },
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_03_model_476.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell03_789_H41_03.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell03_789_H41_03.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060303.html"
               },
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_11_model_937.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell11_1125_H41_06.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell11_1125_H41_06.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060311.html"
               },
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell0603_08_model_602.zip?delay=120.33&vinit=-86&dt=.025&amp=0.7&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell08_876_H41_05_Cell2.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_06_cell08_876_H41_05_Cell2.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_060308.html"
               },
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_05_model_643.zip?delay=120.33&vinit=-86&dt=.025&amp=0.6&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell05_675_H42_04.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell05_675_H42_04.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130305.html"
               },
               {
                 "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/cell1303_06_model_263.zip?delay=120.33&vinit=-86&dt=.025&amp=0.55&tstop=1500&dur=1000&celsius=37",
-                "morphologyImageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell06_945_H42_05.png",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig7/2013_03_13_cell06_945_H42_05.png",
                 "plotIframeUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/plots/Cell_130306.html"
               }
-            ],
-            "additionalContent": {
-              "heading": "Model response to clustered vs non clustered input",
-              "items": [
-                {
-                  "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/clustered_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
-                  "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/clustered.png"
-                },
-                {
-                  "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/distributed_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
-                  "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/non_clustered.png"
-                }
-              ]
-            }
+            ]
           },
           "identifier": "demo-grid-0"
+        },
+        {
+          "label": "Model response to clustered vs non clustered input",
+          "links": [],
+          "type": "bluenaas-demo-grid",
+          "config": {
+            "items": [
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/clustered_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/clustered.png"
+              },
+              {
+                "bluenaasUrl": "https://bluenaas-single-cell.apps.ebrains.eu/#/url/https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Figure_8_Eyal_et_al_Elife/distributed_input/cell0603_11_model_937.zip?delay=0&vinit=-86&dt=.025&amp=0&tstop=500&dur=0&celsius=37",
+                "imageUrl": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_eyal_et_al/Fig8/non_clustered.png"
+              }
+            ]
+          },
+          "identifier": "demo-grid-1"
         }
       ]
     },

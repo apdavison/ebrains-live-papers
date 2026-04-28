@@ -19,18 +19,16 @@
   display: block;
 }
 
+.bluenaas-demo-grid .demo-grid-pair:not(:has(iframe)) .demo-grid-thumbnail {
+  width: 100%;
+}
+
+.bluenaas-demo-grid .demo-grid-pair:not(:has(iframe)) .demo-grid-thumbnail img {
+  max-width: 100%;
+  width: 100%;
+}
+
 .bluenaas-demo-grid .demo-grid-plot {
   width: 100%;
   border: none;
-}
-
-.bluenaas-demo-grid .additional-content-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.bluenaas-demo-grid .additional-content-grid img {
-  width: 100%;
-  display: block;
 }
