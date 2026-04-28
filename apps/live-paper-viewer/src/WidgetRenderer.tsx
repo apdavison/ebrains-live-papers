@@ -1,6 +1,7 @@
 import BlueNaaS from "./BlueNaaS";
 import BlueNaaSDemoGrid from "./BlueNaaSDemoGrid";
 import CopiesGenerator from "./CopiesGenerator";
+import Figure from "./Figure";
 import IframeGrid from "./IframeGrid";
 import SBAComposer from "./SBAComposer";
 import LinkButtons from "./LinkButtons";
@@ -17,6 +18,7 @@ import type {
   BlueNaaSConfig,
   BlueNaaSDemoGridConfig,
   CopiesGeneratorConfig,
+  FigureConfig,
   IframeGridConfig,
   SBAComposerConfig,
   LinkButtonsConfig,
@@ -34,6 +36,8 @@ function renderWidget(item: LivePaperDataItem) {
     return <BlueNaaSDemoGrid config={item.config as BlueNaaSDemoGridConfig} />;
   if (item.type === "copies-generator" && item.config)
     return <CopiesGenerator config={item.config as CopiesGeneratorConfig} />;
+  if (item.type === "figure" && item.config)
+    return <Figure config={item.config as FigureConfig} />;
   if (item.type === "iframe-grid" && item.config)
     return <IframeGrid config={item.config as IframeGridConfig} />;
   if (item.type === "sba-composer" && item.config)

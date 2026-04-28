@@ -242,6 +242,12 @@ export interface NGLViewerConfig {
 
 // --- Data item ---
 
+export interface FigureConfig {
+  url: string;
+  caption?: string;
+  altText?: string;
+}
+
 export interface LivePaperDataItem {
   label: string;
   links: Link[];
@@ -250,6 +256,7 @@ export interface LivePaperDataItem {
     | BlueNaaSConfig
     | BlueNaaSDemoGridConfig
     | CopiesGeneratorConfig
+    | FigureConfig
     | IframeGridConfig
     | SBAComposerConfig
     | LinkButtonsConfig

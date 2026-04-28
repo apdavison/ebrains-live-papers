@@ -67,15 +67,61 @@
       "order": 0,
       "type": "section_custom",
       "title": "Model Structure",
-      "text": "<div class=\"row\">\n   <div class=\"col s12\">\n      <a >\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/model_structure_mandgemanchanda2018.png\" class=\"responsive\">\n      </a>\n   </div>\n   <br>\n   <p align=\"center\">\n      <b>Fig. 1 Computational Model of Urinary Bladder Small DRG Neuron</b>\n   </p>\n</div>",
-      "data": []
+      "text": null,
+      "data": [
+        {
+          "label": "",
+          "links": [],
+          "type": "figure",
+          "identifier": "figure-model-structure",
+          "config": {
+            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/model_structure_mandgemanchanda2018.png",
+            "caption": "Fig. 1 Computational Model of Urinary Bladder Small DRG Neuron",
+            "altText": "Computational Model of Urinary Bladder Small DRG Neuron"
+          }
+        }
+      ]
     },
     {
       "order": 1,
       "type": "section_custom",
       "title": "Model response to Current Clamps",
-      "text": "<p>\n   The captions in Fig. 2, Fig. 3 and Fig. 4 are linked to a Python <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures\" target=\"_blank\">Jupyter Notebook</a> \n   available in the Collab dedicated to this Live Paper through the <a href=\"\"></a> \n   <a href=\"https://wiki.ebrains.eu/\" target=\"_blank\">Human Brain Project Collaboratory</a> platform.\n   The Jupyter Notebook allows to generate the simulation figures reported in the \n   <a href=\"https://doi.org/10.1371/journal.pcbi.1006293\" target=\"_blank\">paper</a> using the respective simulation conditions reported in figure captions and text.\n   <br>\n   More details on how to use the notebook and the results it allows to reproduce are reported inline with the code.\n</p>\n<br>\n<div class=\"row\">\n   <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig9.png\" class=\"responsive\">\n   <br>\n   <p align=\"center\">\n      <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures\"target=\"_blank\">\n      <b>Fig. 2 AP Validation: [A] Single AP, [B] AP with a Long Duration Clamp</b>\n      </a>\n   </p>\n</div>\n<br>\n<div class=\"row\">\n   <div class=\"col s5\" style=\"height:500px\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig10b.png\" align=\"middle\"  style=\"width:100%;height:auto\">\n      <br>\n      <p align=\"center\">\n         <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures\"> \n         <b>Fig. 3 Simulated Subthreshold Potentials and an AP in the model</b>\n         </a>\n      </p>\n   </div>\n   <div class=\"col s7\">\n      <img src=\"https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig12.png\" align=\"middle\" style=\"width:93%;height:auto\">\n      <p align=\"center\">\n         <br>\n         <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures\" target=\"_blank\"> \n         <b>Fig. 4 Comparing Simulated and Experimental Calcium Transients in the Cytoplasm (Red) and the Mitochondria (Blue).</b>\n         </a>\n      </p>\n   </div>\n</div>",
-      "data": []
+      "text": "<p>\n   The captions in Fig. 2, Fig. 3 and Fig. 4 are linked to a Python <a href=\"https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures\" target=\"_blank\">Jupyter Notebook</a>\n   available in the Collab dedicated to this Live Paper through the\n   <a href=\"https://wiki.ebrains.eu/\" target=\"_blank\">Human Brain Project Collaboratory</a> platform.\n   The Jupyter Notebook allows to generate the simulation figures reported in the\n   <a href=\"https://doi.org/10.1371/journal.pcbi.1006293\" target=\"_blank\">paper</a> using the respective simulation conditions reported in figure captions and text.\n   <br>\n   More details on how to use the notebook and the results it allows to reproduce are reported inline with the code.\n</p>",
+      "data": [
+        {
+          "label": "",
+          "links": [],
+          "type": "figure",
+          "identifier": "figure-fig2",
+          "config": {
+            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig9.png",
+            "caption": "[Fig. 2 AP Validation: [A] Single AP, [B] AP with a Long Duration Clamp](https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures)",
+            "altText": "Fig. 2 AP Validation"
+          }
+        },
+        {
+          "label": "",
+          "links": [],
+          "type": "figure",
+          "identifier": "figure-fig3",
+          "config": {
+            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig10b.png",
+            "caption": "[Fig. 3 Simulated Subthreshold Potentials and an AP in the model](https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures)",
+            "altText": "Fig. 3 Simulated Subthreshold Potentials and an AP in the model"
+          }
+        },
+        {
+          "label": "",
+          "links": [],
+          "type": "figure",
+          "identifier": "figure-fig4",
+          "config": {
+            "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_mandge_manchanda/images/Fig12.png",
+            "caption": "[Fig. 4 Comparing Simulated and Experimental Calcium Transients in the Cytoplasm (Red) and the Mitochondria (Blue).](https://wiki.ebrains.eu/bin/view/Collabs/live-paper-2018-mandge-manchanda/Generate%20paper%27s%20figures)",
+            "altText": "Fig. 4 Comparing Simulated and Experimental Calcium Transients"
+          }
+        }
+      ]
     },
     {
       "order": 2,

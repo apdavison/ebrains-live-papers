@@ -1,0 +1,16 @@
+.figure-widget {
+  margin: 0;
+  text-align: center;
+}
+
+.figure-widget img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.figure-widget figcaption {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
