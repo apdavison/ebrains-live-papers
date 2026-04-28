@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App";
 import LivePaperViewer from "./LivePaperViewer";
 import Docs from "./docs/Docs";
+import BuilderPlaceholder from "./BuilderPlaceholder";
 
 const { fetchPublishedLivePapers, fetchPublishedLivePaper } =
   import.meta.env.VITE_MOCK_API === "true"
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       const livepapers = await fetchPublishedLivePapers();
       return { data: livepapers };
     },
+  },
+  {
+    path: "/builder",
+    Component: BuilderPlaceholder,
   },
   {
     path: "/docs",

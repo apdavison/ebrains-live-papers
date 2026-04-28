@@ -1,5 +1,3 @@
-# FROM nginx:alpine
-
 # this two-stage build makes the final image much smaller
 # as it contains only the final built app
 
