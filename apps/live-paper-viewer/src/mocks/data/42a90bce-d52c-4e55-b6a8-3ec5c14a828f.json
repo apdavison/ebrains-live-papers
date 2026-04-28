@@ -210,7 +210,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1/morphology/WT-P270-20-14ak_1.03_SGA2-m12.swc",
-              "service": "download"
+              "service": "Download"
+            },
+            {
+              "url": "https://neuroinformatics.nl/HBP/morphology-viewer-dev/?url=https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/models/MSND1/morphology/WT-P270-20-14ak_1.03_SGA2-m12.swc",
+              "service": "View morphology"
             }
           ],
           "type": "URL",
@@ -229,11 +233,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/bAP/bAP-DayEtAl2006-D1.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/bAP/bAP-DayEtAl2006-D1.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -244,11 +248,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace1.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace1.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -259,11 +263,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace2.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace2.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -274,11 +278,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace3.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace3.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -289,11 +293,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace4.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace4.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -304,11 +308,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace5.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace5.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -319,11 +323,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace6.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace6.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -334,11 +338,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace7.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace7.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
@@ -349,11 +353,11 @@
           "links": [
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace8.csv",
-              "service": "download"
+              "service": "Download"
             },
             {
               "url": "https://data-proxy.ebrains.eu/api/v1/buckets/pc0a33-EBRAINS_live_papers/2018_lindroos_et_al/expdata/FI/Planert2013-D1-FI-trace8.png",
-              "service": null
+              "service": "View"
             }
           ],
           "type": "URL",
