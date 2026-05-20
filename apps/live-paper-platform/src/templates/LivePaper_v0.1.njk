@@ -677,12 +677,9 @@
             
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
-                console.log(event);
-                {# console.log(event.target); #}
-                {# console.log(event.path); #}
-                console.log(event.path.join('').indexOf("myModal"));
-                {# console.log(event.path.some((item) => item.includes('myModal'))); #}
-                if (event.path.join('').indexOf("myModal") == -1) {
+                // event.path was a non-standard Chrome property removed in v109;
+                // use Element.closest() to check whether the click happened inside #myModal
+                if (event.target && event.target.closest && !event.target.closest("#myModal")) {
                     var modal = document.getElementById("myModal");
                     modal.style.display = "none";
 
