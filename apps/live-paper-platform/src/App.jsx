@@ -222,6 +222,11 @@ export default class App extends React.Component {
       axios
         .get("/cache/summary.json")
         .then((res) => {
+          // Vite dev server returns the SPA index.html (200) for unknown
+          // paths, so confirm the response shape before treating it as a hit.
+          if (!Array.isArray(res.data)) {
+            return Promise.reject(new Error("invalid cache response"));
+          }
           console.log("Found listing in server cache!");
           console.log(res);
           this.setState({
@@ -301,6 +306,11 @@ export default class App extends React.Component {
       axios
         .get("/cache/" + lp_id + ".json")
         .then((res) => {
+          // Vite dev server returns the SPA index.html (200) for unknown
+          // paths, so confirm the response shape before treating it as a hit.
+          if (!res.data || typeof res.data !== "object" || !res.data.id) {
+            return Promise.reject(new Error("invalid cache response"));
+          }
           console.log("Found LP in server cache.");
           console.log(res);
           this.setState((prevState) => ({
