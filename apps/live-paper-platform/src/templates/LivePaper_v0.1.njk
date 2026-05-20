@@ -713,21 +713,34 @@
             // downloaded. NGL creates the <canvas> synchronously during Stage
             // construction (long before the data arrives), so a pure
             // :has(canvas) CSS approach would hide the indicator too early.
-            (function patchNGLLoading() {
-                if (typeof NGL === "undefined" || !NGL.Stage || !NGL.Stage.prototype || !NGL.Stage.prototype.loadFile) {
-                    setTimeout(patchNGLLoading, 100);
-                    return;
+            //
+            // Re-install at DOMContentLoaded and window.load as well as immediately,
+            // because the LP's section_custom HTML often loads ngl.js more than once
+            // and each subsequent load replaces NGL.Stage.prototype.loadFile with
+            // the unwrapped version. The idempotency marker prevents double-wrapping.
+            (function () {
+                function install() {
+                    if (typeof NGL === "undefined" || !NGL.Stage || !NGL.Stage.prototype || !NGL.Stage.prototype.loadFile) {
+                        return false;
+                    }
+                    var current = NGL.Stage.prototype.loadFile;
+                    if (current.__nglLoadingWrapped) return true;
+                    var wrapper = function () {
+                        var container = this.viewer && this.viewer.container;
+                        var canvasDiv = container && container.closest && container.closest(".ngl-basic-canvas");
+                        if (canvasDiv) canvasDiv.classList.add("ngl-loading");
+                        var promise = current.apply(this, arguments);
+                        var clear = function () { if (canvasDiv) canvasDiv.classList.remove("ngl-loading"); };
+                        promise.then(clear, clear);
+                        return promise;
+                    };
+                    wrapper.__nglLoadingWrapped = true;
+                    NGL.Stage.prototype.loadFile = wrapper;
+                    return true;
                 }
-                var original = NGL.Stage.prototype.loadFile;
-                NGL.Stage.prototype.loadFile = function () {
-                    var container = this.viewer && this.viewer.container;
-                    var canvasDiv = container && container.closest && container.closest(".ngl-basic-canvas");
-                    if (canvasDiv) canvasDiv.classList.add("ngl-loading");
-                    var promise = original.apply(this, arguments);
-                    var clear = function () { if (canvasDiv) canvasDiv.classList.remove("ngl-loading"); };
-                    promise.then(clear, clear);
-                    return promise;
-                };
+                install();
+                document.addEventListener("DOMContentLoaded", install, false);
+                window.addEventListener("load", install, false);
             })();
 
             // Get the modal
