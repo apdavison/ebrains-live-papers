@@ -581,6 +581,49 @@
                 animation-duration: 0.4s
             }
 
+            /* NGL viewer loading indicator: shown inside any ngl-basic-canvas
+               container until NGL has injected its <canvas>. Avoids the
+               otherwise-blank-modal experience while large trajectory files
+               (e.g. multi-MB .gro / .xtc) are downloading. */
+            .ngl-basic-canvas {
+                position: relative;
+                min-height: 200px;
+            }
+            .ngl-basic-canvas.ngl-loading::before,
+            .ngl-basic-canvas.ngl-loading::after {
+                /* sit above the NGL <canvas> child, which paints an opaque
+                   white background and would otherwise hide ::before */
+                z-index: 1;
+            }
+            .ngl-basic-canvas.ngl-loading::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 36px;
+                height: 36px;
+                margin: -28px 0 0 -18px;
+                border: 4px solid #e0e0e0;
+                border-top-color: #5cb85c;
+                border-radius: 50%;
+                animation: ngl-spin 0.9s linear infinite;
+            }
+            .ngl-basic-canvas.ngl-loading::after {
+                content: "Loading 3D viewer\2026";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                margin-top: 28px;
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 14px;
+                color: #666;
+            }
+            @keyframes ngl-spin {
+                to { transform: rotate(360deg); }
+            }
+
             .my-button {
                 width: 200px;
                 padding: 8px;
@@ -664,6 +707,29 @@
         </script>
         <!-- End Matomo Code -->
         <script>
+            // Toggle the .ngl-loading class on each .ngl-basic-canvas container
+            // for the duration of any NGL stage.loadFile(...) call, so the CSS
+            // spinner/text is visible while large trajectory files are being
+            // downloaded. NGL creates the <canvas> synchronously during Stage
+            // construction (long before the data arrives), so a pure
+            // :has(canvas) CSS approach would hide the indicator too early.
+            (function patchNGLLoading() {
+                if (typeof NGL === "undefined" || !NGL.Stage || !NGL.Stage.prototype || !NGL.Stage.prototype.loadFile) {
+                    setTimeout(patchNGLLoading, 100);
+                    return;
+                }
+                var original = NGL.Stage.prototype.loadFile;
+                NGL.Stage.prototype.loadFile = function () {
+                    var container = this.viewer && this.viewer.container;
+                    var canvasDiv = container && container.closest && container.closest(".ngl-basic-canvas");
+                    if (canvasDiv) canvasDiv.classList.add("ngl-loading");
+                    var promise = original.apply(this, arguments);
+                    var clear = function () { if (canvasDiv) canvasDiv.classList.remove("ngl-loading"); };
+                    promise.then(clear, clear);
+                    return promise;
+                };
+            })();
+
             // Get the modal
             var modal = document.getElementById("myModal");
 

@@ -80,7 +80,9 @@ export default class LivePaperViewer extends React.Component {
   }
 
   componentDidMount() {
-    let lp_data = this.state.lp_data;
+    // deep-clone so the mutations below don't leak into App.state.dataLPs,
+    // which would corrupt the data on a remount (e.g. React StrictMode in dev)
+    let lp_data = JSON.parse(JSON.stringify(this.state.lp_data));
 
     // along the lines of LivePaperBuilder.App.handleLoadProjectKGClose()
     //  + LivePaperBuilder.CreateLivePaper.addDerivedData()
