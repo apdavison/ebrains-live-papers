@@ -585,17 +585,23 @@
                container until NGL has injected its <canvas>. Avoids the
                otherwise-blank-modal experience while large trajectory files
                (e.g. multi-MB .gro / .xtc) are downloading. */
-            .ngl-basic-canvas {
+            /* The container element NGL renders into can have any class the
+               LP author picked (.ngl-basic-canvas for plain structure /
+               trajectory viewers; .ngl-checkbox-canvas for the BD electrostatic-
+               grid viewer; conceivably others). Key everything off the
+               .ngl-loading class that the JS hook below adds, so we don't
+               need to know about each LP's chosen names. */
+            .ngl-loading {
                 position: relative;
                 min-height: 200px;
             }
-            .ngl-basic-canvas.ngl-loading::before,
-            .ngl-basic-canvas.ngl-loading::after {
+            .ngl-loading::before,
+            .ngl-loading::after {
                 /* sit above the NGL <canvas> child, which paints an opaque
                    white background and would otherwise hide ::before */
                 z-index: 1;
             }
-            .ngl-basic-canvas.ngl-loading::before {
+            .ngl-loading::before {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -608,7 +614,7 @@
                 border-radius: 50%;
                 animation: ngl-spin 0.9s linear infinite;
             }
-            .ngl-basic-canvas.ngl-loading::after {
+            .ngl-loading::after {
                 content: "Loading 3D viewer\2026";
                 position: absolute;
                 top: 50%;
@@ -707,17 +713,25 @@
         </script>
         <!-- End Matomo Code -->
         <script>
-            // Toggle the .ngl-loading class on each .ngl-basic-canvas container
-            // for the duration of any NGL stage.loadFile(...) call, so the CSS
-            // spinner/text is visible while large trajectory files are being
-            // downloaded. NGL creates the <canvas> synchronously during Stage
-            // construction (long before the data arrives), so a pure
-            // :has(canvas) CSS approach would hide the indicator too early.
+            // Toggle the .ngl-loading class on each NGL viewer container for
+            // the duration of any NGL stage.loadFile(...) call, so the CSS
+            // spinner/text is visible while large files are being downloaded.
+            // NGL creates the <canvas> synchronously during Stage construction
+            // (long before the data arrives), so a pure :has(canvas) CSS
+            // approach would hide the indicator too early.
             //
-            // Re-install at DOMContentLoaded and window.load as well as immediately,
-            // because the LP's section_custom HTML often loads ngl.js more than once
-            // and each subsequent load replaces NGL.Stage.prototype.loadFile with
-            // the unwrapped version. The idempotency marker prevents double-wrapping.
+            // We add the class directly to this.viewer.container (whatever
+            // class the LP author gave it: .ngl-basic-canvas, .ngl-checkbox-
+            // canvas, etc.). A per-container counter handles concurrent
+            // loadFile calls — e.g. showComplexGrids in the BD electrostatic-
+            // grid viewer launches four loads in Promise.all and we mustn't
+            // clear the class until the LAST one resolves.
+            //
+            // Re-install at DOMContentLoaded and window.load as well as
+            // immediately, because the LP's section_custom HTML often loads
+            // ngl.js more than once and each subsequent load replaces
+            // NGL.Stage.prototype.loadFile with the unwrapped version. The
+            // idempotency marker prevents double-wrapping.
             (function () {
                 function install() {
                     if (typeof NGL === "undefined" || !NGL.Stage || !NGL.Stage.prototype || !NGL.Stage.prototype.loadFile) {
@@ -727,10 +741,18 @@
                     if (current.__nglLoadingWrapped) return true;
                     var wrapper = function () {
                         var container = this.viewer && this.viewer.container;
-                        var canvasDiv = container && container.closest && container.closest(".ngl-basic-canvas");
-                        if (canvasDiv) canvasDiv.classList.add("ngl-loading");
+                        if (container) {
+                            container.classList.add("ngl-loading");
+                            container.__nglLoadingCount = (container.__nglLoadingCount || 0) + 1;
+                        }
                         var promise = current.apply(this, arguments);
-                        var clear = function () { if (canvasDiv) canvasDiv.classList.remove("ngl-loading"); };
+                        var clear = function () {
+                            if (!container) return;
+                            container.__nglLoadingCount--;
+                            if (container.__nglLoadingCount <= 0) {
+                                container.classList.remove("ngl-loading");
+                            }
+                        };
                         promise.then(clear, clear);
                         return promise;
                     };
