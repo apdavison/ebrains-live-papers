@@ -260,7 +260,7 @@ export default class App extends React.Component {
                 console.log("error: ", err.message);
               } else {
                 // Something went wrong. Save the error in state and re-render.
-                let error_message = "";
+                let error_message;
                 try {
                   error_message = err.message;
                 } catch {
@@ -324,7 +324,7 @@ export default class App extends React.Component {
           }));
           return;
         })
-        .catch((err) => {
+        .catch(() => {
           console.log("LP is not in the server cache.");
 
           // 3) published: check if LP published; if yes, fetch LP, add to cache
@@ -360,7 +360,7 @@ export default class App extends React.Component {
                 url = baseUrl + "/livepapers/" + lp_id;
                 axios
                   .get(url, config)
-                  .then((res2) => {
+                  .then(() => {
                     console.log("Code not expected to reach here!");
                     return;
                   })

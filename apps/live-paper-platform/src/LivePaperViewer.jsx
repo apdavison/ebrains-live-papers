@@ -96,7 +96,7 @@ export default class LivePaperViewer extends React.Component {
 
     // KG requires 'data' value for SectionCustom in 'description' field
     // doing reverse mapping here
-    lp_data.resources.forEach(function (res, index) {
+    lp_data.resources.forEach(function (res) {
       // creating extra copy here to handle problem with shallow copy of nested object
       let temp_res = JSON.parse(JSON.stringify(res));
       if (res.type === "section_custom") {
@@ -123,10 +123,10 @@ export default class LivePaperViewer extends React.Component {
     // this is handled by appending it to the label with a separator (#-#)
     // we do the reverse when loading LP project from KG
     // also handle potential markdown in all descriptions
-    lp_data.resources.forEach(function (res, index) {
+    lp_data.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
         let tabs = [];
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           let parts = res_item.label.split(separator);
           if (parts.length > 1) {
             tabs.push(parts[1] || "");
@@ -148,7 +148,7 @@ export default class LivePaperViewer extends React.Component {
     lp_data = this.addDerivedData(lp_data);
 
     // determine appropriate live paper template
-    let LivePaper = null;
+    let LivePaper;
     const lp_version = parseFloat(lp_data.lp_tool_version);
     if (lp_version > 0.1) {
       // add handling for newer templates here as required
@@ -183,10 +183,10 @@ export default class LivePaperViewer extends React.Component {
       this.makeCorrespondingAuthorsString();
 
     // check if resources use tabs; handle appropriately
-    data.resources.forEach(function (res, index) {
+    data.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
         let tabs = [];
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           tabs.push(res_item.tab_name || "");
         });
         // get only unique elements
@@ -205,7 +205,7 @@ export default class LivePaperViewer extends React.Component {
     const author_data = this.state.lp_data.authors;
     var page_title = "";
     if (author_data.length === 0) {
-      page_title = "";
+      // page_title remains ""
     } else if (author_data.length === 1) {
       page_title =
         author_data[0].lastname +
@@ -249,7 +249,7 @@ export default class LivePaperViewer extends React.Component {
 
     // now use the list of affiliations to appropriately create authors string
     var authors_string = "";
-    this.state.lp_data.authors.forEach(function (author, index) {
+    this.state.lp_data.authors.forEach(function (author) {
       if (author.firstname.trim() !== "" || author.lastname.trim() !== "") {
         if (authors_string !== "") {
           authors_string = authors_string + ", ";
@@ -286,7 +286,7 @@ export default class LivePaperViewer extends React.Component {
 
   makeCreatedAuthorsString() {
     var created_authors_string = "";
-    this.state.lp_data.created_author.forEach(function (created_author, index) {
+    this.state.lp_data.created_author.forEach(function (created_author) {
       if (
         created_author.firstname.trim() !== "" ||
         created_author.lastname.trim() !== ""
@@ -310,10 +310,7 @@ export default class LivePaperViewer extends React.Component {
 
   makeCorrespondingAuthorsString() {
     var corresponding_authors_string = "";
-    this.state.lp_data.corresponding_author.forEach(function (
-      corresp_author,
-      index
-    ) {
+    this.state.lp_data.corresponding_author.forEach(function (corresp_author) {
       if (
         corresp_author.firstname.trim() !== "" ||
         corresp_author.lastname.trim() !== ""

@@ -40,7 +40,7 @@
     "programmingLanguage": "Javascript",
     "relatedLink": "https://live-papers.apps.ebrains.eu/docs",
     "softwareRequirements": "https://react.dev/",
-    "version": "20250519",
+    "version": "2025-05-19",
     "continuousIntegration": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/pipelines",
     "developmentStatus": "active",
     "issueTracker": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/issues"
