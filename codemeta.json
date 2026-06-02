@@ -26,9 +26,9 @@
         }
     ],
     "codeRepository": "https://gitlab.ebrains.eu/live-papers/live-papers-platform",
-    "dateModified": "2025-05-19",
+    "dateModified": "2026-05-20",
     "description": "This repository contains the code for the EBRAINS Live Papers web app.\n\nEBRAINS live papers are structured and interactive supplementary documents to complement journal publications, that allow users to readily access, explore and utilize the various kinds of data underlying scientific studies. Interactivity is a prominent feature with several integrated tools and services that will allow users to download, visualise or simulate data, models and results presented in the corresponding publications.\n\nThe web app allows anyone to view and interact with published live papers. It also includes an authoring tool, the live paper builder, which requires an EBRAINS account.",
-    "downloadUrl": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/archive/2025-05-19/live-papers-platform-2025-05-19.zip",
+    "downloadUrl": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/archive/2026-05-20/live-papers-platform-2026-05-20.zip",
     "isPartOf": "https://live-papers.apps.ebrains.eu",
     "license": "https://spdx.org/licenses/Apache-2.0",
     "name": "EBRAINS Live Papers app",
@@ -40,7 +40,7 @@
     "programmingLanguage": "Javascript",
     "relatedLink": "https://live-papers.apps.ebrains.eu/docs",
     "softwareRequirements": "https://react.dev/",
-    "version": "2025-05-19",
+    "version": "2026-05-20",
     "continuousIntegration": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/pipelines",
     "developmentStatus": "active",
     "issueTracker": "https://gitlab.ebrains.eu/live-papers/live-papers-platform/-/issues"

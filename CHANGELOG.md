@@ -4,7 +4,7 @@ All notable changes to the EBRAINS Live Papers app are documented here. Releases
 
 ---
 
-## [Unreleased]
+## [2026-05-20]
 
 - Added NGL loading indicator for molecular dynamics simulations
 - Fixed NGL `loadFile` wrapper race condition against late script loads
