@@ -55,7 +55,14 @@ export default class Credits extends React.Component {
               <div className="block-text">
                 EBRAINS Live Papers have been developed through the efforts of
                 many different people, with financial support from several
-                organisations.
+                organisations. This service was developed in part or in whole
+                in the Human Brain Project, funded from the European Union's
+                Horizon 2020 Framework Programme for Research and Innovation
+                under Specific Grant Agreements No. 785907 and No. 945539
+                (Human Brain Project SGA2 and SGA3), and in the EBRAINS
+                research infrastructure, funded from the European Union's
+                Horizon Europe funding programme under grant agreement
+                No. 101147319 (EBRAINS-2.0).
                 <br />
                 <br />
                 <div style={{ lineHeight: 1.75 }}>
