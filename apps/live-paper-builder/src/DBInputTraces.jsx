@@ -20,7 +20,6 @@ import ErrorDialog from "./ErrorDialog";
 import LoadingIndicator from "./LoadingIndicator";
 import ContextMain from "./ContextMain";
 import TextField from "@mui/material/TextField";
-import MultipleSelect from "./MultipleSelect";
 import SingleSelect from "./SingleSelect";
 import TypeAheadSelect from "./TypeAheadSelect";
 import axios from "axios";
@@ -856,7 +855,7 @@ export class FilterPanelAllenBrain extends React.Component {
         .filter((item) => item !== "");
       // remove duplicates
       list_trace_ids = [...new Set(list_trace_ids)];
-      list_trace_ids.forEach(function (trace_id, i) {
+      list_trace_ids.forEach(function (trace_id) {
         let url =
           corsProxy +
           allenbrain_baseUrl +

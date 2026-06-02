@@ -31,6 +31,13 @@ export default [
       "react/jsx-no-target-blank": "off",
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
       "react/no-unescaped-entities": 0,
+      "react/prop-types": "off",
+    },
+  },
+  {
+    files: ["**/*.test.{js,jsx}", "**/__tests__/**/*.{js,jsx}"],
+    languageOptions: {
+      globals: globals.vitest,
     },
   },
 ];

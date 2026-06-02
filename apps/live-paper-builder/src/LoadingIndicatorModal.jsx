@@ -1,5 +1,4 @@
 import Dialog from "@mui/material/Dialog";
-import React from "react";
 import ColoredCircularProgress from "./ColoredCircularProgress";
 
 export default function LoadingIndicatorModal(props) {

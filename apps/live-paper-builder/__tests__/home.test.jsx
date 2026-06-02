@@ -1,9 +1,5 @@
-import { describe, test, expect, vi } from "vitest";
+import { describe, test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-
-import React from "react";
-import { SnackbarProvider } from "notistack";
-import { Route } from "react-router-dom";
 
 import { ContextMainProvider } from "../src/ContextMain";
 

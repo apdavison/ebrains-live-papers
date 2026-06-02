@@ -832,7 +832,7 @@ export class FilterPanelNeuroMorpho extends React.Component {
       // remove duplicates
       list_morphology_ids = [...new Set(list_morphology_ids)];
 
-      list_morphology_ids.forEach(function (morphology_id, i) {
+      list_morphology_ids.forEach(function (morphology_id) {
         let url = neuromorpho_baseUrl + "/neuron/id/" + parseInt(morphology_id, 10);
         neuroMorphoreqs.push(axios.get(url));
       });
@@ -1156,7 +1156,7 @@ export class FilterPanelAllenBrain extends React.Component {
         .filter((item) => item !== "");
       // remove duplicates
       list_morphology_ids = [...new Set(list_morphology_ids)];
-      list_morphology_ids.forEach(function (morphology_id, i) {
+      list_morphology_ids.forEach(function (morphology_id) {
         let url =
           corsProxy +
           allenbrain_baseUrl +

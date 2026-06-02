@@ -50,7 +50,7 @@ export default class SaveModal extends React.Component {
     this.props.onClose(false);
   }
 
-  checkRequirementsOnPage(dta) {
+  checkRequirementsOnPage() {
     let flag = true;
     // a collab must be specified
     if (!this.state.collab_id) {
@@ -74,7 +74,7 @@ export default class SaveModal extends React.Component {
     return flag;
   }
 
-  checkRequirementsOnPayload(data) {
+  checkRequirementsOnPayload() {
     // placeholder for future checks
     return true;
 
@@ -197,7 +197,7 @@ export default class SaveModal extends React.Component {
             url = url + this.props.data.id;
             axios
               .put(url, payload, config)
-              .then((res) => {
+              .then(() => {
                 // PUT returns null on success
                 // console.log(res);
                 // console.log("UUID = ", res.data.id);
@@ -273,9 +273,9 @@ export default class SaveModal extends React.Component {
     let payload = JSON.parse(JSON.stringify(data)); // copy by value
 
     // KG requires all 'url' field in resource sections to have a valid URL
-    payload.resources.forEach(function (res, index) {
+    payload.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           if (res_item.url === "" && res_item.view_url !== "") {
             res_item.url = res_item.view_url;
           } else if (res_item.url === "" && res_item.view_url === "") {
@@ -290,10 +290,10 @@ export default class SaveModal extends React.Component {
     // KG doesn't have a separate field for saving tabs_name;
     // this is handled by appending it to the label with a separator (#-#)
     console.log(payload);
-    payload.resources.forEach(function (res, index) {
+    payload.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
         // console.log(res);
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           if (res_item.tab_name) {
             res_item.label = res_item.label + separator + res_item.tab_name;
           }

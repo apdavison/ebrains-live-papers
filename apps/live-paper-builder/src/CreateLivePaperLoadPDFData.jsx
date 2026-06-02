@@ -1,5 +1,6 @@
-import React from "react";
+import { Component, createRef } from "react";
 import axios from "axios";
+import { parseString } from "xml2js";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import Paper from "@mui/material/Paper";
@@ -45,7 +46,7 @@ const MyDialogTitle = withStyles(styles)((props) => {
   );
 });
 
-class CreateLivePaperLoadPDFData extends React.Component {
+class CreateLivePaperLoadPDFData extends Component {
   signal = axios.CancelToken.source();
   constructor(props) {
     super(props);
@@ -62,7 +63,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
       loading: false,
     };
 
-    this.loadPDFRef = React.createRef();
+    this.loadPDFRef = createRef();
     this.handleClose = this.handleClose.bind(this);
     this.browseForPDF = this.browseForPDF.bind(this);
     this.acceptDOI = this.acceptDOI.bind(this);
@@ -206,7 +207,6 @@ class CreateLivePaperLoadPDFData extends React.Component {
       axios
         .post(url, formData, config)
         .then((res) => {
-          var parseString = require("xml2js").parseString;
           parseString(res.data, { trim: true, preserveChildrenOrder: true }, function (err, result) {
             console.log(result);
 
@@ -249,7 +249,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                     })
                     .join("; ");
                 }
-              } catch (error) {
+              } catch {
                 // do nothing
               }
               if ("$" in item && item["$"]["role"] === "corresp") {
@@ -321,7 +321,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
               )
                 .toISOString()
                 .replace(/^(?<year>\d+)-(?<month>\d+)-(?<day>\d+)T.*$/, "$<year>-$<month>-$<day>");
-            } catch (error) {
+            } catch {
               console.log("Could not identify year!");
             }
 
@@ -330,7 +330,7 @@ class CreateLivePaperLoadPDFData extends React.Component {
                 result["TEI"]["teiHeader"][0]["fileDesc"][0]["sourceDesc"][0]["biblStruct"][0]["ptr"][0]["$"][
                   "target"
                 ];
-            } catch (error) {
+            } catch {
               console.log("Could not identify download URL!");
             }
 

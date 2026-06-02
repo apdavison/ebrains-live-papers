@@ -559,5 +559,6 @@ export {
   aboutApi,
   kgVocab,
   modelDBvocab,
-  neuromorphoVocab
+  neuromorphoVocab,
+  biomodelsMetadata
 };

@@ -118,7 +118,7 @@ export class SectionTracesEdit extends React.Component {
       try {
         var json = JSON.parse(str);
         return typeof json === "object";
-      } catch (e) {
+      } catch {
         return false;
       }
     }
@@ -478,7 +478,7 @@ export default class SectionTraces extends React.Component {
     if (this.state.useTabs) {
       // if turning off, then erase all tabs data
       let data = this.state.data;
-      data.forEach(function (item, index) {
+      data.forEach(function (item) {
         item.tab_name = "";
       });
       this.setState(

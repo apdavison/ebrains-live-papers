@@ -270,7 +270,7 @@ export default class SectionCustom extends React.Component {
     });
   }
 
-  handleDataInputOnBlur(event, editor) {
+  handleDataInputOnBlur() {
     const converter = new Converter({ tables: true });
     let code = converter.makeHtml(this.state.description);
     console.log(this.state.description);
@@ -281,7 +281,7 @@ export default class SectionCustom extends React.Component {
         plugins: [html],
       });
       console.log(code);
-    } catch (error) {
+    } catch {
       console.log("Error using prettier on code. Potentially invalid HTML syntax!");
     }
 

@@ -1,6 +1,4 @@
-import React from "react";
-
-function RainbowRow(props) {
+function RainbowRow() {
   return (
     <div className="rainbow-row">
       <div></div>

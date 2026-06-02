@@ -561,7 +561,7 @@ export class ToolBar extends React.Component {
               aria-label="move down"
               component="span"
               style={{ paddingRight: "5px" }}
-              onClick={(e) => this.props.handleItemMoveDown(this.props.ind)}
+              onClick={() => this.props.handleItemMoveDown(this.props.ind)}
             >
               <ForwardIcon
                 stroke={"#000000"}

@@ -248,10 +248,10 @@ class App extends React.Component {
       // KG doesn't have a separate field for saving tabs_name;
       // this is handled by appending it to the label with a separator (#-#)
       // we do the reverse when loading LP project from KG
-      data.resources.forEach(function (res, index) {
+      data.resources.forEach(function (res) {
         if (res.type !== "section_custom") {
           let tabs = [];
-          res.data.forEach(function (res_item, index) {
+          res.data.forEach(function (res_item) {
             let parts = res_item.label.split(separator);
             if (parts.length > 1) {
               tabs.push(parts[1] || "");
@@ -285,7 +285,7 @@ class App extends React.Component {
       var data = "";
       const scope = this;
       const reader = new FileReader();
-      reader.onload = function (that) {
+      reader.onload = function () {
         data = JSON.parse(reader.result);
         // let remove_keys = ["lp_tool_version", "modified_date"];
         // remove_keys.forEach((k) => delete data[k]);
@@ -294,11 +294,11 @@ class App extends React.Component {
         data.resources.sort(compareArrayoOfObjectsByOrder);
 
         // handle useTabs for resources
-        data.resources.forEach(function (res, index) {
+        data.resources.forEach(function (res) {
           console.log(res);
           if (res.type !== "section_custom") {
             let tabs = [];
-            res.data.forEach(function (res_item, index) {
+            res.data.forEach(function (res_item) {
               tabs.push(res_item.tab_name || "");
             });
             // get only unique elements

@@ -14,7 +14,7 @@ vi.mock("axios");
 
 axios.CancelToken.source.mockResolvedValue({token: "MOCKCANCELTOKEN"});
 
-axios.get.mockImplementation((url, config) => {
+axios.get.mockImplementation((url) => {
   switch (url) {
     case "https://live-papers-api.apps.ebrains.eu/projects?only_editable=true":
       return new Promise(() => {

@@ -1407,7 +1407,7 @@ export class FilterPanelModelDB extends React.Component {
       // remove duplicates
       list_model_ids = [...new Set(list_model_ids)];
 
-      list_model_ids.forEach(function (model_id, i) {
+      list_model_ids.forEach(function (model_id) {
         let url = corsProxy + modelDB_baseUrl + "/models/" + model_id;
         modelDBreqs.push(axios.get(url));
       });
@@ -1419,7 +1419,7 @@ export class FilterPanelModelDB extends React.Component {
           for (let ind in list_model_ids) {
             if (res[ind].status === "fulfilled") {
               let data_dict = {};
-              ["id", "name", ...Object.values(filterAttributeMappingModelDB)].forEach(function (item, i) {
+              ["id", "name", ...Object.values(filterAttributeMappingModelDB)].forEach(function (item) {
                 let value = res[ind].value.data[item];
                 if (typeof value === "string" || !value) {
                   data_dict[item] = value;
@@ -1430,7 +1430,7 @@ export class FilterPanelModelDB extends React.Component {
                     data_dict[item] = value.value;
                   } else {
                     let item_value = "";
-                    value.value.forEach(function (subitem, j) {
+                    value.value.forEach(function (subitem) {
                       item_value = item_value + subitem.object_name + ", ";
                     });
                     data_dict[item] = item_value.slice(0, -2);
@@ -1490,7 +1490,7 @@ export class FilterPanelModelDB extends React.Component {
                 if (typeof res[i].data[ind].value === "string") {
                   data_dict[item] = res[i].data[ind].value;
                 } else {
-                  res[i].data[ind].value.forEach(function (subitem, j) {
+                  res[i].data[ind].value.forEach(function (subitem) {
                     value = value + subitem.object_name + ", ";
                   });
                   data_dict[item] = value.slice(0, -2);
@@ -1635,7 +1635,7 @@ export class FilterPanelOSB extends React.Component {
       // remove duplicates
       list_model_ids = [...new Set(list_model_ids)];
 
-      list_model_ids.forEach(function (model_id, i) {
+      list_model_ids.forEach(function (model_id) {
         let url = corsProxy + osb_baseUrl + "/projects/" + model_id + ".json";
         modelDBreqs.push(axios.get(url));
       });

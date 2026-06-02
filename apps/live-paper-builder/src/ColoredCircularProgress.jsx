@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { withStyles } from "@mui/styles";
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -17,7 +17,7 @@ class ColoredCircularProgress extends Component {
   }
 }
 
-const styles = (props) => ({
+const styles = () => ({
   colorPrimary: {
     backgroundColor: "transparent",
     color: "#9CE142",

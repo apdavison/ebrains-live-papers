@@ -374,10 +374,10 @@ class CreateLivePaper extends React.Component {
 
     // check if resources use tabs; handle appropriately
     // also handle potential markdown in all descriptions
-    data.resources.forEach(function (res, index) {
+    data.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
         let tabs = [];
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           tabs.push(res_item.tab_name || "");
         });
         // get only unique elements
@@ -406,9 +406,9 @@ class CreateLivePaper extends React.Component {
     let lp_data = this.addDerivedData(this.removeExcessData(this.state));
 
     // same as in SaveModal.adjustForKGSchema()
-    lp_data.resources.forEach(function (res, index) {
+    lp_data.resources.forEach(function (res) {
       if (res.type !== "section_custom") {
-        res.data.forEach(function (res_item, index) {
+        res.data.forEach(function (res_item) {
           if (res_item.url === "" && res_item.view_url !== "") {
             res_item.url = res_item.view_url;
           } else if (res_item.url === "" && res_item.view_url === "") {
@@ -611,7 +611,7 @@ class CreateLivePaper extends React.Component {
         // ) {
         //   author_email = this.state.corresponding_author.email;
         // }
-        this.setState((prevState) => ({
+        this.setState(() => ({
           created_author: [
             {
               firstname: author.firstname,
@@ -893,7 +893,7 @@ class CreateLivePaper extends React.Component {
 
     // now use the list of affiliations to appropriately create authors string
     var authors_string = "";
-    this.state.authors.forEach(function (author, index) {
+    this.state.authors.forEach(function (author) {
       if (author.firstname.trim() !== "" || author.lastname.trim() !== "") {
         if (authors_string !== "") {
           authors_string = authors_string + ", ";
@@ -919,7 +919,7 @@ class CreateLivePaper extends React.Component {
 
   makeCreatedAuthorsString() {
     var created_authors_string = "";
-    this.state.created_author.forEach(function (created_author, index) {
+    this.state.created_author.forEach(function (created_author) {
       if (created_author.firstname.trim() !== "" || created_author.lastname.trim() !== "") {
         if (created_authors_string !== "") {
           created_authors_string = created_authors_string + ";; ";
@@ -936,7 +936,7 @@ class CreateLivePaper extends React.Component {
 
   makeCorrespondingAuthorsString() {
     var corresponding_authors_string = "";
-    this.state.corresponding_author.forEach(function (corresp_author, index) {
+    this.state.corresponding_author.forEach(function (corresp_author) {
       if (corresp_author.firstname.trim() !== "" || corresp_author.lastname.trim() !== "") {
         if (corresponding_authors_string !== "") {
           corresponding_authors_string = corresponding_authors_string + ", ";
