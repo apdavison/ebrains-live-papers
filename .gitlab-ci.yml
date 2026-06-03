@@ -42,6 +42,16 @@ build_merge_request:
   tags:
     - shell-runner
 
+lint:
+  stage: test
+  script:
+    - cd apps/live-paper-builder && npm ci --legacy-peer-deps && npm run lint
+    - cd ../live-paper-platform && npm ci --legacy-peer-deps && npm run lint
+    - cd ../live-paper-docs && npm ci --legacy-peer-deps && npm run lint
+  tags:
+    - docker-runner
+  image: docker-registry.ebrains.eu/live-papers/node:22-alpine
+
 run_tests:
   stage: test
   script:
@@ -49,7 +59,7 @@ run_tests:
     - sh deployment/write_build_info.sh
     - cd live-paper-builder
     - npm ci --legacy-peer-deps
-    - npm run test
+    - npm run coverage
   tags:
     - docker-runner
   image: docker-registry.ebrains.eu/live-papers/node:22-alpine
