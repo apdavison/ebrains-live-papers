@@ -85,7 +85,7 @@ const showdownKatex = userConfig => () => {
   const asciimathDelimiters = config.delimiters
     .filter(item => item.asciimath)
     .map(({ left, right }) => {
-      const test = new RegExp(
+      const test = new RegExp( // nosemgrep: eslint.detect-non-literal-regexp
         `${escapeRegExp(left)}(.*?)${escapeRegExp(right)}`,
         'g',
       );

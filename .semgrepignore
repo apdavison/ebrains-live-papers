@@ -1,0 +1,3 @@
+# vite.config.js is a dev-only build tool; the fs calls it contains are already
+# guarded against path traversal and never run in production.
+apps/live-paper-platform/vite.config.js

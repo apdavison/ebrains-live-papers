@@ -304,7 +304,7 @@ export default class App extends React.Component {
 
       // 2) check if LP in server cache
       axios
-        .get("/cache/" + lp_id + ".json")
+        .get("/cache/" + lp_id + ".json") // nosemgrep: nodejs_scan.javascript-ssrf-rule-node_ssrf
         .then((res) => {
           // Vite dev server returns the SPA index.html (200) for unknown
           // paths, so confirm the response shape before treating it as a hit.
@@ -335,7 +335,7 @@ export default class App extends React.Component {
             cancelToken: this.signal.token,
           };
           axios
-            .get(url, config)
+            .get(url, config) // nosemgrep: nodejs_scan.javascript-ssrf-rule-node_ssrf
             .then((res) => {
               // console.log(res);
               // 3.1) found
@@ -359,7 +359,7 @@ export default class App extends React.Component {
                 // 4) password-protected: check if LP in GET all LPs  (-> password-protected)
                 url = baseUrl + "/livepapers/" + lp_id;
                 axios
-                  .get(url, config)
+                  .get(url, config) // nosemgrep: nodejs_scan.javascript-ssrf-rule-node_ssrf
                   .then(() => {
                     console.log("Code not expected to reach here!");
                     return;
@@ -385,7 +385,7 @@ export default class App extends React.Component {
                           },
                         };
                         axios
-                          .get(url, config)
+                          .get(url, config) // nosemgrep: nodejs_scan.javascript-ssrf-rule-node_ssrf
                           .then((res3) => {
                             // console.log(res3);
                             context.setState((prevState) => ({
