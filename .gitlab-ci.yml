@@ -63,3 +63,31 @@ run_tests:
   tags:
     - docker-runner
   image: docker-registry.ebrains.eu/live-papers/node:22-alpine
+
+# ───────────────────────── Security scanning ─────────────────────────
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/Container-Scanning.gitlab-ci.yml
+
+# The template jobs are untagged;
+# This default routes the scanner jobs to the Docker-capable runner.
+default:
+  tags:
+    - docker-runner
+
+# Container Scanning analyses the *pushed* image.
+container_scanning:
+  stage: test
+  variables:
+    CS_REGISTRY_USER: $DOCKER_REGISTRY_USER
+    CS_REGISTRY_PASSWORD: $DOCKER_REGISTRY_SECRET
+  rules:
+    - if: $CI_COMMIT_BRANCH == "staging"
+      variables:
+        CS_IMAGE: docker-registry.ebrains.eu/live-papers/live-papers-apps:staging
+    - if: $CI_COMMIT_BRANCH == "main"
+      variables:
+        CS_IMAGE: docker-registry.ebrains.eu/live-papers/live-papers-apps:prod
