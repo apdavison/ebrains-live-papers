@@ -356,9 +356,9 @@ class NeuroMorphoContentMorphologyPanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Morphology Name: <span style={{ fontWeight: "bold" }}>{this.props.data.neuron_name}</span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
               <Grid container item justify="flex-end" xs={6}>
@@ -590,12 +590,12 @@ class AllenBrainContentMorphologyPanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Morphology Name:{" "}
                     <span style={{ cursor: "pointer", fontWeight: "bold" }}>
                       {this.props.data.specimen__name}
                     </span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
               <Grid container item justify="flex-end" xs={6}>

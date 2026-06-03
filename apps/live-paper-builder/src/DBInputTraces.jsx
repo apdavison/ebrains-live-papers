@@ -290,9 +290,9 @@ class KGContentTraceVersion extends React.Component {
         >
           <Grid item xs={6}>
             <Box px={2} display="flex" flexDirection="row">
-              <p variant="subtitle2">
+              <Typography variant="subtitle2">
                 Record #: <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.ind + 1}</span>
-              </p>
+              </Typography>
             </Box>
           </Grid>
         </Grid>
@@ -561,12 +561,12 @@ class AllenBrainContentTracePanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Trace Name:{" "}
                     <span style={{ cursor: "pointer", fontWeight: "bold" }}>
                       {this.props.data.specimen__name}
                     </span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
               <Grid container item justify="flex-end" xs={6}>

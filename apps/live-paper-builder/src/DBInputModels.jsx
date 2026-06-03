@@ -401,10 +401,10 @@ export class KGContentModelVersion extends React.Component {
         >
           <Grid item xs={6}>
             <Box px={2} display="flex" flexDirection="row">
-              <p variant="subtitle2">
+              <Typography variant="subtitle2">
                 Version:{" "}
                 <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.instance.version}</span>
-              </p>
+              </Typography>
             </Box>
           </Grid>
           <Grid container item justify="flex-end" xs={6}>
@@ -687,10 +687,10 @@ export class ModelDBContentModelPanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Model ID:{" "}
                     <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.id}</span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
             </Grid>
@@ -899,10 +899,10 @@ export class OSBContentModelPanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Model Identifier:{" "}
                     <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.identifier}</span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
               <Grid container item justify="flex-end" xs={6}>
@@ -1136,10 +1136,10 @@ export class BioModelsContentModelPanel extends React.Component {
             >
               <Grid item xs={6}>
                 <Box px={2} display="flex" flexDirection="row">
-                  <p variant="subtitle2">
+                  <Typography variant="subtitle2">
                     Model Identifier:{" "}
                     <span style={{ cursor: "pointer", fontWeight: "bold" }}>{this.props.data.id}</span>
-                  </p>
+                  </Typography>
                 </Box>
               </Grid>
             </Grid>
