@@ -10,7 +10,7 @@ build_production:
     - export # debugging environment variables
     - cd apps
     - sh deployment/write_build_info.sh
-    - docker build -f deployment/Dockerfile.prod -t docker-registry.ebrains.eu/live-papers/live-papers-apps:prod .
+    - docker build --pull -f deployment/Dockerfile.prod -t docker-registry.ebrains.eu/live-papers/live-papers-apps:prod .
     - echo $DOCKER_REGISTRY_USER
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_SECRET docker-registry.ebrains.eu
     - docker push docker-registry.ebrains.eu/live-papers/live-papers-apps:prod
@@ -24,7 +24,7 @@ build_staging:
   script:
     - cd apps
     - sh deployment/write_build_info.sh
-    - docker build -f deployment/Dockerfile.staging -t docker-registry.ebrains.eu/live-papers/live-papers-apps:staging .
+    - docker build --pull -f deployment/Dockerfile.staging -t docker-registry.ebrains.eu/live-papers/live-papers-apps:staging .
     - echo $DOCKER_REGISTRY_USER
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_SECRET docker-registry.ebrains.eu
     - docker push docker-registry.ebrains.eu/live-papers/live-papers-apps:staging
@@ -38,7 +38,7 @@ build_merge_request:
   script:
     - cd apps
     - sh deployment/write_build_info.sh
-    - docker build -f deployment/Dockerfile.staging -t live-papers-apps-tmp .
+    - docker build --pull -f deployment/Dockerfile.staging -t live-papers-apps-tmp .
   tags:
     - shell-runner
 
