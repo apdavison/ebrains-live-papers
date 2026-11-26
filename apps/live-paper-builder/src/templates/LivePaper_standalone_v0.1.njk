@@ -641,18 +641,34 @@
             }
         </style>
 
-        <!-- Matomo -->
+        <!-- Matomo (EBRAINS Stats site 18): production only -->
         <script>
-            var _paq = window._paq = window._paq || [];
-            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
             (function () {
-                var u = "//stats.humanbrainproject.eu/";
-                _paq.push([
-                    'setTrackerUrl',
-                    u + 'matomo.php'
-                ]);
+                // In the viewer app, a published paper is shown in an <iframe srcdoc>, whose own
+                // address is about:srcdoc. Matomo site 18 rejects page views from URLs outside the
+                // site's domains, so report the viewer's address and referrer instead.
+                var page = window.location;
+                var referrer = document.referrer;
+                try {
+                    if (page.protocol === "about:" && window.parent !== window) {
+                        page = window.parent.location;
+                        referrer = window.parent.document.referrer;
+                    }
+                } catch (e) {
+                    return;  // parent from a different origin
+                }
+                // don't track local development, downloaded copies or builder previews (which
+                // are written into a new window, so take the builder's address)
+                if (page.hostname !== "live-papers.apps.ebrains.eu" || page.pathname.indexOf("/builder") === 0) {
+                    return;
+                }
+                var _paq = window._paq = window._paq || [];
+                _paq.push(['setCustomUrl', page.href]);
+                _paq.push(['setReferrerUrl', referrer]);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+                var u = "https://stats.humanbrainproject.eu/";
+                _paq.push(['setTrackerUrl', u + 'matomo.php']);
                 _paq.push(['setSiteId', '18']);
                 var d = document,
                     g = d.createElement('script'),
